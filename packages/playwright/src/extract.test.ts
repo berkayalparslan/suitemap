@@ -108,6 +108,8 @@ interface FakeProject {
   teardown?: string;
   grep?: RegExp | RegExp[];
   use?: Record<string, unknown>;
+  /** Config-level `tag`: newer Playwright puts it in every file suite's `_tags`. */
+  fileTags?: string[];
   files: Record<string, (FakeSuite | FakeTest)[]>;
 }
 
@@ -127,7 +129,15 @@ function fakeRoot(
       use: p.use ?? {},
     };
     const fileSuites = Object.entries(p.files).map(([file, children]) =>
-      fakeSuite({ title: file, line: undefined, children }, 'file', 2, [], file, modern, internals),
+      fakeSuite(
+        { title: file, line: undefined, children, ownTags: p.fileTags },
+        'file',
+        2,
+        [],
+        file,
+        modern,
+        internals,
+      ),
     );
     // File suites carry no location on some versions: fileOf() falls back to the first test.
     return {
@@ -265,6 +275,29 @@ describe.each([
       { name: '@extra', origin: 'details' },
     ]);
     expect(doc.describes[0]).toMatchObject({ tags: ['@viaDetails'] });
+    expect(doc.warnings).toEqual([]);
+  });
+
+  it('gives config-level tags (file suite _tags) origin project, not describe', () => {
+    const doc = build([
+      {
+        name: 'p',
+        fileTags: ['@ci'],
+        files: {
+          // The file path itself contains an @token: it is not a describe title.
+          'tests/@odd.spec.ts': [
+            { title: 'top', tags: ['@ci'] },
+            { title: 'g', children: [{ title: 't', tags: ['@ci', '@own'] }] },
+          ],
+        },
+      },
+    ]);
+    const tagsOf = (title: string) => doc.tests.find((t) => t.title === title)?.tags;
+    expect(tagsOf('top')).toEqual([{ name: '@ci', origin: 'project' }]);
+    expect(tagsOf('t')).toEqual([
+      { name: '@ci', origin: 'project' },
+      { name: '@own', origin: 'details' },
+    ]);
     expect(doc.warnings).toEqual([]);
   });
 

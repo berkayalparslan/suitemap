@@ -184,21 +184,31 @@ function toProject(ctx: ExtractionContext, p: FullProject): Project {
 
 /**
  * Test tags with origin: `title` (an @token in the test title), `describe` (declared in an enclosing
- * describe's `{ tag }` details, or an @token in an enclosing describe title), otherwise `details`.
- * `chain` is the enclosing file/describe suites, outermost first.
+ * describe's `{ tag }` details, or an @token in an enclosing describe title), `project` (config-level
+ * `tag`, which newer Playwright copies into every file suite's `_tags`), otherwise `details`.
+ * `chain` is the enclosing file suite followed by describes, outermost first; the file suite's title
+ * is a path and its tags are config tags, so neither counts as a describe.
  */
 function toTags(t: TestCase, chain: SuiteInfo[]): TagRef[] {
+  const [file, ...describes] = chain;
   const fromTitle = new Set(tagTokens(t.title));
   const fromDescribes = new Set([
-    ...chain.flatMap((c) => tagTokens(c.title)),
-    ...chain.flatMap((c) => c.tags ?? []),
+    ...describes.flatMap((c) => tagTokens(c.title)),
+    ...describes.flatMap((c) => c.tags ?? []),
   ]);
+  const fromConfig = new Set(file?.tags ?? []);
   const out: TagRef[] = [];
   const seen = new Set<string>();
   for (const name of t.tags) {
     if (seen.has(name)) continue;
     seen.add(name);
-    const origin = fromTitle.has(name) ? 'title' : fromDescribes.has(name) ? 'describe' : 'details';
+    const origin = fromTitle.has(name)
+      ? 'title'
+      : fromDescribes.has(name)
+        ? 'describe'
+        : fromConfig.has(name)
+          ? 'project'
+          : 'details';
     out.push({ name, origin });
   }
   return out;
