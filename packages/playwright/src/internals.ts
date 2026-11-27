@@ -1,5 +1,5 @@
 // The only module that reads Playwright's underscore (internal) fields. Everything else in this
-// package goes through these accessors (ADR 0004, "Internal field risk").
+// package goes through these accessors (ADR 0004 "Consequences", ADR 0007).
 //
 // Contract of every accessor: check that the field exists and has the expected shape, and return
 // `undefined` (never throw) when it does not, after calling `report(field, message)` once per call.
@@ -22,10 +22,13 @@ export interface StaticAnnotation {
 const describeValue = (v: unknown): string =>
   v === null ? 'null' : Array.isArray(v) ? 'array' : typeof v;
 
-/** `Suite._parallelMode`: 'none' (unset) | 'parallel' | 'serial'. 'none' maps to 'default'. */
+/**
+ * `Suite._parallelMode`: 'none' (unset) | 'default' (explicit `configure({ mode: 'default' })`) |
+ * 'parallel' | 'serial'. 'none' and 'default' both map to 'default'.
+ */
 export function readParallelMode(suite: Suite, report: Report): DescribeMode | undefined {
   const value = (suite as { _parallelMode?: unknown })._parallelMode;
-  if (value === 'none') return 'default';
+  if (value === 'none' || value === 'default') return 'default';
   if (value === 'parallel' || value === 'serial') return value;
   report(
     '_parallelMode',

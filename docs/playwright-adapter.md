@@ -97,4 +97,4 @@ Read through four feature-detecting accessors, the only code that touches unders
 - `repeatEach: 2` yields two `TestCase`s inside the same project node, distinguished by `repeatEachIndex` and a different `id`. Instances need `repeatEachIndex` in their id (matches the draft).
 - Loop-generated tests and describes appear as ordinary tests; no marker that they were generated. Location points at the same line for all of them, so `file:line` is not unique and cannot be an id.
 - A `{type: 'issue', description}` annotation round-trips with the exact description (URL or key). Hidden `_` types are reported like any other.
-- Describe `mode` is only available via internal `_parallelMode` (observed: `none`, `parallel`, `serial`); `none` means unset and is reported as `default`.
+- Describe `mode` is only available via internal `_parallelMode` (observed: `none`, `default`, `parallel`, `serial`); `none` (unset) and an explicit `configure({ mode: 'default' })` are both reported as `default`.

@@ -740,7 +740,7 @@
       "describeId": "tests/checkout/cart.spec.ts › default flow",
       "location": {
         "file": "tests/checkout/cart.spec.ts",
-        "line": 17,
+        "line": 18,
         "column": 0
       },
       "tags": []

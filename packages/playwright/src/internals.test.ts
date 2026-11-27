@@ -55,9 +55,10 @@ const collect = () => {
 };
 
 describe.each(trees)('%s suite', (_name, make) => {
-  it('reads _parallelMode: none -> default, parallel, serial', () => {
+  it('reads _parallelMode: none and explicit default -> default, parallel, serial', () => {
     const { calls, report } = collect();
     expect(readParallelMode(make(), report)).toBe('default');
+    expect(readParallelMode(make({ _parallelMode: 'default' }), report)).toBe('default');
     expect(readParallelMode(make({ _parallelMode: 'parallel' }), report)).toBe('parallel');
     expect(readParallelMode(make({ _parallelMode: 'serial' }), report)).toBe('serial');
     expect(calls).toEqual([]);

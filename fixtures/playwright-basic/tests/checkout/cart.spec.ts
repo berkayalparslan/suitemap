@@ -14,5 +14,6 @@ test.describe('parallel flow', () => {
 });
 
 test.describe('default flow', () => {
+  test.describe.configure({ mode: 'default' });
   test('view cart', async () => {});
 });
