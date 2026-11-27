@@ -320,7 +320,10 @@ function addConditional(ctx: ExtractionContext, c: RawConditional): void {
 function appliesTo(ctx: ExtractionContext, f: Finding): RawConditional['appliesToProjects'] {
   if (!f.projectCompare) return 'unknown';
   const { value, negated } = f.projectCompare;
-  return ctx.projectNames.filter((n) => (n === value) !== negated);
+  // Source compares with Playwright's raw name ('' for the unnamed project); the document uses DEFAULT_PROJECT.
+  return ctx.projectNames
+    .filter((n) => (n === value) !== negated)
+    .map((n) => (n === '' ? DEFAULT_PROJECT : n));
 }
 
 /**
@@ -496,7 +499,7 @@ export function extractRaw(config: FullConfig, root: Suite): RawExtraction {
     conditionalKeys: new Set(),
     projectNames: root.suites.flatMap((s) => {
       const n = s.project()?.name;
-      return n === undefined ? [] : [n === '' ? DEFAULT_PROJECT : n];
+      return n === undefined ? [] : [n];
     }),
   };
 

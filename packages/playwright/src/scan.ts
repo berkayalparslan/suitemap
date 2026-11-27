@@ -89,20 +89,23 @@ function dotted(n: N): string[] | undefined {
 
 /** What the root function's parameters make known. */
 interface Env {
-  fixtures: Set<string>;
+  /** Local binding name -> fixture name (they differ for `{ browserName: bn }`). */
+  fixtures: Map<string, string>;
   /** Name of the TestInfo parameter (2nd parameter of a test or hook function). */
   testInfo?: string;
 }
 
 function envOf(fn: N): Env {
   const params = fn.params as N[];
-  const fixtures = new Set<string>();
+  const fixtures = new Map<string, string>();
   const first = params[0];
   if (first?.type === 'ObjectPattern')
     for (const p of first.properties as N[]) {
-      if (p.type === 'Property' && !p.computed && p.key.type === 'Identifier')
-        fixtures.add(p.key.name as string);
-      else if (p.type === 'Property' && p.key.type === 'Literal') fixtures.add(String(p.key.value));
+      if (p.type !== 'Property' || p.computed) continue;
+      const key = p.key.type === 'Identifier' ? (p.key.name as string) : String(p.key.value);
+      const target =
+        (p.value as N).type === 'AssignmentPattern' ? (p.value.left as N) : (p.value as N);
+      fixtures.set(target.type === 'Identifier' ? (target.name as string) : key, key);
     }
   const second = params[1];
   return {
@@ -135,7 +138,7 @@ function analyse(root: N, env: Env): Analysis {
     if (env.testInfo !== undefined && head === env.testInfo) {
       if (rest[0] === 'project') add(rest.length > 1 ? `project.${rest[1]}` : 'project', 'static');
       else add(rest.length > 0 ? rest.join('.') : head, 'inferred');
-    } else if (env.fixtures.has(head)) add(head, 'static');
+    } else if (env.fixtures.has(head)) add(env.fixtures.get(head)!, 'static');
     else if (head === 'process' && rest[0] === 'env')
       add(rest.length > 1 ? `process.env.${rest[1]}` : 'process.env', 'inferred');
     else if (head !== 'undefined') add(path.join('.'), 'inferred');
@@ -319,6 +322,15 @@ export function scanFunctionBody(source: string): ScanResult {
   /** Enclosing branch conditions of the node being visited, with how each is `negated`. */
   type Guard = { expr: N; negated: boolean };
 
+  /** Excerpt of an expression, parenthesised when joining it with `&&` would change its meaning. */
+  const text = (n: N): string => {
+    const t = excerpt(wrapped.slice(n.start, n.end));
+    const loose =
+      (n.type === 'LogicalExpression' && n.operator !== '&&') ||
+      ['ConditionalExpression', 'AssignmentExpression', 'SequenceExpression'].includes(n.type);
+    return loose ? `(${t})` : t;
+  };
+
   const guardCondition = (guards: Guard[]): { text?: string; analysis: Analysis } => {
     const parts: string[] = [];
     const refs: string[] = [];
@@ -327,8 +339,7 @@ export function scanFunctionBody(source: string): ScanResult {
       const a = analyse(g.expr, env);
       for (const r of a.refs) if (!refs.includes(r)) refs.push(r);
       confidence = worst(confidence, a.confidence);
-      const text = excerpt(wrapped.slice(g.expr.start, g.expr.end));
-      parts.push(g.negated ? `!(${text})` : text);
+      parts.push(g.negated ? `!(${text(g.expr)})` : text(g.expr));
     }
     return {
       ...(parts.length ? { text: parts.join(' && ') } : {}),
@@ -417,7 +428,10 @@ export function scanFunctionBody(source: string): ScanResult {
         const own = isFunction(first) ? callbackExpression(first) : first;
         if (own) {
           const a = analyse(own, isFunction(first) ? envOf(first) : env);
-          condition = join(ctx.text, excerpt(wrapped.slice(own.start, own.end)));
+          condition =
+            ctx.text === undefined
+              ? excerpt(wrapped.slice(own.start, own.end))
+              : `${ctx.text} && ${text(own)}`;
           refs = [...refs, ...a.refs.filter((r) => !refs.includes(r))];
           confidence = worst(confidence, a.confidence);
         } else confidence = 'opaque';

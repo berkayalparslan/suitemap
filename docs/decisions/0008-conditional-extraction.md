@@ -45,3 +45,9 @@ A call inside `if`, a ternary or `&&` carries the enclosing condition (negated f
 - The fixture snapshot is identical on Playwright 1.42.1 and 1.65.1 once `column` of conditionals is normalised, as for tests.
 - Condition excerpts come from Babel's output, so their exact text can in principle vary between Playwright versions; the fixture shows no difference. If one appears, normalise it here rather than in the snapshot.
 - Phase 4 results can fill `observed` for the hard cases that stay `opaque`.
+
+## Known limits (accepted)
+
+- **Early exits are source-ordered.** Any `return`/`throw` before the call in the same function makes it `opaque`, even in a branch that cannot precede it (`if (x) { return } else { test.skip(c) }`). Precision is traded for never overstating `static`.
+- **`appliesToProjects` ignores `testMatch`/`testIgnore`.** A `project.name` comparison resolves against all project names, not only those that run the file.
+- **Each file is scanned once per project** and identical findings are then merged; a cache keyed by source would avoid the repeated parses if this shows up in large suites.

@@ -212,8 +212,11 @@ export function buildDocument(raw: RawExtraction, options: BuildOptions = {}): S
     (a, b) =>
       byString<typeof a>((c) => c.scope.file)(a, b) ||
       a.location.line - b.location.line ||
-      a.location.column - b.location.column ||
-      byString<typeof a>((c) => c.type + c.form)(a, b),
+      byString<typeof a>((c) => c.type + c.form)(a, b) ||
+      // Column differs between Playwright versions: only a tie-break of last resort, after the
+      // scope, so `#n` suffixes do not depend on it for conditionals in different tests.
+      byString<typeof a>((c) => JSON.stringify(c.scope))(a, b) ||
+      a.location.column - b.location.column,
   );
   for (const c of sortedRaw) {
     const fileId = c.scope.file;

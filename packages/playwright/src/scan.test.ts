@@ -205,6 +205,28 @@ describe('scanFunctionBody: confidence', () => {
   });
 });
 
+describe('scanFunctionBody: review fixes', () => {
+  it('parenthesises operands so the joined condition keeps its meaning', () => {
+    expect(
+      body(`async ({ a, b, c, d }) => { if (a || b) { test.skip(c || d); } }`)[0]!.condition,
+    ).toBe('(a || b) && (c || d)');
+    expect(
+      body(`async ({ a, b }) => { if (a && b) { test.skip(a ? 1 : 2); } }`)[0]!.condition,
+    ).toBe('a && b && (a ? 1 : 2)');
+  });
+
+  it('resolves aliased and defaulted fixtures to the fixture name', () => {
+    expect(
+      body(
+        `async ({ browserName: bn, isMobile = false }) => { test.skip(bn === 'x' && isMobile); }`,
+      )[0],
+    ).toMatchObject({
+      refs: ['browserName', 'isMobile'],
+      confidence: 'static',
+    });
+  });
+});
+
 describe('scanFunctionBody: runtime annotations', () => {
   it('literal type: static, with description as reason', () => {
     expect(

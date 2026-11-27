@@ -808,6 +808,17 @@ describe('conditionals', () => {
     expect(doc.warnings.map((w) => w.code)).toContain('conditional-parse-failed');
   });
 
+  it("compares project.name with the raw name: the unnamed project matches ''", () => {
+    const fn = fnFrom('{}, ti', '_test.test.skip(ti.project.name === "", "r");');
+    const doc = build([
+      {
+        name: '',
+        files: { 'tests/a.spec.ts': [{ title: 't', line: 3, raw: { fn } } as FakeTest] },
+      },
+    ]);
+    expect(doc.conditionals[0]?.appliesToProjects).toEqual(['default']);
+  });
+
   it('missing fields warn once each and the rest of the extraction is unaffected', () => {
     const { config, root } = fakeRoot([tree()], false, false);
     const doc = extractDocument(config, root, GEN);
