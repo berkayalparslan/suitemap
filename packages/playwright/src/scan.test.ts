@@ -13,8 +13,8 @@ const cb = (src: string): Finding => {
 };
 
 describe('scanFunctionBody: what counts as a conditional', () => {
-  it('matches by shape: Babel member receivers, plain `test`, any module alias', () => {
-    for (const recv of ['test', '_test.test', '_fixtures.test', '_a.b.test'])
+  it('matches by shape: Babel member receivers (named and default export), plain `test`', () => {
+    for (const recv of ['test', '_test.test', '_fixtures.test', '_fixtures.default'])
       expect(body(`async () => { ${recv}.skip(); }`)).toMatchObject([
         { type: 'skip', via: 'call' },
       ]);
@@ -44,11 +44,35 @@ describe('scanFunctionBody: what counts as a conditional', () => {
     });
   });
 
-  it('treats a lone string argument as the reason, not a condition', () => {
-    expect(body(`async () => { test.skip('not ready'); }`)).toMatchObject([
-      { reason: 'not ready', confidence: 'static' },
-    ]);
-    expect(body(`async () => { test.skip('not ready'); }`)[0]!.condition).toBeUndefined();
+  it('treats a lone string argument as a (truthy) condition, with no reason, as Playwright does', () => {
+    const [f] = body(`async () => { test.skip('not ready'); }`);
+    expect(f).toMatchObject({ condition: "'not ready'", confidence: 'static' });
+    expect(f!.reason).toBeUndefined();
+  });
+
+  it('does not take regex.test(...)-like receivers for the test object', () => {
+    expect(body(`async () => { check(pattern.test); regex.test.skip(); }`)).toEqual([]);
+  });
+
+  it('a call in a callback handed to another API is opaque; in test.step it is not', () => {
+    expect(body(`async () => { page.on('x', () => { test.skip(); }); }`)[0]!.confidence).toBe(
+      'opaque',
+    );
+    expect(body(`async () => { items.forEach((i) => test.fixme(i.f)); }`)[0]!.confidence).toBe(
+      'opaque',
+    );
+    expect(
+      body(`async () => { await _test.test.step('s', async () => { _test.test.slow(); }); }`)[0]!
+        .confidence,
+    ).toBe('static');
+  });
+
+  it('keeps the condition within the length limit after joining guards', () => {
+    const c = `'${'x'.repeat(150)}'`;
+    const f = body(
+      `async ({ a }) => { if (a === ${c}) { if (a === ${c}) { test.skip(a === ${c}); } } }`,
+    )[0]!;
+    expect(f.condition!.length).toBeLessThanOrEqual(MAX_EXCERPT);
   });
 
   it('ignores the (title, fn) declaration shape', () => {

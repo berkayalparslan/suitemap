@@ -13,7 +13,7 @@ ADR 0004 decided that conditional and runtime annotations become a first-class `
 
 **Parser:** `acorn`, added to `packages/playwright` only (zero dependencies, about 570 kB unpacked). `@babel/parser` is more than twice the size, Playwright's bundled Babel cannot be imported, `ts-morph` was ruled out in ADR 0004. The sources are already plain JavaScript (Babel strips types), so no TypeScript parser is needed. A 20-line walker replaces `acorn-walk`.
 
-**Matching is by shape.** A call is a conditional when it is a member call named `skip`, `fixme`, `fail` or `slow` whose receiver is the test object (`test`, or anything ending in `.test`, which is what Babel emits: `_test.test`, `_fixtures.test`) or a TestInfo handle (the second parameter of the test or hook function, or `test.info()`); or `<handle>.annotations.push(...)`. A call to any other function that is passed the test object (`skipOnCI(test)`) is an opaque finding. `helper(testInfo)` is not flagged: passing `testInfo` to helpers is far too common to be a signal. Not detected (the schema already says "N found by scan"): a helper that imports `test` itself, and `const t = test`.
+**Matching is by shape.** A call is a conditional when it is a member call named `skip`, `fixme`, `fail` or `slow` whose receiver is the test object (`test`, or what Babel's module interop makes of an imported one: `_x.test`, `_x.default`; the `_` prefix keeps `pattern.test` out, and a namespace import is not recognised) or a TestInfo handle (the second parameter of the test or hook function, or `test.info()`); or `<handle>.annotations.push(...)`. A call to any other function that is passed the test object (`skipOnCI(test)`) is an opaque finding. `helper(testInfo)` is not flagged: passing `testInfo` to helpers is far too common to be a signal. Not detected (the schema already says "N found by scan"): a helper that imports `test` itself, and `const t = test`.
 
 **Confidence.**
 
@@ -23,9 +23,9 @@ ADR 0004 decided that conditional and runtime annotations become a first-class `
 | `inferred` | the condition depends on `process.env.*`, other `testInfo` fields (`retry`, ...), or any other free identifier: values outside the code |
 | `opaque` | helper calls, calls in the condition that are not methods of a fixture or testInfo, `await`, nested functions, computed annotation types, an earlier `return`/`throw`, a call inside a loop, `switch` or `try`, an unparseable function |
 
-A call inside `if`, a ternary or `&&` carries the enclosing condition (negated for `else`), joined with `&&`, and takes the worst confidence of the two.
+A call inside a callback handed to anything but `.step(...)` is `opaque` (it may never run). A lone string argument, `test.skip('x')`, is a truthy condition with no reason, as in Playwright. A call inside `if`, a ternary or `&&` carries the enclosing condition (negated for `else`), joined with `&&`, and takes the worst confidence of the two.
 
-**Excerpts and refs.** `condition` is the source slice with whitespace collapsed, trimmed and limited to 200 characters (`…` marks the cut). `refs` hold fixture names (`browserName`), `process.env.X`, `project.name` for `<testInfo>.project.name`, other testInfo fields without the parameter name, and other identifiers as written. No code is evaluated and no environment value is read.
+**Excerpts and refs.** `condition` is the source slice with whitespace collapsed, trimmed and limited to 200 characters (`…` marks the cut), also after guards are joined. `refs` hold fixture names (`browserName`), `process.env.X`, `project.name` for `<testInfo>.project.name`, other testInfo fields without the parameter name, and other identifiers as written. No code is evaluated and no environment value is read.
 
 **`appliesToProjects`** is resolved only for an unguarded `project.name ===`/`!==` string literal comparison, against the projects that exist; everything else is `'unknown'` (including `browserName`: the default browser is not visible).
 

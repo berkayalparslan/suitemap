@@ -402,7 +402,11 @@ function scanSuite(
   const loc = (l: { file: string; line: number; column: number } | undefined) =>
     l
       ? { file: relPath(ctx, l.file), line: l.line, column: l.column }
-      : { file: fallbackFile, line: 0, column: 0 };
+      : {
+          file: fallbackFile,
+          line: suite.location?.line ?? 1,
+          column: suite.location?.column ?? 1,
+        };
   for (const m of readSuiteModifiers(suite, report) ?? [])
     scanInto(
       ctx,
@@ -462,22 +466,31 @@ function toNodes(
   suite: Suite,
   chain: SuiteInfo[],
   describePath: string[],
+  describeKeys: string[],
   file: string,
 ): RawNode[] {
   const nodes: RawNode[] = [];
+  // Sibling describes may share a title; core numbers them in order (`title#2`), so scopes must too.
+  const seenTitles = new Map<string, number>();
   for (const entry of entriesOf(suite)) {
     if (isTest(entry)) nodes.push(toTest(ctx, entry, chain, describePath));
     else {
       const info = readSuiteInfo(ctx, entry);
+      const occurrence = (seenTitles.get(entry.title) ?? 0) + 1;
+      seenTitles.set(entry.title, occurrence);
       const path = [...describePath, entry.title];
-      scanSuite(ctx, entry, 'describe', { file, describePath: path }, file);
+      const keys = [
+        ...describeKeys,
+        occurrence === 1 ? entry.title : `${entry.title}#${occurrence}`,
+      ];
+      scanSuite(ctx, entry, 'describe', { file, describePath: keys }, file);
       nodes.push({
         kind: 'describe',
         title: entry.title,
         mode: info.mode ?? 'default',
         tags: info.tags ?? [],
         annotations: (info.annotations ?? []).map((a) => ({ ...a, origin: 'describe' as const })),
-        children: toNodes(ctx, entry, [...chain, info], path, file),
+        children: toNodes(ctx, entry, [...chain, info], path, keys, file),
       });
     }
   }
@@ -534,7 +547,7 @@ export function extractRaw(config: FullConfig, root: Suite): RawExtraction {
       scanSuite(ctx, fileSuite, 'file', { file: filePath }, filePath);
       files.push({
         path: filePath,
-        children: toNodes(ctx, fileSuite, [readSuiteInfo(ctx, fileSuite)], [], filePath),
+        children: toNodes(ctx, fileSuite, [readSuiteInfo(ctx, fileSuite)], [], [], filePath),
       });
     }
     projects.push({ project: toProject(ctx, project), files });

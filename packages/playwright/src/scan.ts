@@ -268,12 +268,26 @@ export function scanModifierCallback(source: string): ScanResult {
   };
 }
 
-/** Receiver that looks like the test object: `test`, or `<anything>.test` (Babel: `_test.test`). */
+const isStepCall = (call: N): boolean =>
+  call.callee.type === 'MemberExpression' &&
+  !call.callee.computed &&
+  call.callee.property.name === 'step';
+
+/**
+ * Receiver that looks like the test object: `test`, or what Babel's module interop makes of an
+ * imported one: `_x.test` (named export) or `_x.default` (default export). The `_` prefix keeps
+ * `pattern.test` and `regex.test` out. A namespace import (`import * as fx`) is not recognised.
+ */
 function isTestLike(n: N): boolean {
   if (n.type === 'Identifier') return n.name === 'test';
-  return n.type === 'MemberExpression' && !n.computed && n.property.type === 'Identifier'
-    ? n.property.name === 'test'
-    : false;
+  return (
+    n.type === 'MemberExpression' &&
+    !n.computed &&
+    n.object.type === 'Identifier' &&
+    (n.object.name as string).startsWith('_') &&
+    n.property.type === 'Identifier' &&
+    (n.property.name === 'test' || n.property.name === 'default')
+  );
 }
 
 interface Frame {
@@ -385,7 +399,10 @@ export function scanFunctionBody(source: string): ScanResult {
       }
       case 'CallExpression':
         inspectCall(n, frame, guards, opaqueCtx);
-        for (const c of children(n)) walk(c, frame, guards, opaqueCtx);
+        // A callback handed to anything but `.step(...)` may never run (event handlers, forEach on an
+        // empty list, ...): what it contains is not certain.
+        for (const c of children(n))
+          walk(c, frame, guards, opaqueCtx || (isFunction(c) && !isStepCall(n)));
         return;
       default:
         for (const c of children(n)) walk(c, frame, guards, opaqueCtx);
@@ -423,7 +440,7 @@ export function scanFunctionBody(source: string): ScanResult {
       let condition = ctx.text;
       let refs = ctx.refs;
       let confidence = ctx.confidence;
-      let reasonArg = args[1];
+      const reasonArg = args[1];
       if (first) {
         const own = isFunction(first) ? callbackExpression(first) : first;
         if (own) {
@@ -435,11 +452,6 @@ export function scanFunctionBody(source: string): ScanResult {
           refs = [...refs, ...a.refs.filter((r) => !refs.includes(r))];
           confidence = worst(confidence, a.confidence);
         } else confidence = 'opaque';
-      }
-      // test.skip('reason') with a lone string: the string is the description, not a condition.
-      if (first && args.length === 1 && literalString(first) !== undefined) {
-        condition = ctx.text;
-        reasonArg = first;
       }
       const reason = reasonOf(reasonArg);
       const compare =
@@ -516,5 +528,6 @@ export function scanFunctionBody(source: string): ScanResult {
   };
 
   walk(fn, { exits: exitsOf(fn) }, [], false);
+  for (const f of findings) if (f.condition !== undefined) f.condition = excerpt(f.condition);
   return { ok: true, findings };
 }

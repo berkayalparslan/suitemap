@@ -819,6 +819,28 @@ describe('conditionals', () => {
     expect(doc.conditionals[0]?.appliesToProjects).toEqual(['default']);
   });
 
+  it('attaches a hook to the right one of two describes with the same title', () => {
+    const hook = fnFrom('{ b }', '_test.test.skip(b === 1);');
+    const doc = build([
+      {
+        name: 'p',
+        files: {
+          'tests/a.spec.ts': [
+            { title: 'g', line: 2, children: [{ title: 't1', line: 3 }] },
+            {
+              title: 'g',
+              line: 6,
+              raw: { _hooks: [{ type: 'beforeEach', location: loc(7), fn: hook }] },
+              children: [{ title: 't2', line: 8 }],
+            },
+          ],
+        },
+      },
+    ]);
+    expect(doc.conditionals).toMatchObject([{ scope: { describeId: 'tests/a.spec.ts › g#2' } }]);
+    expect(doc.warnings).toEqual([]);
+  });
+
   it('missing fields warn once each and the rest of the extraction is unaffected', () => {
     const { config, root } = fakeRoot([tree()], false, false);
     const doc = extractDocument(config, root, GEN);
