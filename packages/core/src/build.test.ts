@@ -224,6 +224,71 @@ describe('buildDocument', () => {
     expect(d.warnings.map((w) => w.code)).toEqual(['describe-mode-differs']);
   });
 
+  it('keeps sibling describes with the same title distinct, consistently across projects', () => {
+    const mk = (id: string) => ({
+      project: project(id),
+      files: [
+        {
+          path: 'a.spec.ts',
+          children: [
+            {
+              kind: 'describe' as const,
+              title: 'X',
+              mode: 'serial' as const,
+              tags: ['@a'],
+              annotations: [],
+              children: [
+                test('one'),
+                {
+                  kind: 'describe' as const,
+                  title: 'Inner',
+                  mode: 'default' as const,
+                  tags: [],
+                  annotations: [],
+                  children: [test('deep1')],
+                },
+              ],
+            },
+            {
+              kind: 'describe' as const,
+              title: 'X',
+              mode: 'parallel' as const,
+              tags: ['@b'],
+              annotations: [],
+              children: [
+                test('two'),
+                {
+                  kind: 'describe' as const,
+                  title: 'Inner',
+                  mode: 'default' as const,
+                  tags: [],
+                  annotations: [],
+                  children: [test('deep2')],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    });
+    const d = buildDocument(raw({ projects: [mk('a'), mk('b')] }), { generatedAt: GEN });
+    expect(d.warnings).toEqual([]);
+    expect(d.describes.map((x) => [x.id, x.mode, x.tags, x.parentId])).toEqual([
+      ['a.spec.ts › X', 'serial', ['@a'], undefined],
+      ['a.spec.ts › X › Inner', 'default', [], 'a.spec.ts › X'],
+      ['a.spec.ts › X#2', 'parallel', ['@b'], undefined],
+      ['a.spec.ts › X#2 › Inner', 'default', [], 'a.spec.ts › X#2'],
+    ]);
+    const byTitle = Object.fromEntries(d.tests.map((t) => [t.title, t.describeId]));
+    expect(byTitle).toEqual({
+      one: 'a.spec.ts › X',
+      deep1: 'a.spec.ts › X › Inner',
+      two: 'a.spec.ts › X#2',
+      deep2: 'a.spec.ts › X#2 › Inner',
+    });
+    expect(validateDocument(d).ok).toBe(true);
+  });
+
   it('resolves conditional scopes to ids and degrades with a warning when it cannot', () => {
     const r = twoProjects();
     const loc = (line: number) => ({ file: 'tests/auth/login.spec.ts', line, column: 3 });

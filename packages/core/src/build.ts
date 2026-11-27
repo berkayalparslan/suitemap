@@ -89,9 +89,17 @@ export function buildDocument(raw: RawExtraction, options: BuildOptions = {}): S
     for (const file of [...ps.files].sort(byString((f) => f.path))) {
       const fileId = ensureFile(file.path);
 
-      const visitDescribe = (d: RawDescribe, titles: string[], parentId?: string) => {
+      const visitDescribe = (
+        d: RawDescribe,
+        titles: string[],
+        parentId: string | undefined,
+        occurrence: number,
+      ) => {
         const path = [...titles, d.title];
-        const id = describeId(fileId, path);
+        // Sibling describes may share a title; the n-th one gets a "#n" suffix so they stay distinct.
+        // The id is built from the parent's id (not just titles) so nested describes stay distinct too.
+        const base = `${parentId ?? fileId}${SEP}${d.title}`;
+        const id = occurrence === 1 ? base : `${base}#${occurrence}`;
         const annotations = d.annotations.map(normalizeAnnotation);
         const existing = describes.get(id);
         if (!existing) {
@@ -165,9 +173,13 @@ export function buildDocument(raw: RawExtraction, options: BuildOptions = {}): S
       };
 
       const visitNodes = (nodes: RawNode[], titles: string[], parentId?: string) => {
+        const seen = new Map<string, number>();
         for (const n of nodes) {
-          if (n.kind === 'describe') visitDescribe(n, titles, parentId);
-          else visitTest(n, titles, parentId);
+          if (n.kind === 'describe') {
+            const occurrence = (seen.get(n.title) ?? 0) + 1;
+            seen.set(n.title, occurrence);
+            visitDescribe(n, titles, parentId, occurrence);
+          } else visitTest(n, titles, parentId);
         }
       };
 
