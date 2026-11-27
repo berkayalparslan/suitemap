@@ -39,7 +39,7 @@ const fakeTest = (
     retries: 0,
     repeatEachIndex: 0,
     id: `id-${file}-${t.title}`,
-    ...(internals ? { _only: t.only ?? false } : {}),
+    ...(internals ? { _only: t.only ?? false, fn: async () => {} } : {}),
     ...t.raw,
   }) as unknown as TestCase;
 
@@ -88,6 +88,8 @@ function fakeSuite(
           _parallelMode: s.mode ?? 'none',
           _tags: s.ownTags ?? [],
           _staticAnnotations: s.ownAnnotations ?? [],
+          _modifiers: [],
+          _hooks: [],
         }
       : {}),
     ...s.raw,
@@ -110,6 +112,8 @@ interface FakeProject {
   use?: Record<string, unknown>;
   /** Config-level `tag`: newer Playwright puts it in every file suite's `_tags`. */
   fileTags?: string[];
+  /** Overrides applied to every file suite of this project (e.g. `_modifiers`). */
+  fileRaw?: Record<string, unknown>;
   files: Record<string, (FakeSuite | FakeTest)[]>;
 }
 
@@ -130,7 +134,7 @@ function fakeRoot(
     };
     const fileSuites = Object.entries(p.files).map(([file, children]) =>
       fakeSuite(
-        { title: file, line: undefined, children, ownTags: p.fileTags },
+        { title: file, line: undefined, children, ownTags: p.fileTags, raw: p.fileRaw },
         'file',
         2,
         [],
@@ -485,7 +489,15 @@ describe.each([
       ]);
       expect(
         doc.warnings.filter((w) => w.code === 'internal-field-unavailable').map((w) => w.where),
-      ).toEqual(['_parallelMode', '_tags', '_staticAnnotations', '_only']);
+      ).toEqual([
+        '_modifiers',
+        '_hooks',
+        '_parallelMode',
+        '_tags',
+        '_staticAnnotations',
+        'fn',
+        '_only',
+      ]);
     });
 
     it('treats a malformed field as unavailable, per field, without throwing', () => {
@@ -627,5 +639,217 @@ describe('review fixes', () => {
     expect(doc.instances[0]?.annotations).toEqual([
       { type: 'serial', description: 'mine', origin: 'declaration' },
     ]);
+  });
+});
+
+describe('conditionals', () => {
+  const loc = (line: number) => ({ file: `${BASE}/tests/a.spec.ts`, line, column: 1 });
+  // Real functions whose toString() is the given source, like the ones Playwright loads.
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const AsyncFunction = Object.getPrototypeOf(async function () {}).constructor as any;
+  const fnFrom = (params: string, body: string) => new AsyncFunction(params, body) as () => void;
+  // A native function: its source is "function () { [native code] }", which cannot be parsed.
+  const native = () => (() => {}).bind(null);
+  const build = (projects: FakeProject[], modern = false) => {
+    const { config, root } = fakeRoot(projects, modern);
+    return extractDocument(config, root, GEN);
+  };
+  const tree = (over: Partial<FakeProject> = {}, tests: FakeTest[] = []): FakeProject => ({
+    name: 'p',
+    files: {
+      'tests/a.spec.ts': [
+        { title: 'g', line: 2, children: [{ title: 't', line: 3, ...tests[0] }] },
+      ],
+    },
+    ...over,
+  });
+
+  it('attaches file modifiers, describe hooks and test bodies to their scopes', () => {
+    const g: FakeSuite = {
+      title: 'g',
+      line: 2,
+      raw: {
+        _hooks: [
+          {
+            type: 'beforeEach',
+            location: loc(4),
+            fn: async ({ browserName }: { browserName: string }) => browserName,
+          },
+        ],
+      },
+      children: [
+        {
+          title: 't',
+          line: 3,
+          raw: {
+            fn: async () => {
+              /* test.skip(true) */
+            },
+          },
+        },
+      ],
+    };
+    const doc = build([
+      {
+        name: 'p',
+        fileRaw: {
+          _modifiers: [
+            { type: 'skip', description: 'why', location: loc(1), fn: () => process.env.X },
+          ],
+        },
+        files: { 'tests/a.spec.ts': [g] },
+      },
+    ]);
+    expect(doc.conditionals).toMatchObject([
+      {
+        type: 'skip',
+        form: 'file-callback',
+        condition: 'process.env.X',
+        refs: ['process.env.X'],
+        reason: 'why',
+        scope: { fileId: 'tests/a.spec.ts' },
+        source: 'reporter',
+        confidence: 'inferred',
+      },
+    ]);
+  });
+
+  it('wires a hook and a test body through to scope and form', () => {
+    const hookFn = fnFrom('{ b }', '_test.test.skip(b === 1, "r");');
+    const bodyFn = fnFrom('', '_test.test.info().annotations.push({ type: "x" });');
+    const doc = build([
+      {
+        name: 'p',
+        files: {
+          'tests/a.spec.ts': [
+            {
+              title: 'g',
+              line: 2,
+              raw: { _hooks: [{ type: 'beforeEach', location: loc(4), fn: hookFn }] },
+              children: [{ title: 't', line: 3, raw: { fn: bodyFn } }],
+            },
+          ],
+        },
+      },
+    ]);
+    expect(doc.conditionals).toMatchObject([
+      // Sorted by source position: the test (line 3) before its describe's hook (line 4).
+      {
+        type: 'x',
+        form: 'runtime-push',
+        scope: { testId: 'tests/a.spec.ts › g › t' },
+        confidence: 'static',
+      },
+      {
+        type: 'skip',
+        form: 'hook',
+        scope: { describeId: 'tests/a.spec.ts › g' },
+        confidence: 'static',
+        source: 'scan',
+      },
+    ]);
+  });
+
+  it('lists a conditional once when the file is in several projects, and resolves project.name', () => {
+    const fn = fnFrom('{}, ti', '_test.test.skip(ti.project.name === "b", "r");');
+    const files = () => ({
+      'tests/a.spec.ts': [{ title: 't', line: 3, raw: { fn } } as FakeTest],
+    });
+    const doc = build([
+      { name: 'a', files: files() },
+      { name: 'b', files: files() },
+    ]);
+    expect(doc.conditionals).toHaveLength(1);
+    expect(doc.conditionals[0]).toMatchObject({ appliesToProjects: ['b'], confidence: 'static' });
+  });
+
+  it('an unparseable function warns once and becomes one opaque conditional of unknown type', () => {
+    const bad = native();
+    const doc = build([
+      {
+        name: 'a',
+        files: { 'tests/a.spec.ts': [{ title: 't', line: 3, raw: { fn: bad } } as FakeTest] },
+      },
+      {
+        name: 'b',
+        files: { 'tests/a.spec.ts': [{ title: 't', line: 3, raw: { fn: bad } } as FakeTest] },
+      },
+    ]);
+    expect(doc.conditionals).toMatchObject([
+      {
+        type: 'unknown',
+        form: 'body',
+        confidence: 'opaque',
+        source: 'scan',
+        refs: [],
+        scope: { testId: 'tests/a.spec.ts › t' },
+      },
+    ]);
+    expect(doc.conditionals[0]!.condition).toBeUndefined();
+    expect(doc.warnings.filter((w) => w.code === 'conditional-parse-failed')).toHaveLength(1);
+  });
+
+  it('an unparseable modifier keeps its type and reason', () => {
+    const bad = native();
+    const doc = build([
+      tree({
+        fileRaw: { _modifiers: [{ type: 'fixme', description: 'why', location: loc(1), fn: bad }] },
+      }),
+    ]);
+    expect(doc.conditionals).toMatchObject([
+      {
+        type: 'fixme',
+        form: 'file-callback',
+        reason: 'why',
+        confidence: 'opaque',
+        source: 'reporter',
+      },
+    ]);
+    expect(doc.warnings.map((w) => w.code)).toContain('conditional-parse-failed');
+  });
+
+  it("compares project.name with the raw name: the unnamed project matches ''", () => {
+    const fn = fnFrom('{}, ti', '_test.test.skip(ti.project.name === "", "r");');
+    const doc = build([
+      {
+        name: '',
+        files: { 'tests/a.spec.ts': [{ title: 't', line: 3, raw: { fn } } as FakeTest] },
+      },
+    ]);
+    expect(doc.conditionals[0]?.appliesToProjects).toEqual(['default']);
+  });
+
+  it('attaches a hook to the right one of two describes with the same title', () => {
+    const hook = fnFrom('{ b }', '_test.test.skip(b === 1);');
+    const doc = build([
+      {
+        name: 'p',
+        files: {
+          'tests/a.spec.ts': [
+            { title: 'g', line: 2, children: [{ title: 't1', line: 3 }] },
+            {
+              title: 'g',
+              line: 6,
+              raw: { _hooks: [{ type: 'beforeEach', location: loc(7), fn: hook }] },
+              children: [{ title: 't2', line: 8 }],
+            },
+          ],
+        },
+      },
+    ]);
+    expect(doc.conditionals).toMatchObject([{ scope: { describeId: 'tests/a.spec.ts › g#2' } }]);
+    expect(doc.warnings).toEqual([]);
+  });
+
+  it('missing fields warn once each and the rest of the extraction is unaffected', () => {
+    const { config, root } = fakeRoot([tree()], false, false);
+    const doc = extractDocument(config, root, GEN);
+    expect(doc.conditionals).toEqual([]);
+    const fields = doc.warnings
+      .filter((w) => w.code === 'internal-field-unavailable')
+      .map((w) => w.where);
+    expect(fields).toEqual(expect.arrayContaining(['_modifiers', '_hooks', 'fn']));
+    expect(new Set(fields).size).toBe(fields.length);
+    expect(doc.tests).toHaveLength(1);
   });
 });

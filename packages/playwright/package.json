@@ -24,7 +24,8 @@
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@suitemap/core": "workspace:*"
+    "@suitemap/core": "workspace:*",
+    "acorn": "^8.19.0"
   },
   "peerDependencies": {
     "@playwright/test": ">=1.42"

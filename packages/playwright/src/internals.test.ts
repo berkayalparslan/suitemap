@@ -9,7 +9,10 @@ import type { Suite, TestCase } from '@playwright/test/reporter';
 import {
   readParallelMode,
   readSuiteAnnotations,
+  readSuiteHooks,
+  readSuiteModifiers,
   readSuiteTags,
+  readTestFn,
   readTestOnly,
 } from './internals.js';
 
@@ -165,5 +168,76 @@ describe('encapsulation', () => {
         /\.\s*_[a-zA-Z]|as \{\s*_[a-zA-Z]/.test(readFileSync(path.join(dir, f), 'utf8')),
       );
     expect(offenders).toEqual([]);
+  });
+});
+
+describe('readSuiteModifiers / readSuiteHooks / readTestFn', () => {
+  const fnA = ({ browserName }: { browserName: string }) => browserName === 'firefox';
+  const loc = { file: '/r/a.spec.ts', line: 3, column: 5 };
+
+  it.each(trees)(
+    'reads modifiers and hooks as source text on a %s suite, without calling them',
+    (_n, make) => {
+      let called = false;
+      const { calls, report } = collect();
+      const s = make({
+        _modifiers: [{ type: 'skip', description: 'why', location: loc, fn: fnA }],
+        _hooks: [
+          {
+            type: 'beforeEach',
+            location: loc,
+            fn: () => {
+              called = true;
+            },
+          },
+        ],
+      });
+      expect(readSuiteModifiers(s, report)).toEqual([
+        { type: 'skip', description: 'why', location: loc, source: fnA.toString() },
+      ]);
+      expect(readSuiteHooks(s, report)).toEqual([
+        { type: 'beforeEach', location: loc, source: expect.stringContaining('called = true') },
+      ]);
+      expect(called).toBe(false);
+      expect(calls).toEqual([]);
+    },
+  );
+
+  it('keeps entries without description or location', () => {
+    const { calls, report } = collect();
+    expect(
+      readSuiteModifiers(suite142({ _modifiers: [{ type: 'slow', fn: () => 1 }] }), report),
+    ).toEqual([{ type: 'slow', source: expect.any(String) }]);
+    expect(calls).toEqual([]);
+  });
+
+  it('reports and returns undefined when the field is missing or not an array', () => {
+    const { calls, report } = collect();
+    expect(readSuiteModifiers(suite({ title: 'g' }), report)).toBeUndefined();
+    expect(readSuiteHooks(suite({ _hooks: 'x' }), report)).toBeUndefined();
+    expect(calls.map(([f]) => f)).toEqual(['_modifiers', '_hooks']);
+  });
+
+  it('drops malformed entries, keeps the good ones, and reports once', () => {
+    const { calls, report } = collect();
+    const s = suite142({
+      _modifiers: [
+        { type: 'skip', fn: () => 1 },
+        { type: 3, fn: () => 1 },
+        { type: 'fixme' },
+        null,
+      ],
+    });
+    expect(readSuiteModifiers(s, report)).toHaveLength(1);
+    expect(calls).toHaveLength(1);
+    expect(calls[0]![0]).toBe('_modifiers');
+  });
+
+  it('reads TestCase.fn as source, reports when absent or not a function', () => {
+    const { calls, report } = collect();
+    expect(readTestFn(test({ fn: async () => 42 }), report)).toContain('42');
+    expect(readTestFn(test({}), report)).toBeUndefined();
+    expect(readTestFn(test({ fn: 'x' }), report)).toBeUndefined();
+    expect(calls.map(([f]) => f)).toEqual(['fn', 'fn']);
   });
 });

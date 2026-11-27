@@ -36,4 +36,22 @@ test.describe('conditionals', () => {
   test('project name condition', async ({}, testInfo) => {
     test.slow(testInfo.project.name === 'webkit', 'slow project');
   });
+
+  test('testInfo modifier', async ({}, testInfo) => {
+    testInfo.fail(process.platform === 'win32', 'known bug on windows');
+  });
+
+  test('guarded unconditional skip', async ({ browserName }) => {
+    if (browserName === 'firefox') {
+      test.skip();
+    }
+  });
+
+  test('literal runtime annotation', async () => {
+    test.info().annotations.push({ type: 'issue', description: 'JIRA-10' });
+  });
+
+  test.afterEach(async () => {
+    test.slow(); // unconditional, hook form
+  });
 });

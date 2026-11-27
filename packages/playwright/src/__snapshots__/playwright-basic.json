@@ -873,6 +873,54 @@
       "tags": []
     },
     {
+      "id": "tests/misc/conditionals.spec.ts › conditionals › testInfo modifier",
+      "title": "testInfo modifier",
+      "titlePath": [
+        "conditionals",
+        "testInfo modifier"
+      ],
+      "fileId": "tests/misc/conditionals.spec.ts",
+      "describeId": "tests/misc/conditionals.spec.ts › conditionals",
+      "location": {
+        "file": "tests/misc/conditionals.spec.ts",
+        "line": 40,
+        "column": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts › conditionals › guarded unconditional skip",
+      "title": "guarded unconditional skip",
+      "titlePath": [
+        "conditionals",
+        "guarded unconditional skip"
+      ],
+      "fileId": "tests/misc/conditionals.spec.ts",
+      "describeId": "tests/misc/conditionals.spec.ts › conditionals",
+      "location": {
+        "file": "tests/misc/conditionals.spec.ts",
+        "line": 44,
+        "column": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts › conditionals › literal runtime annotation",
+      "title": "literal runtime annotation",
+      "titlePath": [
+        "conditionals",
+        "literal runtime annotation"
+      ],
+      "fileId": "tests/misc/conditionals.spec.ts",
+      "describeId": "tests/misc/conditionals.spec.ts › conditionals",
+      "location": {
+        "file": "tests/misc/conditionals.spec.ts",
+        "line": 50,
+        "column": 0
+      },
+      "tags": []
+    },
+    {
       "id": "tests/misc/generated.spec.ts › role admin can log in",
       "title": "role admin can log in",
       "titlePath": [
@@ -1494,6 +1542,42 @@
       "only": false
     },
     {
+      "id": "tests/misc/conditionals.spec.ts › conditionals › testInfo modifier [chromium#0]",
+      "testId": "tests/misc/conditionals.spec.ts › conditionals › testInfo modifier",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "512e66e67c635f8cbc7f-00be9831aa239997bb79",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0,
+      "only": false
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts › conditionals › guarded unconditional skip [chromium#0]",
+      "testId": "tests/misc/conditionals.spec.ts › conditionals › guarded unconditional skip",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "512e66e67c635f8cbc7f-5301ecab9425533fec50",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0,
+      "only": false
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts › conditionals › literal runtime annotation [chromium#0]",
+      "testId": "tests/misc/conditionals.spec.ts › conditionals › literal runtime annotation",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "512e66e67c635f8cbc7f-73137595ba19d9d68da2",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0,
+      "only": false
+    },
+    {
       "id": "tests/misc/generated.spec.ts › role admin can log in [chromium#0]",
       "testId": "tests/misc/generated.spec.ts › role admin can log in",
       "projectId": "chromium",
@@ -2049,6 +2133,42 @@
       "projectId": "firefox",
       "repeatEachIndex": 0,
       "playwrightId": "512e66e67c635f8cbc7f-d725bf03bcf1d2a02009",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0,
+      "only": false
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts › conditionals › testInfo modifier [firefox#0]",
+      "testId": "tests/misc/conditionals.spec.ts › conditionals › testInfo modifier",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "512e66e67c635f8cbc7f-13482064859a16203d09",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0,
+      "only": false
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts › conditionals › guarded unconditional skip [firefox#0]",
+      "testId": "tests/misc/conditionals.spec.ts › conditionals › guarded unconditional skip",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "512e66e67c635f8cbc7f-10aa09e5201d3a64b653",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0,
+      "only": false
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts › conditionals › literal runtime annotation [firefox#0]",
+      "testId": "tests/misc/conditionals.spec.ts › conditionals › literal runtime annotation",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "512e66e67c635f8cbc7f-7aa5e49873815339b07d",
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
@@ -2642,6 +2762,42 @@
       "only": false
     },
     {
+      "id": "tests/misc/conditionals.spec.ts › conditionals › testInfo modifier [webkit#0]",
+      "testId": "tests/misc/conditionals.spec.ts › conditionals › testInfo modifier",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "512e66e67c635f8cbc7f-1e2090c8545cdd42bc20",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0,
+      "only": false
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts › conditionals › guarded unconditional skip [webkit#0]",
+      "testId": "tests/misc/conditionals.spec.ts › conditionals › guarded unconditional skip",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "512e66e67c635f8cbc7f-dc64a2e7cd623e28532d",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0,
+      "only": false
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts › conditionals › literal runtime annotation [webkit#0]",
+      "testId": "tests/misc/conditionals.spec.ts › conditionals › literal runtime annotation",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "512e66e67c635f8cbc7f-5b0f88f08927ed4d92e3",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0,
+      "only": false
+    },
+    {
       "id": "tests/misc/generated.spec.ts › role admin can log in [webkit#0]",
       "testId": "tests/misc/generated.spec.ts › role admin can log in",
       "projectId": "webkit",
@@ -2776,6 +2932,385 @@
       "testCount": 2
     }
   ],
-  "conditionals": [],
+  "conditionals": [
+    {
+      "id": "tests/checkout/builtins.spec.ts:4:skip:body",
+      "type": "skip",
+      "form": "body",
+      "refs": [],
+      "location": {
+        "file": "tests/checkout/builtins.spec.ts",
+        "line": 4,
+        "column": 0
+      },
+      "scope": {
+        "testId": "tests/checkout/builtins.spec.ts › unconditional › skip"
+      },
+      "appliesToProjects": "unknown",
+      "source": "scan",
+      "confidence": "static"
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts:8:slow:body",
+      "type": "slow",
+      "form": "body",
+      "refs": [],
+      "location": {
+        "file": "tests/checkout/builtins.spec.ts",
+        "line": 8,
+        "column": 0
+      },
+      "scope": {
+        "testId": "tests/checkout/builtins.spec.ts › unconditional › slow (in body)"
+      },
+      "appliesToProjects": "unknown",
+      "source": "scan",
+      "confidence": "static"
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts:12:skip:body",
+      "type": "skip",
+      "form": "body",
+      "condition": "browserName === 'webkit'",
+      "refs": [
+        "browserName"
+      ],
+      "reason": "not on webkit",
+      "location": {
+        "file": "tests/checkout/builtins.spec.ts",
+        "line": 12,
+        "column": 0
+      },
+      "scope": {
+        "testId": "tests/checkout/builtins.spec.ts › conditional on browserName › skip webkit (declaration callback)"
+      },
+      "appliesToProjects": "unknown",
+      "source": "scan",
+      "confidence": "static"
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts:15:fail:body",
+      "type": "fail",
+      "form": "body",
+      "condition": "browserName === 'firefox'",
+      "refs": [
+        "browserName"
+      ],
+      "reason": "firefox bug",
+      "location": {
+        "file": "tests/checkout/builtins.spec.ts",
+        "line": 15,
+        "column": 0
+      },
+      "scope": {
+        "testId": "tests/checkout/builtins.spec.ts › conditional on browserName › fail firefox (in body)"
+      },
+      "appliesToProjects": "unknown",
+      "source": "scan",
+      "confidence": "static"
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts:18:fixme:body",
+      "type": "fixme",
+      "form": "body",
+      "condition": "browserName === 'chromium'",
+      "refs": [
+        "browserName"
+      ],
+      "reason": "chromium bug",
+      "location": {
+        "file": "tests/checkout/builtins.spec.ts",
+        "line": 18,
+        "column": 0
+      },
+      "scope": {
+        "testId": "tests/checkout/builtins.spec.ts › conditional on browserName › fixme chromium (in body)"
+      },
+      "appliesToProjects": "unknown",
+      "source": "scan",
+      "confidence": "static"
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts:21:slow:body",
+      "type": "slow",
+      "form": "body",
+      "condition": "browserName === 'webkit'",
+      "refs": [
+        "browserName"
+      ],
+      "reason": "slow on webkit",
+      "location": {
+        "file": "tests/checkout/builtins.spec.ts",
+        "line": 21,
+        "column": 0
+      },
+      "scope": {
+        "testId": "tests/checkout/builtins.spec.ts › conditional on browserName › slow webkit (in body)"
+      },
+      "appliesToProjects": "unknown",
+      "source": "scan",
+      "confidence": "static"
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts:27:fixme:describe-callback",
+      "type": "fixme",
+      "form": "describe-callback",
+      "condition": "browserName === 'firefox'",
+      "refs": [
+        "browserName"
+      ],
+      "reason": "describe fixme on firefox",
+      "location": {
+        "file": "tests/checkout/builtins.spec.ts",
+        "line": 27,
+        "column": 0
+      },
+      "scope": {
+        "describeId": "tests/checkout/builtins.spec.ts › describe-level"
+      },
+      "appliesToProjects": "unknown",
+      "source": "reporter",
+      "confidence": "static"
+    },
+    {
+      "id": "tests/misc/annotations.spec.ts:14:runtime:runtime-push",
+      "type": "runtime",
+      "form": "runtime-push",
+      "refs": [],
+      "reason": "added at run time",
+      "location": {
+        "file": "tests/misc/annotations.spec.ts",
+        "line": 14,
+        "column": 0
+      },
+      "scope": {
+        "testId": "tests/misc/annotations.spec.ts › runtime annotation"
+      },
+      "appliesToProjects": "unknown",
+      "source": "scan",
+      "confidence": "static"
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts:12:skip:file-callback",
+      "type": "skip",
+      "form": "file-callback",
+      "condition": "browserName === 'firefox'",
+      "refs": [
+        "browserName"
+      ],
+      "reason": "file-level: no firefox",
+      "location": {
+        "file": "tests/misc/conditionals.spec.ts",
+        "line": 12,
+        "column": 0
+      },
+      "scope": {
+        "fileId": "tests/misc/conditionals.spec.ts"
+      },
+      "appliesToProjects": "unknown",
+      "source": "reporter",
+      "confidence": "static"
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts:15:skip:hook",
+      "type": "skip",
+      "form": "hook",
+      "condition": "browserName === 'webkit'",
+      "refs": [
+        "browserName"
+      ],
+      "reason": "beforeEach: no webkit",
+      "location": {
+        "file": "tests/misc/conditionals.spec.ts",
+        "line": 15,
+        "column": 0
+      },
+      "scope": {
+        "describeId": "tests/misc/conditionals.spec.ts › conditionals"
+      },
+      "appliesToProjects": "unknown",
+      "source": "scan",
+      "confidence": "static"
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts:19:fixme:body",
+      "type": "fixme",
+      "form": "body",
+      "condition": "process.env.FEATURE_X === '1'",
+      "refs": [
+        "process.env.FEATURE_X"
+      ],
+      "reason": "needs feature x",
+      "location": {
+        "file": "tests/misc/conditionals.spec.ts",
+        "line": 19,
+        "column": 0
+      },
+      "scope": {
+        "testId": "tests/misc/conditionals.spec.ts › conditionals › env var condition"
+      },
+      "appliesToProjects": "unknown",
+      "source": "scan",
+      "confidence": "inferred"
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts:23:unknown:body",
+      "type": "unknown",
+      "form": "body",
+      "condition": "skipOnCI(_test.test)",
+      "refs": [
+        "skipOnCI"
+      ],
+      "location": {
+        "file": "tests/misc/conditionals.spec.ts",
+        "line": 23,
+        "column": 0
+      },
+      "scope": {
+        "testId": "tests/misc/conditionals.spec.ts › conditionals › helper call"
+      },
+      "appliesToProjects": "unknown",
+      "source": "scan",
+      "confidence": "opaque"
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts:27:unknown:runtime-push",
+      "type": "unknown",
+      "form": "runtime-push",
+      "refs": [
+        "kind"
+      ],
+      "reason": "JIRA-9",
+      "location": {
+        "file": "tests/misc/conditionals.spec.ts",
+        "line": 27,
+        "column": 0
+      },
+      "scope": {
+        "testId": "tests/misc/conditionals.spec.ts › conditionals › computed annotation type"
+      },
+      "appliesToProjects": "unknown",
+      "source": "scan",
+      "confidence": "opaque"
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts:31:skip:body",
+      "type": "skip",
+      "form": "body",
+      "condition": "true",
+      "refs": [],
+      "reason": "never reached on chromium",
+      "location": {
+        "file": "tests/misc/conditionals.spec.ts",
+        "line": 31,
+        "column": 0
+      },
+      "scope": {
+        "testId": "tests/misc/conditionals.spec.ts › conditionals › early return before conditional"
+      },
+      "appliesToProjects": "unknown",
+      "source": "scan",
+      "confidence": "opaque"
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts:36:slow:body",
+      "type": "slow",
+      "form": "body",
+      "condition": "testInfo.project.name === 'webkit'",
+      "refs": [
+        "project.name"
+      ],
+      "reason": "slow project",
+      "location": {
+        "file": "tests/misc/conditionals.spec.ts",
+        "line": 36,
+        "column": 0
+      },
+      "scope": {
+        "testId": "tests/misc/conditionals.spec.ts › conditionals › project name condition"
+      },
+      "appliesToProjects": [
+        "webkit"
+      ],
+      "source": "scan",
+      "confidence": "static"
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts:40:fail:body",
+      "type": "fail",
+      "form": "body",
+      "condition": "process.platform === 'win32'",
+      "refs": [
+        "process.platform"
+      ],
+      "reason": "known bug on windows",
+      "location": {
+        "file": "tests/misc/conditionals.spec.ts",
+        "line": 40,
+        "column": 0
+      },
+      "scope": {
+        "testId": "tests/misc/conditionals.spec.ts › conditionals › testInfo modifier"
+      },
+      "appliesToProjects": "unknown",
+      "source": "scan",
+      "confidence": "inferred"
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts:44:skip:body",
+      "type": "skip",
+      "form": "body",
+      "condition": "browserName === 'firefox'",
+      "refs": [
+        "browserName"
+      ],
+      "location": {
+        "file": "tests/misc/conditionals.spec.ts",
+        "line": 44,
+        "column": 0
+      },
+      "scope": {
+        "testId": "tests/misc/conditionals.spec.ts › conditionals › guarded unconditional skip"
+      },
+      "appliesToProjects": "unknown",
+      "source": "scan",
+      "confidence": "static"
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts:50:issue:runtime-push",
+      "type": "issue",
+      "form": "runtime-push",
+      "refs": [],
+      "reason": "JIRA-10",
+      "location": {
+        "file": "tests/misc/conditionals.spec.ts",
+        "line": 50,
+        "column": 0
+      },
+      "scope": {
+        "testId": "tests/misc/conditionals.spec.ts › conditionals › literal runtime annotation"
+      },
+      "appliesToProjects": "unknown",
+      "source": "scan",
+      "confidence": "static"
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts:54:slow:hook",
+      "type": "slow",
+      "form": "hook",
+      "refs": [],
+      "location": {
+        "file": "tests/misc/conditionals.spec.ts",
+        "line": 54,
+        "column": 0
+      },
+      "scope": {
+        "describeId": "tests/misc/conditionals.spec.ts › conditionals"
+      },
+      "appliesToProjects": "unknown",
+      "source": "scan",
+      "confidence": "static"
+    }
+  ],
   "warnings": []
 }

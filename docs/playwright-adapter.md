@@ -71,11 +71,10 @@ Found while building the public-fields extractor; the version matrix in CI (1.42
 - **`serial` annotation filter:** newer versions add a synthetic `{ type: 'serial' }` (no description) to every test under a serial describe or a serial file (`test.describe.configure({ mode: 'serial' })` at file level). It is dropped only where `_parallelMode` proves an enclosing suite is serial, so a user-declared `serial` annotation survives (as `declaration`, or `describe` when it sits on a describe). If `_parallelMode` or `_staticAnnotations` cannot be read, the old shape-based filter applies (drop every description-less `serial`).
 - **`location.column` is version-dependent** (e.g. 9 on 1.42 vs 1 on latest for the same call). It is kept in the document but must not be compared across versions; the snapshot test zeroes it.
 - **`use.baseURL`** is serialised only when it is an http(s) URL, without userinfo, query and fragment.
-- **Remaining public-only limit:** conditionals (`_modifiers`, `_hooks`, `TestCase.fn`), still `[]` until the conditionals PR.
 
 ### Internal fields (`packages/playwright/src/internals.ts`)
 
-Read through four feature-detecting accessors, the only code that touches underscore fields. Each checks existence and shape and returns `undefined` plus a report on mismatch; it never throws. The extractor turns a report into one `internal-field-unavailable` warning per field (`where` is the field name) and falls back to what the public API can prove.
+Read through seven feature-detecting accessors, the only code that touches underscore fields. Each checks existence and shape and returns `undefined` plus a report on mismatch; it never throws. The extractor turns a report into one `internal-field-unavailable` warning per field (`where` is the field name) and falls back to what the public API can prove.
 
 | Field | Gives | Fallback when unavailable |
 | --- | --- | --- |
@@ -83,6 +82,9 @@ Read through four feature-detecting accessors, the only code that touches unders
 | `Suite._tags` | describe-level tags; tag origin `describe` for `{ tag }` details | no describe tags; those tags get origin `details` |
 | `Suite._staticAnnotations` | describe's own annotations; inherited vs own split | no describe annotations; every annotation is `declaration` |
 | `TestCase._only` | `Instance.only` | `only` omitted (not `false`) |
+| `Suite._modifiers` | describe- and file-level callback conditionals | those conditionals are not reported |
+| `Suite._hooks` | conditionals inside hooks | not reported |
+| `TestCase.fn` | conditionals and runtime annotations in test bodies | not reported |
 
 - **Annotation split.** `test.annotations` is built outermost-first: per enclosing suite, its `_staticAnnotations` (preceded, on newer versions only, by the synthetic `serial` marker for a serial suite), then the test's own. The extractor consumes that prefix positionally from the enclosing file and describe suites, tags it `describe`, and keeps the rest as `declaration`. If the prefix does not match (a Playwright change), it does not guess: all annotations are `declaration` and an `annotation-inheritance-mismatch` warning is emitted. Inherited annotations stay on each instance (so the annotation lens does not have to walk the tree) with origin `describe`; the describe node holds its own list once.
 - **Tag origin**, in order: an `@token` in the test's own title (`title`); an enclosing describe's `_tags` or an `@token` in an enclosing describe title (`describe`); a tag in the file suite's `_tags` (`project`); anything else (`details`). On newer versions (1.65.1 verified) the loader copies the config-level `tag` option into every file suite's `_tags` (1.42.1 has no config `tag`), so those tags are config-level, not describe-level; the file suite's own title is a path and is not scanned for `@tokens`. The fixture config sets no `tag`, so the snapshot does not exercise this; a unit test does. A tag that is both in the test title and a describe is `title`.
@@ -98,3 +100,14 @@ Read through four feature-detecting accessors, the only code that touches unders
 - Loop-generated tests and describes appear as ordinary tests; no marker that they were generated. Location points at the same line for all of them, so `file:line` is not unique and cannot be an id.
 - A `{type: 'issue', description}` annotation round-trips with the exact description (URL or key). Hidden `_` types are reported like any other.
 - Describe `mode` is only available via internal `_parallelMode` (observed: `none`, `default`, `parallel`, `serial`); `none` (unset) and an explicit `configure({ mode: 'default' })` are both reported as `default`.
+
+### Conditionals (`packages/playwright/src/scan.ts`, ADR 0008)
+
+Verified on 1.42.1 and 1.65.1 with `fixtures/playwright-basic`; the snapshot is identical on both once the `column` of conditionals is normalised.
+
+- `_modifiers`, `_hooks` and `TestCase.fn` exist on every file and describe suite and every test on both versions. Their sources are read with `Function.prototype.toString` and parsed with acorn; the functions are never called.
+- Modifier and hook entries carry real `location`s (the `test.skip(...)` or `beforeEach(...)` call, the same on both versions for modifiers and hooks). A **body** has no usable line numbers (transformed source, no source maps read), so a body conditional is located at its test. The column of a `test(...)` call differs between versions (e.g. 3 vs 7), which is why `Conditional.id` has no column.
+- The same conditional is found once per project the file belongs to; identical findings are recorded once.
+- Babel emits the test object as `_test.test` (a member of the imported module), not `test`; `_x.test` and `_x.default` receivers are accepted. An aliased import (`import { test as base }`) is still `_x.test`.
+- Hard cases and their expected conditionals: `packages/playwright/src/conditionals.fixture.test.ts` (one explicit expectation per case in `conditionals.spec.ts`).
+- Detected: `skip/fixme/fail/slow` with a condition or callback, unconditional `skip()`/`slow()`/... in a body, `testInfo.<modifier>(...)`, runtime `annotations.push(...)`, helper calls that receive the test object, and the same inside hooks. Not detected: a helper that imports `test` itself, `const t = test`, `testInfo` passed to a helper, conditionals in fixtures.

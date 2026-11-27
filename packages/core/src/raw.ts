@@ -52,7 +52,10 @@ export interface RawConditional {
   refs: string[];
   reason?: string;
   location: Location;
-  /** What it is attached to; resolved to ids by the builder. Describe/test paths are titles. */
+  /**
+   * What it is attached to; resolved to ids by the builder. `testTitlePath` is titles; `describePath`
+   * is describe titles where the n-th sibling with the same title (n > 1) is written `title#n`.
+   */
   scope: { file: string; describePath?: string[]; testTitlePath?: string[] };
   appliesToProjects: string[] | 'unknown';
   source: 'reporter' | 'scan';

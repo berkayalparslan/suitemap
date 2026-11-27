@@ -22,6 +22,8 @@ Adopt the changes listed under "Phase 0 decisions" in `docs/schema.md` for schem
 
 Decision: model all of them as a first-class `Conditional` entity (see `docs/schema.md`), filterable by test, project, tag, folder, referenced identifiers, form and type. Each entry carries `source` (reporter or scan) and `confidence` (static, inferred, opaque) so the viewer is explicit about what it knows. Phase 4 results fill `observed`. If a file cannot be parsed, extraction warns and reports that file's conditionals as unknown; it does not fail.
 
+Details (parser, matching rules, confidence table, unknown type, ids): ADR 0008.
+
 Accepted: the function-source scan ships with the Phase 1 extractor and adds a small JS parser dependency to `packages/playwright` only. It relies on `fn`, `_modifiers` and `_hooks`, all internal.
 
 ## Consequences

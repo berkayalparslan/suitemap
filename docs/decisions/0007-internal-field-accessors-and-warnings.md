@@ -18,4 +18,4 @@ ADR 0004 accepted reading a few Playwright internals (`Suite._parallelMode`, `_t
 
 - No schema change and no `schemaVersion` bump: the fields already existed. `RawExtraction` is unchanged. Warning codes are the only contract change; nothing consumes the removed codes yet.
 - On a supported Playwright version the fixture extracts with `warnings: []`, so any internals drift appears as a warning diff in the matrix snapshot.
-- `_modifiers`, `_hooks` and `TestCase.fn` are not read yet (conditionals PR); they will get accessors in the same module.
+- `_modifiers`, `_hooks` and `TestCase.fn` are read as source text by accessors in the same module (conditionals PR, ADR 0008); each is warned about once like the others.

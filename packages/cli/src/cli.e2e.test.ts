@@ -28,11 +28,16 @@ function suitemap(args: string[], env: Record<string, string> = {}, cwd?: string
 }
 
 // Same normalisation as the extractor's own fixture test.
-function normalise(doc: { source: object; tests: { location: object }[] }) {
+function normalise(doc: {
+  source: object;
+  tests: { location: object }[];
+  conditionals: { location: object }[];
+}) {
   return {
     ...doc,
     source: { ...doc.source, rootDir: '<rootDir>', frameworkVersion: '<version>' },
     tests: doc.tests.map((t) => ({ ...t, location: { ...t.location, column: 0 } })),
+    conditionals: doc.conditionals.map((c) => ({ ...c, location: { ...c.location, column: 0 } })),
   };
 }
 
