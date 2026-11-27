@@ -3,7 +3,7 @@
 // Public Reporter API plus the describe/test internals read through ./internals.ts (the only module
 // that touches underscore fields). When an internal field is missing or malformed the dependent schema
 // field falls back to what the public API can prove, and a warning says so (one per field).
-// Still TODO (conditionals PR): _modifiers, _hooks, TestCase.fn.
+// Conditionals come from `_modifiers`, `_hooks` and `TestCase.fn` source text, scanned by ./scan.ts.
 import path from 'node:path';
 import {
   buildDocument,
@@ -12,6 +12,7 @@ import {
   type BuildOptions,
   type Project,
   type RawExtraction,
+  type RawConditional,
   type RawFile,
   type RawNode,
   type RawProjectSuite,
@@ -24,11 +25,15 @@ import type { FullConfig, Suite, TestCase } from '@playwright/test/reporter';
 import {
   readParallelMode,
   readSuiteAnnotations,
+  readSuiteHooks,
+  readSuiteModifiers,
   readSuiteTags,
+  readTestFn,
   readTestOnly,
   type DescribeMode,
   type StaticAnnotation,
 } from './internals.js';
+import { scanFunctionBody, scanModifierCallback, UNKNOWN_TYPE, type Finding } from './scan.js';
 
 // `FullProject` is not exported by the 1.42 reporter types.
 type FullProject = NonNullable<ReturnType<Suite['project']>>;
@@ -107,6 +112,11 @@ export interface ExtractionContext {
   flags: Set<string>;
   /** Whether this Playwright version adds a synthetic `serial` annotation; undefined until learned. */
   syntheticSerial?: boolean;
+  /** Findings so far, de-duplicated: the same file is listed once per project it belongs to. */
+  conditionals: RawConditional[];
+  conditionalKeys: Set<string>;
+  /** Project names that exist, to resolve `project.name` comparisons. */
+  projectNames: string[];
 }
 
 const warnOnce = (ctx: ExtractionContext, code: string, message: string, where?: string) => {
@@ -125,6 +135,9 @@ const FALLBACK: Record<string, string> = {
   _staticAnnotations:
     'describe-level annotations are not reported and inherited annotations keep origin "declaration"',
   _only: 'the `only` flag is not reported',
+  _modifiers: 'describe- and file-level conditionals are not reported',
+  _hooks: 'conditionals inside hooks are not reported',
+  fn: 'conditionals and runtime annotations inside test bodies are not reported',
 };
 
 /** Warning for an internal field that is missing or has an unexpected shape (once per field). */
@@ -290,13 +303,142 @@ function toAnnotations(ctx: ExtractionContext, t: TestCase, chain: SuiteInfo[]):
   return all.filter((a) => !isSerialMark(a)).map((a) => make(a, 'declaration'));
 }
 
-function toTest(ctx: ExtractionContext, t: TestCase, chain: SuiteInfo[]): RawTest {
+type Scope = RawConditional['scope'];
+type Origin =
+  | { kind: 'modifier'; type: string; reason?: string; scopeKind: 'file' | 'describe' }
+  | { kind: 'hook' }
+  | { kind: 'body' };
+
+/** Records one finding, once even when the file is listed under several projects. */
+function addConditional(ctx: ExtractionContext, c: RawConditional): void {
+  const key = JSON.stringify(c);
+  if (ctx.conditionalKeys.has(key)) return;
+  ctx.conditionalKeys.add(key);
+  ctx.conditionals.push(c);
+}
+
+function appliesTo(ctx: ExtractionContext, f: Finding): RawConditional['appliesToProjects'] {
+  if (!f.projectCompare) return 'unknown';
+  const { value, negated } = f.projectCompare;
+  return ctx.projectNames.filter((n) => (n === value) !== negated);
+}
+
+/**
+ * Scans one function source and records its conditionals. A source that cannot be parsed is reported
+ * once (`conditional-parse-failed`) and recorded as a single opaque, type-unknown conditional so the
+ * map shows that something there was not understood (ADR 0008).
+ */
+function scanInto(
+  ctx: ExtractionContext,
+  source: string,
+  origin: Origin,
+  location: RawConditional['location'],
+  scope: Scope,
+): void {
+  const result =
+    origin.kind === 'modifier' ? scanModifierCallback(source) : scanFunctionBody(source);
+  const form = (f: Finding): RawConditional['form'] =>
+    origin.kind === 'modifier'
+      ? origin.scopeKind === 'file'
+        ? 'file-callback'
+        : 'describe-callback'
+      : origin.kind === 'hook'
+        ? 'hook'
+        : f.via === 'runtime-push'
+          ? 'runtime-push'
+          : 'body';
+  const reporter = origin.kind === 'modifier';
+  if (!result.ok) {
+    warnOnce(
+      ctx,
+      'conditional-parse-failed',
+      `Could not parse a ${origin.kind} function (${result.error}); its conditionals are reported as unknown.`,
+      `${location.file}:${location.line}`,
+    );
+    addConditional(ctx, {
+      type: origin.kind === 'modifier' ? origin.type : UNKNOWN_TYPE,
+      form: form({ via: 'call' } as Finding),
+      refs: [],
+      ...(origin.kind === 'modifier' && origin.reason !== undefined
+        ? { reason: origin.reason }
+        : {}),
+      location,
+      scope,
+      appliesToProjects: 'unknown',
+      source: reporter ? 'reporter' : 'scan',
+      confidence: 'opaque',
+    });
+    return;
+  }
+  for (const f of result.findings) {
+    const reason = origin.kind === 'modifier' ? origin.reason : f.reason;
+    addConditional(ctx, {
+      type: origin.kind === 'modifier' ? origin.type : f.type,
+      form: form(f),
+      ...(f.condition === undefined ? {} : { condition: f.condition }),
+      refs: f.refs,
+      ...(reason === undefined ? {} : { reason }),
+      location,
+      scope,
+      appliesToProjects: origin.kind === 'modifier' ? 'unknown' : appliesTo(ctx, f),
+      source: reporter ? 'reporter' : 'scan',
+      confidence: f.confidence,
+    });
+  }
+}
+
+/** Modifiers and hooks registered on one file or describe suite. */
+function scanSuite(
+  ctx: ExtractionContext,
+  suite: Suite,
+  scopeKind: 'file' | 'describe',
+  scope: Scope,
+  fallbackFile: string,
+): void {
+  const report = internalsReport(ctx);
+  const loc = (l: { file: string; line: number; column: number } | undefined) =>
+    l
+      ? { file: relPath(ctx, l.file), line: l.line, column: l.column }
+      : { file: fallbackFile, line: 0, column: 0 };
+  for (const m of readSuiteModifiers(suite, report) ?? [])
+    scanInto(
+      ctx,
+      m.source,
+      {
+        kind: 'modifier',
+        type: m.type,
+        scopeKind,
+        ...(m.description === undefined ? {} : { reason: m.description }),
+      },
+      loc(m.location),
+      scope,
+    );
+  for (const h of readSuiteHooks(suite, report) ?? [])
+    scanInto(ctx, h.source, { kind: 'hook' }, loc(h.location), scope);
+}
+
+function toTest(
+  ctx: ExtractionContext,
+  t: TestCase,
+  chain: SuiteInfo[],
+  describePath: string[],
+): RawTest {
+  const file = relPath(ctx, t.location.file);
+  const body = readTestFn(t, internalsReport(ctx));
+  if (body !== undefined)
+    scanInto(
+      ctx,
+      body,
+      { kind: 'body' },
+      { file, line: t.location.line, column: t.location.column },
+      { file, testTitlePath: [...describePath, t.title] },
+    );
   const only = readTestOnly(t, internalsReport(ctx));
   return {
     kind: 'test',
     title: t.title,
     location: {
-      file: relPath(ctx, t.location.file),
+      file,
       line: t.location.line,
       column: t.location.column,
     },
@@ -311,20 +453,28 @@ function toTest(ctx: ExtractionContext, t: TestCase, chain: SuiteInfo[]): RawTes
   };
 }
 
-/** `chain` is the enclosing file and describe suites, outermost first. */
-function toNodes(ctx: ExtractionContext, suite: Suite, chain: SuiteInfo[]): RawNode[] {
+/** `chain` is the enclosing file and describe suites, outermost first; `describePath` their titles (describes only). */
+function toNodes(
+  ctx: ExtractionContext,
+  suite: Suite,
+  chain: SuiteInfo[],
+  describePath: string[],
+  file: string,
+): RawNode[] {
   const nodes: RawNode[] = [];
   for (const entry of entriesOf(suite)) {
-    if (isTest(entry)) nodes.push(toTest(ctx, entry, chain));
+    if (isTest(entry)) nodes.push(toTest(ctx, entry, chain, describePath));
     else {
       const info = readSuiteInfo(ctx, entry);
+      const path = [...describePath, entry.title];
+      scanSuite(ctx, entry, 'describe', { file, describePath: path }, file);
       nodes.push({
         kind: 'describe',
         title: entry.title,
         mode: info.mode ?? 'default',
         tags: info.tags ?? [],
         annotations: (info.annotations ?? []).map((a) => ({ ...a, origin: 'describe' as const })),
-        children: toNodes(ctx, entry, [...chain, info]),
+        children: toNodes(ctx, entry, [...chain, info], path, file),
       });
     }
   }
@@ -342,6 +492,12 @@ export function extractRaw(config: FullConfig, root: Suite): RawExtraction {
     baseDir: config.configFile ? path.dirname(config.configFile) : config.rootDir,
     warnings: [],
     flags: new Set(),
+    conditionals: [],
+    conditionalKeys: new Set(),
+    projectNames: root.suites.flatMap((s) => {
+      const n = s.project()?.name;
+      return n === undefined ? [] : [n === '' ? DEFAULT_PROJECT : n];
+    }),
   };
 
   if (noConfigFile)
@@ -371,9 +527,11 @@ export function extractRaw(config: FullConfig, root: Suite): RawExtraction {
         });
         continue;
       }
+      const filePath = relPath(ctx, file);
+      scanSuite(ctx, fileSuite, 'file', { file: filePath }, filePath);
       files.push({
-        path: relPath(ctx, file),
-        children: toNodes(ctx, fileSuite, [readSuiteInfo(ctx, fileSuite)]),
+        path: filePath,
+        children: toNodes(ctx, fileSuite, [readSuiteInfo(ctx, fileSuite)], [], filePath),
       });
     }
     projects.push({ project: toProject(ctx, project), files });
@@ -385,8 +543,7 @@ export function extractRaw(config: FullConfig, root: Suite): RawExtraction {
     configFile: config.configFile ? relPath(ctx, config.configFile) : '',
     rootDir: ctx.baseDir,
     projects,
-    // TODO(internals PR): conditionals from `_modifiers`, `_hooks` and `TestCase.fn` (ADR 0004).
-    conditionals: [],
+    conditionals: ctx.conditionals,
     warnings: ctx.warnings,
   };
 }

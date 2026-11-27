@@ -95,12 +95,12 @@ export interface AnnotationType { type: string; builtIn: boolean; testCount: num
 
 export interface Conditional {
   id: string;
-  type: string;                      // 'skip' | 'fail' | 'fixme' | 'slow' | custom annotation type
+  type: string;                      // 'skip' | 'fail' | 'fixme' | 'slow' | custom annotation type | 'unknown' (computed; reserved, ADR 0008)
   form: 'body' | 'describe-callback' | 'file-callback' | 'hook' | 'runtime-push';
   condition?: string;                // source text, e.g. "browserName === 'webkit'"
   refs: string[];                    // identifiers it depends on: browserName, process.env.CI, project name ...
   reason?: string;
-  location: { file: string; line: number; column: number };
+  location: { file: string; line: number; column: number };  // of the modifier call (callbacks) or hook; of the test for a body (no lines inside bodies, ADR 0008)
   scope: { testId?: string; describeId?: string; fileId?: string };  // what it is attached to
   appliesToProjects: string[] | 'unknown';   // resolved only for simple comparisons
   source: 'reporter' | 'scan';       // reporter: from Suite._modifiers; scan: parsed from TestCase.fn / hook fn source
@@ -142,6 +142,8 @@ Conditional and runtime annotations (`test.skip(cond)`, `annotations.push(...)`,
 
 The `Conditional` type is defined in the main schema above.
 
+Details of what is detected, the confidence levels, `type: 'unknown'`, unparseable functions and the id format are in ADR 0008. `condition` is a trimmed excerpt of at most 200 characters; nothing is evaluated.
+
 Completeness: the scan cannot prove it found every conditional (helpers, fixtures, dynamic types). The viewer shows "N found by scan", not "all".
 
 ## Id formats (implemented in `packages/core/src/build.ts`)
@@ -151,4 +153,4 @@ Ids are readable and deterministic; consumers should treat them as opaque string
 - `Folder.id` / `File.id`: path relative to `rootDir`, forward slashes; the root folder is `.`.
 - `Describe.id`: `<parent id> › <describe title>` (so `<file> › <describe title> › ...`); sibling describes with the same title get `#2`, `#3`, ... appended in source order; `Test.id`: `<file> › <describe titles> › <test title>` (separator ` › `).
 - `TestInstance.id`: `<test id> [<project id>#<repeatEachIndex>]`.
-- `Conditional.id`: `<file>:<line>:<column>:<type>:<form>`, with `#n` appended on collision.
+- `Conditional.id`: `<file>:<line>:<type>:<form>`, with `#n` appended on collision (no column: it varies by Playwright version, ADR 0008).

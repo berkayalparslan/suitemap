@@ -16,12 +16,13 @@ const GENERATED_AT = '2026-01-01T00:00:00.000Z';
 // Version-dependent or machine-dependent values are normalised; everything else must match exactly.
 //  - rootDir is an absolute path.
 //  - frameworkVersion is the version under test (checked separately against the installed one).
-//  - Test `column` differs between Playwright versions for the same call (docs/playwright-adapter.md).
+//  - Test and conditional `column` differ between Playwright versions for the same call (docs/playwright-adapter.md).
 function normalise(doc: SuitemapDocument) {
   return {
     ...doc,
     source: { ...doc.source, rootDir: '<rootDir>', frameworkVersion: '<version>' },
     tests: doc.tests.map((t) => ({ ...t, location: { ...t.location, column: 0 } })),
+    conditionals: doc.conditionals.map((c) => ({ ...c, location: { ...c.location, column: 0 } })),
   };
 }
 

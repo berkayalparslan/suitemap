@@ -250,7 +250,8 @@ export function buildDocument(raw: RawExtraction, options: BuildOptions = {}): S
       }
     } else scope.fileId = fileId;
 
-    const base = `${fileId}:${c.location.line}:${c.location.column}:${c.type}:${c.form}`;
+    // No column: it differs between Playwright versions for the same call (ADR 0008).
+    const base = `${fileId}:${c.location.line}:${c.type}:${c.form}`;
     let id = base;
     for (let n = 2; usedIds.has(id); n++) id = `${base}#${n}`;
     usedIds.add(id);
