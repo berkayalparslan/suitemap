@@ -4,6 +4,7 @@
 #   version  npm version/tag of @playwright/test, e.g. 1.42.1 or latest
 #   config   fixture config file (default playwright.config.ts)
 #   suffix   appended to the output name, e.g. "repeat" -> output/pw-1.42-repeat.json
+# `latest` is not pinned: the committed pw-latest*.json were produced with 1.65.1 (recorded in playwrightVersion inside each dump).
 # Without a suffix it also records the duplicate-title load error and writes output/diff.txt
 # once both pw-1.42.json and pw-latest.json exist.
 # Copies the fixture to spike/.work/<label>, installs that Playwright version, runs --list with the spike reporter.
@@ -23,6 +24,7 @@ echo "$label: wrote $out; globalSetup marker: $([ -f global-setup-ran.marker ] &
 if [ -z "${4:-}" ]; then
   cp "$here/../fixtures/playwright-basic/playwright.negative.config.ts" "$work/"
   npx playwright test --config playwright.negative.config.ts --list > "$here/output/duplicate-title-$label.txt" 2>&1 && { echo "expected duplicate-title error, got success"; exit 1; } || echo "$label: duplicate-title error recorded"
+  # diff.txt compares whatever pw-1.42.json and pw-latest.json are on disk; run both labels in one go before trusting it.
   if [ -f "$here/output/pw-1.42.json" ] && [ -f "$here/output/pw-latest.json" ]; then
     (cd "$here/output" && diff -u pw-1.42.json pw-latest.json > diff.txt || true)
   fi

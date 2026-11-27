@@ -62,7 +62,7 @@ Evidence: `spike/output/pw-1.42.json` (1.42.1), `pw-latest.json` (1.65.1), `*-re
 ### Other findings
 
 - `test.only` does not filter `--list`; all tests are listed. The focused test is flagged via internal `_only` (also on both versions).
-- Duplicate titles in one file are a load error on both versions, so `file + titlePath` is a unique id within a project. `TestCase.id` is not unique across projects (it is identical for the same test in every project); the instance id must include the project name.
+- Duplicate titles in one file are a load error on both versions (`spike/output/duplicate-title-*.txt`), so `file + titlePath` is a unique test id within a project. `TestCase.id` is `<prefix>-<suffix>`: the 20-character prefix is shared by the same test in every project, the suffix differs per project and per `repeatEachIndex`, so the whole id is unique per instance (122 tests, 122 unique ids on both versions) and equal across versions. It is an opaque hash; the instance id still includes the project name and `repeatEachIndex` explicitly.
 - `repeatEach: 2` yields two `TestCase`s inside the same project node, distinguished by `repeatEachIndex` and a different `id`. Instances need `repeatEachIndex` in their id (matches the draft).
 - Loop-generated tests and describes appear as ordinary tests; no marker that they were generated. Location points at the same line for all of them, so `file:line` is not unique and cannot be an id.
 - A `{type: 'issue', description}` annotation round-trips with the exact description (URL or key). Hidden `_` types are reported like any other.

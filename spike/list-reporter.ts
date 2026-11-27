@@ -22,6 +22,7 @@ class ListReporter implements Reporter {
         // `suite.type` only exists on newer versions; fall back to depth-based inference.
         type: (s as any).type ?? (depth === 0 ? 'root' : depth === 1 ? 'project' : depth === 2 ? 'file' : 'describe'),
         typeFromApi: 'type' in s,
+        typeInferenceOk: !('type' in s) || (s as any).type === (depth === 0 ? 'root' : depth === 1 ? 'project' : depth === 2 ? 'file' : 'describe'),
         only: (s as any)._only,
         title: s.title,
         location: loc(s.location),

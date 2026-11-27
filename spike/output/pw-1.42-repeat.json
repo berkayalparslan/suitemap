@@ -11,6 +11,7 @@
   "tree": {
     "type": "root",
     "typeFromApi": false,
+    "typeInferenceOk": true,
     "only": false,
     "title": "",
     "parallelMode": "none",
@@ -19,6 +20,7 @@
       {
         "type": "project",
         "typeFromApi": false,
+        "typeInferenceOk": true,
         "only": false,
         "title": "teardown",
         "parallelMode": "none",
@@ -27,6 +29,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "setup/cleanup.teardown.ts",
             "location": {
@@ -52,6 +55,8 @@
                 "tags": [],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -74,6 +79,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "setup/cleanup.teardown.ts",
             "location": {
@@ -99,6 +105,8 @@
                 "tags": [],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -138,6 +146,7 @@
       {
         "type": "project",
         "typeFromApi": false,
+        "typeInferenceOk": true,
         "only": false,
         "title": "setup",
         "parallelMode": "none",
@@ -146,6 +155,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "setup/auth.setup.ts",
             "location": {
@@ -171,6 +181,8 @@
                 "tags": [],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -193,6 +205,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "setup/auth.setup.ts",
             "location": {
@@ -218,6 +231,8 @@
                 "tags": [],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -258,6 +273,7 @@
       {
         "type": "project",
         "typeFromApi": false,
+        "typeInferenceOk": true,
         "only": false,
         "title": "chromium",
         "parallelMode": "none",
@@ -266,6 +282,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "auth/login.spec.ts",
             "location": {
@@ -293,6 +310,8 @@
                 ],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -317,6 +336,8 @@
                 ],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -341,6 +362,8 @@
                 ],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -367,6 +390,8 @@
                   }
                 ],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -397,6 +422,8 @@
                   }
                 ],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -419,6 +446,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "auth/login.spec.ts",
             "location": {
@@ -446,6 +474,8 @@
                 ],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -470,6 +500,8 @@
                 ],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -494,6 +526,8 @@
                 ],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -520,6 +554,8 @@
                   }
                 ],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -550,6 +586,8 @@
                   }
                 ],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -572,6 +610,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "auth/permissions/roles.spec.ts",
             "location": {
@@ -585,6 +624,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "roles",
                 "location": {
@@ -598,6 +638,7 @@
                   {
                     "type": "describe",
                     "typeFromApi": false,
+                    "typeInferenceOk": true,
                     "only": false,
                     "title": "nested",
                     "location": {
@@ -638,6 +679,8 @@
                           }
                         ],
                         "only": false,
+                        "hasFn": "function",
+                        "fnSource": "async () => {}",
                         "expectedStatus": "passed",
                         "timeout": 30000,
                         "retries": 0,
@@ -690,6 +733,8 @@
                       }
                     ],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -733,6 +778,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "auth/permissions/roles.spec.ts",
             "location": {
@@ -746,6 +792,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "roles",
                 "location": {
@@ -759,6 +806,7 @@
                   {
                     "type": "describe",
                     "typeFromApi": false,
+                    "typeInferenceOk": true,
                     "only": false,
                     "title": "nested",
                     "location": {
@@ -799,6 +847,8 @@
                           }
                         ],
                         "only": false,
+                        "hasFn": "function",
+                        "fnSource": "async () => {}",
                         "expectedStatus": "passed",
                         "timeout": 30000,
                         "retries": 0,
@@ -851,6 +901,8 @@
                       }
                     ],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -894,6 +946,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "checkout/builtins.spec.ts",
             "location": {
@@ -907,6 +960,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "unconditional",
                 "location": {
@@ -933,6 +987,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    _test.test.skip();\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -959,6 +1015,8 @@
                       }
                     ],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "skipped",
                     "timeout": 30000,
                     "retries": 0,
@@ -985,6 +1043,8 @@
                       }
                     ],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -1011,6 +1071,8 @@
                       }
                     ],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "skipped",
                     "timeout": 30000,
                     "retries": 0,
@@ -1033,6 +1095,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    _test.test.slow();\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -1056,6 +1120,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "conditional on browserName",
                 "location": {
@@ -1082,6 +1147,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    _test.test.skip(browserName === 'webkit', 'not on webkit');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -1104,6 +1171,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    _test.test.fail(browserName === 'firefox', 'firefox bug');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -1126,6 +1195,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    _test.test.fixme(browserName === 'chromium', 'chromium bug');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -1148,6 +1219,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    _test.test.slow(browserName === 'webkit', 'slow on webkit');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -1171,6 +1244,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "describe-level",
                 "location": {
@@ -1197,6 +1271,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -1232,6 +1308,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "skipped describe",
                 "location": {
@@ -1262,6 +1339,8 @@
                       }
                     ],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "skipped",
                     "timeout": 30000,
                     "retries": 0,
@@ -1289,6 +1368,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "fixme describe",
                 "location": {
@@ -1319,6 +1399,8 @@
                       }
                     ],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "skipped",
                     "timeout": 30000,
                     "retries": 0,
@@ -1346,6 +1428,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "only",
                 "location": {
@@ -1372,6 +1455,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": true,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -1394,6 +1479,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -1430,6 +1517,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "checkout/builtins.spec.ts",
             "location": {
@@ -1443,6 +1531,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "unconditional",
                 "location": {
@@ -1469,6 +1558,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    _test.test.skip();\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -1495,6 +1586,8 @@
                       }
                     ],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "skipped",
                     "timeout": 30000,
                     "retries": 0,
@@ -1521,6 +1614,8 @@
                       }
                     ],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -1547,6 +1642,8 @@
                       }
                     ],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "skipped",
                     "timeout": 30000,
                     "retries": 0,
@@ -1569,6 +1666,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    _test.test.slow();\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -1592,6 +1691,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "conditional on browserName",
                 "location": {
@@ -1618,6 +1718,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    _test.test.skip(browserName === 'webkit', 'not on webkit');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -1640,6 +1742,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    _test.test.fail(browserName === 'firefox', 'firefox bug');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -1662,6 +1766,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    _test.test.fixme(browserName === 'chromium', 'chromium bug');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -1684,6 +1790,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    _test.test.slow(browserName === 'webkit', 'slow on webkit');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -1707,6 +1815,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "describe-level",
                 "location": {
@@ -1733,6 +1842,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -1768,6 +1879,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "skipped describe",
                 "location": {
@@ -1798,6 +1910,8 @@
                       }
                     ],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "skipped",
                     "timeout": 30000,
                     "retries": 0,
@@ -1825,6 +1939,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "fixme describe",
                 "location": {
@@ -1855,6 +1970,8 @@
                       }
                     ],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "skipped",
                     "timeout": 30000,
                     "retries": 0,
@@ -1882,6 +1999,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "only",
                 "location": {
@@ -1908,6 +2026,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": true,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -1930,6 +2050,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -1966,6 +2088,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "checkout/cart.spec.ts",
             "location": {
@@ -1979,6 +2102,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "serial flow",
                 "location": {
@@ -2005,6 +2129,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -2027,6 +2153,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -2049,6 +2177,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -2072,6 +2202,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "parallel flow",
                 "location": {
@@ -2098,6 +2229,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -2120,6 +2253,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -2143,6 +2278,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "default flow",
                 "location": {
@@ -2169,6 +2305,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -2205,6 +2343,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "checkout/cart.spec.ts",
             "location": {
@@ -2218,6 +2357,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "serial flow",
                 "location": {
@@ -2244,6 +2384,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -2266,6 +2408,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -2288,6 +2432,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -2311,6 +2457,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "parallel flow",
                 "location": {
@@ -2337,6 +2484,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -2359,6 +2508,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -2382,6 +2533,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "default flow",
                 "location": {
@@ -2408,6 +2560,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -2444,6 +2598,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "misc/annotations.spec.ts",
             "location": {
@@ -2474,6 +2629,8 @@
                   }
                 ],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -2510,6 +2667,8 @@
                   }
                 ],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -2531,6 +2690,8 @@
                 "tags": [],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {\n  _test.test.info().annotations.push({\n    type: 'runtime',\n    description: 'added at run time'\n  });\n}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -2553,6 +2714,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "misc/annotations.spec.ts",
             "location": {
@@ -2583,6 +2745,8 @@
                   }
                 ],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -2619,6 +2783,8 @@
                   }
                 ],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -2640,6 +2806,8 @@
                 "tags": [],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {\n  _test.test.info().annotations.push({\n    type: 'runtime',\n    description: 'added at run time'\n  });\n}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -2662,6 +2830,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "misc/conditionals.spec.ts",
             "location": {
@@ -2675,6 +2844,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "conditionals",
                 "location": {
@@ -2701,6 +2871,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    _test.test.fixme(process.env.FEATURE_X === '1', 'needs feature x');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -2723,6 +2895,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    skipOnCI(_test.test);\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -2745,6 +2919,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    _test.test.info().annotations.push({\n      type: kind,\n      description: 'JIRA-9'\n    });\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -2767,6 +2943,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    if (browserName === 'chromium') return;\n    _test.test.skip(true, 'never reached on chromium');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -2789,6 +2967,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({}, testInfo) => {\n    _test.test.slow(testInfo.project.name === 'webkit', 'slow project');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -2848,6 +3028,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "misc/conditionals.spec.ts",
             "location": {
@@ -2861,6 +3042,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "conditionals",
                 "location": {
@@ -2887,6 +3069,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    _test.test.fixme(process.env.FEATURE_X === '1', 'needs feature x');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -2909,6 +3093,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    skipOnCI(_test.test);\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -2931,6 +3117,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    _test.test.info().annotations.push({\n      type: kind,\n      description: 'JIRA-9'\n    });\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -2953,6 +3141,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    if (browserName === 'chromium') return;\n    _test.test.skip(true, 'never reached on chromium');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -2975,6 +3165,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({}, testInfo) => {\n    _test.test.slow(testInfo.project.name === 'webkit', 'slow project');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -3034,6 +3226,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "misc/generated.spec.ts",
             "location": {
@@ -3047,6 +3240,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "env staging",
                 "location": {
@@ -3073,6 +3267,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -3096,6 +3292,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "env prod",
                 "location": {
@@ -3122,6 +3319,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -3160,6 +3359,8 @@
                 ],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -3183,6 +3384,8 @@
                 ],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -3206,6 +3409,8 @@
                 ],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -3228,6 +3433,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "misc/generated.spec.ts",
             "location": {
@@ -3241,6 +3447,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "env staging",
                 "location": {
@@ -3267,6 +3474,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -3290,6 +3499,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "env prod",
                 "location": {
@@ -3316,6 +3526,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -3354,6 +3566,8 @@
                 ],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -3377,6 +3591,8 @@
                 ],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -3400,6 +3616,8 @@
                 ],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -3443,6 +3661,7 @@
       {
         "type": "project",
         "typeFromApi": false,
+        "typeInferenceOk": true,
         "only": false,
         "title": "firefox",
         "parallelMode": "none",
@@ -3451,6 +3670,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "auth/login.spec.ts",
             "location": {
@@ -3478,6 +3698,8 @@
                 ],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -3502,6 +3724,8 @@
                 ],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -3526,6 +3750,8 @@
                 ],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -3552,6 +3778,8 @@
                   }
                 ],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -3582,6 +3810,8 @@
                   }
                 ],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -3604,6 +3834,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "auth/login.spec.ts",
             "location": {
@@ -3631,6 +3862,8 @@
                 ],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -3655,6 +3888,8 @@
                 ],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -3679,6 +3914,8 @@
                 ],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -3705,6 +3942,8 @@
                   }
                 ],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -3735,6 +3974,8 @@
                   }
                 ],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -3757,6 +3998,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "auth/permissions/roles.spec.ts",
             "location": {
@@ -3770,6 +4012,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "roles",
                 "location": {
@@ -3783,6 +4026,7 @@
                   {
                     "type": "describe",
                     "typeFromApi": false,
+                    "typeInferenceOk": true,
                     "only": false,
                     "title": "nested",
                     "location": {
@@ -3823,6 +4067,8 @@
                           }
                         ],
                         "only": false,
+                        "hasFn": "function",
+                        "fnSource": "async () => {}",
                         "expectedStatus": "passed",
                         "timeout": 30000,
                         "retries": 0,
@@ -3875,6 +4121,8 @@
                       }
                     ],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -3918,6 +4166,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "auth/permissions/roles.spec.ts",
             "location": {
@@ -3931,6 +4180,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "roles",
                 "location": {
@@ -3944,6 +4194,7 @@
                   {
                     "type": "describe",
                     "typeFromApi": false,
+                    "typeInferenceOk": true,
                     "only": false,
                     "title": "nested",
                     "location": {
@@ -3984,6 +4235,8 @@
                           }
                         ],
                         "only": false,
+                        "hasFn": "function",
+                        "fnSource": "async () => {}",
                         "expectedStatus": "passed",
                         "timeout": 30000,
                         "retries": 0,
@@ -4036,6 +4289,8 @@
                       }
                     ],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -4079,6 +4334,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "checkout/builtins.spec.ts",
             "location": {
@@ -4092,6 +4348,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "unconditional",
                 "location": {
@@ -4118,6 +4375,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    _test.test.skip();\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -4144,6 +4403,8 @@
                       }
                     ],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "skipped",
                     "timeout": 30000,
                     "retries": 0,
@@ -4170,6 +4431,8 @@
                       }
                     ],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -4196,6 +4459,8 @@
                       }
                     ],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "skipped",
                     "timeout": 30000,
                     "retries": 0,
@@ -4218,6 +4483,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    _test.test.slow();\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -4241,6 +4508,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "conditional on browserName",
                 "location": {
@@ -4267,6 +4535,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    _test.test.skip(browserName === 'webkit', 'not on webkit');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -4289,6 +4559,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    _test.test.fail(browserName === 'firefox', 'firefox bug');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -4311,6 +4583,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    _test.test.fixme(browserName === 'chromium', 'chromium bug');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -4333,6 +4607,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    _test.test.slow(browserName === 'webkit', 'slow on webkit');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -4356,6 +4632,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "describe-level",
                 "location": {
@@ -4382,6 +4659,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -4417,6 +4696,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "skipped describe",
                 "location": {
@@ -4447,6 +4727,8 @@
                       }
                     ],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "skipped",
                     "timeout": 30000,
                     "retries": 0,
@@ -4474,6 +4756,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "fixme describe",
                 "location": {
@@ -4504,6 +4787,8 @@
                       }
                     ],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "skipped",
                     "timeout": 30000,
                     "retries": 0,
@@ -4531,6 +4816,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "only",
                 "location": {
@@ -4557,6 +4843,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": true,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -4579,6 +4867,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -4615,6 +4905,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "checkout/builtins.spec.ts",
             "location": {
@@ -4628,6 +4919,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "unconditional",
                 "location": {
@@ -4654,6 +4946,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    _test.test.skip();\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -4680,6 +4974,8 @@
                       }
                     ],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "skipped",
                     "timeout": 30000,
                     "retries": 0,
@@ -4706,6 +5002,8 @@
                       }
                     ],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -4732,6 +5030,8 @@
                       }
                     ],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "skipped",
                     "timeout": 30000,
                     "retries": 0,
@@ -4754,6 +5054,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    _test.test.slow();\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -4777,6 +5079,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "conditional on browserName",
                 "location": {
@@ -4803,6 +5106,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    _test.test.skip(browserName === 'webkit', 'not on webkit');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -4825,6 +5130,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    _test.test.fail(browserName === 'firefox', 'firefox bug');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -4847,6 +5154,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    _test.test.fixme(browserName === 'chromium', 'chromium bug');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -4869,6 +5178,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    _test.test.slow(browserName === 'webkit', 'slow on webkit');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -4892,6 +5203,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "describe-level",
                 "location": {
@@ -4918,6 +5230,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -4953,6 +5267,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "skipped describe",
                 "location": {
@@ -4983,6 +5298,8 @@
                       }
                     ],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "skipped",
                     "timeout": 30000,
                     "retries": 0,
@@ -5010,6 +5327,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "fixme describe",
                 "location": {
@@ -5040,6 +5358,8 @@
                       }
                     ],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "skipped",
                     "timeout": 30000,
                     "retries": 0,
@@ -5067,6 +5387,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "only",
                 "location": {
@@ -5093,6 +5414,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": true,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -5115,6 +5438,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -5151,6 +5476,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "checkout/cart.spec.ts",
             "location": {
@@ -5164,6 +5490,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "serial flow",
                 "location": {
@@ -5190,6 +5517,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -5212,6 +5541,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -5234,6 +5565,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -5257,6 +5590,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "parallel flow",
                 "location": {
@@ -5283,6 +5617,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -5305,6 +5641,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -5328,6 +5666,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "default flow",
                 "location": {
@@ -5354,6 +5693,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -5390,6 +5731,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "checkout/cart.spec.ts",
             "location": {
@@ -5403,6 +5745,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "serial flow",
                 "location": {
@@ -5429,6 +5772,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -5451,6 +5796,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -5473,6 +5820,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -5496,6 +5845,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "parallel flow",
                 "location": {
@@ -5522,6 +5872,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -5544,6 +5896,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -5567,6 +5921,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "default flow",
                 "location": {
@@ -5593,6 +5948,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -5629,6 +5986,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "misc/annotations.spec.ts",
             "location": {
@@ -5659,6 +6017,8 @@
                   }
                 ],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -5695,6 +6055,8 @@
                   }
                 ],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -5716,6 +6078,8 @@
                 "tags": [],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {\n  _test.test.info().annotations.push({\n    type: 'runtime',\n    description: 'added at run time'\n  });\n}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -5738,6 +6102,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "misc/annotations.spec.ts",
             "location": {
@@ -5768,6 +6133,8 @@
                   }
                 ],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -5804,6 +6171,8 @@
                   }
                 ],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -5825,6 +6194,8 @@
                 "tags": [],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {\n  _test.test.info().annotations.push({\n    type: 'runtime',\n    description: 'added at run time'\n  });\n}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -5847,6 +6218,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "misc/conditionals.spec.ts",
             "location": {
@@ -5860,6 +6232,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "conditionals",
                 "location": {
@@ -5886,6 +6259,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    _test.test.fixme(process.env.FEATURE_X === '1', 'needs feature x');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -5908,6 +6283,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    skipOnCI(_test.test);\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -5930,6 +6307,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    _test.test.info().annotations.push({\n      type: kind,\n      description: 'JIRA-9'\n    });\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -5952,6 +6331,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    if (browserName === 'chromium') return;\n    _test.test.skip(true, 'never reached on chromium');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -5974,6 +6355,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({}, testInfo) => {\n    _test.test.slow(testInfo.project.name === 'webkit', 'slow project');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -6033,6 +6416,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "misc/conditionals.spec.ts",
             "location": {
@@ -6046,6 +6430,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "conditionals",
                 "location": {
@@ -6072,6 +6457,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    _test.test.fixme(process.env.FEATURE_X === '1', 'needs feature x');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -6094,6 +6481,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    skipOnCI(_test.test);\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -6116,6 +6505,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    _test.test.info().annotations.push({\n      type: kind,\n      description: 'JIRA-9'\n    });\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -6138,6 +6529,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    if (browserName === 'chromium') return;\n    _test.test.skip(true, 'never reached on chromium');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -6160,6 +6553,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({}, testInfo) => {\n    _test.test.slow(testInfo.project.name === 'webkit', 'slow project');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -6219,6 +6614,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "misc/generated.spec.ts",
             "location": {
@@ -6232,6 +6628,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "env staging",
                 "location": {
@@ -6258,6 +6655,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -6281,6 +6680,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "env prod",
                 "location": {
@@ -6307,6 +6707,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -6345,6 +6747,8 @@
                 ],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -6368,6 +6772,8 @@
                 ],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -6391,6 +6797,8 @@
                 ],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -6413,6 +6821,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "misc/generated.spec.ts",
             "location": {
@@ -6426,6 +6835,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "env staging",
                 "location": {
@@ -6452,6 +6862,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -6475,6 +6887,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "env prod",
                 "location": {
@@ -6501,6 +6914,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -6539,6 +6954,8 @@
                 ],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -6562,6 +6979,8 @@
                 ],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -6585,6 +7004,8 @@
                 ],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -6628,6 +7049,7 @@
       {
         "type": "project",
         "typeFromApi": false,
+        "typeInferenceOk": true,
         "only": false,
         "title": "webkit",
         "parallelMode": "none",
@@ -6636,6 +7058,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "auth/login.spec.ts",
             "location": {
@@ -6663,6 +7086,8 @@
                 ],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -6687,6 +7112,8 @@
                 ],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -6711,6 +7138,8 @@
                 ],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -6737,6 +7166,8 @@
                   }
                 ],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -6767,6 +7198,8 @@
                   }
                 ],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -6789,6 +7222,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "auth/login.spec.ts",
             "location": {
@@ -6816,6 +7250,8 @@
                 ],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -6840,6 +7276,8 @@
                 ],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -6864,6 +7302,8 @@
                 ],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -6890,6 +7330,8 @@
                   }
                 ],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -6920,6 +7362,8 @@
                   }
                 ],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -6942,6 +7386,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "auth/permissions/roles.spec.ts",
             "location": {
@@ -6955,6 +7400,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "roles",
                 "location": {
@@ -6968,6 +7414,7 @@
                   {
                     "type": "describe",
                     "typeFromApi": false,
+                    "typeInferenceOk": true,
                     "only": false,
                     "title": "nested",
                     "location": {
@@ -7008,6 +7455,8 @@
                           }
                         ],
                         "only": false,
+                        "hasFn": "function",
+                        "fnSource": "async () => {}",
                         "expectedStatus": "passed",
                         "timeout": 30000,
                         "retries": 0,
@@ -7060,6 +7509,8 @@
                       }
                     ],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -7103,6 +7554,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "auth/permissions/roles.spec.ts",
             "location": {
@@ -7116,6 +7568,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "roles",
                 "location": {
@@ -7129,6 +7582,7 @@
                   {
                     "type": "describe",
                     "typeFromApi": false,
+                    "typeInferenceOk": true,
                     "only": false,
                     "title": "nested",
                     "location": {
@@ -7169,6 +7623,8 @@
                           }
                         ],
                         "only": false,
+                        "hasFn": "function",
+                        "fnSource": "async () => {}",
                         "expectedStatus": "passed",
                         "timeout": 30000,
                         "retries": 0,
@@ -7221,6 +7677,8 @@
                       }
                     ],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -7264,6 +7722,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "checkout/builtins.spec.ts",
             "location": {
@@ -7277,6 +7736,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "unconditional",
                 "location": {
@@ -7303,6 +7763,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    _test.test.skip();\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -7329,6 +7791,8 @@
                       }
                     ],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "skipped",
                     "timeout": 30000,
                     "retries": 0,
@@ -7355,6 +7819,8 @@
                       }
                     ],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -7381,6 +7847,8 @@
                       }
                     ],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "skipped",
                     "timeout": 30000,
                     "retries": 0,
@@ -7403,6 +7871,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    _test.test.slow();\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -7426,6 +7896,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "conditional on browserName",
                 "location": {
@@ -7452,6 +7923,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    _test.test.skip(browserName === 'webkit', 'not on webkit');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -7474,6 +7947,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    _test.test.fail(browserName === 'firefox', 'firefox bug');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -7496,6 +7971,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    _test.test.fixme(browserName === 'chromium', 'chromium bug');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -7518,6 +7995,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    _test.test.slow(browserName === 'webkit', 'slow on webkit');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -7541,6 +8020,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "describe-level",
                 "location": {
@@ -7567,6 +8047,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -7602,6 +8084,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "skipped describe",
                 "location": {
@@ -7632,6 +8115,8 @@
                       }
                     ],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "skipped",
                     "timeout": 30000,
                     "retries": 0,
@@ -7659,6 +8144,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "fixme describe",
                 "location": {
@@ -7689,6 +8175,8 @@
                       }
                     ],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "skipped",
                     "timeout": 30000,
                     "retries": 0,
@@ -7716,6 +8204,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "only",
                 "location": {
@@ -7742,6 +8231,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": true,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -7764,6 +8255,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -7800,6 +8293,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "checkout/builtins.spec.ts",
             "location": {
@@ -7813,6 +8307,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "unconditional",
                 "location": {
@@ -7839,6 +8334,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    _test.test.skip();\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -7865,6 +8362,8 @@
                       }
                     ],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "skipped",
                     "timeout": 30000,
                     "retries": 0,
@@ -7891,6 +8390,8 @@
                       }
                     ],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -7917,6 +8418,8 @@
                       }
                     ],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "skipped",
                     "timeout": 30000,
                     "retries": 0,
@@ -7939,6 +8442,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    _test.test.slow();\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -7962,6 +8467,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "conditional on browserName",
                 "location": {
@@ -7988,6 +8494,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    _test.test.skip(browserName === 'webkit', 'not on webkit');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -8010,6 +8518,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    _test.test.fail(browserName === 'firefox', 'firefox bug');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -8032,6 +8542,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    _test.test.fixme(browserName === 'chromium', 'chromium bug');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -8054,6 +8566,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    _test.test.slow(browserName === 'webkit', 'slow on webkit');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -8077,6 +8591,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "describe-level",
                 "location": {
@@ -8103,6 +8618,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -8138,6 +8655,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "skipped describe",
                 "location": {
@@ -8168,6 +8686,8 @@
                       }
                     ],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "skipped",
                     "timeout": 30000,
                     "retries": 0,
@@ -8195,6 +8715,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "fixme describe",
                 "location": {
@@ -8225,6 +8746,8 @@
                       }
                     ],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "skipped",
                     "timeout": 30000,
                     "retries": 0,
@@ -8252,6 +8775,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "only",
                 "location": {
@@ -8278,6 +8802,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": true,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -8300,6 +8826,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -8336,6 +8864,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "checkout/cart.spec.ts",
             "location": {
@@ -8349,6 +8878,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "serial flow",
                 "location": {
@@ -8375,6 +8905,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -8397,6 +8929,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -8419,6 +8953,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -8442,6 +8978,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "parallel flow",
                 "location": {
@@ -8468,6 +9005,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -8490,6 +9029,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -8513,6 +9054,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "default flow",
                 "location": {
@@ -8539,6 +9081,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -8575,6 +9119,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "checkout/cart.spec.ts",
             "location": {
@@ -8588,6 +9133,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "serial flow",
                 "location": {
@@ -8614,6 +9160,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -8636,6 +9184,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -8658,6 +9208,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -8681,6 +9233,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "parallel flow",
                 "location": {
@@ -8707,6 +9260,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -8729,6 +9284,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -8752,6 +9309,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "default flow",
                 "location": {
@@ -8778,6 +9336,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -8814,6 +9374,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "misc/annotations.spec.ts",
             "location": {
@@ -8844,6 +9405,8 @@
                   }
                 ],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -8880,6 +9443,8 @@
                   }
                 ],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -8901,6 +9466,8 @@
                 "tags": [],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {\n  _test.test.info().annotations.push({\n    type: 'runtime',\n    description: 'added at run time'\n  });\n}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -8923,6 +9490,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "misc/annotations.spec.ts",
             "location": {
@@ -8953,6 +9521,8 @@
                   }
                 ],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -8989,6 +9559,8 @@
                   }
                 ],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -9010,6 +9582,8 @@
                 "tags": [],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {\n  _test.test.info().annotations.push({\n    type: 'runtime',\n    description: 'added at run time'\n  });\n}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -9032,6 +9606,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "misc/conditionals.spec.ts",
             "location": {
@@ -9045,6 +9620,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "conditionals",
                 "location": {
@@ -9071,6 +9647,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    _test.test.fixme(process.env.FEATURE_X === '1', 'needs feature x');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -9093,6 +9671,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    skipOnCI(_test.test);\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -9115,6 +9695,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    _test.test.info().annotations.push({\n      type: kind,\n      description: 'JIRA-9'\n    });\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -9137,6 +9719,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    if (browserName === 'chromium') return;\n    _test.test.skip(true, 'never reached on chromium');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -9159,6 +9743,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({}, testInfo) => {\n    _test.test.slow(testInfo.project.name === 'webkit', 'slow project');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -9218,6 +9804,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "misc/conditionals.spec.ts",
             "location": {
@@ -9231,6 +9818,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "conditionals",
                 "location": {
@@ -9257,6 +9845,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    _test.test.fixme(process.env.FEATURE_X === '1', 'needs feature x');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -9279,6 +9869,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    skipOnCI(_test.test);\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -9301,6 +9893,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    _test.test.info().annotations.push({\n      type: kind,\n      description: 'JIRA-9'\n    });\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -9323,6 +9917,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    if (browserName === 'chromium') return;\n    _test.test.skip(true, 'never reached on chromium');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -9345,6 +9941,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({}, testInfo) => {\n    _test.test.slow(testInfo.project.name === 'webkit', 'slow project');\n  }",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -9404,6 +10002,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "misc/generated.spec.ts",
             "location": {
@@ -9417,6 +10016,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "env staging",
                 "location": {
@@ -9443,6 +10043,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -9466,6 +10068,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "env prod",
                 "location": {
@@ -9492,6 +10095,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -9530,6 +10135,8 @@
                 ],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -9553,6 +10160,8 @@
                 ],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -9576,6 +10185,8 @@
                 ],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -9598,6 +10209,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "misc/generated.spec.ts",
             "location": {
@@ -9611,6 +10223,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "env staging",
                 "location": {
@@ -9637,6 +10250,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -9660,6 +10275,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "env prod",
                 "location": {
@@ -9686,6 +10302,8 @@
                     "tags": [],
                     "annotations": [],
                     "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
                     "expectedStatus": "passed",
                     "timeout": 30000,
                     "retries": 0,
@@ -9724,6 +10342,8 @@
                 ],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -9747,6 +10367,8 @@
                 ],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,
@@ -9770,6 +10392,8 @@
                 ],
                 "annotations": [],
                 "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
                 "expectedStatus": "passed",
                 "timeout": 30000,
                 "retries": 0,

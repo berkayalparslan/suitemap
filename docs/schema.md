@@ -103,7 +103,7 @@ export interface InstanceResult {
 
 Source: `docs/playwright-adapter.md` (Phase 0 checks). Proposed for v1, pending acceptance of `docs/decisions/0004-phase-0-schema-changes.md`.
 
-1. `TestInstance.id` = `projectId + testId + repeatEachIndex` always (not only if > 0); Playwright's own `TestCase.id` is identical across projects.
+1. `TestInstance.id` = `projectId + testId + repeatEachIndex` always (not only if > 0); Playwright's `TestCase.id` is unique per project and repeat index (122 tests, 122 unique ids) and identical across versions, but its first 20 characters are shared by the same test in every project and it is a hash, not readable. Keep our own `testId` + `projectId` + `repeatEachIndex` id and store `TestCase.id` only as an optional cross-check.
 2. `Test.id` = file path + `titlePath` (describe titles + test title, without project or file segments); duplicate titles are a load error, so this is unique. Do not use line or column.
 3. `Annotation.origin` stays, but note that Playwright copies describe annotations onto every test. The extractor must dedupe: take the describe's own annotations (internal `_staticAnnotations`) as `describe`, the rest as `declaration`. Drop the synthetic `serial` annotation.
 4. `TagRef.origin` is reconstructed by the extractor (Playwright gives a flat list).

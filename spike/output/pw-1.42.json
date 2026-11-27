@@ -11,6 +11,7 @@
   "tree": {
     "type": "root",
     "typeFromApi": false,
+    "typeInferenceOk": true,
     "only": false,
     "title": "",
     "parallelMode": "none",
@@ -19,6 +20,7 @@
       {
         "type": "project",
         "typeFromApi": false,
+        "typeInferenceOk": true,
         "only": false,
         "title": "teardown",
         "parallelMode": "none",
@@ -27,6 +29,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "setup/cleanup.teardown.ts",
             "location": {
@@ -93,6 +96,7 @@
       {
         "type": "project",
         "typeFromApi": false,
+        "typeInferenceOk": true,
         "only": false,
         "title": "setup",
         "parallelMode": "none",
@@ -101,6 +105,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "setup/auth.setup.ts",
             "location": {
@@ -168,6 +173,7 @@
       {
         "type": "project",
         "typeFromApi": false,
+        "typeInferenceOk": true,
         "only": false,
         "title": "chromium",
         "parallelMode": "none",
@@ -176,6 +182,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "auth/login.spec.ts",
             "location": {
@@ -339,6 +346,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "auth/permissions/roles.spec.ts",
             "location": {
@@ -352,6 +360,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "roles",
                 "location": {
@@ -365,6 +374,7 @@
                   {
                     "type": "describe",
                     "typeFromApi": false,
+                    "typeInferenceOk": true,
                     "only": false,
                     "title": "nested",
                     "location": {
@@ -504,6 +514,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "checkout/builtins.spec.ts",
             "location": {
@@ -517,6 +528,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "unconditional",
                 "location": {
@@ -676,6 +688,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "conditional on browserName",
                 "location": {
@@ -799,6 +812,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "describe-level",
                 "location": {
@@ -862,6 +876,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "skipped describe",
                 "location": {
@@ -921,6 +936,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "fixme describe",
                 "location": {
@@ -980,6 +996,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "only",
                 "location": {
@@ -1068,6 +1085,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "checkout/cart.spec.ts",
             "location": {
@@ -1081,6 +1099,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "serial flow",
                 "location": {
@@ -1180,6 +1199,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "parallel flow",
                 "location": {
@@ -1255,6 +1275,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "default flow",
                 "location": {
@@ -1319,6 +1340,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "misc/annotations.spec.ts",
             "location": {
@@ -1434,6 +1456,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "misc/conditionals.spec.ts",
             "location": {
@@ -1447,6 +1470,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "conditionals",
                 "location": {
@@ -1630,6 +1654,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "misc/generated.spec.ts",
             "location": {
@@ -1643,6 +1668,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "env staging",
                 "location": {
@@ -1694,6 +1720,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "env prod",
                 "location": {
@@ -1855,6 +1882,7 @@
       {
         "type": "project",
         "typeFromApi": false,
+        "typeInferenceOk": true,
         "only": false,
         "title": "firefox",
         "parallelMode": "none",
@@ -1863,6 +1891,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "auth/login.spec.ts",
             "location": {
@@ -2026,6 +2055,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "auth/permissions/roles.spec.ts",
             "location": {
@@ -2039,6 +2069,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "roles",
                 "location": {
@@ -2052,6 +2083,7 @@
                   {
                     "type": "describe",
                     "typeFromApi": false,
+                    "typeInferenceOk": true,
                     "only": false,
                     "title": "nested",
                     "location": {
@@ -2191,6 +2223,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "checkout/builtins.spec.ts",
             "location": {
@@ -2204,6 +2237,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "unconditional",
                 "location": {
@@ -2363,6 +2397,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "conditional on browserName",
                 "location": {
@@ -2486,6 +2521,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "describe-level",
                 "location": {
@@ -2549,6 +2585,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "skipped describe",
                 "location": {
@@ -2608,6 +2645,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "fixme describe",
                 "location": {
@@ -2667,6 +2705,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "only",
                 "location": {
@@ -2755,6 +2794,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "checkout/cart.spec.ts",
             "location": {
@@ -2768,6 +2808,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "serial flow",
                 "location": {
@@ -2867,6 +2908,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "parallel flow",
                 "location": {
@@ -2942,6 +2984,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "default flow",
                 "location": {
@@ -3006,6 +3049,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "misc/annotations.spec.ts",
             "location": {
@@ -3121,6 +3165,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "misc/conditionals.spec.ts",
             "location": {
@@ -3134,6 +3179,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "conditionals",
                 "location": {
@@ -3317,6 +3363,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "misc/generated.spec.ts",
             "location": {
@@ -3330,6 +3377,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "env staging",
                 "location": {
@@ -3381,6 +3429,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "env prod",
                 "location": {
@@ -3542,6 +3591,7 @@
       {
         "type": "project",
         "typeFromApi": false,
+        "typeInferenceOk": true,
         "only": false,
         "title": "webkit",
         "parallelMode": "none",
@@ -3550,6 +3600,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "auth/login.spec.ts",
             "location": {
@@ -3713,6 +3764,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "auth/permissions/roles.spec.ts",
             "location": {
@@ -3726,6 +3778,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "roles",
                 "location": {
@@ -3739,6 +3792,7 @@
                   {
                     "type": "describe",
                     "typeFromApi": false,
+                    "typeInferenceOk": true,
                     "only": false,
                     "title": "nested",
                     "location": {
@@ -3878,6 +3932,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "checkout/builtins.spec.ts",
             "location": {
@@ -3891,6 +3946,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "unconditional",
                 "location": {
@@ -4050,6 +4106,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "conditional on browserName",
                 "location": {
@@ -4173,6 +4230,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "describe-level",
                 "location": {
@@ -4236,6 +4294,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "skipped describe",
                 "location": {
@@ -4295,6 +4354,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "fixme describe",
                 "location": {
@@ -4354,6 +4414,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "only",
                 "location": {
@@ -4442,6 +4503,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "checkout/cart.spec.ts",
             "location": {
@@ -4455,6 +4517,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "serial flow",
                 "location": {
@@ -4554,6 +4617,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "parallel flow",
                 "location": {
@@ -4629,6 +4693,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "default flow",
                 "location": {
@@ -4693,6 +4758,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "misc/annotations.spec.ts",
             "location": {
@@ -4808,6 +4874,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "misc/conditionals.spec.ts",
             "location": {
@@ -4821,6 +4888,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "conditionals",
                 "location": {
@@ -5004,6 +5072,7 @@
           {
             "type": "file",
             "typeFromApi": false,
+            "typeInferenceOk": true,
             "only": false,
             "title": "misc/generated.spec.ts",
             "location": {
@@ -5017,6 +5086,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "env staging",
                 "location": {
@@ -5068,6 +5138,7 @@
               {
                 "type": "describe",
                 "typeFromApi": false,
+                "typeInferenceOk": true,
                 "only": false,
                 "title": "env prod",
                 "location": {
