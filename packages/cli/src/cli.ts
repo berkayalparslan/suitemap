@@ -140,22 +140,28 @@ async function runExtract(args: string[], io: Io): Promise<number> {
     return EXIT_FAILURE;
   }
 
-  if (doc.warnings.length > 0) {
-    if (values.verbose) {
-      io.stderr(`suitemap: ${doc.warnings.length} warning(s)\n`);
-      for (const w of doc.warnings)
-        io.stderr(`  [${w.code}] ${w.message}${w.where ? ` (${w.where})` : ''}\n`);
-    } else {
-      const counts = new Map<string, number>();
-      for (const w of doc.warnings) counts.set(w.code, (counts.get(w.code) ?? 0) + 1);
-      const summary = [...counts].map(([code, n]) => `${n} ${code}`).join(', ');
-      io.stderr(
-        `suitemap: ${doc.warnings.length} warning(s): ${summary} (use --verbose to list)\n`,
-      );
-    }
-  }
+  reportWarnings(doc.warnings, values.verbose === true, io);
   io.stdout(`Wrote ${out} (${doc.tests.length} tests, ${doc.instances.length} instances)\n`);
   return EXIT_OK;
+}
+
+/** Warnings go to stderr: a per-kind summary, or one line each with `verbose`. Silent when there are none. */
+export function reportWarnings(
+  warnings: readonly { code: string; message: string; where?: string }[],
+  verbose: boolean,
+  io: Io,
+): void {
+  if (warnings.length === 0) return;
+  if (verbose) {
+    io.stderr(`suitemap: ${warnings.length} warning(s)\n`);
+    for (const w of warnings)
+      io.stderr(`  [${w.code}] ${w.message}${w.where ? ` (${w.where})` : ''}\n`);
+    return;
+  }
+  const counts = new Map<string, number>();
+  for (const w of warnings) counts.set(w.code, (counts.get(w.code) ?? 0) + 1);
+  const summary = [...counts].map(([code, n]) => `${n} ${code}`).join(', ');
+  io.stderr(`suitemap: ${warnings.length} warning(s): ${summary} (use --verbose to list)\n`);
 }
 
 export async function main(argv: string[], io: Io): Promise<number> {
