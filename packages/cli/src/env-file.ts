@@ -12,8 +12,14 @@ export function parseEnvFile(text: string): Record<string, string> {
     let value = (m[2] ?? '').trim();
     const quote = value[0];
     if (quote === '"' || quote === "'") {
-      const end = value.indexOf(quote, 1);
-      if (end === -1) throw new Error(`line ${i + 1} has an unterminated quote`);
+      let end = 1;
+      // Inside double quotes a backslash escapes the next character, including a quote.
+      while (end < value.length && value[end] !== quote)
+        end += quote === '"' && value[end] === '\\' ? 2 : 1;
+      if (end >= value.length) throw new Error(`line ${i + 1} has an unterminated quote`);
+      const rest = value.slice(end + 1).trim();
+      if (rest !== '' && !rest.startsWith('#'))
+        throw new Error(`line ${i + 1} has text after the closing quote`);
       value = value.slice(1, end);
       if (quote === '"')
         value = value.replace(/\\([n"\\])/g, (_, c: string) => (c === 'n' ? '\n' : c));

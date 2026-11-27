@@ -10,10 +10,23 @@ describe('parseEnvFile', () => {
   });
 
   it('decodes escapes in one pass and treats a leading # as a comment', () => {
-    expect(parseEnvFile('P="C:\\\\new"\nQ=   # fill me in\n__proto__=x')).toMatchObject({
+    expect(parseEnvFile('P="C:\\\\new"\nQ=   # fill me in\nR="a\\"b" # note')).toEqual({
       P: 'C:\\new',
       Q: '',
+      R: 'a"b',
     });
+  });
+
+  it('keeps __proto__ as a plain own key', () => {
+    const env = parseEnvFile('__proto__=x');
+    expect(Object.keys(env)).toEqual(['__proto__']);
+    expect(Object.getPrototypeOf(env)).toBeNull();
+    expect(({} as Record<string, unknown>).x).toBeUndefined();
+  });
+
+  it('rejects text after a closing quote without echoing it', () => {
+    expect(() => parseEnvFile('A="ab"hunter2')).toThrow(/line 1 has text after/);
+    expect(() => parseEnvFile('A="ab"hunter2')).not.toThrow(/hunter2/);
   });
 
   it('names the line but never echoes its content', () => {

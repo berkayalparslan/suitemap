@@ -26,7 +26,7 @@ extract options:
   --config <path>    Playwright config file. Default: Playwright's own lookup in --cwd.
   --out <file>       Output JSON file. Default: suitemap.json next to the config (or in --cwd).
   --env-file <path>  KEY=value file loaded into the environment of the Playwright process.
-                     Variables already set in your environment win. Values are not copied
+                     Variables already set in your environment win, even if empty. Values are not copied
                      into the output, except config fields the extractor keeps (baseURL,
                      credentials stripped): do not put secrets in a variable feeding baseURL.
   --cwd <dir>        Directory Playwright runs in and @playwright/test is resolved from.
