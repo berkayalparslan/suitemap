@@ -5,7 +5,7 @@
 1. **Primary:** a custom reporter run with `npx playwright test --list --reporter=@suitemap/playwright/extract`. `onBegin(config, suite)` receives the full tree (root → project → file → describe → test) with tags, annotations, `expectedStatus` and locations, and no test is executed. This uses Playwright's own config resolution, so loops and parameterised tests are handled.
 2. **Fallback:** parse `npx playwright test --list --reporter=json`.
 3. **Results overlay (Phase 4):** read JSON or blob reports (including merged shards) to add actual status, duration, retries, and conditional/runtime annotations.
-4. **Later, optional:** AST parsing (ts-morph) for repos whose config cannot load without secrets or services.
+4. **Source scan (Phase 1, in `packages/playwright`):** ts-morph scan of test bodies and hooks for conditional and runtime annotations, anchored on `TestCase.location`. Findings become `Conditional` entities (see ADR 0004). A full AST-only extraction for repos whose config cannot load without secrets or services stays optional and later.
 
 ## Minimum version: 1.42
 
@@ -23,7 +23,7 @@ Playwright 1.42 introduced the `tag` and `annotation` options on `test()` / `tes
 
 Forms: unconditional (declaration), conditional (`test.skip(cond, reason)`), callback over fixtures at describe level, inside hooks, and runtime `test.info().annotations.push()`.
 
-**Static limit:** conditional and runtime annotations may be invisible to `--list`. The viewer labels the map as a "static view"; the Phase 4 overlay fills the gaps.
+**Static limit:** conditional and runtime annotations are mostly invisible to `--list` (see Phase 0 checks). Describe/file-level callbacks come from `_modifiers`, the rest from the source scan, with a confidence level; the viewer labels the map as a "static view" and the Phase 4 overlay confirms what fired.
 
 ## Tags
 
