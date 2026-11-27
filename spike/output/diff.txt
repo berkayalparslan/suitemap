@@ -1,5 +1,5 @@
---- pw-1.42.json	2026-11-27 13:41:37
-+++ pw-latest.json	2026-11-27 13:41:39
+--- pw-1.42.json	2026-11-27 13:47:51
++++ pw-latest.json	2026-11-27 13:47:53
 @@ -1,5 +1,5 @@
  {
 -  "playwrightVersion": "1.42.1",
@@ -73,8 +73,8 @@
                  "outcome": "skipped"
                }
              ],
-@@ -64,16 +65,17 @@
-             "internalTags": [],
+@@ -66,16 +67,17 @@
+             "hasHooksField": true,
              "titlePath": [
                "",
 -              "teardown",
@@ -94,7 +94,7 @@
            "testDir": "",
            "grep": "/.*/",
            "repeatEach": 1,
-@@ -86,19 +88,19 @@
+@@ -90,19 +92,19 @@
        },
        {
          "type": "project",
@@ -119,7 +119,7 @@
                "line": 0,
                "column": 0
              },
-@@ -107,16 +109,17 @@
+@@ -111,16 +113,17 @@
              "suites": [],
              "tests": [
                {
@@ -142,7 +142,7 @@
                  "tags": [],
                  "annotations": [],
                  "only": false,
-@@ -124,7 +127,7 @@
+@@ -128,7 +131,7 @@
                  "timeout": 30000,
                  "retries": 0,
                  "repeatEachIndex": 0,
@@ -151,8 +151,8 @@
                  "outcome": "skipped"
                }
              ],
-@@ -132,17 +135,16 @@
-             "internalTags": [],
+@@ -138,17 +141,16 @@
+             "hasHooksField": true,
              "titlePath": [
                "",
 -              "setup",
@@ -172,7 +172,7 @@
            "testDir": "",
            "grep": "/.*/",
            "repeatEach": 1,
-@@ -155,7 +157,7 @@
+@@ -163,7 +165,7 @@
        },
        {
          "type": "project",
@@ -181,7 +181,7 @@
          "only": false,
          "title": "chromium",
          "parallelMode": "none",
-@@ -163,7 +165,7 @@
+@@ -171,7 +173,7 @@
          "suites": [
            {
              "type": "file",
@@ -190,7 +190,7 @@
              "only": false,
              "title": "auth/login.spec.ts",
              "location": {
-@@ -183,9 +185,10 @@
+@@ -191,9 +193,10 @@
                  "location": {
                    "file": "auth/login.spec.ts",
                    "line": 3,
@@ -202,7 +202,7 @@
                  "tags": [
                    "@smoke"
                  ],
-@@ -206,9 +209,10 @@
+@@ -214,9 +217,10 @@
                  "location": {
                    "file": "auth/login.spec.ts",
                    "line": 5,
@@ -214,7 +214,7 @@
                  "tags": [
                    "@auth",
                    "@smoke"
-@@ -230,9 +234,10 @@
+@@ -238,9 +242,10 @@
                  "location": {
                    "file": "auth/login.spec.ts",
                    "line": 7,
@@ -226,7 +226,7 @@
                  "tags": [
                    "@fast",
                    "@auth"
-@@ -254,14 +259,20 @@
+@@ -262,14 +267,20 @@
                  "location": {
                    "file": "auth/login.spec.ts",
                    "line": 9,
@@ -249,7 +249,7 @@
                    }
                  ],
                  "only": false,
-@@ -280,18 +291,29 @@
+@@ -288,18 +299,29 @@
                  "location": {
                    "file": "auth/login.spec.ts",
                    "line": 13,
@@ -282,7 +282,7 @@
                    }
                  ],
                  "only": false,
-@@ -314,7 +336,7 @@
+@@ -324,7 +346,7 @@
            },
            {
              "type": "file",
@@ -291,7 +291,7 @@
              "only": false,
              "title": "auth/permissions/roles.spec.ts",
              "location": {
-@@ -327,7 +349,7 @@
+@@ -337,7 +359,7 @@
              "suites": [
                {
                  "type": "describe",
@@ -300,7 +300,7 @@
                  "only": false,
                  "title": "roles",
                  "location": {
-@@ -340,7 +362,7 @@
+@@ -350,7 +372,7 @@
                  "suites": [
                    {
                      "type": "describe",
@@ -309,7 +309,7 @@
                      "only": false,
                      "title": "nested",
                      "location": {
-@@ -362,9 +384,10 @@
+@@ -372,9 +394,10 @@
                          "location": {
                            "file": "auth/permissions/roles.spec.ts",
                            "line": 10,
@@ -321,7 +321,7 @@
                          "tags": [
                            "@rbac",
                            "@nested",
-@@ -373,11 +396,21 @@
+@@ -383,11 +406,21 @@
                          "annotations": [
                            {
                              "type": "owner",
@@ -345,7 +345,7 @@
                            }
                          ],
                          "only": false,
-@@ -392,7 +425,12 @@
+@@ -402,7 +435,12 @@
                      "staticAnnotations": [
                        {
                          "type": "issue",
@@ -359,7 +359,7 @@
                        }
                      ],
                      "internalTags": [
-@@ -418,16 +456,22 @@
+@@ -430,16 +468,22 @@
                      "location": {
                        "file": "auth/permissions/roles.spec.ts",
                        "line": 7,
@@ -384,7 +384,7 @@
                        }
                      ],
                      "only": false,
-@@ -442,7 +486,12 @@
+@@ -454,7 +498,12 @@
                  "staticAnnotations": [
                    {
                      "type": "owner",
@@ -398,7 +398,7 @@
                    }
                  ],
                  "internalTags": [
-@@ -469,7 +518,7 @@
+@@ -485,7 +534,7 @@
            },
            {
              "type": "file",
@@ -407,7 +407,7 @@
              "only": false,
              "title": "checkout/builtins.spec.ts",
              "location": {
-@@ -482,7 +531,7 @@
+@@ -498,7 +547,7 @@
              "suites": [
                {
                  "type": "describe",
@@ -416,7 +416,7 @@
                  "only": false,
                  "title": "unconditional",
                  "location": {
-@@ -503,9 +552,10 @@
+@@ -519,9 +568,10 @@
                      "location": {
                        "file": "checkout/builtins.spec.ts",
                        "line": 4,
@@ -428,7 +428,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": false,
-@@ -528,10 +578,16 @@
+@@ -544,10 +594,16 @@
                        "column": 8
                      },
                      "parentTitle": "unconditional",
@@ -446,7 +446,7 @@
                        }
                      ],
                      "only": false,
-@@ -554,10 +610,16 @@
+@@ -570,10 +626,16 @@
                        "column": 8
                      },
                      "parentTitle": "unconditional",
@@ -464,7 +464,7 @@
                        }
                      ],
                      "only": false,
-@@ -580,10 +642,16 @@
+@@ -596,10 +658,16 @@
                        "column": 8
                      },
                      "parentTitle": "unconditional",
@@ -482,7 +482,7 @@
                        }
                      ],
                      "only": false,
-@@ -603,9 +671,10 @@
+@@ -619,9 +687,10 @@
                      "location": {
                        "file": "checkout/builtins.spec.ts",
                        "line": 8,
@@ -494,7 +494,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": false,
-@@ -629,7 +698,7 @@
+@@ -647,7 +716,7 @@
                },
                {
                  "type": "describe",
@@ -503,7 +503,7 @@
                  "only": false,
                  "title": "conditional on browserName",
                  "location": {
-@@ -650,9 +719,10 @@
+@@ -668,9 +737,10 @@
                      "location": {
                        "file": "checkout/builtins.spec.ts",
                        "line": 12,
@@ -515,7 +515,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": false,
-@@ -672,9 +742,10 @@
+@@ -690,9 +760,10 @@
                      "location": {
                        "file": "checkout/builtins.spec.ts",
                        "line": 15,
@@ -527,7 +527,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": false,
-@@ -694,9 +765,10 @@
+@@ -712,9 +783,10 @@
                      "location": {
                        "file": "checkout/builtins.spec.ts",
                        "line": 18,
@@ -539,7 +539,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": false,
-@@ -716,9 +788,10 @@
+@@ -734,9 +806,10 @@
                      "location": {
                        "file": "checkout/builtins.spec.ts",
                        "line": 21,
@@ -551,7 +551,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": false,
-@@ -742,7 +815,7 @@
+@@ -762,7 +835,7 @@
                },
                {
                  "type": "describe",
@@ -560,7 +560,7 @@
                  "only": false,
                  "title": "describe-level",
                  "location": {
-@@ -763,9 +836,10 @@
+@@ -783,9 +856,10 @@
                      "location": {
                        "file": "checkout/builtins.spec.ts",
                        "line": 28,
@@ -572,7 +572,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": false,
-@@ -789,7 +863,7 @@
+@@ -823,7 +897,7 @@
                },
                {
                  "type": "describe",
@@ -581,7 +581,7 @@
                  "only": false,
                  "title": "skipped describe",
                  "location": {
-@@ -810,13 +884,19 @@
+@@ -844,13 +918,19 @@
                      "location": {
                        "file": "checkout/builtins.spec.ts",
                        "line": 32,
@@ -603,7 +603,7 @@
                        }
                      ],
                      "only": false,
-@@ -830,7 +910,12 @@
+@@ -864,7 +944,12 @@
                  ],
                  "staticAnnotations": [
                    {
@@ -617,7 +617,7 @@
                    }
                  ],
                  "internalTags": [],
-@@ -844,7 +929,7 @@
+@@ -880,7 +965,7 @@
                },
                {
                  "type": "describe",
@@ -626,7 +626,7 @@
                  "only": false,
                  "title": "fixme describe",
                  "location": {
-@@ -865,13 +950,19 @@
+@@ -901,13 +986,19 @@
                      "location": {
                        "file": "checkout/builtins.spec.ts",
                        "line": 36,
@@ -648,7 +648,7 @@
                        }
                      ],
                      "only": false,
-@@ -885,7 +976,12 @@
+@@ -921,7 +1012,12 @@
                  ],
                  "staticAnnotations": [
                    {
@@ -662,7 +662,7 @@
                    }
                  ],
                  "internalTags": [],
-@@ -899,7 +995,7 @@
+@@ -937,7 +1033,7 @@
                },
                {
                  "type": "describe",
@@ -671,7 +671,7 @@
                  "only": false,
                  "title": "only",
                  "location": {
-@@ -923,6 +1019,7 @@
+@@ -961,6 +1057,7 @@
                        "column": 8
                      },
                      "parentTitle": "only",
@@ -679,7 +679,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": true,
-@@ -942,9 +1039,10 @@
+@@ -980,9 +1077,10 @@
                      "location": {
                        "file": "checkout/builtins.spec.ts",
                        "line": 41,
@@ -691,7 +691,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": false,
-@@ -979,7 +1077,7 @@
+@@ -1021,7 +1119,7 @@
            },
            {
              "type": "file",
@@ -700,7 +700,7 @@
              "only": false,
              "title": "checkout/cart.spec.ts",
              "location": {
-@@ -992,7 +1090,7 @@
+@@ -1034,7 +1132,7 @@
              "suites": [
                {
                  "type": "describe",
@@ -709,7 +709,7 @@
                  "only": false,
                  "title": "serial flow",
                  "location": {
-@@ -1013,11 +1111,21 @@
+@@ -1055,11 +1153,21 @@
                      "location": {
                        "file": "checkout/cart.spec.ts",
                        "line": 5,
@@ -733,7 +733,7 @@
                      "only": false,
                      "expectedStatus": "passed",
                      "timeout": 30000,
-@@ -1035,11 +1143,21 @@
+@@ -1077,11 +1185,21 @@
                      "location": {
                        "file": "checkout/cart.spec.ts",
                        "line": 6,
@@ -757,7 +757,7 @@
                      "only": false,
                      "expectedStatus": "passed",
                      "timeout": 30000,
-@@ -1057,11 +1175,21 @@
+@@ -1099,11 +1217,21 @@
                      "location": {
                        "file": "checkout/cart.spec.ts",
                        "line": 7,
@@ -781,7 +781,7 @@
                      "only": false,
                      "expectedStatus": "passed",
                      "timeout": 30000,
-@@ -1083,7 +1211,7 @@
+@@ -1127,7 +1255,7 @@
                },
                {
                  "type": "describe",
@@ -790,7 +790,7 @@
                  "only": false,
                  "title": "parallel flow",
                  "location": {
-@@ -1104,9 +1232,10 @@
+@@ -1148,9 +1276,10 @@
                      "location": {
                        "file": "checkout/cart.spec.ts",
                        "line": 12,
@@ -802,7 +802,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": false,
-@@ -1126,9 +1255,10 @@
+@@ -1170,9 +1299,10 @@
                      "location": {
                        "file": "checkout/cart.spec.ts",
                        "line": 13,
@@ -814,7 +814,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": false,
-@@ -1152,7 +1282,7 @@
+@@ -1198,7 +1328,7 @@
                },
                {
                  "type": "describe",
@@ -823,7 +823,7 @@
                  "only": false,
                  "title": "default flow",
                  "location": {
-@@ -1173,9 +1303,10 @@
+@@ -1219,9 +1349,10 @@
                      "location": {
                        "file": "checkout/cart.spec.ts",
                        "line": 17,
@@ -835,7 +835,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": false,
-@@ -1210,7 +1341,7 @@
+@@ -1260,7 +1391,7 @@
            },
            {
              "type": "file",
@@ -844,7 +844,7 @@
              "only": false,
              "title": "misc/annotations.spec.ts",
              "location": {
-@@ -1230,14 +1361,20 @@
+@@ -1280,14 +1411,20 @@
                  "location": {
                    "file": "misc/annotations.spec.ts",
                    "line": 3,
@@ -867,7 +867,7 @@
                    }
                  ],
                  "only": false,
-@@ -1256,24 +1393,40 @@
+@@ -1306,24 +1443,40 @@
                  "location": {
                    "file": "misc/annotations.spec.ts",
                    "line": 5,
@@ -912,7 +912,7 @@
                    }
                  ],
                  "only": false,
-@@ -1292,9 +1445,10 @@
+@@ -1342,9 +1495,10 @@
                  "location": {
                    "file": "misc/annotations.spec.ts",
                    "line": 14,
@@ -924,7 +924,85 @@
                  "tags": [],
                  "annotations": [],
                  "only": false,
-@@ -1317,7 +1471,7 @@
+@@ -1369,7 +1523,7 @@
+           },
+           {
+             "type": "file",
+-            "typeFromApi": false,
++            "typeFromApi": true,
+             "only": false,
+             "title": "misc/conditionals.spec.ts",
+             "location": {
+@@ -1382,7 +1536,7 @@
+             "suites": [
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "only": false,
+                 "title": "conditionals",
+                 "location": {
+@@ -1403,9 +1557,10 @@
+                     "location": {
+                       "file": "misc/conditionals.spec.ts",
+                       "line": 19,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditionals",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -1425,9 +1580,10 @@
+                     "location": {
+                       "file": "misc/conditionals.spec.ts",
+                       "line": 23,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditionals",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -1447,9 +1603,10 @@
+                     "location": {
+                       "file": "misc/conditionals.spec.ts",
+                       "line": 27,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditionals",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -1469,9 +1626,10 @@
+                     "location": {
+                       "file": "misc/conditionals.spec.ts",
+                       "line": 31,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditionals",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -1491,9 +1649,10 @@
+                     "location": {
+                       "file": "misc/conditionals.spec.ts",
+                       "line": 36,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditionals",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -1555,7 +1714,7 @@
            },
            {
              "type": "file",
@@ -933,7 +1011,7 @@
              "only": false,
              "title": "misc/generated.spec.ts",
              "location": {
-@@ -1330,7 +1484,7 @@
+@@ -1568,7 +1727,7 @@
              "suites": [
                {
                  "type": "describe",
@@ -942,7 +1020,7 @@
                  "only": false,
                  "title": "env staging",
                  "location": {
-@@ -1351,9 +1505,10 @@
+@@ -1589,9 +1748,10 @@
                      "location": {
                        "file": "misc/generated.spec.ts",
                        "line": 9,
@@ -954,7 +1032,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": false,
-@@ -1377,7 +1532,7 @@
+@@ -1617,7 +1777,7 @@
                },
                {
                  "type": "describe",
@@ -963,7 +1041,7 @@
                  "only": false,
                  "title": "env prod",
                  "location": {
-@@ -1398,9 +1553,10 @@
+@@ -1638,9 +1798,10 @@
                      "location": {
                        "file": "misc/generated.spec.ts",
                        "line": 9,
@@ -975,7 +1053,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": false,
-@@ -1432,9 +1588,10 @@
+@@ -1674,9 +1835,10 @@
                  "location": {
                    "file": "misc/generated.spec.ts",
                    "line": 4,
@@ -987,7 +1065,7 @@
                  "tags": [
                    "@role-admin"
                  ],
-@@ -1455,9 +1612,10 @@
+@@ -1697,9 +1859,10 @@
                  "location": {
                    "file": "misc/generated.spec.ts",
                    "line": 4,
@@ -999,7 +1077,7 @@
                  "tags": [
                    "@role-user"
                  ],
-@@ -1478,9 +1636,10 @@
+@@ -1720,9 +1883,10 @@
                  "location": {
                    "file": "misc/generated.spec.ts",
                    "line": 4,
@@ -1011,7 +1089,7 @@
                  "tags": [
                    "@role-guest"
                  ],
-@@ -1524,7 +1683,7 @@
+@@ -1770,7 +1934,7 @@
        },
        {
          "type": "project",
@@ -1020,7 +1098,7 @@
          "only": false,
          "title": "firefox",
          "parallelMode": "none",
-@@ -1532,7 +1691,7 @@
+@@ -1778,7 +1942,7 @@
          "suites": [
            {
              "type": "file",
@@ -1029,7 +1107,7 @@
              "only": false,
              "title": "auth/login.spec.ts",
              "location": {
-@@ -1552,9 +1711,10 @@
+@@ -1798,9 +1962,10 @@
                  "location": {
                    "file": "auth/login.spec.ts",
                    "line": 3,
@@ -1041,7 +1119,7 @@
                  "tags": [
                    "@smoke"
                  ],
-@@ -1575,9 +1735,10 @@
+@@ -1821,9 +1986,10 @@
                  "location": {
                    "file": "auth/login.spec.ts",
                    "line": 5,
@@ -1053,7 +1131,7 @@
                  "tags": [
                    "@auth",
                    "@smoke"
-@@ -1599,9 +1760,10 @@
+@@ -1845,9 +2011,10 @@
                  "location": {
                    "file": "auth/login.spec.ts",
                    "line": 7,
@@ -1065,7 +1143,7 @@
                  "tags": [
                    "@fast",
                    "@auth"
-@@ -1623,14 +1785,20 @@
+@@ -1869,14 +2036,20 @@
                  "location": {
                    "file": "auth/login.spec.ts",
                    "line": 9,
@@ -1088,7 +1166,7 @@
                    }
                  ],
                  "only": false,
-@@ -1649,18 +1817,29 @@
+@@ -1895,18 +2068,29 @@
                  "location": {
                    "file": "auth/login.spec.ts",
                    "line": 13,
@@ -1121,7 +1199,7 @@
                    }
                  ],
                  "only": false,
-@@ -1683,7 +1862,7 @@
+@@ -1931,7 +2115,7 @@
            },
            {
              "type": "file",
@@ -1130,7 +1208,7 @@
              "only": false,
              "title": "auth/permissions/roles.spec.ts",
              "location": {
-@@ -1696,7 +1875,7 @@
+@@ -1944,7 +2128,7 @@
              "suites": [
                {
                  "type": "describe",
@@ -1139,7 +1217,7 @@
                  "only": false,
                  "title": "roles",
                  "location": {
-@@ -1709,7 +1888,7 @@
+@@ -1957,7 +2141,7 @@
                  "suites": [
                    {
                      "type": "describe",
@@ -1148,7 +1226,7 @@
                      "only": false,
                      "title": "nested",
                      "location": {
-@@ -1731,9 +1910,10 @@
+@@ -1979,9 +2163,10 @@
                          "location": {
                            "file": "auth/permissions/roles.spec.ts",
                            "line": 10,
@@ -1160,7 +1238,7 @@
                          "tags": [
                            "@rbac",
                            "@nested",
-@@ -1742,11 +1922,21 @@
+@@ -1990,11 +2175,21 @@
                          "annotations": [
                            {
                              "type": "owner",
@@ -1184,7 +1262,7 @@
                            }
                          ],
                          "only": false,
-@@ -1761,7 +1951,12 @@
+@@ -2009,7 +2204,12 @@
                      "staticAnnotations": [
                        {
                          "type": "issue",
@@ -1198,7 +1276,7 @@
                        }
                      ],
                      "internalTags": [
-@@ -1787,16 +1982,22 @@
+@@ -2037,16 +2237,22 @@
                      "location": {
                        "file": "auth/permissions/roles.spec.ts",
                        "line": 7,
@@ -1223,7 +1301,7 @@
                        }
                      ],
                      "only": false,
-@@ -1811,7 +2012,12 @@
+@@ -2061,7 +2267,12 @@
                  "staticAnnotations": [
                    {
                      "type": "owner",
@@ -1237,7 +1315,7 @@
                    }
                  ],
                  "internalTags": [
-@@ -1838,7 +2044,7 @@
+@@ -2092,7 +2303,7 @@
            },
            {
              "type": "file",
@@ -1246,7 +1324,7 @@
              "only": false,
              "title": "checkout/builtins.spec.ts",
              "location": {
-@@ -1851,7 +2057,7 @@
+@@ -2105,7 +2316,7 @@
              "suites": [
                {
                  "type": "describe",
@@ -1255,7 +1333,7 @@
                  "only": false,
                  "title": "unconditional",
                  "location": {
-@@ -1872,9 +2078,10 @@
+@@ -2126,9 +2337,10 @@
                      "location": {
                        "file": "checkout/builtins.spec.ts",
                        "line": 4,
@@ -1267,7 +1345,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": false,
-@@ -1897,10 +2104,16 @@
+@@ -2151,10 +2363,16 @@
                        "column": 8
                      },
                      "parentTitle": "unconditional",
@@ -1285,7 +1363,7 @@
                        }
                      ],
                      "only": false,
-@@ -1923,10 +2136,16 @@
+@@ -2177,10 +2395,16 @@
                        "column": 8
                      },
                      "parentTitle": "unconditional",
@@ -1303,7 +1381,7 @@
                        }
                      ],
                      "only": false,
-@@ -1949,10 +2168,16 @@
+@@ -2203,10 +2427,16 @@
                        "column": 8
                      },
                      "parentTitle": "unconditional",
@@ -1321,7 +1399,7 @@
                        }
                      ],
                      "only": false,
-@@ -1972,9 +2197,10 @@
+@@ -2226,9 +2456,10 @@
                      "location": {
                        "file": "checkout/builtins.spec.ts",
                        "line": 8,
@@ -1333,7 +1411,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": false,
-@@ -1998,7 +2224,7 @@
+@@ -2254,7 +2485,7 @@
                },
                {
                  "type": "describe",
@@ -1342,7 +1420,7 @@
                  "only": false,
                  "title": "conditional on browserName",
                  "location": {
-@@ -2019,9 +2245,10 @@
+@@ -2275,9 +2506,10 @@
                      "location": {
                        "file": "checkout/builtins.spec.ts",
                        "line": 12,
@@ -1354,7 +1432,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": false,
-@@ -2041,9 +2268,10 @@
+@@ -2297,9 +2529,10 @@
                      "location": {
                        "file": "checkout/builtins.spec.ts",
                        "line": 15,
@@ -1366,7 +1444,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": false,
-@@ -2063,9 +2291,10 @@
+@@ -2319,9 +2552,10 @@
                      "location": {
                        "file": "checkout/builtins.spec.ts",
                        "line": 18,
@@ -1378,7 +1456,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": false,
-@@ -2085,9 +2314,10 @@
+@@ -2341,9 +2575,10 @@
                      "location": {
                        "file": "checkout/builtins.spec.ts",
                        "line": 21,
@@ -1390,7 +1468,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": false,
-@@ -2111,7 +2341,7 @@
+@@ -2369,7 +2604,7 @@
                },
                {
                  "type": "describe",
@@ -1399,7 +1477,7 @@
                  "only": false,
                  "title": "describe-level",
                  "location": {
-@@ -2132,9 +2362,10 @@
+@@ -2390,9 +2625,10 @@
                      "location": {
                        "file": "checkout/builtins.spec.ts",
                        "line": 28,
@@ -1411,7 +1489,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": false,
-@@ -2158,7 +2389,7 @@
+@@ -2430,7 +2666,7 @@
                },
                {
                  "type": "describe",
@@ -1420,7 +1498,7 @@
                  "only": false,
                  "title": "skipped describe",
                  "location": {
-@@ -2179,13 +2410,19 @@
+@@ -2451,13 +2687,19 @@
                      "location": {
                        "file": "checkout/builtins.spec.ts",
                        "line": 32,
@@ -1442,7 +1520,7 @@
                        }
                      ],
                      "only": false,
-@@ -2199,7 +2436,12 @@
+@@ -2471,7 +2713,12 @@
                  ],
                  "staticAnnotations": [
                    {
@@ -1456,7 +1534,7 @@
                    }
                  ],
                  "internalTags": [],
-@@ -2213,7 +2455,7 @@
+@@ -2487,7 +2734,7 @@
                },
                {
                  "type": "describe",
@@ -1465,7 +1543,7 @@
                  "only": false,
                  "title": "fixme describe",
                  "location": {
-@@ -2234,13 +2476,19 @@
+@@ -2508,13 +2755,19 @@
                      "location": {
                        "file": "checkout/builtins.spec.ts",
                        "line": 36,
@@ -1487,7 +1565,7 @@
                        }
                      ],
                      "only": false,
-@@ -2254,7 +2502,12 @@
+@@ -2528,7 +2781,12 @@
                  ],
                  "staticAnnotations": [
                    {
@@ -1501,7 +1579,7 @@
                    }
                  ],
                  "internalTags": [],
-@@ -2268,7 +2521,7 @@
+@@ -2544,7 +2802,7 @@
                },
                {
                  "type": "describe",
@@ -1510,7 +1588,7 @@
                  "only": false,
                  "title": "only",
                  "location": {
-@@ -2292,6 +2545,7 @@
+@@ -2568,6 +2826,7 @@
                        "column": 8
                      },
                      "parentTitle": "only",
@@ -1518,7 +1596,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": true,
-@@ -2311,9 +2565,10 @@
+@@ -2587,9 +2846,10 @@
                      "location": {
                        "file": "checkout/builtins.spec.ts",
                        "line": 41,
@@ -1530,7 +1608,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": false,
-@@ -2348,7 +2603,7 @@
+@@ -2628,7 +2888,7 @@
            },
            {
              "type": "file",
@@ -1539,7 +1617,7 @@
              "only": false,
              "title": "checkout/cart.spec.ts",
              "location": {
-@@ -2361,7 +2616,7 @@
+@@ -2641,7 +2901,7 @@
              "suites": [
                {
                  "type": "describe",
@@ -1548,7 +1626,7 @@
                  "only": false,
                  "title": "serial flow",
                  "location": {
-@@ -2382,11 +2637,21 @@
+@@ -2662,11 +2922,21 @@
                      "location": {
                        "file": "checkout/cart.spec.ts",
                        "line": 5,
@@ -1572,7 +1650,7 @@
                      "only": false,
                      "expectedStatus": "passed",
                      "timeout": 30000,
-@@ -2404,11 +2669,21 @@
+@@ -2684,11 +2954,21 @@
                      "location": {
                        "file": "checkout/cart.spec.ts",
                        "line": 6,
@@ -1596,7 +1674,7 @@
                      "only": false,
                      "expectedStatus": "passed",
                      "timeout": 30000,
-@@ -2426,11 +2701,21 @@
+@@ -2706,11 +2986,21 @@
                      "location": {
                        "file": "checkout/cart.spec.ts",
                        "line": 7,
@@ -1620,7 +1698,7 @@
                      "only": false,
                      "expectedStatus": "passed",
                      "timeout": 30000,
-@@ -2452,7 +2737,7 @@
+@@ -2734,7 +3024,7 @@
                },
                {
                  "type": "describe",
@@ -1629,7 +1707,7 @@
                  "only": false,
                  "title": "parallel flow",
                  "location": {
-@@ -2473,9 +2758,10 @@
+@@ -2755,9 +3045,10 @@
                      "location": {
                        "file": "checkout/cart.spec.ts",
                        "line": 12,
@@ -1641,7 +1719,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": false,
-@@ -2495,9 +2781,10 @@
+@@ -2777,9 +3068,10 @@
                      "location": {
                        "file": "checkout/cart.spec.ts",
                        "line": 13,
@@ -1653,7 +1731,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": false,
-@@ -2521,7 +2808,7 @@
+@@ -2805,7 +3097,7 @@
                },
                {
                  "type": "describe",
@@ -1662,7 +1740,7 @@
                  "only": false,
                  "title": "default flow",
                  "location": {
-@@ -2542,9 +2829,10 @@
+@@ -2826,9 +3118,10 @@
                      "location": {
                        "file": "checkout/cart.spec.ts",
                        "line": 17,
@@ -1674,7 +1752,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": false,
-@@ -2579,7 +2867,7 @@
+@@ -2867,7 +3160,7 @@
            },
            {
              "type": "file",
@@ -1683,7 +1761,7 @@
              "only": false,
              "title": "misc/annotations.spec.ts",
              "location": {
-@@ -2599,14 +2887,20 @@
+@@ -2887,14 +3180,20 @@
                  "location": {
                    "file": "misc/annotations.spec.ts",
                    "line": 3,
@@ -1706,7 +1784,7 @@
                    }
                  ],
                  "only": false,
-@@ -2625,24 +2919,40 @@
+@@ -2913,24 +3212,40 @@
                  "location": {
                    "file": "misc/annotations.spec.ts",
                    "line": 5,
@@ -1751,7 +1829,7 @@
                    }
                  ],
                  "only": false,
-@@ -2661,9 +2971,10 @@
+@@ -2949,9 +3264,10 @@
                  "location": {
                    "file": "misc/annotations.spec.ts",
                    "line": 14,
@@ -1763,7 +1841,85 @@
                  "tags": [],
                  "annotations": [],
                  "only": false,
-@@ -2686,7 +2997,7 @@
+@@ -2976,7 +3292,7 @@
+           },
+           {
+             "type": "file",
+-            "typeFromApi": false,
++            "typeFromApi": true,
+             "only": false,
+             "title": "misc/conditionals.spec.ts",
+             "location": {
+@@ -2989,7 +3305,7 @@
+             "suites": [
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "only": false,
+                 "title": "conditionals",
+                 "location": {
+@@ -3010,9 +3326,10 @@
+                     "location": {
+                       "file": "misc/conditionals.spec.ts",
+                       "line": 19,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditionals",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -3032,9 +3349,10 @@
+                     "location": {
+                       "file": "misc/conditionals.spec.ts",
+                       "line": 23,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditionals",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -3054,9 +3372,10 @@
+                     "location": {
+                       "file": "misc/conditionals.spec.ts",
+                       "line": 27,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditionals",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -3076,9 +3395,10 @@
+                     "location": {
+                       "file": "misc/conditionals.spec.ts",
+                       "line": 31,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditionals",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -3098,9 +3418,10 @@
+                     "location": {
+                       "file": "misc/conditionals.spec.ts",
+                       "line": 36,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditionals",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -3162,7 +3483,7 @@
            },
            {
              "type": "file",
@@ -1772,7 +1928,7 @@
              "only": false,
              "title": "misc/generated.spec.ts",
              "location": {
-@@ -2699,7 +3010,7 @@
+@@ -3175,7 +3496,7 @@
              "suites": [
                {
                  "type": "describe",
@@ -1781,7 +1937,7 @@
                  "only": false,
                  "title": "env staging",
                  "location": {
-@@ -2720,9 +3031,10 @@
+@@ -3196,9 +3517,10 @@
                      "location": {
                        "file": "misc/generated.spec.ts",
                        "line": 9,
@@ -1793,7 +1949,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": false,
-@@ -2746,7 +3058,7 @@
+@@ -3224,7 +3546,7 @@
                },
                {
                  "type": "describe",
@@ -1802,7 +1958,7 @@
                  "only": false,
                  "title": "env prod",
                  "location": {
-@@ -2767,9 +3079,10 @@
+@@ -3245,9 +3567,10 @@
                      "location": {
                        "file": "misc/generated.spec.ts",
                        "line": 9,
@@ -1814,7 +1970,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": false,
-@@ -2801,9 +3114,10 @@
+@@ -3281,9 +3604,10 @@
                  "location": {
                    "file": "misc/generated.spec.ts",
                    "line": 4,
@@ -1826,7 +1982,7 @@
                  "tags": [
                    "@role-admin"
                  ],
-@@ -2824,9 +3138,10 @@
+@@ -3304,9 +3628,10 @@
                  "location": {
                    "file": "misc/generated.spec.ts",
                    "line": 4,
@@ -1838,7 +1994,7 @@
                  "tags": [
                    "@role-user"
                  ],
-@@ -2847,9 +3162,10 @@
+@@ -3327,9 +3652,10 @@
                  "location": {
                    "file": "misc/generated.spec.ts",
                    "line": 4,
@@ -1850,7 +2006,7 @@
                  "tags": [
                    "@role-guest"
                  ],
-@@ -2893,7 +3209,7 @@
+@@ -3377,7 +3703,7 @@
        },
        {
          "type": "project",
@@ -1859,7 +2015,7 @@
          "only": false,
          "title": "webkit",
          "parallelMode": "none",
-@@ -2901,7 +3217,7 @@
+@@ -3385,7 +3711,7 @@
          "suites": [
            {
              "type": "file",
@@ -1868,7 +2024,7 @@
              "only": false,
              "title": "auth/login.spec.ts",
              "location": {
-@@ -2921,9 +3237,10 @@
+@@ -3405,9 +3731,10 @@
                  "location": {
                    "file": "auth/login.spec.ts",
                    "line": 3,
@@ -1880,7 +2036,7 @@
                  "tags": [
                    "@smoke"
                  ],
-@@ -2944,9 +3261,10 @@
+@@ -3428,9 +3755,10 @@
                  "location": {
                    "file": "auth/login.spec.ts",
                    "line": 5,
@@ -1892,7 +2048,7 @@
                  "tags": [
                    "@auth",
                    "@smoke"
-@@ -2968,9 +3286,10 @@
+@@ -3452,9 +3780,10 @@
                  "location": {
                    "file": "auth/login.spec.ts",
                    "line": 7,
@@ -1904,7 +2060,7 @@
                  "tags": [
                    "@fast",
                    "@auth"
-@@ -2992,14 +3311,20 @@
+@@ -3476,14 +3805,20 @@
                  "location": {
                    "file": "auth/login.spec.ts",
                    "line": 9,
@@ -1927,7 +2083,7 @@
                    }
                  ],
                  "only": false,
-@@ -3018,18 +3343,29 @@
+@@ -3502,18 +3837,29 @@
                  "location": {
                    "file": "auth/login.spec.ts",
                    "line": 13,
@@ -1960,7 +2116,7 @@
                    }
                  ],
                  "only": false,
-@@ -3052,7 +3388,7 @@
+@@ -3538,7 +3884,7 @@
            },
            {
              "type": "file",
@@ -1969,7 +2125,7 @@
              "only": false,
              "title": "auth/permissions/roles.spec.ts",
              "location": {
-@@ -3065,7 +3401,7 @@
+@@ -3551,7 +3897,7 @@
              "suites": [
                {
                  "type": "describe",
@@ -1978,7 +2134,7 @@
                  "only": false,
                  "title": "roles",
                  "location": {
-@@ -3078,7 +3414,7 @@
+@@ -3564,7 +3910,7 @@
                  "suites": [
                    {
                      "type": "describe",
@@ -1987,7 +2143,7 @@
                      "only": false,
                      "title": "nested",
                      "location": {
-@@ -3100,9 +3436,10 @@
+@@ -3586,9 +3932,10 @@
                          "location": {
                            "file": "auth/permissions/roles.spec.ts",
                            "line": 10,
@@ -1999,7 +2155,7 @@
                          "tags": [
                            "@rbac",
                            "@nested",
-@@ -3111,11 +3448,21 @@
+@@ -3597,11 +3944,21 @@
                          "annotations": [
                            {
                              "type": "owner",
@@ -2023,7 +2179,7 @@
                            }
                          ],
                          "only": false,
-@@ -3130,7 +3477,12 @@
+@@ -3616,7 +3973,12 @@
                      "staticAnnotations": [
                        {
                          "type": "issue",
@@ -2037,7 +2193,7 @@
                        }
                      ],
                      "internalTags": [
-@@ -3156,16 +3508,22 @@
+@@ -3644,16 +4006,22 @@
                      "location": {
                        "file": "auth/permissions/roles.spec.ts",
                        "line": 7,
@@ -2062,7 +2218,7 @@
                        }
                      ],
                      "only": false,
-@@ -3180,7 +3538,12 @@
+@@ -3668,7 +4036,12 @@
                  "staticAnnotations": [
                    {
                      "type": "owner",
@@ -2076,7 +2232,7 @@
                    }
                  ],
                  "internalTags": [
-@@ -3207,7 +3570,7 @@
+@@ -3699,7 +4072,7 @@
            },
            {
              "type": "file",
@@ -2085,7 +2241,7 @@
              "only": false,
              "title": "checkout/builtins.spec.ts",
              "location": {
-@@ -3220,7 +3583,7 @@
+@@ -3712,7 +4085,7 @@
              "suites": [
                {
                  "type": "describe",
@@ -2094,7 +2250,7 @@
                  "only": false,
                  "title": "unconditional",
                  "location": {
-@@ -3241,9 +3604,10 @@
+@@ -3733,9 +4106,10 @@
                      "location": {
                        "file": "checkout/builtins.spec.ts",
                        "line": 4,
@@ -2106,7 +2262,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": false,
-@@ -3266,10 +3630,16 @@
+@@ -3758,10 +4132,16 @@
                        "column": 8
                      },
                      "parentTitle": "unconditional",
@@ -2124,7 +2280,7 @@
                        }
                      ],
                      "only": false,
-@@ -3292,10 +3662,16 @@
+@@ -3784,10 +4164,16 @@
                        "column": 8
                      },
                      "parentTitle": "unconditional",
@@ -2142,7 +2298,7 @@
                        }
                      ],
                      "only": false,
-@@ -3318,10 +3694,16 @@
+@@ -3810,10 +4196,16 @@
                        "column": 8
                      },
                      "parentTitle": "unconditional",
@@ -2160,7 +2316,7 @@
                        }
                      ],
                      "only": false,
-@@ -3341,9 +3723,10 @@
+@@ -3833,9 +4225,10 @@
                      "location": {
                        "file": "checkout/builtins.spec.ts",
                        "line": 8,
@@ -2172,7 +2328,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": false,
-@@ -3367,7 +3750,7 @@
+@@ -3861,7 +4254,7 @@
                },
                {
                  "type": "describe",
@@ -2181,7 +2337,7 @@
                  "only": false,
                  "title": "conditional on browserName",
                  "location": {
-@@ -3388,9 +3771,10 @@
+@@ -3882,9 +4275,10 @@
                      "location": {
                        "file": "checkout/builtins.spec.ts",
                        "line": 12,
@@ -2193,7 +2349,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": false,
-@@ -3410,9 +3794,10 @@
+@@ -3904,9 +4298,10 @@
                      "location": {
                        "file": "checkout/builtins.spec.ts",
                        "line": 15,
@@ -2205,7 +2361,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": false,
-@@ -3432,9 +3817,10 @@
+@@ -3926,9 +4321,10 @@
                      "location": {
                        "file": "checkout/builtins.spec.ts",
                        "line": 18,
@@ -2217,7 +2373,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": false,
-@@ -3454,9 +3840,10 @@
+@@ -3948,9 +4344,10 @@
                      "location": {
                        "file": "checkout/builtins.spec.ts",
                        "line": 21,
@@ -2229,7 +2385,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": false,
-@@ -3480,7 +3867,7 @@
+@@ -3976,7 +4373,7 @@
                },
                {
                  "type": "describe",
@@ -2238,7 +2394,7 @@
                  "only": false,
                  "title": "describe-level",
                  "location": {
-@@ -3501,9 +3888,10 @@
+@@ -3997,9 +4394,10 @@
                      "location": {
                        "file": "checkout/builtins.spec.ts",
                        "line": 28,
@@ -2250,7 +2406,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": false,
-@@ -3527,7 +3915,7 @@
+@@ -4037,7 +4435,7 @@
                },
                {
                  "type": "describe",
@@ -2259,7 +2415,7 @@
                  "only": false,
                  "title": "skipped describe",
                  "location": {
-@@ -3548,13 +3936,19 @@
+@@ -4058,13 +4456,19 @@
                      "location": {
                        "file": "checkout/builtins.spec.ts",
                        "line": 32,
@@ -2281,7 +2437,7 @@
                        }
                      ],
                      "only": false,
-@@ -3568,7 +3962,12 @@
+@@ -4078,7 +4482,12 @@
                  ],
                  "staticAnnotations": [
                    {
@@ -2295,7 +2451,7 @@
                    }
                  ],
                  "internalTags": [],
-@@ -3582,7 +3981,7 @@
+@@ -4094,7 +4503,7 @@
                },
                {
                  "type": "describe",
@@ -2304,7 +2460,7 @@
                  "only": false,
                  "title": "fixme describe",
                  "location": {
-@@ -3603,13 +4002,19 @@
+@@ -4115,13 +4524,19 @@
                      "location": {
                        "file": "checkout/builtins.spec.ts",
                        "line": 36,
@@ -2326,7 +2482,7 @@
                        }
                      ],
                      "only": false,
-@@ -3623,7 +4028,12 @@
+@@ -4135,7 +4550,12 @@
                  ],
                  "staticAnnotations": [
                    {
@@ -2340,7 +2496,7 @@
                    }
                  ],
                  "internalTags": [],
-@@ -3637,7 +4047,7 @@
+@@ -4151,7 +4571,7 @@
                },
                {
                  "type": "describe",
@@ -2349,7 +2505,7 @@
                  "only": false,
                  "title": "only",
                  "location": {
-@@ -3661,6 +4071,7 @@
+@@ -4175,6 +4595,7 @@
                        "column": 8
                      },
                      "parentTitle": "only",
@@ -2357,7 +2513,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": true,
-@@ -3680,9 +4091,10 @@
+@@ -4194,9 +4615,10 @@
                      "location": {
                        "file": "checkout/builtins.spec.ts",
                        "line": 41,
@@ -2369,7 +2525,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": false,
-@@ -3717,7 +4129,7 @@
+@@ -4235,7 +4657,7 @@
            },
            {
              "type": "file",
@@ -2378,7 +2534,7 @@
              "only": false,
              "title": "checkout/cart.spec.ts",
              "location": {
-@@ -3730,7 +4142,7 @@
+@@ -4248,7 +4670,7 @@
              "suites": [
                {
                  "type": "describe",
@@ -2387,7 +2543,7 @@
                  "only": false,
                  "title": "serial flow",
                  "location": {
-@@ -3751,11 +4163,21 @@
+@@ -4269,11 +4691,21 @@
                      "location": {
                        "file": "checkout/cart.spec.ts",
                        "line": 5,
@@ -2411,7 +2567,7 @@
                      "only": false,
                      "expectedStatus": "passed",
                      "timeout": 30000,
-@@ -3773,11 +4195,21 @@
+@@ -4291,11 +4723,21 @@
                      "location": {
                        "file": "checkout/cart.spec.ts",
                        "line": 6,
@@ -2435,7 +2591,7 @@
                      "only": false,
                      "expectedStatus": "passed",
                      "timeout": 30000,
-@@ -3795,11 +4227,21 @@
+@@ -4313,11 +4755,21 @@
                      "location": {
                        "file": "checkout/cart.spec.ts",
                        "line": 7,
@@ -2459,7 +2615,7 @@
                      "only": false,
                      "expectedStatus": "passed",
                      "timeout": 30000,
-@@ -3821,7 +4263,7 @@
+@@ -4341,7 +4793,7 @@
                },
                {
                  "type": "describe",
@@ -2468,7 +2624,7 @@
                  "only": false,
                  "title": "parallel flow",
                  "location": {
-@@ -3842,9 +4284,10 @@
+@@ -4362,9 +4814,10 @@
                      "location": {
                        "file": "checkout/cart.spec.ts",
                        "line": 12,
@@ -2480,7 +2636,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": false,
-@@ -3864,9 +4307,10 @@
+@@ -4384,9 +4837,10 @@
                      "location": {
                        "file": "checkout/cart.spec.ts",
                        "line": 13,
@@ -2492,7 +2648,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": false,
-@@ -3890,7 +4334,7 @@
+@@ -4412,7 +4866,7 @@
                },
                {
                  "type": "describe",
@@ -2501,7 +2657,7 @@
                  "only": false,
                  "title": "default flow",
                  "location": {
-@@ -3911,9 +4355,10 @@
+@@ -4433,9 +4887,10 @@
                      "location": {
                        "file": "checkout/cart.spec.ts",
                        "line": 17,
@@ -2513,7 +2669,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": false,
-@@ -3948,7 +4393,7 @@
+@@ -4474,7 +4929,7 @@
            },
            {
              "type": "file",
@@ -2522,7 +2678,7 @@
              "only": false,
              "title": "misc/annotations.spec.ts",
              "location": {
-@@ -3968,14 +4413,20 @@
+@@ -4494,14 +4949,20 @@
                  "location": {
                    "file": "misc/annotations.spec.ts",
                    "line": 3,
@@ -2545,7 +2701,7 @@
                    }
                  ],
                  "only": false,
-@@ -3994,24 +4445,40 @@
+@@ -4520,24 +4981,40 @@
                  "location": {
                    "file": "misc/annotations.spec.ts",
                    "line": 5,
@@ -2590,7 +2746,7 @@
                    }
                  ],
                  "only": false,
-@@ -4030,9 +4497,10 @@
+@@ -4556,9 +5033,10 @@
                  "location": {
                    "file": "misc/annotations.spec.ts",
                    "line": 14,
@@ -2602,7 +2758,85 @@
                  "tags": [],
                  "annotations": [],
                  "only": false,
-@@ -4055,7 +4523,7 @@
+@@ -4583,7 +5061,7 @@
+           },
+           {
+             "type": "file",
+-            "typeFromApi": false,
++            "typeFromApi": true,
+             "only": false,
+             "title": "misc/conditionals.spec.ts",
+             "location": {
+@@ -4596,7 +5074,7 @@
+             "suites": [
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "only": false,
+                 "title": "conditionals",
+                 "location": {
+@@ -4617,9 +5095,10 @@
+                     "location": {
+                       "file": "misc/conditionals.spec.ts",
+                       "line": 19,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditionals",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -4639,9 +5118,10 @@
+                     "location": {
+                       "file": "misc/conditionals.spec.ts",
+                       "line": 23,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditionals",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -4661,9 +5141,10 @@
+                     "location": {
+                       "file": "misc/conditionals.spec.ts",
+                       "line": 27,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditionals",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -4683,9 +5164,10 @@
+                     "location": {
+                       "file": "misc/conditionals.spec.ts",
+                       "line": 31,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditionals",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -4705,9 +5187,10 @@
+                     "location": {
+                       "file": "misc/conditionals.spec.ts",
+                       "line": 36,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditionals",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -4769,7 +5252,7 @@
            },
            {
              "type": "file",
@@ -2611,7 +2845,7 @@
              "only": false,
              "title": "misc/generated.spec.ts",
              "location": {
-@@ -4068,7 +4536,7 @@
+@@ -4782,7 +5265,7 @@
              "suites": [
                {
                  "type": "describe",
@@ -2620,7 +2854,7 @@
                  "only": false,
                  "title": "env staging",
                  "location": {
-@@ -4089,9 +4557,10 @@
+@@ -4803,9 +5286,10 @@
                      "location": {
                        "file": "misc/generated.spec.ts",
                        "line": 9,
@@ -2632,7 +2866,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": false,
-@@ -4115,7 +4584,7 @@
+@@ -4831,7 +5315,7 @@
                },
                {
                  "type": "describe",
@@ -2641,7 +2875,7 @@
                  "only": false,
                  "title": "env prod",
                  "location": {
-@@ -4136,9 +4605,10 @@
+@@ -4852,9 +5336,10 @@
                      "location": {
                        "file": "misc/generated.spec.ts",
                        "line": 9,
@@ -2653,7 +2887,7 @@
                      "tags": [],
                      "annotations": [],
                      "only": false,
-@@ -4170,9 +4640,10 @@
+@@ -4888,9 +5373,10 @@
                  "location": {
                    "file": "misc/generated.spec.ts",
                    "line": 4,
@@ -2665,7 +2899,7 @@
                  "tags": [
                    "@role-admin"
                  ],
-@@ -4193,9 +4664,10 @@
+@@ -4911,9 +5397,10 @@
                  "location": {
                    "file": "misc/generated.spec.ts",
                    "line": 4,
@@ -2677,7 +2911,7 @@
                  "tags": [
                    "@role-user"
                  ],
-@@ -4216,9 +4688,10 @@
+@@ -4934,9 +5421,10 @@
                  "location": {
                    "file": "misc/generated.spec.ts",
                    "line": 4,

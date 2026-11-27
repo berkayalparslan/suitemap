@@ -109,6 +109,29 @@ Source: `docs/playwright-adapter.md` (Phase 0 checks). Proposed for v1, pending 
 4. `TagRef.origin` is reconstructed by the extractor (Playwright gives a flat list).
 5. `Describe.mode` stays `default`/`parallel`/`serial`; map Playwright's `none` to `default`.
 6. `TestInstance.only` stays; sourced from internal `_only`.
-7. No per-instance flag for conditional annotations: they are not detectable statically, the viewer labels the map as a static view.
+7. Conditionals become a first-class entity (`Conditional`, below) instead of being invisible. See ADR 0004.
 8. `Annotation` has no `location` on 1.42; keep it optional if added later.
 9. Open questions answered: repeatEach produces separate instances; `use` allow-list is an extractor decision (the spike used `browserName, viewport, baseURL, channel, headless`).
+
+### Proposed entity: `Conditional`
+
+Conditional and runtime annotations (`test.skip(cond)`, `annotations.push(...)`, hooks, describe callbacks) are listed as their own entity so lenses and filters (test, project, tag, folder, `refs`, `form`, `type`, `confidence`) treat them like tags and annotations. Added to `SuitemapDocument` as `conditionals: Conditional[]`.
+
+```ts
+export interface Conditional {
+  id: string;
+  type: string;                      // 'skip' | 'fail' | 'fixme' | 'slow' | custom annotation type
+  form: 'body' | 'describe-callback' | 'file-callback' | 'hook' | 'runtime-push';
+  condition?: string;                // source text, e.g. "browserName === 'webkit'"
+  refs: string[];                    // identifiers it depends on: browserName, process.env.CI, project name ...
+  reason?: string;
+  location: { file: string; line: number; column: number };
+  scope: { testId?: string; describeId?: string; fileId?: string };  // what it is attached to
+  appliesToProjects: string[] | 'unknown';   // resolved only for simple comparisons
+  source: 'reporter' | 'scan';       // reporter: from Suite._modifiers/_hooks; scan: from the source scan
+  confidence: 'static' | 'inferred' | 'opaque';  // opaque: not analysable (e.g. helper call)
+  observed?: { instanceId: string; fired: boolean }[];  // Phase 4
+}
+```
+
+Completeness: the scan cannot prove it found every conditional (helpers, fixtures, dynamic types). The viewer shows "N found by scan", not "all".

@@ -62,6 +62,8 @@
             ],
             "staticAnnotations": [],
             "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
             "titlePath": [
               "",
               "teardown",
@@ -82,7 +84,9 @@
           "use": {}
         },
         "staticAnnotations": [],
-        "internalTags": []
+        "internalTags": [],
+        "hasModifiersField": true,
+        "hasHooksField": true
       },
       {
         "type": "project",
@@ -130,6 +134,8 @@
             ],
             "staticAnnotations": [],
             "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
             "titlePath": [
               "",
               "setup",
@@ -151,7 +157,9 @@
           "use": {}
         },
         "staticAnnotations": [],
-        "internalTags": []
+        "internalTags": [],
+        "hasModifiersField": true,
+        "hasHooksField": true
       },
       {
         "type": "project",
@@ -305,6 +313,8 @@
             ],
             "staticAnnotations": [],
             "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
             "titlePath": [
               "",
               "chromium",
@@ -398,6 +408,8 @@
                     "internalTags": [
                       "@nested"
                     ],
+                    "hasModifiersField": true,
+                    "hasHooksField": true,
                     "titlePath": [
                       "",
                       "chromium",
@@ -448,6 +460,8 @@
                 "internalTags": [
                   "@rbac"
                 ],
+                "hasModifiersField": true,
+                "hasHooksField": true,
                 "titlePath": [
                   "",
                   "chromium",
@@ -460,6 +474,8 @@
             "tests": [],
             "staticAnnotations": [],
             "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
             "titlePath": [
               "",
               "chromium",
@@ -619,6 +635,8 @@
                 ],
                 "staticAnnotations": [],
                 "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
                 "titlePath": [
                   "",
                   "chromium",
@@ -732,6 +750,8 @@
                 ],
                 "staticAnnotations": [],
                 "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
                 "titlePath": [
                   "",
                   "chromium",
@@ -779,6 +799,20 @@
                 ],
                 "staticAnnotations": [],
                 "internalTags": [],
+                "hasModifiersField": true,
+                "modifiers": [
+                  {
+                    "type": "fixme",
+                    "description": "describe fixme on firefox",
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 27,
+                      "column": 8
+                    },
+                    "fn": "({\n    browserName\n  }) => browserName === 'firefox'"
+                  }
+                ],
+                "hasHooksField": true,
                 "titlePath": [
                   "",
                   "chromium",
@@ -834,6 +868,8 @@
                   }
                 ],
                 "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
                 "titlePath": [
                   "",
                   "chromium",
@@ -889,6 +925,8 @@
                   }
                 ],
                 "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
                 "titlePath": [
                   "",
                   "chromium",
@@ -958,6 +996,8 @@
                 ],
                 "staticAnnotations": [],
                 "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
                 "titlePath": [
                   "",
                   "chromium",
@@ -970,6 +1010,8 @@
             "tests": [],
             "staticAnnotations": [],
             "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
             "titlePath": [
               "",
               "chromium",
@@ -1073,6 +1115,8 @@
                 ],
                 "staticAnnotations": [],
                 "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
                 "titlePath": [
                   "",
                   "chromium",
@@ -1142,6 +1186,8 @@
                 ],
                 "staticAnnotations": [],
                 "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
                 "titlePath": [
                   "",
                   "chromium",
@@ -1189,6 +1235,8 @@
                 ],
                 "staticAnnotations": [],
                 "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
                 "titlePath": [
                   "",
                   "chromium",
@@ -1201,6 +1249,8 @@
             "tests": [],
             "staticAnnotations": [],
             "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
             "titlePath": [
               "",
               "chromium",
@@ -1308,12 +1358,200 @@
             ],
             "staticAnnotations": [],
             "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
             "titlePath": [
               "",
               "chromium",
               "misc/annotations.spec.ts"
             ],
             "allTestCount": 3
+          },
+          {
+            "type": "file",
+            "typeFromApi": false,
+            "only": false,
+            "title": "misc/conditionals.spec.ts",
+            "location": {
+              "file": "misc/conditionals.spec.ts",
+              "line": 0,
+              "column": 0
+            },
+            "parallelMode": "none",
+            "hasTagsField": false,
+            "suites": [
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "only": false,
+                "title": "conditionals",
+                "location": {
+                  "file": "misc/conditionals.spec.ts",
+                  "line": 14,
+                  "column": 6
+                },
+                "parallelMode": "none",
+                "hasTagsField": false,
+                "suites": [],
+                "tests": [
+                  {
+                    "title": "env var condition",
+                    "titlePath": [
+                      "conditionals",
+                      "env var condition"
+                    ],
+                    "location": {
+                      "file": "misc/conditionals.spec.ts",
+                      "line": 19,
+                      "column": 7
+                    },
+                    "parentTitle": "conditionals",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "512e66e67c635f8cbc7f-f668e627a62a3e19b177",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "helper call",
+                    "titlePath": [
+                      "conditionals",
+                      "helper call"
+                    ],
+                    "location": {
+                      "file": "misc/conditionals.spec.ts",
+                      "line": 23,
+                      "column": 7
+                    },
+                    "parentTitle": "conditionals",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "512e66e67c635f8cbc7f-ce77c8a36cf7e38b2195",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "computed annotation type",
+                    "titlePath": [
+                      "conditionals",
+                      "computed annotation type"
+                    ],
+                    "location": {
+                      "file": "misc/conditionals.spec.ts",
+                      "line": 27,
+                      "column": 7
+                    },
+                    "parentTitle": "conditionals",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "512e66e67c635f8cbc7f-27e408e0b24426ca4bf5",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "early return before conditional",
+                    "titlePath": [
+                      "conditionals",
+                      "early return before conditional"
+                    ],
+                    "location": {
+                      "file": "misc/conditionals.spec.ts",
+                      "line": 31,
+                      "column": 7
+                    },
+                    "parentTitle": "conditionals",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "512e66e67c635f8cbc7f-869a6355632e03b7e968",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "project name condition",
+                    "titlePath": [
+                      "conditionals",
+                      "project name condition"
+                    ],
+                    "location": {
+                      "file": "misc/conditionals.spec.ts",
+                      "line": 36,
+                      "column": 7
+                    },
+                    "parentTitle": "conditionals",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "512e66e67c635f8cbc7f-e4cdc9f225ed5103ce56",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [],
+                "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
+                "hooks": [
+                  {
+                    "type": "beforeEach",
+                    "location": {
+                      "file": "misc/conditionals.spec.ts",
+                      "line": 15,
+                      "column": 8
+                    },
+                    "fn": "async ({\n    browserName\n  }) => {\n    _test.test.skip(browserName === 'webkit', 'beforeEach: no webkit'); // hook form\n  }"
+                  }
+                ],
+                "titlePath": [
+                  "",
+                  "chromium",
+                  "misc/conditionals.spec.ts",
+                  "conditionals"
+                ],
+                "allTestCount": 5
+              }
+            ],
+            "tests": [],
+            "staticAnnotations": [],
+            "internalTags": [],
+            "hasModifiersField": true,
+            "modifiers": [
+              {
+                "type": "skip",
+                "description": "file-level: no firefox",
+                "location": {
+                  "file": "misc/conditionals.spec.ts",
+                  "line": 12,
+                  "column": 6
+                },
+                "fn": "({\n  browserName\n}) => browserName === 'firefox'"
+              }
+            ],
+            "hasHooksField": true,
+            "titlePath": [
+              "",
+              "chromium",
+              "misc/conditionals.spec.ts"
+            ],
+            "allTestCount": 5
           },
           {
             "type": "file",
@@ -1367,6 +1605,8 @@
                 ],
                 "staticAnnotations": [],
                 "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
                 "titlePath": [
                   "",
                   "chromium",
@@ -1414,6 +1654,8 @@
                 ],
                 "staticAnnotations": [],
                 "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
                 "titlePath": [
                   "",
                   "chromium",
@@ -1496,6 +1738,8 @@
             ],
             "staticAnnotations": [],
             "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
             "titlePath": [
               "",
               "chromium",
@@ -1520,7 +1764,9 @@
           }
         },
         "staticAnnotations": [],
-        "internalTags": []
+        "internalTags": [],
+        "hasModifiersField": true,
+        "hasHooksField": true
       },
       {
         "type": "project",
@@ -1674,6 +1920,8 @@
             ],
             "staticAnnotations": [],
             "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
             "titlePath": [
               "",
               "firefox",
@@ -1767,6 +2015,8 @@
                     "internalTags": [
                       "@nested"
                     ],
+                    "hasModifiersField": true,
+                    "hasHooksField": true,
                     "titlePath": [
                       "",
                       "firefox",
@@ -1817,6 +2067,8 @@
                 "internalTags": [
                   "@rbac"
                 ],
+                "hasModifiersField": true,
+                "hasHooksField": true,
                 "titlePath": [
                   "",
                   "firefox",
@@ -1829,6 +2081,8 @@
             "tests": [],
             "staticAnnotations": [],
             "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
             "titlePath": [
               "",
               "firefox",
@@ -1988,6 +2242,8 @@
                 ],
                 "staticAnnotations": [],
                 "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
                 "titlePath": [
                   "",
                   "firefox",
@@ -2101,6 +2357,8 @@
                 ],
                 "staticAnnotations": [],
                 "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
                 "titlePath": [
                   "",
                   "firefox",
@@ -2148,6 +2406,20 @@
                 ],
                 "staticAnnotations": [],
                 "internalTags": [],
+                "hasModifiersField": true,
+                "modifiers": [
+                  {
+                    "type": "fixme",
+                    "description": "describe fixme on firefox",
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 27,
+                      "column": 8
+                    },
+                    "fn": "({\n    browserName\n  }) => browserName === 'firefox'"
+                  }
+                ],
+                "hasHooksField": true,
                 "titlePath": [
                   "",
                   "firefox",
@@ -2203,6 +2475,8 @@
                   }
                 ],
                 "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
                 "titlePath": [
                   "",
                   "firefox",
@@ -2258,6 +2532,8 @@
                   }
                 ],
                 "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
                 "titlePath": [
                   "",
                   "firefox",
@@ -2327,6 +2603,8 @@
                 ],
                 "staticAnnotations": [],
                 "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
                 "titlePath": [
                   "",
                   "firefox",
@@ -2339,6 +2617,8 @@
             "tests": [],
             "staticAnnotations": [],
             "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
             "titlePath": [
               "",
               "firefox",
@@ -2442,6 +2722,8 @@
                 ],
                 "staticAnnotations": [],
                 "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
                 "titlePath": [
                   "",
                   "firefox",
@@ -2511,6 +2793,8 @@
                 ],
                 "staticAnnotations": [],
                 "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
                 "titlePath": [
                   "",
                   "firefox",
@@ -2558,6 +2842,8 @@
                 ],
                 "staticAnnotations": [],
                 "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
                 "titlePath": [
                   "",
                   "firefox",
@@ -2570,6 +2856,8 @@
             "tests": [],
             "staticAnnotations": [],
             "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
             "titlePath": [
               "",
               "firefox",
@@ -2677,12 +2965,200 @@
             ],
             "staticAnnotations": [],
             "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
             "titlePath": [
               "",
               "firefox",
               "misc/annotations.spec.ts"
             ],
             "allTestCount": 3
+          },
+          {
+            "type": "file",
+            "typeFromApi": false,
+            "only": false,
+            "title": "misc/conditionals.spec.ts",
+            "location": {
+              "file": "misc/conditionals.spec.ts",
+              "line": 0,
+              "column": 0
+            },
+            "parallelMode": "none",
+            "hasTagsField": false,
+            "suites": [
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "only": false,
+                "title": "conditionals",
+                "location": {
+                  "file": "misc/conditionals.spec.ts",
+                  "line": 14,
+                  "column": 6
+                },
+                "parallelMode": "none",
+                "hasTagsField": false,
+                "suites": [],
+                "tests": [
+                  {
+                    "title": "env var condition",
+                    "titlePath": [
+                      "conditionals",
+                      "env var condition"
+                    ],
+                    "location": {
+                      "file": "misc/conditionals.spec.ts",
+                      "line": 19,
+                      "column": 7
+                    },
+                    "parentTitle": "conditionals",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "512e66e67c635f8cbc7f-f3c1333c7962ef4f9cc2",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "helper call",
+                    "titlePath": [
+                      "conditionals",
+                      "helper call"
+                    ],
+                    "location": {
+                      "file": "misc/conditionals.spec.ts",
+                      "line": 23,
+                      "column": 7
+                    },
+                    "parentTitle": "conditionals",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "512e66e67c635f8cbc7f-32e925fd0adbcd8987da",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "computed annotation type",
+                    "titlePath": [
+                      "conditionals",
+                      "computed annotation type"
+                    ],
+                    "location": {
+                      "file": "misc/conditionals.spec.ts",
+                      "line": 27,
+                      "column": 7
+                    },
+                    "parentTitle": "conditionals",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "512e66e67c635f8cbc7f-24bae7a2143460c50c0e",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "early return before conditional",
+                    "titlePath": [
+                      "conditionals",
+                      "early return before conditional"
+                    ],
+                    "location": {
+                      "file": "misc/conditionals.spec.ts",
+                      "line": 31,
+                      "column": 7
+                    },
+                    "parentTitle": "conditionals",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "512e66e67c635f8cbc7f-a4496a88a09dbd1759cb",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "project name condition",
+                    "titlePath": [
+                      "conditionals",
+                      "project name condition"
+                    ],
+                    "location": {
+                      "file": "misc/conditionals.spec.ts",
+                      "line": 36,
+                      "column": 7
+                    },
+                    "parentTitle": "conditionals",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "512e66e67c635f8cbc7f-d725bf03bcf1d2a02009",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [],
+                "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
+                "hooks": [
+                  {
+                    "type": "beforeEach",
+                    "location": {
+                      "file": "misc/conditionals.spec.ts",
+                      "line": 15,
+                      "column": 8
+                    },
+                    "fn": "async ({\n    browserName\n  }) => {\n    _test.test.skip(browserName === 'webkit', 'beforeEach: no webkit'); // hook form\n  }"
+                  }
+                ],
+                "titlePath": [
+                  "",
+                  "firefox",
+                  "misc/conditionals.spec.ts",
+                  "conditionals"
+                ],
+                "allTestCount": 5
+              }
+            ],
+            "tests": [],
+            "staticAnnotations": [],
+            "internalTags": [],
+            "hasModifiersField": true,
+            "modifiers": [
+              {
+                "type": "skip",
+                "description": "file-level: no firefox",
+                "location": {
+                  "file": "misc/conditionals.spec.ts",
+                  "line": 12,
+                  "column": 6
+                },
+                "fn": "({\n  browserName\n}) => browserName === 'firefox'"
+              }
+            ],
+            "hasHooksField": true,
+            "titlePath": [
+              "",
+              "firefox",
+              "misc/conditionals.spec.ts"
+            ],
+            "allTestCount": 5
           },
           {
             "type": "file",
@@ -2736,6 +3212,8 @@
                 ],
                 "staticAnnotations": [],
                 "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
                 "titlePath": [
                   "",
                   "firefox",
@@ -2783,6 +3261,8 @@
                 ],
                 "staticAnnotations": [],
                 "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
                 "titlePath": [
                   "",
                   "firefox",
@@ -2865,6 +3345,8 @@
             ],
             "staticAnnotations": [],
             "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
             "titlePath": [
               "",
               "firefox",
@@ -2889,7 +3371,9 @@
           }
         },
         "staticAnnotations": [],
-        "internalTags": []
+        "internalTags": [],
+        "hasModifiersField": true,
+        "hasHooksField": true
       },
       {
         "type": "project",
@@ -3043,6 +3527,8 @@
             ],
             "staticAnnotations": [],
             "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
             "titlePath": [
               "",
               "webkit",
@@ -3136,6 +3622,8 @@
                     "internalTags": [
                       "@nested"
                     ],
+                    "hasModifiersField": true,
+                    "hasHooksField": true,
                     "titlePath": [
                       "",
                       "webkit",
@@ -3186,6 +3674,8 @@
                 "internalTags": [
                   "@rbac"
                 ],
+                "hasModifiersField": true,
+                "hasHooksField": true,
                 "titlePath": [
                   "",
                   "webkit",
@@ -3198,6 +3688,8 @@
             "tests": [],
             "staticAnnotations": [],
             "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
             "titlePath": [
               "",
               "webkit",
@@ -3357,6 +3849,8 @@
                 ],
                 "staticAnnotations": [],
                 "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
                 "titlePath": [
                   "",
                   "webkit",
@@ -3470,6 +3964,8 @@
                 ],
                 "staticAnnotations": [],
                 "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
                 "titlePath": [
                   "",
                   "webkit",
@@ -3517,6 +4013,20 @@
                 ],
                 "staticAnnotations": [],
                 "internalTags": [],
+                "hasModifiersField": true,
+                "modifiers": [
+                  {
+                    "type": "fixme",
+                    "description": "describe fixme on firefox",
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 27,
+                      "column": 8
+                    },
+                    "fn": "({\n    browserName\n  }) => browserName === 'firefox'"
+                  }
+                ],
+                "hasHooksField": true,
                 "titlePath": [
                   "",
                   "webkit",
@@ -3572,6 +4082,8 @@
                   }
                 ],
                 "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
                 "titlePath": [
                   "",
                   "webkit",
@@ -3627,6 +4139,8 @@
                   }
                 ],
                 "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
                 "titlePath": [
                   "",
                   "webkit",
@@ -3696,6 +4210,8 @@
                 ],
                 "staticAnnotations": [],
                 "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
                 "titlePath": [
                   "",
                   "webkit",
@@ -3708,6 +4224,8 @@
             "tests": [],
             "staticAnnotations": [],
             "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
             "titlePath": [
               "",
               "webkit",
@@ -3811,6 +4329,8 @@
                 ],
                 "staticAnnotations": [],
                 "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
                 "titlePath": [
                   "",
                   "webkit",
@@ -3880,6 +4400,8 @@
                 ],
                 "staticAnnotations": [],
                 "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
                 "titlePath": [
                   "",
                   "webkit",
@@ -3927,6 +4449,8 @@
                 ],
                 "staticAnnotations": [],
                 "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
                 "titlePath": [
                   "",
                   "webkit",
@@ -3939,6 +4463,8 @@
             "tests": [],
             "staticAnnotations": [],
             "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
             "titlePath": [
               "",
               "webkit",
@@ -4046,12 +4572,200 @@
             ],
             "staticAnnotations": [],
             "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
             "titlePath": [
               "",
               "webkit",
               "misc/annotations.spec.ts"
             ],
             "allTestCount": 3
+          },
+          {
+            "type": "file",
+            "typeFromApi": false,
+            "only": false,
+            "title": "misc/conditionals.spec.ts",
+            "location": {
+              "file": "misc/conditionals.spec.ts",
+              "line": 0,
+              "column": 0
+            },
+            "parallelMode": "none",
+            "hasTagsField": false,
+            "suites": [
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "only": false,
+                "title": "conditionals",
+                "location": {
+                  "file": "misc/conditionals.spec.ts",
+                  "line": 14,
+                  "column": 6
+                },
+                "parallelMode": "none",
+                "hasTagsField": false,
+                "suites": [],
+                "tests": [
+                  {
+                    "title": "env var condition",
+                    "titlePath": [
+                      "conditionals",
+                      "env var condition"
+                    ],
+                    "location": {
+                      "file": "misc/conditionals.spec.ts",
+                      "line": 19,
+                      "column": 7
+                    },
+                    "parentTitle": "conditionals",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "512e66e67c635f8cbc7f-3711cc6e63fe24fc63b2",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "helper call",
+                    "titlePath": [
+                      "conditionals",
+                      "helper call"
+                    ],
+                    "location": {
+                      "file": "misc/conditionals.spec.ts",
+                      "line": 23,
+                      "column": 7
+                    },
+                    "parentTitle": "conditionals",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "512e66e67c635f8cbc7f-d49088e1a2cbbaad8101",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "computed annotation type",
+                    "titlePath": [
+                      "conditionals",
+                      "computed annotation type"
+                    ],
+                    "location": {
+                      "file": "misc/conditionals.spec.ts",
+                      "line": 27,
+                      "column": 7
+                    },
+                    "parentTitle": "conditionals",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "512e66e67c635f8cbc7f-7a875c8a4a2ae809e9c2",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "early return before conditional",
+                    "titlePath": [
+                      "conditionals",
+                      "early return before conditional"
+                    ],
+                    "location": {
+                      "file": "misc/conditionals.spec.ts",
+                      "line": 31,
+                      "column": 7
+                    },
+                    "parentTitle": "conditionals",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "512e66e67c635f8cbc7f-0114bcddd57fe1112ad4",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "project name condition",
+                    "titlePath": [
+                      "conditionals",
+                      "project name condition"
+                    ],
+                    "location": {
+                      "file": "misc/conditionals.spec.ts",
+                      "line": 36,
+                      "column": 7
+                    },
+                    "parentTitle": "conditionals",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "512e66e67c635f8cbc7f-722d23766c79f0b39ea4",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [],
+                "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
+                "hooks": [
+                  {
+                    "type": "beforeEach",
+                    "location": {
+                      "file": "misc/conditionals.spec.ts",
+                      "line": 15,
+                      "column": 8
+                    },
+                    "fn": "async ({\n    browserName\n  }) => {\n    _test.test.skip(browserName === 'webkit', 'beforeEach: no webkit'); // hook form\n  }"
+                  }
+                ],
+                "titlePath": [
+                  "",
+                  "webkit",
+                  "misc/conditionals.spec.ts",
+                  "conditionals"
+                ],
+                "allTestCount": 5
+              }
+            ],
+            "tests": [],
+            "staticAnnotations": [],
+            "internalTags": [],
+            "hasModifiersField": true,
+            "modifiers": [
+              {
+                "type": "skip",
+                "description": "file-level: no firefox",
+                "location": {
+                  "file": "misc/conditionals.spec.ts",
+                  "line": 12,
+                  "column": 6
+                },
+                "fn": "({\n  browserName\n}) => browserName === 'firefox'"
+              }
+            ],
+            "hasHooksField": true,
+            "titlePath": [
+              "",
+              "webkit",
+              "misc/conditionals.spec.ts"
+            ],
+            "allTestCount": 5
           },
           {
             "type": "file",
@@ -4105,6 +4819,8 @@
                 ],
                 "staticAnnotations": [],
                 "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
                 "titlePath": [
                   "",
                   "webkit",
@@ -4152,6 +4868,8 @@
                 ],
                 "staticAnnotations": [],
                 "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
                 "titlePath": [
                   "",
                   "webkit",
@@ -4234,6 +4952,8 @@
             ],
             "staticAnnotations": [],
             "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
             "titlePath": [
               "",
               "webkit",
@@ -4258,11 +4978,15 @@
           }
         },
         "staticAnnotations": [],
-        "internalTags": []
+        "internalTags": [],
+        "hasModifiersField": true,
+        "hasHooksField": true
       }
     ],
     "tests": [],
     "staticAnnotations": [],
-    "internalTags": []
+    "internalTags": [],
+    "hasModifiersField": true,
+    "hasHooksField": true
   }
 }

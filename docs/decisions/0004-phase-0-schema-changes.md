@@ -11,6 +11,18 @@ The spike (`spike/`, `fixtures/playwright-basic`) dumped the suite tree on Playw
 
 Adopt the changes listed under "Phase 0 findings: proposed changes" in `docs/schema.md` for schema v1. The extractor reads a few internal fields (`_staticAnnotations`, `_tags`, `_only`, `_parallelMode`) because the public Reporter API does not expose describe-level data; the Phase 1 extractor must feature-detect them and cover them with the version-matrix snapshot tests (planned, not yet written; the spike reporter reads them without fallback).
 
+## Conditional and runtime annotations
+
+`--list` does not show conditional or runtime annotations as annotations, but part of the information is reachable:
+
+- Describe-level and file-level callback modifiers: readable from internal `Suite._modifiers` (type, reason, location, condition source). Verified on 1.42.1 and 1.65.1.
+- Hooks: `Suite._hooks` gives type, location and source, so conditionals inside hooks can be scanned.
+- In-test-body conditionals and runtime `annotations.push`: not exposed. Found by a source scan (ts-morph, anchored on `TestCase.location`) in `packages/playwright`.
+
+Decision: model all of them as a first-class `Conditional` entity (see `docs/schema.md`), filterable by test, project, tag, folder, referenced identifiers, form and type. Each entry carries `source` (reporter or scan) and `confidence` (static, inferred, opaque) so the viewer is explicit about what it knows. Phase 4 results fill `observed`. If a file cannot be parsed, extraction warns and reports that file's conditionals as unknown; it does not fail.
+
+Open for acceptance: the scan ships with the Phase 1 extractor (needed for this to be more than a hint) and adds a ts-morph dependency to `packages/playwright` only.
+
 ## Consequences
 
 - Extractor owns dedupe of inherited annotations/tags and origin reconstruction.

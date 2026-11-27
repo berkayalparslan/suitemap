@@ -49,6 +49,16 @@ class ListReporter implements Reporter {
       const internal = s as any;
       if (internal._staticAnnotations) out.staticAnnotations = internal._staticAnnotations.map(relAnn);
       if (internal._tags) out.internalTags = internal._tags;
+      // Describe/file-level conditional modifiers (test.skip(cb, reason) at suite level), if exposed.
+      out.hasModifiersField = '_modifiers' in internal;
+      if (internal._modifiers?.length)
+        out.modifiers = internal._modifiers.map((m: any) => ({
+          type: m.type, description: m.description, location: loc(m.location), fn: m.fn?.toString(),
+        }));
+      // Hooks (beforeEach etc.) are registered on the suite; record whether they are visible.
+      out.hasHooksField = '_hooks' in internal;
+      if (internal._hooks?.length)
+        out.hooks = internal._hooks.map((h: any) => ({ type: h.type, location: loc(h.location), fn: h.fn?.toString() }));
       if (out.type === 'describe' || out.type === 'file') {
         out.titlePath = s.titlePath();
         out.allTestCount = s.allTests().length;
