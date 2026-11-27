@@ -5,7 +5,7 @@
 1. **Primary:** a custom reporter run with `npx playwright test --list --reporter=@suitemap/playwright/extract`. `onBegin(config, suite)` receives the full tree (root → project → file → describe → test) with tags, annotations, `expectedStatus` and locations, and no test is executed. This uses Playwright's own config resolution, so loops and parameterised tests are handled.
 2. **Fallback:** parse `npx playwright test --list --reporter=json`.
 3. **Results overlay (Phase 4):** read JSON or blob reports (including merged shards) to add actual status, duration, retries, and conditional/runtime annotations.
-4. **Source scan (Phase 1, in `packages/playwright`):** ts-morph scan of test bodies and hooks for conditional and runtime annotations, anchored on `TestCase.location`. Findings become `Conditional` entities (see ADR 0004). A full AST-only extraction for repos whose config cannot load without secrets or services stays optional and later.
+4. **Function-source scan (Phase 1, in `packages/playwright`):** parse the function source Playwright already holds (`TestCase.fn`, `Suite._hooks[].fn`, `Suite._modifiers[].fn`) with a small JS parser for conditional and runtime annotations. No source files are read and no ts-morph is needed. Findings become `Conditional` entities (see ADR 0004). Parsing source files directly (AST-only extraction) for repos whose config cannot load without secrets or services stays optional and later.
 
 ## Minimum version: 1.42
 
@@ -23,7 +23,7 @@ Playwright 1.42 introduced the `tag` and `annotation` options on `test()` / `tes
 
 Forms: unconditional (declaration), conditional (`test.skip(cond, reason)`), callback over fixtures at describe level, inside hooks, and runtime `test.info().annotations.push()`.
 
-**Static limit:** conditional and runtime annotations are mostly invisible to `--list` (see Phase 0 checks). Describe/file-level callbacks come from `_modifiers`, the rest from the source scan, with a confidence level; the viewer labels the map as a "static view" and the Phase 4 overlay confirms what fired.
+**Static limit:** conditional and runtime annotations are not annotations in `--list` (see Phase 0 checks). Describe/file-level callbacks come from `_modifiers`, bodies and hooks from parsing `fn` source, with a confidence level; the viewer labels the map as a "static view" and the Phase 4 overlay confirms what fired.
 
 ## Tags
 
@@ -51,7 +51,9 @@ Evidence: `spike/output/pw-1.42.json` (1.42.1), `pw-latest.json` (1.65.1), `*-re
 - [x] **Do conditional `skip`/`fixme` appear in `--list`?** Partly; it depends on where the call is. Same on 1.42.1 and 1.65.1.
   - **Visible via internal `Suite._modifiers`:** describe-level and file-level callback forms, e.g. `test.fixme(({ browserName }) => browserName === 'firefox', 'reason')` and `test.skip(({ browserName }) => ..., 'reason')` at file level. Each entry has `type`, `description`, `location` and the callback (`fn.toString()`, Babel-transformed source containing the condition). They are **not** reflected in `test.annotations` or `expectedStatus` (all `passed`/no annotation).
   - **Partly visible via internal `Suite._hooks`:** `beforeEach`/`afterEach` etc. appear with `type`, `location` and transformed function source, so a scan can be anchored on the hook and read the `test.skip(...)` inside it. Condition evaluation is not available.
-  - **Invisible:** conditional calls inside a test body (`test.skip(cond, reason)`, `test.fail`, `test.fixme`, `test.slow`), unconditional `test.skip()`/`test.slow()` in a body, helper calls, and runtime `test.info().annotations.push(...)`. These are plain code inside the test function and only execute when the test runs. A source scan (ts-morph, anchored on the test's `location`) is the only static way to find them; see ADR 0004.
+  - **Visible via internal `TestCase.fn`:** the body of every test (Babel-transformed source, e.g. `_test.test.fixme(process.env.FEATURE_X === '1', ...)`), identical on 1.42.1 and 1.65.1. `fn` is not in the public types. The conditional itself is not an annotation until the test runs; the extractor has to parse the string.
+  - **Not resolvable even with `fn`:** helper calls (`skipOnCI(_test.test)`, the call is visible but its effect is not), computed types (`type: kind`), early returns, and conditions that depend on runtime values. These get `confidence: opaque` or `inferred`.
+  - **Not exposed as annotations:** conditional calls inside a test body (`test.skip(cond, reason)`, `test.fail`, `test.fixme`, `test.slow`), unconditional `test.skip()`/`test.slow()` in a body, helper calls, and runtime `test.info().annotations.push(...)`. These are plain code inside the test function and only execute when the test runs. The function-source scan above finds them; see ADR 0004.
   - **Visible as normal annotations:** unconditional declarations (`test.skip(title, fn)`, `test.fixme(title, fn)`, `test.describe.skip/fixme`) with `expectedStatus: skipped` and a `skip`/`fixme` annotation; `test.fail(title, fn)` has a `fail` annotation but `expectedStatus` stays `passed`.
   - Gotcha: `test.slow(title, fn)` is not a declaration form; a call with those args acts as a describe-level `slow()`.
   - Hard cases for the scan are in `fixtures/playwright-basic/tests/misc/conditionals.spec.ts` (helper call, env var, computed annotation type, early return, project-name condition, hook form, file-level callback).

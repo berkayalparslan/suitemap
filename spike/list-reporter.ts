@@ -76,6 +76,8 @@ class ListReporter implements Reporter {
       tags: (t as any).tags,
       annotations: t.annotations.map(relAnn),
       only: (t as any)._only,
+      hasFn: typeof (t as any).fn,
+      fnSource: (t as any).fn?.toString(),
       expectedStatus: t.expectedStatus,
       timeout: t.timeout,
       retries: t.retries,

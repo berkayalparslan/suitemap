@@ -128,7 +128,7 @@ export interface Conditional {
   location: { file: string; line: number; column: number };
   scope: { testId?: string; describeId?: string; fileId?: string };  // what it is attached to
   appliesToProjects: string[] | 'unknown';   // resolved only for simple comparisons
-  source: 'reporter' | 'scan';       // reporter: from Suite._modifiers/_hooks; scan: from the source scan
+  source: 'reporter' | 'scan';       // reporter: from Suite._modifiers; scan: parsed from TestCase.fn / hook fn source
   confidence: 'static' | 'inferred' | 'opaque';  // opaque: not analysable (e.g. helper call)
   observed?: { instanceId: string; fired: boolean }[];  // Phase 4
 }
