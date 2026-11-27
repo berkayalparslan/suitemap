@@ -27,6 +27,19 @@ importers:
         specifier: ^3.0.0
         version: 3.2.7(@types/node@20.19.43)
 
+  packages/cli:
+    dependencies:
+      '@suitemap/playwright':
+        specifier: workspace:*
+        version: link:../playwright
+    devDependencies:
+      '@suitemap/core':
+        specifier: workspace:*
+        version: link:../core
+      '@types/node':
+        specifier: ^20.19.43
+        version: 20.19.43
+
   packages/core:
     dependencies:
       valibot:

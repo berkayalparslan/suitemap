@@ -42,7 +42,15 @@ pnpm exec vitest run packages/core/src/build.test.ts   # one file
 
 The extractor's fixture snapshot test spawns Playwright with the built reporter, so run `pnpm build` before `pnpm test`. To try another Playwright version locally: `pnpm --filter @suitemap/playwright add -D @playwright/test@1.42.1` (revert `package.json` and the lockfile afterwards).
 
-CI (`.github/workflows/ci.yml`) runs format check, lint, typecheck, build and test. A second `extractor` job repeats build, typecheck and the extractor tests on Playwright 1.42.1 and 1.65.1. `suitemap extract` is added with the CLI package; its usage goes here then.
+CI (`.github/workflows/ci.yml`) runs format check, lint, typecheck, build and test. A second `extractor` job repeats build, typecheck and the extractor tests on Playwright 1.42.1 and 1.65.1.
+
+`suitemap extract` (package `packages/cli`, bin `suitemap`; not published yet, run it from the build):
+
+```sh
+node packages/cli/dist/bin.js extract --config <playwright.config.ts> [--out <file>] [--env-file <path>] [--cwd <dir>] [--verbose]
+```
+
+Default `--out` is `suitemap.json` next to the config. The target project must have `@playwright/test` installed (resolved from `--cwd`). Exit 0 on success even with warnings (summary on stderr, `--verbose` lists them); 1 on failure (config load error, Playwright missing, invalid output, unwritable `--out`); 2 on bad usage. The JSON goes only to the file. `--env-file` is loaded into the Playwright process only; values already in the environment win, and values are not copied into the output (the extractor keeps only allow-listed config fields such as `baseURL`, with credentials stripped). The CLI e2e test (`packages/cli`) runs in the extractor CI matrix.
 
 ## Conventions
 
