@@ -1,0 +1,5307 @@
+{
+  "playwrightVersion": "1.42.1",
+  "globalSetup": "../global-setup.ts",
+  "projectNames": [
+    "setup",
+    "teardown",
+    "chromium",
+    "firefox",
+    "webkit"
+  ],
+  "tree": {
+    "type": "root",
+    "typeFromApi": false,
+    "typeInferenceOk": true,
+    "only": false,
+    "title": "",
+    "parallelMode": "none",
+    "hasTagsField": false,
+    "suites": [
+      {
+        "type": "project",
+        "typeFromApi": false,
+        "typeInferenceOk": true,
+        "only": false,
+        "title": "teardown",
+        "parallelMode": "none",
+        "hasTagsField": false,
+        "suites": [
+          {
+            "type": "file",
+            "typeFromApi": false,
+            "typeInferenceOk": true,
+            "only": false,
+            "title": "setup/cleanup.teardown.ts",
+            "location": {
+              "file": "setup/cleanup.teardown.ts",
+              "line": 0,
+              "column": 0
+            },
+            "parallelMode": "none",
+            "hasTagsField": false,
+            "suites": [],
+            "tests": [
+              {
+                "title": "cleanup",
+                "titlePath": [
+                  "cleanup"
+                ],
+                "location": {
+                  "file": "setup/cleanup.teardown.ts",
+                  "line": 2,
+                  "column": 9
+                },
+                "parentTitle": "setup/cleanup.teardown.ts",
+                "tags": [],
+                "annotations": [],
+                "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
+                "expectedStatus": "passed",
+                "timeout": 30000,
+                "retries": 0,
+                "repeatEachIndex": 0,
+                "id": "4e960201d466a68c6215-ce45eeff1c9244e209ba",
+                "outcome": "skipped"
+              }
+            ],
+            "staticAnnotations": [],
+            "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
+            "titlePath": [
+              "",
+              "teardown",
+              "setup/cleanup.teardown.ts"
+            ],
+            "allTestCount": 1
+          }
+        ],
+        "tests": [],
+        "project": {
+          "name": "teardown",
+          "dependencies": [],
+          "testDir": "",
+          "grep": "/.*/",
+          "repeatEach": 1,
+          "retries": 0,
+          "timeout": 30000,
+          "use": {}
+        },
+        "staticAnnotations": [],
+        "internalTags": [],
+        "hasModifiersField": true,
+        "hasHooksField": true
+      },
+      {
+        "type": "project",
+        "typeFromApi": false,
+        "typeInferenceOk": true,
+        "only": false,
+        "title": "setup",
+        "parallelMode": "none",
+        "hasTagsField": false,
+        "suites": [
+          {
+            "type": "file",
+            "typeFromApi": false,
+            "typeInferenceOk": true,
+            "only": false,
+            "title": "setup/auth.setup.ts",
+            "location": {
+              "file": "setup/auth.setup.ts",
+              "line": 0,
+              "column": 0
+            },
+            "parallelMode": "none",
+            "hasTagsField": false,
+            "suites": [],
+            "tests": [
+              {
+                "title": "authenticate",
+                "titlePath": [
+                  "authenticate"
+                ],
+                "location": {
+                  "file": "setup/auth.setup.ts",
+                  "line": 2,
+                  "column": 6
+                },
+                "parentTitle": "setup/auth.setup.ts",
+                "tags": [],
+                "annotations": [],
+                "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
+                "expectedStatus": "passed",
+                "timeout": 30000,
+                "retries": 0,
+                "repeatEachIndex": 0,
+                "id": "e717b06d8d484d1cd946-ece6ea03d0ba8d9d0fd4",
+                "outcome": "skipped"
+              }
+            ],
+            "staticAnnotations": [],
+            "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
+            "titlePath": [
+              "",
+              "setup",
+              "setup/auth.setup.ts"
+            ],
+            "allTestCount": 1
+          }
+        ],
+        "tests": [],
+        "project": {
+          "name": "setup",
+          "dependencies": [],
+          "teardown": "teardown",
+          "testDir": "",
+          "grep": "/.*/",
+          "repeatEach": 1,
+          "retries": 0,
+          "timeout": 30000,
+          "use": {}
+        },
+        "staticAnnotations": [],
+        "internalTags": [],
+        "hasModifiersField": true,
+        "hasHooksField": true
+      },
+      {
+        "type": "project",
+        "typeFromApi": false,
+        "typeInferenceOk": true,
+        "only": false,
+        "title": "chromium",
+        "parallelMode": "none",
+        "hasTagsField": false,
+        "suites": [
+          {
+            "type": "file",
+            "typeFromApi": false,
+            "typeInferenceOk": true,
+            "only": false,
+            "title": "auth/login.spec.ts",
+            "location": {
+              "file": "auth/login.spec.ts",
+              "line": 0,
+              "column": 0
+            },
+            "parallelMode": "none",
+            "hasTagsField": false,
+            "suites": [],
+            "tests": [
+              {
+                "title": "login with valid credentials @smoke",
+                "titlePath": [
+                  "login with valid credentials @smoke"
+                ],
+                "location": {
+                  "file": "auth/login.spec.ts",
+                  "line": 3,
+                  "column": 5
+                },
+                "parentTitle": "auth/login.spec.ts",
+                "tags": [
+                  "@smoke"
+                ],
+                "annotations": [],
+                "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
+                "expectedStatus": "passed",
+                "timeout": 30000,
+                "retries": 0,
+                "repeatEachIndex": 0,
+                "id": "231ca1f0f4db3e4958c3-638515f8543500453e2c",
+                "outcome": "skipped"
+              },
+              {
+                "title": "login with details tags",
+                "titlePath": [
+                  "login with details tags"
+                ],
+                "location": {
+                  "file": "auth/login.spec.ts",
+                  "line": 5,
+                  "column": 5
+                },
+                "parentTitle": "auth/login.spec.ts",
+                "tags": [
+                  "@auth",
+                  "@smoke"
+                ],
+                "annotations": [],
+                "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
+                "expectedStatus": "passed",
+                "timeout": 30000,
+                "retries": 0,
+                "repeatEachIndex": 0,
+                "id": "231ca1f0f4db3e4958c3-b810360acee508f8f8e7",
+                "outcome": "skipped"
+              },
+              {
+                "title": "login mixed tags @fast",
+                "titlePath": [
+                  "login mixed tags @fast"
+                ],
+                "location": {
+                  "file": "auth/login.spec.ts",
+                  "line": 7,
+                  "column": 5
+                },
+                "parentTitle": "auth/login.spec.ts",
+                "tags": [
+                  "@fast",
+                  "@auth"
+                ],
+                "annotations": [],
+                "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
+                "expectedStatus": "passed",
+                "timeout": 30000,
+                "retries": 0,
+                "repeatEachIndex": 0,
+                "id": "231ca1f0f4db3e4958c3-0a36170f67316032a752",
+                "outcome": "skipped"
+              },
+              {
+                "title": "login known bug (url issue)",
+                "titlePath": [
+                  "login known bug (url issue)"
+                ],
+                "location": {
+                  "file": "auth/login.spec.ts",
+                  "line": 9,
+                  "column": 5
+                },
+                "parentTitle": "auth/login.spec.ts",
+                "tags": [],
+                "annotations": [
+                  {
+                    "type": "issue",
+                    "description": "https://github.com/org/repo/issues/12"
+                  }
+                ],
+                "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
+                "expectedStatus": "passed",
+                "timeout": 30000,
+                "retries": 0,
+                "repeatEachIndex": 0,
+                "id": "231ca1f0f4db3e4958c3-f6b893daf9e38572abac",
+                "outcome": "skipped"
+              },
+              {
+                "title": "login known bug (jira key)",
+                "titlePath": [
+                  "login known bug (jira key)"
+                ],
+                "location": {
+                  "file": "auth/login.spec.ts",
+                  "line": 13,
+                  "column": 5
+                },
+                "parentTitle": "auth/login.spec.ts",
+                "tags": [],
+                "annotations": [
+                  {
+                    "type": "issue",
+                    "description": "JIRA-123"
+                  },
+                  {
+                    "type": "issue",
+                    "description": "https://example.atlassian.net/browse/JIRA-456"
+                  }
+                ],
+                "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
+                "expectedStatus": "passed",
+                "timeout": 30000,
+                "retries": 0,
+                "repeatEachIndex": 0,
+                "id": "231ca1f0f4db3e4958c3-f3709b4cff346695da01",
+                "outcome": "skipped"
+              }
+            ],
+            "staticAnnotations": [],
+            "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
+            "titlePath": [
+              "",
+              "chromium",
+              "auth/login.spec.ts"
+            ],
+            "allTestCount": 5
+          },
+          {
+            "type": "file",
+            "typeFromApi": false,
+            "typeInferenceOk": true,
+            "only": false,
+            "title": "auth/permissions/roles.spec.ts",
+            "location": {
+              "file": "auth/permissions/roles.spec.ts",
+              "line": 0,
+              "column": 0
+            },
+            "parallelMode": "none",
+            "hasTagsField": false,
+            "suites": [
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "typeInferenceOk": true,
+                "only": false,
+                "title": "roles",
+                "location": {
+                  "file": "auth/permissions/roles.spec.ts",
+                  "line": 3,
+                  "column": 6
+                },
+                "parallelMode": "none",
+                "hasTagsField": false,
+                "suites": [
+                  {
+                    "type": "describe",
+                    "typeFromApi": false,
+                    "typeInferenceOk": true,
+                    "only": false,
+                    "title": "nested",
+                    "location": {
+                      "file": "auth/permissions/roles.spec.ts",
+                      "line": 9,
+                      "column": 8
+                    },
+                    "parallelMode": "none",
+                    "hasTagsField": false,
+                    "suites": [],
+                    "tests": [
+                      {
+                        "title": "guest cannot manage users",
+                        "titlePath": [
+                          "roles",
+                          "nested",
+                          "guest cannot manage users"
+                        ],
+                        "location": {
+                          "file": "auth/permissions/roles.spec.ts",
+                          "line": 10,
+                          "column": 9
+                        },
+                        "parentTitle": "nested",
+                        "tags": [
+                          "@rbac",
+                          "@nested",
+                          "@negative"
+                        ],
+                        "annotations": [
+                          {
+                            "type": "owner",
+                            "description": "team-auth"
+                          },
+                          {
+                            "type": "issue",
+                            "description": "RBAC-7"
+                          }
+                        ],
+                        "only": false,
+                        "hasFn": "function",
+                        "fnSource": "async () => {}",
+                        "expectedStatus": "passed",
+                        "timeout": 30000,
+                        "retries": 0,
+                        "repeatEachIndex": 0,
+                        "id": "9ea6afc0c4455dda9c0c-49d9191eaaf71f4bbefd",
+                        "outcome": "skipped"
+                      }
+                    ],
+                    "staticAnnotations": [
+                      {
+                        "type": "issue",
+                        "description": "RBAC-7"
+                      }
+                    ],
+                    "internalTags": [
+                      "@nested"
+                    ],
+                    "hasModifiersField": true,
+                    "hasHooksField": true,
+                    "titlePath": [
+                      "",
+                      "chromium",
+                      "auth/permissions/roles.spec.ts",
+                      "roles",
+                      "nested"
+                    ],
+                    "allTestCount": 1
+                  }
+                ],
+                "tests": [
+                  {
+                    "title": "admin can manage users",
+                    "titlePath": [
+                      "roles",
+                      "admin can manage users"
+                    ],
+                    "location": {
+                      "file": "auth/permissions/roles.spec.ts",
+                      "line": 7,
+                      "column": 7
+                    },
+                    "parentTitle": "roles",
+                    "tags": [
+                      "@rbac"
+                    ],
+                    "annotations": [
+                      {
+                        "type": "owner",
+                        "description": "team-auth"
+                      }
+                    ],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "9ea6afc0c4455dda9c0c-d04dcbaae8cb68acf44d",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [
+                  {
+                    "type": "owner",
+                    "description": "team-auth"
+                  }
+                ],
+                "internalTags": [
+                  "@rbac"
+                ],
+                "hasModifiersField": true,
+                "hasHooksField": true,
+                "titlePath": [
+                  "",
+                  "chromium",
+                  "auth/permissions/roles.spec.ts",
+                  "roles"
+                ],
+                "allTestCount": 2
+              }
+            ],
+            "tests": [],
+            "staticAnnotations": [],
+            "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
+            "titlePath": [
+              "",
+              "chromium",
+              "auth/permissions/roles.spec.ts"
+            ],
+            "allTestCount": 2
+          },
+          {
+            "type": "file",
+            "typeFromApi": false,
+            "typeInferenceOk": true,
+            "only": false,
+            "title": "checkout/builtins.spec.ts",
+            "location": {
+              "file": "checkout/builtins.spec.ts",
+              "line": 0,
+              "column": 0
+            },
+            "parallelMode": "none",
+            "hasTagsField": false,
+            "suites": [
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "typeInferenceOk": true,
+                "only": false,
+                "title": "unconditional",
+                "location": {
+                  "file": "checkout/builtins.spec.ts",
+                  "line": 3,
+                  "column": 6
+                },
+                "parallelMode": "none",
+                "hasTagsField": false,
+                "suites": [],
+                "tests": [
+                  {
+                    "title": "skip",
+                    "titlePath": [
+                      "unconditional",
+                      "skip"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 4,
+                      "column": 7
+                    },
+                    "parentTitle": "unconditional",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    _test.test.skip();\n  }",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-4090e4bbc23f5cede2a3",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "skip (declaration)",
+                    "titlePath": [
+                      "unconditional",
+                      "skip (declaration)"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 5,
+                      "column": 8
+                    },
+                    "parentTitle": "unconditional",
+                    "tags": [],
+                    "annotations": [
+                      {
+                        "type": "skip"
+                      }
+                    ],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "skipped",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-6538e503e7909f156138",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "fail (declaration)",
+                    "titlePath": [
+                      "unconditional",
+                      "fail (declaration)"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 6,
+                      "column": 8
+                    },
+                    "parentTitle": "unconditional",
+                    "tags": [],
+                    "annotations": [
+                      {
+                        "type": "fail"
+                      }
+                    ],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-0715f9c793b2ffa0c0ef",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "fixme (declaration)",
+                    "titlePath": [
+                      "unconditional",
+                      "fixme (declaration)"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 7,
+                      "column": 8
+                    },
+                    "parentTitle": "unconditional",
+                    "tags": [],
+                    "annotations": [
+                      {
+                        "type": "fixme"
+                      }
+                    ],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "skipped",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-9991e968be56b2b3edbc",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "slow (in body)",
+                    "titlePath": [
+                      "unconditional",
+                      "slow (in body)"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 8,
+                      "column": 7
+                    },
+                    "parentTitle": "unconditional",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    _test.test.slow();\n  }",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-2d0b0f722b63db3b943d",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [],
+                "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
+                "titlePath": [
+                  "",
+                  "chromium",
+                  "checkout/builtins.spec.ts",
+                  "unconditional"
+                ],
+                "allTestCount": 5
+              },
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "typeInferenceOk": true,
+                "only": false,
+                "title": "conditional on browserName",
+                "location": {
+                  "file": "checkout/builtins.spec.ts",
+                  "line": 11,
+                  "column": 6
+                },
+                "parallelMode": "none",
+                "hasTagsField": false,
+                "suites": [],
+                "tests": [
+                  {
+                    "title": "skip webkit (declaration callback)",
+                    "titlePath": [
+                      "conditional on browserName",
+                      "skip webkit (declaration callback)"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 12,
+                      "column": 7
+                    },
+                    "parentTitle": "conditional on browserName",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    _test.test.skip(browserName === 'webkit', 'not on webkit');\n  }",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-3a7ca32cc3db3e6f86d3",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "fail firefox (in body)",
+                    "titlePath": [
+                      "conditional on browserName",
+                      "fail firefox (in body)"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 15,
+                      "column": 7
+                    },
+                    "parentTitle": "conditional on browserName",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    _test.test.fail(browserName === 'firefox', 'firefox bug');\n  }",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-25bd8ec6feed2f133f94",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "fixme chromium (in body)",
+                    "titlePath": [
+                      "conditional on browserName",
+                      "fixme chromium (in body)"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 18,
+                      "column": 7
+                    },
+                    "parentTitle": "conditional on browserName",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    _test.test.fixme(browserName === 'chromium', 'chromium bug');\n  }",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-097bbad4ee4037705b4b",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "slow webkit (in body)",
+                    "titlePath": [
+                      "conditional on browserName",
+                      "slow webkit (in body)"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 21,
+                      "column": 7
+                    },
+                    "parentTitle": "conditional on browserName",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    _test.test.slow(browserName === 'webkit', 'slow on webkit');\n  }",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-b1dedbb453fd546b1967",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [],
+                "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
+                "titlePath": [
+                  "",
+                  "chromium",
+                  "checkout/builtins.spec.ts",
+                  "conditional on browserName"
+                ],
+                "allTestCount": 4
+              },
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "typeInferenceOk": true,
+                "only": false,
+                "title": "describe-level",
+                "location": {
+                  "file": "checkout/builtins.spec.ts",
+                  "line": 26,
+                  "column": 6
+                },
+                "parallelMode": "none",
+                "hasTagsField": false,
+                "suites": [],
+                "tests": [
+                  {
+                    "title": "inside conditional fixme describe",
+                    "titlePath": [
+                      "describe-level",
+                      "inside conditional fixme describe"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 28,
+                      "column": 7
+                    },
+                    "parentTitle": "describe-level",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-5047ce561e3c4c6fbc5d",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [],
+                "internalTags": [],
+                "hasModifiersField": true,
+                "modifiers": [
+                  {
+                    "type": "fixme",
+                    "description": "describe fixme on firefox",
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 27,
+                      "column": 8
+                    },
+                    "fn": "({\n    browserName\n  }) => browserName === 'firefox'"
+                  }
+                ],
+                "hasHooksField": true,
+                "titlePath": [
+                  "",
+                  "chromium",
+                  "checkout/builtins.spec.ts",
+                  "describe-level"
+                ],
+                "allTestCount": 1
+              },
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "typeInferenceOk": true,
+                "only": false,
+                "title": "skipped describe",
+                "location": {
+                  "file": "checkout/builtins.spec.ts",
+                  "line": 31,
+                  "column": 15
+                },
+                "parallelMode": "none",
+                "hasTagsField": false,
+                "suites": [],
+                "tests": [
+                  {
+                    "title": "inside skipped describe",
+                    "titlePath": [
+                      "skipped describe",
+                      "inside skipped describe"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 32,
+                      "column": 7
+                    },
+                    "parentTitle": "skipped describe",
+                    "tags": [],
+                    "annotations": [
+                      {
+                        "type": "skip"
+                      }
+                    ],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "skipped",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-734aae171aa529055a8a",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [
+                  {
+                    "type": "skip"
+                  }
+                ],
+                "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
+                "titlePath": [
+                  "",
+                  "chromium",
+                  "checkout/builtins.spec.ts",
+                  "skipped describe"
+                ],
+                "allTestCount": 1
+              },
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "typeInferenceOk": true,
+                "only": false,
+                "title": "fixme describe",
+                "location": {
+                  "file": "checkout/builtins.spec.ts",
+                  "line": 35,
+                  "column": 15
+                },
+                "parallelMode": "none",
+                "hasTagsField": false,
+                "suites": [],
+                "tests": [
+                  {
+                    "title": "inside fixme describe",
+                    "titlePath": [
+                      "fixme describe",
+                      "inside fixme describe"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 36,
+                      "column": 7
+                    },
+                    "parentTitle": "fixme describe",
+                    "tags": [],
+                    "annotations": [
+                      {
+                        "type": "fixme"
+                      }
+                    ],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "skipped",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-5a82e3c95eba28a9525d",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [
+                  {
+                    "type": "fixme"
+                  }
+                ],
+                "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
+                "titlePath": [
+                  "",
+                  "chromium",
+                  "checkout/builtins.spec.ts",
+                  "fixme describe"
+                ],
+                "allTestCount": 1
+              },
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "typeInferenceOk": true,
+                "only": false,
+                "title": "only",
+                "location": {
+                  "file": "checkout/builtins.spec.ts",
+                  "line": 39,
+                  "column": 6
+                },
+                "parallelMode": "none",
+                "hasTagsField": false,
+                "suites": [],
+                "tests": [
+                  {
+                    "title": "focused test",
+                    "titlePath": [
+                      "only",
+                      "focused test"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 40,
+                      "column": 8
+                    },
+                    "parentTitle": "only",
+                    "tags": [],
+                    "annotations": [],
+                    "only": true,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-e7acf3d04c45b474292f",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "unfocused sibling",
+                    "titlePath": [
+                      "only",
+                      "unfocused sibling"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 41,
+                      "column": 7
+                    },
+                    "parentTitle": "only",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-65eb3ef2fcac6b0ca242",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [],
+                "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
+                "titlePath": [
+                  "",
+                  "chromium",
+                  "checkout/builtins.spec.ts",
+                  "only"
+                ],
+                "allTestCount": 2
+              }
+            ],
+            "tests": [],
+            "staticAnnotations": [],
+            "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
+            "titlePath": [
+              "",
+              "chromium",
+              "checkout/builtins.spec.ts"
+            ],
+            "allTestCount": 14
+          },
+          {
+            "type": "file",
+            "typeFromApi": false,
+            "typeInferenceOk": true,
+            "only": false,
+            "title": "checkout/cart.spec.ts",
+            "location": {
+              "file": "checkout/cart.spec.ts",
+              "line": 0,
+              "column": 0
+            },
+            "parallelMode": "none",
+            "hasTagsField": false,
+            "suites": [
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "typeInferenceOk": true,
+                "only": false,
+                "title": "serial flow",
+                "location": {
+                  "file": "checkout/cart.spec.ts",
+                  "line": 3,
+                  "column": 6
+                },
+                "parallelMode": "serial",
+                "hasTagsField": false,
+                "suites": [],
+                "tests": [
+                  {
+                    "title": "add item",
+                    "titlePath": [
+                      "serial flow",
+                      "add item"
+                    ],
+                    "location": {
+                      "file": "checkout/cart.spec.ts",
+                      "line": 5,
+                      "column": 7
+                    },
+                    "parentTitle": "serial flow",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "53fa0b5a5aa39ac6891a-c623f7311a80c0895021",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "apply coupon",
+                    "titlePath": [
+                      "serial flow",
+                      "apply coupon"
+                    ],
+                    "location": {
+                      "file": "checkout/cart.spec.ts",
+                      "line": 6,
+                      "column": 7
+                    },
+                    "parentTitle": "serial flow",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "53fa0b5a5aa39ac6891a-aa91a039a1ab21e2e662",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "pay",
+                    "titlePath": [
+                      "serial flow",
+                      "pay"
+                    ],
+                    "location": {
+                      "file": "checkout/cart.spec.ts",
+                      "line": 7,
+                      "column": 7
+                    },
+                    "parentTitle": "serial flow",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "53fa0b5a5aa39ac6891a-4da882aed35dba77abfa",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [],
+                "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
+                "titlePath": [
+                  "",
+                  "chromium",
+                  "checkout/cart.spec.ts",
+                  "serial flow"
+                ],
+                "allTestCount": 3
+              },
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "typeInferenceOk": true,
+                "only": false,
+                "title": "parallel flow",
+                "location": {
+                  "file": "checkout/cart.spec.ts",
+                  "line": 10,
+                  "column": 6
+                },
+                "parallelMode": "parallel",
+                "hasTagsField": false,
+                "suites": [],
+                "tests": [
+                  {
+                    "title": "browse A",
+                    "titlePath": [
+                      "parallel flow",
+                      "browse A"
+                    ],
+                    "location": {
+                      "file": "checkout/cart.spec.ts",
+                      "line": 12,
+                      "column": 7
+                    },
+                    "parentTitle": "parallel flow",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "53fa0b5a5aa39ac6891a-8fcc8bf3d97b62fb11d3",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "browse B",
+                    "titlePath": [
+                      "parallel flow",
+                      "browse B"
+                    ],
+                    "location": {
+                      "file": "checkout/cart.spec.ts",
+                      "line": 13,
+                      "column": 7
+                    },
+                    "parentTitle": "parallel flow",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "53fa0b5a5aa39ac6891a-8c37e850f48b30d62359",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [],
+                "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
+                "titlePath": [
+                  "",
+                  "chromium",
+                  "checkout/cart.spec.ts",
+                  "parallel flow"
+                ],
+                "allTestCount": 2
+              },
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "typeInferenceOk": true,
+                "only": false,
+                "title": "default flow",
+                "location": {
+                  "file": "checkout/cart.spec.ts",
+                  "line": 16,
+                  "column": 6
+                },
+                "parallelMode": "none",
+                "hasTagsField": false,
+                "suites": [],
+                "tests": [
+                  {
+                    "title": "view cart",
+                    "titlePath": [
+                      "default flow",
+                      "view cart"
+                    ],
+                    "location": {
+                      "file": "checkout/cart.spec.ts",
+                      "line": 17,
+                      "column": 7
+                    },
+                    "parentTitle": "default flow",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "53fa0b5a5aa39ac6891a-dea83a442d071e042af5",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [],
+                "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
+                "titlePath": [
+                  "",
+                  "chromium",
+                  "checkout/cart.spec.ts",
+                  "default flow"
+                ],
+                "allTestCount": 1
+              }
+            ],
+            "tests": [],
+            "staticAnnotations": [],
+            "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
+            "titlePath": [
+              "",
+              "chromium",
+              "checkout/cart.spec.ts"
+            ],
+            "allTestCount": 6
+          },
+          {
+            "type": "file",
+            "typeFromApi": false,
+            "typeInferenceOk": true,
+            "only": false,
+            "title": "misc/annotations.spec.ts",
+            "location": {
+              "file": "misc/annotations.spec.ts",
+              "line": 0,
+              "column": 0
+            },
+            "parallelMode": "none",
+            "hasTagsField": false,
+            "suites": [],
+            "tests": [
+              {
+                "title": "hidden type",
+                "titlePath": [
+                  "hidden type"
+                ],
+                "location": {
+                  "file": "misc/annotations.spec.ts",
+                  "line": 3,
+                  "column": 5
+                },
+                "parentTitle": "misc/annotations.spec.ts",
+                "tags": [],
+                "annotations": [
+                  {
+                    "type": "_internal",
+                    "description": "tooling only"
+                  }
+                ],
+                "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
+                "expectedStatus": "passed",
+                "timeout": 30000,
+                "retries": 0,
+                "repeatEachIndex": 0,
+                "id": "7718a717855dcee93cd0-89e013edb99091ad2151",
+                "outcome": "skipped"
+              },
+              {
+                "title": "multiple annotations",
+                "titlePath": [
+                  "multiple annotations"
+                ],
+                "location": {
+                  "file": "misc/annotations.spec.ts",
+                  "line": 5,
+                  "column": 5
+                },
+                "parentTitle": "misc/annotations.spec.ts",
+                "tags": [
+                  "@multi"
+                ],
+                "annotations": [
+                  {
+                    "type": "owner",
+                    "description": "alice"
+                  },
+                  {
+                    "type": "issue",
+                    "description": "#123"
+                  },
+                  {
+                    "type": "owner",
+                    "description": "bob"
+                  }
+                ],
+                "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
+                "expectedStatus": "passed",
+                "timeout": 30000,
+                "retries": 0,
+                "repeatEachIndex": 0,
+                "id": "7718a717855dcee93cd0-1ac90ff53e9300d8bffa",
+                "outcome": "skipped"
+              },
+              {
+                "title": "runtime annotation",
+                "titlePath": [
+                  "runtime annotation"
+                ],
+                "location": {
+                  "file": "misc/annotations.spec.ts",
+                  "line": 14,
+                  "column": 5
+                },
+                "parentTitle": "misc/annotations.spec.ts",
+                "tags": [],
+                "annotations": [],
+                "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {\n  _test.test.info().annotations.push({\n    type: 'runtime',\n    description: 'added at run time'\n  });\n}",
+                "expectedStatus": "passed",
+                "timeout": 30000,
+                "retries": 0,
+                "repeatEachIndex": 0,
+                "id": "7718a717855dcee93cd0-753a9aee160586586e92",
+                "outcome": "skipped"
+              }
+            ],
+            "staticAnnotations": [],
+            "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
+            "titlePath": [
+              "",
+              "chromium",
+              "misc/annotations.spec.ts"
+            ],
+            "allTestCount": 3
+          },
+          {
+            "type": "file",
+            "typeFromApi": false,
+            "typeInferenceOk": true,
+            "only": false,
+            "title": "misc/conditionals.spec.ts",
+            "location": {
+              "file": "misc/conditionals.spec.ts",
+              "line": 0,
+              "column": 0
+            },
+            "parallelMode": "none",
+            "hasTagsField": false,
+            "suites": [
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "typeInferenceOk": true,
+                "only": false,
+                "title": "conditionals",
+                "location": {
+                  "file": "misc/conditionals.spec.ts",
+                  "line": 14,
+                  "column": 6
+                },
+                "parallelMode": "none",
+                "hasTagsField": false,
+                "suites": [],
+                "tests": [
+                  {
+                    "title": "env var condition",
+                    "titlePath": [
+                      "conditionals",
+                      "env var condition"
+                    ],
+                    "location": {
+                      "file": "misc/conditionals.spec.ts",
+                      "line": 19,
+                      "column": 7
+                    },
+                    "parentTitle": "conditionals",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    _test.test.fixme(process.env.FEATURE_X === '1', 'needs feature x');\n  }",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "512e66e67c635f8cbc7f-f668e627a62a3e19b177",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "helper call",
+                    "titlePath": [
+                      "conditionals",
+                      "helper call"
+                    ],
+                    "location": {
+                      "file": "misc/conditionals.spec.ts",
+                      "line": 23,
+                      "column": 7
+                    },
+                    "parentTitle": "conditionals",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    skipOnCI(_test.test);\n  }",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "512e66e67c635f8cbc7f-ce77c8a36cf7e38b2195",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "computed annotation type",
+                    "titlePath": [
+                      "conditionals",
+                      "computed annotation type"
+                    ],
+                    "location": {
+                      "file": "misc/conditionals.spec.ts",
+                      "line": 27,
+                      "column": 7
+                    },
+                    "parentTitle": "conditionals",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    _test.test.info().annotations.push({\n      type: kind,\n      description: 'JIRA-9'\n    });\n  }",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "512e66e67c635f8cbc7f-27e408e0b24426ca4bf5",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "early return before conditional",
+                    "titlePath": [
+                      "conditionals",
+                      "early return before conditional"
+                    ],
+                    "location": {
+                      "file": "misc/conditionals.spec.ts",
+                      "line": 31,
+                      "column": 7
+                    },
+                    "parentTitle": "conditionals",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    if (browserName === 'chromium') return;\n    _test.test.skip(true, 'never reached on chromium');\n  }",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "512e66e67c635f8cbc7f-869a6355632e03b7e968",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "project name condition",
+                    "titlePath": [
+                      "conditionals",
+                      "project name condition"
+                    ],
+                    "location": {
+                      "file": "misc/conditionals.spec.ts",
+                      "line": 36,
+                      "column": 7
+                    },
+                    "parentTitle": "conditionals",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({}, testInfo) => {\n    _test.test.slow(testInfo.project.name === 'webkit', 'slow project');\n  }",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "512e66e67c635f8cbc7f-e4cdc9f225ed5103ce56",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [],
+                "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
+                "hooks": [
+                  {
+                    "type": "beforeEach",
+                    "location": {
+                      "file": "misc/conditionals.spec.ts",
+                      "line": 15,
+                      "column": 8
+                    },
+                    "fn": "async ({\n    browserName\n  }) => {\n    _test.test.skip(browserName === 'webkit', 'beforeEach: no webkit'); // hook form\n  }"
+                  }
+                ],
+                "titlePath": [
+                  "",
+                  "chromium",
+                  "misc/conditionals.spec.ts",
+                  "conditionals"
+                ],
+                "allTestCount": 5
+              }
+            ],
+            "tests": [],
+            "staticAnnotations": [],
+            "internalTags": [],
+            "hasModifiersField": true,
+            "modifiers": [
+              {
+                "type": "skip",
+                "description": "file-level: no firefox",
+                "location": {
+                  "file": "misc/conditionals.spec.ts",
+                  "line": 12,
+                  "column": 6
+                },
+                "fn": "({\n  browserName\n}) => browserName === 'firefox'"
+              }
+            ],
+            "hasHooksField": true,
+            "titlePath": [
+              "",
+              "chromium",
+              "misc/conditionals.spec.ts"
+            ],
+            "allTestCount": 5
+          },
+          {
+            "type": "file",
+            "typeFromApi": false,
+            "typeInferenceOk": true,
+            "only": false,
+            "title": "misc/generated.spec.ts",
+            "location": {
+              "file": "misc/generated.spec.ts",
+              "line": 0,
+              "column": 0
+            },
+            "parallelMode": "none",
+            "hasTagsField": false,
+            "suites": [
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "typeInferenceOk": true,
+                "only": false,
+                "title": "env staging",
+                "location": {
+                  "file": "misc/generated.spec.ts",
+                  "line": 8,
+                  "column": 8
+                },
+                "parallelMode": "none",
+                "hasTagsField": false,
+                "suites": [],
+                "tests": [
+                  {
+                    "title": "health check",
+                    "titlePath": [
+                      "env staging",
+                      "health check"
+                    ],
+                    "location": {
+                      "file": "misc/generated.spec.ts",
+                      "line": 9,
+                      "column": 9
+                    },
+                    "parentTitle": "env staging",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "38c60d58330107297c1d-9c4263f572253be5b907",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [],
+                "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
+                "titlePath": [
+                  "",
+                  "chromium",
+                  "misc/generated.spec.ts",
+                  "env staging"
+                ],
+                "allTestCount": 1
+              },
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "typeInferenceOk": true,
+                "only": false,
+                "title": "env prod",
+                "location": {
+                  "file": "misc/generated.spec.ts",
+                  "line": 8,
+                  "column": 8
+                },
+                "parallelMode": "none",
+                "hasTagsField": false,
+                "suites": [],
+                "tests": [
+                  {
+                    "title": "health check",
+                    "titlePath": [
+                      "env prod",
+                      "health check"
+                    ],
+                    "location": {
+                      "file": "misc/generated.spec.ts",
+                      "line": 9,
+                      "column": 9
+                    },
+                    "parentTitle": "env prod",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "38c60d58330107297c1d-3fc5debfae3eabbd1602",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [],
+                "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
+                "titlePath": [
+                  "",
+                  "chromium",
+                  "misc/generated.spec.ts",
+                  "env prod"
+                ],
+                "allTestCount": 1
+              }
+            ],
+            "tests": [
+              {
+                "title": "role admin can log in",
+                "titlePath": [
+                  "role admin can log in"
+                ],
+                "location": {
+                  "file": "misc/generated.spec.ts",
+                  "line": 4,
+                  "column": 7
+                },
+                "parentTitle": "misc/generated.spec.ts",
+                "tags": [
+                  "@role-admin"
+                ],
+                "annotations": [],
+                "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
+                "expectedStatus": "passed",
+                "timeout": 30000,
+                "retries": 0,
+                "repeatEachIndex": 0,
+                "id": "38c60d58330107297c1d-453c6a529576d98be1d2",
+                "outcome": "skipped"
+              },
+              {
+                "title": "role user can log in",
+                "titlePath": [
+                  "role user can log in"
+                ],
+                "location": {
+                  "file": "misc/generated.spec.ts",
+                  "line": 4,
+                  "column": 7
+                },
+                "parentTitle": "misc/generated.spec.ts",
+                "tags": [
+                  "@role-user"
+                ],
+                "annotations": [],
+                "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
+                "expectedStatus": "passed",
+                "timeout": 30000,
+                "retries": 0,
+                "repeatEachIndex": 0,
+                "id": "38c60d58330107297c1d-33867f6457e70b6c28eb",
+                "outcome": "skipped"
+              },
+              {
+                "title": "role guest can log in",
+                "titlePath": [
+                  "role guest can log in"
+                ],
+                "location": {
+                  "file": "misc/generated.spec.ts",
+                  "line": 4,
+                  "column": 7
+                },
+                "parentTitle": "misc/generated.spec.ts",
+                "tags": [
+                  "@role-guest"
+                ],
+                "annotations": [],
+                "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
+                "expectedStatus": "passed",
+                "timeout": 30000,
+                "retries": 0,
+                "repeatEachIndex": 0,
+                "id": "38c60d58330107297c1d-49678b3fb363eb54e329",
+                "outcome": "skipped"
+              }
+            ],
+            "staticAnnotations": [],
+            "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
+            "titlePath": [
+              "",
+              "chromium",
+              "misc/generated.spec.ts"
+            ],
+            "allTestCount": 5
+          }
+        ],
+        "tests": [],
+        "project": {
+          "name": "chromium",
+          "dependencies": [
+            "setup"
+          ],
+          "testDir": "",
+          "grep": "/.*/",
+          "repeatEach": 1,
+          "retries": 0,
+          "timeout": 30000,
+          "use": {
+            "browserName": "chromium"
+          }
+        },
+        "staticAnnotations": [],
+        "internalTags": [],
+        "hasModifiersField": true,
+        "hasHooksField": true
+      },
+      {
+        "type": "project",
+        "typeFromApi": false,
+        "typeInferenceOk": true,
+        "only": false,
+        "title": "firefox",
+        "parallelMode": "none",
+        "hasTagsField": false,
+        "suites": [
+          {
+            "type": "file",
+            "typeFromApi": false,
+            "typeInferenceOk": true,
+            "only": false,
+            "title": "auth/login.spec.ts",
+            "location": {
+              "file": "auth/login.spec.ts",
+              "line": 0,
+              "column": 0
+            },
+            "parallelMode": "none",
+            "hasTagsField": false,
+            "suites": [],
+            "tests": [
+              {
+                "title": "login with valid credentials @smoke",
+                "titlePath": [
+                  "login with valid credentials @smoke"
+                ],
+                "location": {
+                  "file": "auth/login.spec.ts",
+                  "line": 3,
+                  "column": 5
+                },
+                "parentTitle": "auth/login.spec.ts",
+                "tags": [
+                  "@smoke"
+                ],
+                "annotations": [],
+                "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
+                "expectedStatus": "passed",
+                "timeout": 30000,
+                "retries": 0,
+                "repeatEachIndex": 0,
+                "id": "231ca1f0f4db3e4958c3-f4de6880e3c6ac2dc420",
+                "outcome": "skipped"
+              },
+              {
+                "title": "login with details tags",
+                "titlePath": [
+                  "login with details tags"
+                ],
+                "location": {
+                  "file": "auth/login.spec.ts",
+                  "line": 5,
+                  "column": 5
+                },
+                "parentTitle": "auth/login.spec.ts",
+                "tags": [
+                  "@auth",
+                  "@smoke"
+                ],
+                "annotations": [],
+                "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
+                "expectedStatus": "passed",
+                "timeout": 30000,
+                "retries": 0,
+                "repeatEachIndex": 0,
+                "id": "231ca1f0f4db3e4958c3-09e5bce17e14678e58de",
+                "outcome": "skipped"
+              },
+              {
+                "title": "login mixed tags @fast",
+                "titlePath": [
+                  "login mixed tags @fast"
+                ],
+                "location": {
+                  "file": "auth/login.spec.ts",
+                  "line": 7,
+                  "column": 5
+                },
+                "parentTitle": "auth/login.spec.ts",
+                "tags": [
+                  "@fast",
+                  "@auth"
+                ],
+                "annotations": [],
+                "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
+                "expectedStatus": "passed",
+                "timeout": 30000,
+                "retries": 0,
+                "repeatEachIndex": 0,
+                "id": "231ca1f0f4db3e4958c3-339e9aec7be7ef839514",
+                "outcome": "skipped"
+              },
+              {
+                "title": "login known bug (url issue)",
+                "titlePath": [
+                  "login known bug (url issue)"
+                ],
+                "location": {
+                  "file": "auth/login.spec.ts",
+                  "line": 9,
+                  "column": 5
+                },
+                "parentTitle": "auth/login.spec.ts",
+                "tags": [],
+                "annotations": [
+                  {
+                    "type": "issue",
+                    "description": "https://github.com/org/repo/issues/12"
+                  }
+                ],
+                "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
+                "expectedStatus": "passed",
+                "timeout": 30000,
+                "retries": 0,
+                "repeatEachIndex": 0,
+                "id": "231ca1f0f4db3e4958c3-bd2f2c884b84fa485533",
+                "outcome": "skipped"
+              },
+              {
+                "title": "login known bug (jira key)",
+                "titlePath": [
+                  "login known bug (jira key)"
+                ],
+                "location": {
+                  "file": "auth/login.spec.ts",
+                  "line": 13,
+                  "column": 5
+                },
+                "parentTitle": "auth/login.spec.ts",
+                "tags": [],
+                "annotations": [
+                  {
+                    "type": "issue",
+                    "description": "JIRA-123"
+                  },
+                  {
+                    "type": "issue",
+                    "description": "https://example.atlassian.net/browse/JIRA-456"
+                  }
+                ],
+                "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
+                "expectedStatus": "passed",
+                "timeout": 30000,
+                "retries": 0,
+                "repeatEachIndex": 0,
+                "id": "231ca1f0f4db3e4958c3-df31ad7e6187d54b0002",
+                "outcome": "skipped"
+              }
+            ],
+            "staticAnnotations": [],
+            "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
+            "titlePath": [
+              "",
+              "firefox",
+              "auth/login.spec.ts"
+            ],
+            "allTestCount": 5
+          },
+          {
+            "type": "file",
+            "typeFromApi": false,
+            "typeInferenceOk": true,
+            "only": false,
+            "title": "auth/permissions/roles.spec.ts",
+            "location": {
+              "file": "auth/permissions/roles.spec.ts",
+              "line": 0,
+              "column": 0
+            },
+            "parallelMode": "none",
+            "hasTagsField": false,
+            "suites": [
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "typeInferenceOk": true,
+                "only": false,
+                "title": "roles",
+                "location": {
+                  "file": "auth/permissions/roles.spec.ts",
+                  "line": 3,
+                  "column": 6
+                },
+                "parallelMode": "none",
+                "hasTagsField": false,
+                "suites": [
+                  {
+                    "type": "describe",
+                    "typeFromApi": false,
+                    "typeInferenceOk": true,
+                    "only": false,
+                    "title": "nested",
+                    "location": {
+                      "file": "auth/permissions/roles.spec.ts",
+                      "line": 9,
+                      "column": 8
+                    },
+                    "parallelMode": "none",
+                    "hasTagsField": false,
+                    "suites": [],
+                    "tests": [
+                      {
+                        "title": "guest cannot manage users",
+                        "titlePath": [
+                          "roles",
+                          "nested",
+                          "guest cannot manage users"
+                        ],
+                        "location": {
+                          "file": "auth/permissions/roles.spec.ts",
+                          "line": 10,
+                          "column": 9
+                        },
+                        "parentTitle": "nested",
+                        "tags": [
+                          "@rbac",
+                          "@nested",
+                          "@negative"
+                        ],
+                        "annotations": [
+                          {
+                            "type": "owner",
+                            "description": "team-auth"
+                          },
+                          {
+                            "type": "issue",
+                            "description": "RBAC-7"
+                          }
+                        ],
+                        "only": false,
+                        "hasFn": "function",
+                        "fnSource": "async () => {}",
+                        "expectedStatus": "passed",
+                        "timeout": 30000,
+                        "retries": 0,
+                        "repeatEachIndex": 0,
+                        "id": "9ea6afc0c4455dda9c0c-722c2621bf8d1c11cd2c",
+                        "outcome": "skipped"
+                      }
+                    ],
+                    "staticAnnotations": [
+                      {
+                        "type": "issue",
+                        "description": "RBAC-7"
+                      }
+                    ],
+                    "internalTags": [
+                      "@nested"
+                    ],
+                    "hasModifiersField": true,
+                    "hasHooksField": true,
+                    "titlePath": [
+                      "",
+                      "firefox",
+                      "auth/permissions/roles.spec.ts",
+                      "roles",
+                      "nested"
+                    ],
+                    "allTestCount": 1
+                  }
+                ],
+                "tests": [
+                  {
+                    "title": "admin can manage users",
+                    "titlePath": [
+                      "roles",
+                      "admin can manage users"
+                    ],
+                    "location": {
+                      "file": "auth/permissions/roles.spec.ts",
+                      "line": 7,
+                      "column": 7
+                    },
+                    "parentTitle": "roles",
+                    "tags": [
+                      "@rbac"
+                    ],
+                    "annotations": [
+                      {
+                        "type": "owner",
+                        "description": "team-auth"
+                      }
+                    ],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "9ea6afc0c4455dda9c0c-bd36dfa7535b6f398e07",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [
+                  {
+                    "type": "owner",
+                    "description": "team-auth"
+                  }
+                ],
+                "internalTags": [
+                  "@rbac"
+                ],
+                "hasModifiersField": true,
+                "hasHooksField": true,
+                "titlePath": [
+                  "",
+                  "firefox",
+                  "auth/permissions/roles.spec.ts",
+                  "roles"
+                ],
+                "allTestCount": 2
+              }
+            ],
+            "tests": [],
+            "staticAnnotations": [],
+            "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
+            "titlePath": [
+              "",
+              "firefox",
+              "auth/permissions/roles.spec.ts"
+            ],
+            "allTestCount": 2
+          },
+          {
+            "type": "file",
+            "typeFromApi": false,
+            "typeInferenceOk": true,
+            "only": false,
+            "title": "checkout/builtins.spec.ts",
+            "location": {
+              "file": "checkout/builtins.spec.ts",
+              "line": 0,
+              "column": 0
+            },
+            "parallelMode": "none",
+            "hasTagsField": false,
+            "suites": [
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "typeInferenceOk": true,
+                "only": false,
+                "title": "unconditional",
+                "location": {
+                  "file": "checkout/builtins.spec.ts",
+                  "line": 3,
+                  "column": 6
+                },
+                "parallelMode": "none",
+                "hasTagsField": false,
+                "suites": [],
+                "tests": [
+                  {
+                    "title": "skip",
+                    "titlePath": [
+                      "unconditional",
+                      "skip"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 4,
+                      "column": 7
+                    },
+                    "parentTitle": "unconditional",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    _test.test.skip();\n  }",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-b33712465d20989f2425",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "skip (declaration)",
+                    "titlePath": [
+                      "unconditional",
+                      "skip (declaration)"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 5,
+                      "column": 8
+                    },
+                    "parentTitle": "unconditional",
+                    "tags": [],
+                    "annotations": [
+                      {
+                        "type": "skip"
+                      }
+                    ],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "skipped",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-d98070d14e50bfef3cf1",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "fail (declaration)",
+                    "titlePath": [
+                      "unconditional",
+                      "fail (declaration)"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 6,
+                      "column": 8
+                    },
+                    "parentTitle": "unconditional",
+                    "tags": [],
+                    "annotations": [
+                      {
+                        "type": "fail"
+                      }
+                    ],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-1ca325fe067426bebb7a",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "fixme (declaration)",
+                    "titlePath": [
+                      "unconditional",
+                      "fixme (declaration)"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 7,
+                      "column": 8
+                    },
+                    "parentTitle": "unconditional",
+                    "tags": [],
+                    "annotations": [
+                      {
+                        "type": "fixme"
+                      }
+                    ],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "skipped",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-322b53053ea27c6cd627",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "slow (in body)",
+                    "titlePath": [
+                      "unconditional",
+                      "slow (in body)"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 8,
+                      "column": 7
+                    },
+                    "parentTitle": "unconditional",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    _test.test.slow();\n  }",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-333310a4b6fe404e4e30",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [],
+                "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
+                "titlePath": [
+                  "",
+                  "firefox",
+                  "checkout/builtins.spec.ts",
+                  "unconditional"
+                ],
+                "allTestCount": 5
+              },
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "typeInferenceOk": true,
+                "only": false,
+                "title": "conditional on browserName",
+                "location": {
+                  "file": "checkout/builtins.spec.ts",
+                  "line": 11,
+                  "column": 6
+                },
+                "parallelMode": "none",
+                "hasTagsField": false,
+                "suites": [],
+                "tests": [
+                  {
+                    "title": "skip webkit (declaration callback)",
+                    "titlePath": [
+                      "conditional on browserName",
+                      "skip webkit (declaration callback)"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 12,
+                      "column": 7
+                    },
+                    "parentTitle": "conditional on browserName",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    _test.test.skip(browserName === 'webkit', 'not on webkit');\n  }",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-ec17d5ae4c5962bebc11",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "fail firefox (in body)",
+                    "titlePath": [
+                      "conditional on browserName",
+                      "fail firefox (in body)"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 15,
+                      "column": 7
+                    },
+                    "parentTitle": "conditional on browserName",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    _test.test.fail(browserName === 'firefox', 'firefox bug');\n  }",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-b58eaaf250ebc53c2f60",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "fixme chromium (in body)",
+                    "titlePath": [
+                      "conditional on browserName",
+                      "fixme chromium (in body)"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 18,
+                      "column": 7
+                    },
+                    "parentTitle": "conditional on browserName",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    _test.test.fixme(browserName === 'chromium', 'chromium bug');\n  }",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-8a1bd8e6d4e58671be49",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "slow webkit (in body)",
+                    "titlePath": [
+                      "conditional on browserName",
+                      "slow webkit (in body)"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 21,
+                      "column": 7
+                    },
+                    "parentTitle": "conditional on browserName",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    _test.test.slow(browserName === 'webkit', 'slow on webkit');\n  }",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-7cf30ce962acfe4a4ad0",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [],
+                "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
+                "titlePath": [
+                  "",
+                  "firefox",
+                  "checkout/builtins.spec.ts",
+                  "conditional on browserName"
+                ],
+                "allTestCount": 4
+              },
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "typeInferenceOk": true,
+                "only": false,
+                "title": "describe-level",
+                "location": {
+                  "file": "checkout/builtins.spec.ts",
+                  "line": 26,
+                  "column": 6
+                },
+                "parallelMode": "none",
+                "hasTagsField": false,
+                "suites": [],
+                "tests": [
+                  {
+                    "title": "inside conditional fixme describe",
+                    "titlePath": [
+                      "describe-level",
+                      "inside conditional fixme describe"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 28,
+                      "column": 7
+                    },
+                    "parentTitle": "describe-level",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-b8d7650b1fdeafd515ef",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [],
+                "internalTags": [],
+                "hasModifiersField": true,
+                "modifiers": [
+                  {
+                    "type": "fixme",
+                    "description": "describe fixme on firefox",
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 27,
+                      "column": 8
+                    },
+                    "fn": "({\n    browserName\n  }) => browserName === 'firefox'"
+                  }
+                ],
+                "hasHooksField": true,
+                "titlePath": [
+                  "",
+                  "firefox",
+                  "checkout/builtins.spec.ts",
+                  "describe-level"
+                ],
+                "allTestCount": 1
+              },
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "typeInferenceOk": true,
+                "only": false,
+                "title": "skipped describe",
+                "location": {
+                  "file": "checkout/builtins.spec.ts",
+                  "line": 31,
+                  "column": 15
+                },
+                "parallelMode": "none",
+                "hasTagsField": false,
+                "suites": [],
+                "tests": [
+                  {
+                    "title": "inside skipped describe",
+                    "titlePath": [
+                      "skipped describe",
+                      "inside skipped describe"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 32,
+                      "column": 7
+                    },
+                    "parentTitle": "skipped describe",
+                    "tags": [],
+                    "annotations": [
+                      {
+                        "type": "skip"
+                      }
+                    ],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "skipped",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-da4f11edb5a939aa598f",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [
+                  {
+                    "type": "skip"
+                  }
+                ],
+                "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
+                "titlePath": [
+                  "",
+                  "firefox",
+                  "checkout/builtins.spec.ts",
+                  "skipped describe"
+                ],
+                "allTestCount": 1
+              },
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "typeInferenceOk": true,
+                "only": false,
+                "title": "fixme describe",
+                "location": {
+                  "file": "checkout/builtins.spec.ts",
+                  "line": 35,
+                  "column": 15
+                },
+                "parallelMode": "none",
+                "hasTagsField": false,
+                "suites": [],
+                "tests": [
+                  {
+                    "title": "inside fixme describe",
+                    "titlePath": [
+                      "fixme describe",
+                      "inside fixme describe"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 36,
+                      "column": 7
+                    },
+                    "parentTitle": "fixme describe",
+                    "tags": [],
+                    "annotations": [
+                      {
+                        "type": "fixme"
+                      }
+                    ],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "skipped",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-8e6afc71fa8a903960bf",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [
+                  {
+                    "type": "fixme"
+                  }
+                ],
+                "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
+                "titlePath": [
+                  "",
+                  "firefox",
+                  "checkout/builtins.spec.ts",
+                  "fixme describe"
+                ],
+                "allTestCount": 1
+              },
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "typeInferenceOk": true,
+                "only": false,
+                "title": "only",
+                "location": {
+                  "file": "checkout/builtins.spec.ts",
+                  "line": 39,
+                  "column": 6
+                },
+                "parallelMode": "none",
+                "hasTagsField": false,
+                "suites": [],
+                "tests": [
+                  {
+                    "title": "focused test",
+                    "titlePath": [
+                      "only",
+                      "focused test"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 40,
+                      "column": 8
+                    },
+                    "parentTitle": "only",
+                    "tags": [],
+                    "annotations": [],
+                    "only": true,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-3123c76e76101d0f6794",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "unfocused sibling",
+                    "titlePath": [
+                      "only",
+                      "unfocused sibling"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 41,
+                      "column": 7
+                    },
+                    "parentTitle": "only",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-9b6f3ec845fc8f935800",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [],
+                "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
+                "titlePath": [
+                  "",
+                  "firefox",
+                  "checkout/builtins.spec.ts",
+                  "only"
+                ],
+                "allTestCount": 2
+              }
+            ],
+            "tests": [],
+            "staticAnnotations": [],
+            "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
+            "titlePath": [
+              "",
+              "firefox",
+              "checkout/builtins.spec.ts"
+            ],
+            "allTestCount": 14
+          },
+          {
+            "type": "file",
+            "typeFromApi": false,
+            "typeInferenceOk": true,
+            "only": false,
+            "title": "checkout/cart.spec.ts",
+            "location": {
+              "file": "checkout/cart.spec.ts",
+              "line": 0,
+              "column": 0
+            },
+            "parallelMode": "none",
+            "hasTagsField": false,
+            "suites": [
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "typeInferenceOk": true,
+                "only": false,
+                "title": "serial flow",
+                "location": {
+                  "file": "checkout/cart.spec.ts",
+                  "line": 3,
+                  "column": 6
+                },
+                "parallelMode": "serial",
+                "hasTagsField": false,
+                "suites": [],
+                "tests": [
+                  {
+                    "title": "add item",
+                    "titlePath": [
+                      "serial flow",
+                      "add item"
+                    ],
+                    "location": {
+                      "file": "checkout/cart.spec.ts",
+                      "line": 5,
+                      "column": 7
+                    },
+                    "parentTitle": "serial flow",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "53fa0b5a5aa39ac6891a-620afddd56c52a6361d9",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "apply coupon",
+                    "titlePath": [
+                      "serial flow",
+                      "apply coupon"
+                    ],
+                    "location": {
+                      "file": "checkout/cart.spec.ts",
+                      "line": 6,
+                      "column": 7
+                    },
+                    "parentTitle": "serial flow",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "53fa0b5a5aa39ac6891a-9414f6e9fa90414675f9",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "pay",
+                    "titlePath": [
+                      "serial flow",
+                      "pay"
+                    ],
+                    "location": {
+                      "file": "checkout/cart.spec.ts",
+                      "line": 7,
+                      "column": 7
+                    },
+                    "parentTitle": "serial flow",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "53fa0b5a5aa39ac6891a-57f2786416444ac7d9f2",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [],
+                "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
+                "titlePath": [
+                  "",
+                  "firefox",
+                  "checkout/cart.spec.ts",
+                  "serial flow"
+                ],
+                "allTestCount": 3
+              },
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "typeInferenceOk": true,
+                "only": false,
+                "title": "parallel flow",
+                "location": {
+                  "file": "checkout/cart.spec.ts",
+                  "line": 10,
+                  "column": 6
+                },
+                "parallelMode": "parallel",
+                "hasTagsField": false,
+                "suites": [],
+                "tests": [
+                  {
+                    "title": "browse A",
+                    "titlePath": [
+                      "parallel flow",
+                      "browse A"
+                    ],
+                    "location": {
+                      "file": "checkout/cart.spec.ts",
+                      "line": 12,
+                      "column": 7
+                    },
+                    "parentTitle": "parallel flow",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "53fa0b5a5aa39ac6891a-214dfd3cd5839dd900ca",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "browse B",
+                    "titlePath": [
+                      "parallel flow",
+                      "browse B"
+                    ],
+                    "location": {
+                      "file": "checkout/cart.spec.ts",
+                      "line": 13,
+                      "column": 7
+                    },
+                    "parentTitle": "parallel flow",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "53fa0b5a5aa39ac6891a-eff1bb16dc26d53df341",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [],
+                "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
+                "titlePath": [
+                  "",
+                  "firefox",
+                  "checkout/cart.spec.ts",
+                  "parallel flow"
+                ],
+                "allTestCount": 2
+              },
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "typeInferenceOk": true,
+                "only": false,
+                "title": "default flow",
+                "location": {
+                  "file": "checkout/cart.spec.ts",
+                  "line": 16,
+                  "column": 6
+                },
+                "parallelMode": "none",
+                "hasTagsField": false,
+                "suites": [],
+                "tests": [
+                  {
+                    "title": "view cart",
+                    "titlePath": [
+                      "default flow",
+                      "view cart"
+                    ],
+                    "location": {
+                      "file": "checkout/cart.spec.ts",
+                      "line": 17,
+                      "column": 7
+                    },
+                    "parentTitle": "default flow",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "53fa0b5a5aa39ac6891a-18ddec892c33acc65b72",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [],
+                "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
+                "titlePath": [
+                  "",
+                  "firefox",
+                  "checkout/cart.spec.ts",
+                  "default flow"
+                ],
+                "allTestCount": 1
+              }
+            ],
+            "tests": [],
+            "staticAnnotations": [],
+            "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
+            "titlePath": [
+              "",
+              "firefox",
+              "checkout/cart.spec.ts"
+            ],
+            "allTestCount": 6
+          },
+          {
+            "type": "file",
+            "typeFromApi": false,
+            "typeInferenceOk": true,
+            "only": false,
+            "title": "misc/annotations.spec.ts",
+            "location": {
+              "file": "misc/annotations.spec.ts",
+              "line": 0,
+              "column": 0
+            },
+            "parallelMode": "none",
+            "hasTagsField": false,
+            "suites": [],
+            "tests": [
+              {
+                "title": "hidden type",
+                "titlePath": [
+                  "hidden type"
+                ],
+                "location": {
+                  "file": "misc/annotations.spec.ts",
+                  "line": 3,
+                  "column": 5
+                },
+                "parentTitle": "misc/annotations.spec.ts",
+                "tags": [],
+                "annotations": [
+                  {
+                    "type": "_internal",
+                    "description": "tooling only"
+                  }
+                ],
+                "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
+                "expectedStatus": "passed",
+                "timeout": 30000,
+                "retries": 0,
+                "repeatEachIndex": 0,
+                "id": "7718a717855dcee93cd0-f40a89db3659de9f55e8",
+                "outcome": "skipped"
+              },
+              {
+                "title": "multiple annotations",
+                "titlePath": [
+                  "multiple annotations"
+                ],
+                "location": {
+                  "file": "misc/annotations.spec.ts",
+                  "line": 5,
+                  "column": 5
+                },
+                "parentTitle": "misc/annotations.spec.ts",
+                "tags": [
+                  "@multi"
+                ],
+                "annotations": [
+                  {
+                    "type": "owner",
+                    "description": "alice"
+                  },
+                  {
+                    "type": "issue",
+                    "description": "#123"
+                  },
+                  {
+                    "type": "owner",
+                    "description": "bob"
+                  }
+                ],
+                "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
+                "expectedStatus": "passed",
+                "timeout": 30000,
+                "retries": 0,
+                "repeatEachIndex": 0,
+                "id": "7718a717855dcee93cd0-141296a5f7e8d281593c",
+                "outcome": "skipped"
+              },
+              {
+                "title": "runtime annotation",
+                "titlePath": [
+                  "runtime annotation"
+                ],
+                "location": {
+                  "file": "misc/annotations.spec.ts",
+                  "line": 14,
+                  "column": 5
+                },
+                "parentTitle": "misc/annotations.spec.ts",
+                "tags": [],
+                "annotations": [],
+                "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {\n  _test.test.info().annotations.push({\n    type: 'runtime',\n    description: 'added at run time'\n  });\n}",
+                "expectedStatus": "passed",
+                "timeout": 30000,
+                "retries": 0,
+                "repeatEachIndex": 0,
+                "id": "7718a717855dcee93cd0-2b0035d00d8d5836eb61",
+                "outcome": "skipped"
+              }
+            ],
+            "staticAnnotations": [],
+            "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
+            "titlePath": [
+              "",
+              "firefox",
+              "misc/annotations.spec.ts"
+            ],
+            "allTestCount": 3
+          },
+          {
+            "type": "file",
+            "typeFromApi": false,
+            "typeInferenceOk": true,
+            "only": false,
+            "title": "misc/conditionals.spec.ts",
+            "location": {
+              "file": "misc/conditionals.spec.ts",
+              "line": 0,
+              "column": 0
+            },
+            "parallelMode": "none",
+            "hasTagsField": false,
+            "suites": [
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "typeInferenceOk": true,
+                "only": false,
+                "title": "conditionals",
+                "location": {
+                  "file": "misc/conditionals.spec.ts",
+                  "line": 14,
+                  "column": 6
+                },
+                "parallelMode": "none",
+                "hasTagsField": false,
+                "suites": [],
+                "tests": [
+                  {
+                    "title": "env var condition",
+                    "titlePath": [
+                      "conditionals",
+                      "env var condition"
+                    ],
+                    "location": {
+                      "file": "misc/conditionals.spec.ts",
+                      "line": 19,
+                      "column": 7
+                    },
+                    "parentTitle": "conditionals",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    _test.test.fixme(process.env.FEATURE_X === '1', 'needs feature x');\n  }",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "512e66e67c635f8cbc7f-f3c1333c7962ef4f9cc2",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "helper call",
+                    "titlePath": [
+                      "conditionals",
+                      "helper call"
+                    ],
+                    "location": {
+                      "file": "misc/conditionals.spec.ts",
+                      "line": 23,
+                      "column": 7
+                    },
+                    "parentTitle": "conditionals",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    skipOnCI(_test.test);\n  }",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "512e66e67c635f8cbc7f-32e925fd0adbcd8987da",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "computed annotation type",
+                    "titlePath": [
+                      "conditionals",
+                      "computed annotation type"
+                    ],
+                    "location": {
+                      "file": "misc/conditionals.spec.ts",
+                      "line": 27,
+                      "column": 7
+                    },
+                    "parentTitle": "conditionals",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    _test.test.info().annotations.push({\n      type: kind,\n      description: 'JIRA-9'\n    });\n  }",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "512e66e67c635f8cbc7f-24bae7a2143460c50c0e",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "early return before conditional",
+                    "titlePath": [
+                      "conditionals",
+                      "early return before conditional"
+                    ],
+                    "location": {
+                      "file": "misc/conditionals.spec.ts",
+                      "line": 31,
+                      "column": 7
+                    },
+                    "parentTitle": "conditionals",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    if (browserName === 'chromium') return;\n    _test.test.skip(true, 'never reached on chromium');\n  }",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "512e66e67c635f8cbc7f-a4496a88a09dbd1759cb",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "project name condition",
+                    "titlePath": [
+                      "conditionals",
+                      "project name condition"
+                    ],
+                    "location": {
+                      "file": "misc/conditionals.spec.ts",
+                      "line": 36,
+                      "column": 7
+                    },
+                    "parentTitle": "conditionals",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({}, testInfo) => {\n    _test.test.slow(testInfo.project.name === 'webkit', 'slow project');\n  }",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "512e66e67c635f8cbc7f-d725bf03bcf1d2a02009",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [],
+                "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
+                "hooks": [
+                  {
+                    "type": "beforeEach",
+                    "location": {
+                      "file": "misc/conditionals.spec.ts",
+                      "line": 15,
+                      "column": 8
+                    },
+                    "fn": "async ({\n    browserName\n  }) => {\n    _test.test.skip(browserName === 'webkit', 'beforeEach: no webkit'); // hook form\n  }"
+                  }
+                ],
+                "titlePath": [
+                  "",
+                  "firefox",
+                  "misc/conditionals.spec.ts",
+                  "conditionals"
+                ],
+                "allTestCount": 5
+              }
+            ],
+            "tests": [],
+            "staticAnnotations": [],
+            "internalTags": [],
+            "hasModifiersField": true,
+            "modifiers": [
+              {
+                "type": "skip",
+                "description": "file-level: no firefox",
+                "location": {
+                  "file": "misc/conditionals.spec.ts",
+                  "line": 12,
+                  "column": 6
+                },
+                "fn": "({\n  browserName\n}) => browserName === 'firefox'"
+              }
+            ],
+            "hasHooksField": true,
+            "titlePath": [
+              "",
+              "firefox",
+              "misc/conditionals.spec.ts"
+            ],
+            "allTestCount": 5
+          },
+          {
+            "type": "file",
+            "typeFromApi": false,
+            "typeInferenceOk": true,
+            "only": false,
+            "title": "misc/generated.spec.ts",
+            "location": {
+              "file": "misc/generated.spec.ts",
+              "line": 0,
+              "column": 0
+            },
+            "parallelMode": "none",
+            "hasTagsField": false,
+            "suites": [
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "typeInferenceOk": true,
+                "only": false,
+                "title": "env staging",
+                "location": {
+                  "file": "misc/generated.spec.ts",
+                  "line": 8,
+                  "column": 8
+                },
+                "parallelMode": "none",
+                "hasTagsField": false,
+                "suites": [],
+                "tests": [
+                  {
+                    "title": "health check",
+                    "titlePath": [
+                      "env staging",
+                      "health check"
+                    ],
+                    "location": {
+                      "file": "misc/generated.spec.ts",
+                      "line": 9,
+                      "column": 9
+                    },
+                    "parentTitle": "env staging",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "38c60d58330107297c1d-d3be50a7ac840ef3bca3",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [],
+                "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
+                "titlePath": [
+                  "",
+                  "firefox",
+                  "misc/generated.spec.ts",
+                  "env staging"
+                ],
+                "allTestCount": 1
+              },
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "typeInferenceOk": true,
+                "only": false,
+                "title": "env prod",
+                "location": {
+                  "file": "misc/generated.spec.ts",
+                  "line": 8,
+                  "column": 8
+                },
+                "parallelMode": "none",
+                "hasTagsField": false,
+                "suites": [],
+                "tests": [
+                  {
+                    "title": "health check",
+                    "titlePath": [
+                      "env prod",
+                      "health check"
+                    ],
+                    "location": {
+                      "file": "misc/generated.spec.ts",
+                      "line": 9,
+                      "column": 9
+                    },
+                    "parentTitle": "env prod",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "38c60d58330107297c1d-8d9fed69072221f66ee2",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [],
+                "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
+                "titlePath": [
+                  "",
+                  "firefox",
+                  "misc/generated.spec.ts",
+                  "env prod"
+                ],
+                "allTestCount": 1
+              }
+            ],
+            "tests": [
+              {
+                "title": "role admin can log in",
+                "titlePath": [
+                  "role admin can log in"
+                ],
+                "location": {
+                  "file": "misc/generated.spec.ts",
+                  "line": 4,
+                  "column": 7
+                },
+                "parentTitle": "misc/generated.spec.ts",
+                "tags": [
+                  "@role-admin"
+                ],
+                "annotations": [],
+                "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
+                "expectedStatus": "passed",
+                "timeout": 30000,
+                "retries": 0,
+                "repeatEachIndex": 0,
+                "id": "38c60d58330107297c1d-9ffbaafe1545b744e704",
+                "outcome": "skipped"
+              },
+              {
+                "title": "role user can log in",
+                "titlePath": [
+                  "role user can log in"
+                ],
+                "location": {
+                  "file": "misc/generated.spec.ts",
+                  "line": 4,
+                  "column": 7
+                },
+                "parentTitle": "misc/generated.spec.ts",
+                "tags": [
+                  "@role-user"
+                ],
+                "annotations": [],
+                "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
+                "expectedStatus": "passed",
+                "timeout": 30000,
+                "retries": 0,
+                "repeatEachIndex": 0,
+                "id": "38c60d58330107297c1d-c0f90607565f40e43057",
+                "outcome": "skipped"
+              },
+              {
+                "title": "role guest can log in",
+                "titlePath": [
+                  "role guest can log in"
+                ],
+                "location": {
+                  "file": "misc/generated.spec.ts",
+                  "line": 4,
+                  "column": 7
+                },
+                "parentTitle": "misc/generated.spec.ts",
+                "tags": [
+                  "@role-guest"
+                ],
+                "annotations": [],
+                "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
+                "expectedStatus": "passed",
+                "timeout": 30000,
+                "retries": 0,
+                "repeatEachIndex": 0,
+                "id": "38c60d58330107297c1d-5b364279a66c990eef4a",
+                "outcome": "skipped"
+              }
+            ],
+            "staticAnnotations": [],
+            "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
+            "titlePath": [
+              "",
+              "firefox",
+              "misc/generated.spec.ts"
+            ],
+            "allTestCount": 5
+          }
+        ],
+        "tests": [],
+        "project": {
+          "name": "firefox",
+          "dependencies": [
+            "setup"
+          ],
+          "testDir": "",
+          "grep": "/.*/",
+          "repeatEach": 1,
+          "retries": 0,
+          "timeout": 30000,
+          "use": {
+            "browserName": "firefox"
+          }
+        },
+        "staticAnnotations": [],
+        "internalTags": [],
+        "hasModifiersField": true,
+        "hasHooksField": true
+      },
+      {
+        "type": "project",
+        "typeFromApi": false,
+        "typeInferenceOk": true,
+        "only": false,
+        "title": "webkit",
+        "parallelMode": "none",
+        "hasTagsField": false,
+        "suites": [
+          {
+            "type": "file",
+            "typeFromApi": false,
+            "typeInferenceOk": true,
+            "only": false,
+            "title": "auth/login.spec.ts",
+            "location": {
+              "file": "auth/login.spec.ts",
+              "line": 0,
+              "column": 0
+            },
+            "parallelMode": "none",
+            "hasTagsField": false,
+            "suites": [],
+            "tests": [
+              {
+                "title": "login with valid credentials @smoke",
+                "titlePath": [
+                  "login with valid credentials @smoke"
+                ],
+                "location": {
+                  "file": "auth/login.spec.ts",
+                  "line": 3,
+                  "column": 5
+                },
+                "parentTitle": "auth/login.spec.ts",
+                "tags": [
+                  "@smoke"
+                ],
+                "annotations": [],
+                "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
+                "expectedStatus": "passed",
+                "timeout": 30000,
+                "retries": 0,
+                "repeatEachIndex": 0,
+                "id": "231ca1f0f4db3e4958c3-125f80a340b52bfbb610",
+                "outcome": "skipped"
+              },
+              {
+                "title": "login with details tags",
+                "titlePath": [
+                  "login with details tags"
+                ],
+                "location": {
+                  "file": "auth/login.spec.ts",
+                  "line": 5,
+                  "column": 5
+                },
+                "parentTitle": "auth/login.spec.ts",
+                "tags": [
+                  "@auth",
+                  "@smoke"
+                ],
+                "annotations": [],
+                "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
+                "expectedStatus": "passed",
+                "timeout": 30000,
+                "retries": 0,
+                "repeatEachIndex": 0,
+                "id": "231ca1f0f4db3e4958c3-443295b9e217000b8b5c",
+                "outcome": "skipped"
+              },
+              {
+                "title": "login mixed tags @fast",
+                "titlePath": [
+                  "login mixed tags @fast"
+                ],
+                "location": {
+                  "file": "auth/login.spec.ts",
+                  "line": 7,
+                  "column": 5
+                },
+                "parentTitle": "auth/login.spec.ts",
+                "tags": [
+                  "@fast",
+                  "@auth"
+                ],
+                "annotations": [],
+                "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
+                "expectedStatus": "passed",
+                "timeout": 30000,
+                "retries": 0,
+                "repeatEachIndex": 0,
+                "id": "231ca1f0f4db3e4958c3-6a14fd9421cf4bc223f6",
+                "outcome": "skipped"
+              },
+              {
+                "title": "login known bug (url issue)",
+                "titlePath": [
+                  "login known bug (url issue)"
+                ],
+                "location": {
+                  "file": "auth/login.spec.ts",
+                  "line": 9,
+                  "column": 5
+                },
+                "parentTitle": "auth/login.spec.ts",
+                "tags": [],
+                "annotations": [
+                  {
+                    "type": "issue",
+                    "description": "https://github.com/org/repo/issues/12"
+                  }
+                ],
+                "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
+                "expectedStatus": "passed",
+                "timeout": 30000,
+                "retries": 0,
+                "repeatEachIndex": 0,
+                "id": "231ca1f0f4db3e4958c3-ef59c5379b7641ebef6c",
+                "outcome": "skipped"
+              },
+              {
+                "title": "login known bug (jira key)",
+                "titlePath": [
+                  "login known bug (jira key)"
+                ],
+                "location": {
+                  "file": "auth/login.spec.ts",
+                  "line": 13,
+                  "column": 5
+                },
+                "parentTitle": "auth/login.spec.ts",
+                "tags": [],
+                "annotations": [
+                  {
+                    "type": "issue",
+                    "description": "JIRA-123"
+                  },
+                  {
+                    "type": "issue",
+                    "description": "https://example.atlassian.net/browse/JIRA-456"
+                  }
+                ],
+                "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
+                "expectedStatus": "passed",
+                "timeout": 30000,
+                "retries": 0,
+                "repeatEachIndex": 0,
+                "id": "231ca1f0f4db3e4958c3-8f1d87ca1ada4cd39120",
+                "outcome": "skipped"
+              }
+            ],
+            "staticAnnotations": [],
+            "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
+            "titlePath": [
+              "",
+              "webkit",
+              "auth/login.spec.ts"
+            ],
+            "allTestCount": 5
+          },
+          {
+            "type": "file",
+            "typeFromApi": false,
+            "typeInferenceOk": true,
+            "only": false,
+            "title": "auth/permissions/roles.spec.ts",
+            "location": {
+              "file": "auth/permissions/roles.spec.ts",
+              "line": 0,
+              "column": 0
+            },
+            "parallelMode": "none",
+            "hasTagsField": false,
+            "suites": [
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "typeInferenceOk": true,
+                "only": false,
+                "title": "roles",
+                "location": {
+                  "file": "auth/permissions/roles.spec.ts",
+                  "line": 3,
+                  "column": 6
+                },
+                "parallelMode": "none",
+                "hasTagsField": false,
+                "suites": [
+                  {
+                    "type": "describe",
+                    "typeFromApi": false,
+                    "typeInferenceOk": true,
+                    "only": false,
+                    "title": "nested",
+                    "location": {
+                      "file": "auth/permissions/roles.spec.ts",
+                      "line": 9,
+                      "column": 8
+                    },
+                    "parallelMode": "none",
+                    "hasTagsField": false,
+                    "suites": [],
+                    "tests": [
+                      {
+                        "title": "guest cannot manage users",
+                        "titlePath": [
+                          "roles",
+                          "nested",
+                          "guest cannot manage users"
+                        ],
+                        "location": {
+                          "file": "auth/permissions/roles.spec.ts",
+                          "line": 10,
+                          "column": 9
+                        },
+                        "parentTitle": "nested",
+                        "tags": [
+                          "@rbac",
+                          "@nested",
+                          "@negative"
+                        ],
+                        "annotations": [
+                          {
+                            "type": "owner",
+                            "description": "team-auth"
+                          },
+                          {
+                            "type": "issue",
+                            "description": "RBAC-7"
+                          }
+                        ],
+                        "only": false,
+                        "hasFn": "function",
+                        "fnSource": "async () => {}",
+                        "expectedStatus": "passed",
+                        "timeout": 30000,
+                        "retries": 0,
+                        "repeatEachIndex": 0,
+                        "id": "9ea6afc0c4455dda9c0c-a4873cbc75deea659712",
+                        "outcome": "skipped"
+                      }
+                    ],
+                    "staticAnnotations": [
+                      {
+                        "type": "issue",
+                        "description": "RBAC-7"
+                      }
+                    ],
+                    "internalTags": [
+                      "@nested"
+                    ],
+                    "hasModifiersField": true,
+                    "hasHooksField": true,
+                    "titlePath": [
+                      "",
+                      "webkit",
+                      "auth/permissions/roles.spec.ts",
+                      "roles",
+                      "nested"
+                    ],
+                    "allTestCount": 1
+                  }
+                ],
+                "tests": [
+                  {
+                    "title": "admin can manage users",
+                    "titlePath": [
+                      "roles",
+                      "admin can manage users"
+                    ],
+                    "location": {
+                      "file": "auth/permissions/roles.spec.ts",
+                      "line": 7,
+                      "column": 7
+                    },
+                    "parentTitle": "roles",
+                    "tags": [
+                      "@rbac"
+                    ],
+                    "annotations": [
+                      {
+                        "type": "owner",
+                        "description": "team-auth"
+                      }
+                    ],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "9ea6afc0c4455dda9c0c-4a6da0e3eea73130e6e8",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [
+                  {
+                    "type": "owner",
+                    "description": "team-auth"
+                  }
+                ],
+                "internalTags": [
+                  "@rbac"
+                ],
+                "hasModifiersField": true,
+                "hasHooksField": true,
+                "titlePath": [
+                  "",
+                  "webkit",
+                  "auth/permissions/roles.spec.ts",
+                  "roles"
+                ],
+                "allTestCount": 2
+              }
+            ],
+            "tests": [],
+            "staticAnnotations": [],
+            "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
+            "titlePath": [
+              "",
+              "webkit",
+              "auth/permissions/roles.spec.ts"
+            ],
+            "allTestCount": 2
+          },
+          {
+            "type": "file",
+            "typeFromApi": false,
+            "typeInferenceOk": true,
+            "only": false,
+            "title": "checkout/builtins.spec.ts",
+            "location": {
+              "file": "checkout/builtins.spec.ts",
+              "line": 0,
+              "column": 0
+            },
+            "parallelMode": "none",
+            "hasTagsField": false,
+            "suites": [
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "typeInferenceOk": true,
+                "only": false,
+                "title": "unconditional",
+                "location": {
+                  "file": "checkout/builtins.spec.ts",
+                  "line": 3,
+                  "column": 6
+                },
+                "parallelMode": "none",
+                "hasTagsField": false,
+                "suites": [],
+                "tests": [
+                  {
+                    "title": "skip",
+                    "titlePath": [
+                      "unconditional",
+                      "skip"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 4,
+                      "column": 7
+                    },
+                    "parentTitle": "unconditional",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    _test.test.skip();\n  }",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-2142f9b9af074c737b7f",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "skip (declaration)",
+                    "titlePath": [
+                      "unconditional",
+                      "skip (declaration)"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 5,
+                      "column": 8
+                    },
+                    "parentTitle": "unconditional",
+                    "tags": [],
+                    "annotations": [
+                      {
+                        "type": "skip"
+                      }
+                    ],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "skipped",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-35339b17d8479f1df331",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "fail (declaration)",
+                    "titlePath": [
+                      "unconditional",
+                      "fail (declaration)"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 6,
+                      "column": 8
+                    },
+                    "parentTitle": "unconditional",
+                    "tags": [],
+                    "annotations": [
+                      {
+                        "type": "fail"
+                      }
+                    ],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-96ce88258a2d4939f79c",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "fixme (declaration)",
+                    "titlePath": [
+                      "unconditional",
+                      "fixme (declaration)"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 7,
+                      "column": 8
+                    },
+                    "parentTitle": "unconditional",
+                    "tags": [],
+                    "annotations": [
+                      {
+                        "type": "fixme"
+                      }
+                    ],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "skipped",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-e7f8d279b5773d7441e9",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "slow (in body)",
+                    "titlePath": [
+                      "unconditional",
+                      "slow (in body)"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 8,
+                      "column": 7
+                    },
+                    "parentTitle": "unconditional",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    _test.test.slow();\n  }",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-cb0e7091482efb894954",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [],
+                "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
+                "titlePath": [
+                  "",
+                  "webkit",
+                  "checkout/builtins.spec.ts",
+                  "unconditional"
+                ],
+                "allTestCount": 5
+              },
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "typeInferenceOk": true,
+                "only": false,
+                "title": "conditional on browserName",
+                "location": {
+                  "file": "checkout/builtins.spec.ts",
+                  "line": 11,
+                  "column": 6
+                },
+                "parallelMode": "none",
+                "hasTagsField": false,
+                "suites": [],
+                "tests": [
+                  {
+                    "title": "skip webkit (declaration callback)",
+                    "titlePath": [
+                      "conditional on browserName",
+                      "skip webkit (declaration callback)"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 12,
+                      "column": 7
+                    },
+                    "parentTitle": "conditional on browserName",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    _test.test.skip(browserName === 'webkit', 'not on webkit');\n  }",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-b5001d7b24c00ecf08f4",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "fail firefox (in body)",
+                    "titlePath": [
+                      "conditional on browserName",
+                      "fail firefox (in body)"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 15,
+                      "column": 7
+                    },
+                    "parentTitle": "conditional on browserName",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    _test.test.fail(browserName === 'firefox', 'firefox bug');\n  }",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-7256fc2faa9061e4c272",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "fixme chromium (in body)",
+                    "titlePath": [
+                      "conditional on browserName",
+                      "fixme chromium (in body)"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 18,
+                      "column": 7
+                    },
+                    "parentTitle": "conditional on browserName",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    _test.test.fixme(browserName === 'chromium', 'chromium bug');\n  }",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-49aaa858388327bfff8a",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "slow webkit (in body)",
+                    "titlePath": [
+                      "conditional on browserName",
+                      "slow webkit (in body)"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 21,
+                      "column": 7
+                    },
+                    "parentTitle": "conditional on browserName",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    _test.test.slow(browserName === 'webkit', 'slow on webkit');\n  }",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-94a98cddcb30b88c2131",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [],
+                "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
+                "titlePath": [
+                  "",
+                  "webkit",
+                  "checkout/builtins.spec.ts",
+                  "conditional on browserName"
+                ],
+                "allTestCount": 4
+              },
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "typeInferenceOk": true,
+                "only": false,
+                "title": "describe-level",
+                "location": {
+                  "file": "checkout/builtins.spec.ts",
+                  "line": 26,
+                  "column": 6
+                },
+                "parallelMode": "none",
+                "hasTagsField": false,
+                "suites": [],
+                "tests": [
+                  {
+                    "title": "inside conditional fixme describe",
+                    "titlePath": [
+                      "describe-level",
+                      "inside conditional fixme describe"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 28,
+                      "column": 7
+                    },
+                    "parentTitle": "describe-level",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-aa09e067775a7a1b0d5e",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [],
+                "internalTags": [],
+                "hasModifiersField": true,
+                "modifiers": [
+                  {
+                    "type": "fixme",
+                    "description": "describe fixme on firefox",
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 27,
+                      "column": 8
+                    },
+                    "fn": "({\n    browserName\n  }) => browserName === 'firefox'"
+                  }
+                ],
+                "hasHooksField": true,
+                "titlePath": [
+                  "",
+                  "webkit",
+                  "checkout/builtins.spec.ts",
+                  "describe-level"
+                ],
+                "allTestCount": 1
+              },
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "typeInferenceOk": true,
+                "only": false,
+                "title": "skipped describe",
+                "location": {
+                  "file": "checkout/builtins.spec.ts",
+                  "line": 31,
+                  "column": 15
+                },
+                "parallelMode": "none",
+                "hasTagsField": false,
+                "suites": [],
+                "tests": [
+                  {
+                    "title": "inside skipped describe",
+                    "titlePath": [
+                      "skipped describe",
+                      "inside skipped describe"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 32,
+                      "column": 7
+                    },
+                    "parentTitle": "skipped describe",
+                    "tags": [],
+                    "annotations": [
+                      {
+                        "type": "skip"
+                      }
+                    ],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "skipped",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-8411ec3192aee1ce1d3b",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [
+                  {
+                    "type": "skip"
+                  }
+                ],
+                "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
+                "titlePath": [
+                  "",
+                  "webkit",
+                  "checkout/builtins.spec.ts",
+                  "skipped describe"
+                ],
+                "allTestCount": 1
+              },
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "typeInferenceOk": true,
+                "only": false,
+                "title": "fixme describe",
+                "location": {
+                  "file": "checkout/builtins.spec.ts",
+                  "line": 35,
+                  "column": 15
+                },
+                "parallelMode": "none",
+                "hasTagsField": false,
+                "suites": [],
+                "tests": [
+                  {
+                    "title": "inside fixme describe",
+                    "titlePath": [
+                      "fixme describe",
+                      "inside fixme describe"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 36,
+                      "column": 7
+                    },
+                    "parentTitle": "fixme describe",
+                    "tags": [],
+                    "annotations": [
+                      {
+                        "type": "fixme"
+                      }
+                    ],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "skipped",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-45bb11f4611e76247eba",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [
+                  {
+                    "type": "fixme"
+                  }
+                ],
+                "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
+                "titlePath": [
+                  "",
+                  "webkit",
+                  "checkout/builtins.spec.ts",
+                  "fixme describe"
+                ],
+                "allTestCount": 1
+              },
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "typeInferenceOk": true,
+                "only": false,
+                "title": "only",
+                "location": {
+                  "file": "checkout/builtins.spec.ts",
+                  "line": 39,
+                  "column": 6
+                },
+                "parallelMode": "none",
+                "hasTagsField": false,
+                "suites": [],
+                "tests": [
+                  {
+                    "title": "focused test",
+                    "titlePath": [
+                      "only",
+                      "focused test"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 40,
+                      "column": 8
+                    },
+                    "parentTitle": "only",
+                    "tags": [],
+                    "annotations": [],
+                    "only": true,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-9d97760d5402389f726a",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "unfocused sibling",
+                    "titlePath": [
+                      "only",
+                      "unfocused sibling"
+                    ],
+                    "location": {
+                      "file": "checkout/builtins.spec.ts",
+                      "line": 41,
+                      "column": 7
+                    },
+                    "parentTitle": "only",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "6cb2e79787f8f05e426e-14f80008a03e1ab6d0d9",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [],
+                "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
+                "titlePath": [
+                  "",
+                  "webkit",
+                  "checkout/builtins.spec.ts",
+                  "only"
+                ],
+                "allTestCount": 2
+              }
+            ],
+            "tests": [],
+            "staticAnnotations": [],
+            "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
+            "titlePath": [
+              "",
+              "webkit",
+              "checkout/builtins.spec.ts"
+            ],
+            "allTestCount": 14
+          },
+          {
+            "type": "file",
+            "typeFromApi": false,
+            "typeInferenceOk": true,
+            "only": false,
+            "title": "checkout/cart.spec.ts",
+            "location": {
+              "file": "checkout/cart.spec.ts",
+              "line": 0,
+              "column": 0
+            },
+            "parallelMode": "none",
+            "hasTagsField": false,
+            "suites": [
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "typeInferenceOk": true,
+                "only": false,
+                "title": "serial flow",
+                "location": {
+                  "file": "checkout/cart.spec.ts",
+                  "line": 3,
+                  "column": 6
+                },
+                "parallelMode": "serial",
+                "hasTagsField": false,
+                "suites": [],
+                "tests": [
+                  {
+                    "title": "add item",
+                    "titlePath": [
+                      "serial flow",
+                      "add item"
+                    ],
+                    "location": {
+                      "file": "checkout/cart.spec.ts",
+                      "line": 5,
+                      "column": 7
+                    },
+                    "parentTitle": "serial flow",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "53fa0b5a5aa39ac6891a-2a1128f0f48be304d136",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "apply coupon",
+                    "titlePath": [
+                      "serial flow",
+                      "apply coupon"
+                    ],
+                    "location": {
+                      "file": "checkout/cart.spec.ts",
+                      "line": 6,
+                      "column": 7
+                    },
+                    "parentTitle": "serial flow",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "53fa0b5a5aa39ac6891a-ffa743eca09faeb52990",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "pay",
+                    "titlePath": [
+                      "serial flow",
+                      "pay"
+                    ],
+                    "location": {
+                      "file": "checkout/cart.spec.ts",
+                      "line": 7,
+                      "column": 7
+                    },
+                    "parentTitle": "serial flow",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "53fa0b5a5aa39ac6891a-f67a205ba25172b452f1",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [],
+                "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
+                "titlePath": [
+                  "",
+                  "webkit",
+                  "checkout/cart.spec.ts",
+                  "serial flow"
+                ],
+                "allTestCount": 3
+              },
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "typeInferenceOk": true,
+                "only": false,
+                "title": "parallel flow",
+                "location": {
+                  "file": "checkout/cart.spec.ts",
+                  "line": 10,
+                  "column": 6
+                },
+                "parallelMode": "parallel",
+                "hasTagsField": false,
+                "suites": [],
+                "tests": [
+                  {
+                    "title": "browse A",
+                    "titlePath": [
+                      "parallel flow",
+                      "browse A"
+                    ],
+                    "location": {
+                      "file": "checkout/cart.spec.ts",
+                      "line": 12,
+                      "column": 7
+                    },
+                    "parentTitle": "parallel flow",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "53fa0b5a5aa39ac6891a-fd63bd15b3e8b857012b",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "browse B",
+                    "titlePath": [
+                      "parallel flow",
+                      "browse B"
+                    ],
+                    "location": {
+                      "file": "checkout/cart.spec.ts",
+                      "line": 13,
+                      "column": 7
+                    },
+                    "parentTitle": "parallel flow",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "53fa0b5a5aa39ac6891a-103f693ec2b9d07dff5a",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [],
+                "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
+                "titlePath": [
+                  "",
+                  "webkit",
+                  "checkout/cart.spec.ts",
+                  "parallel flow"
+                ],
+                "allTestCount": 2
+              },
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "typeInferenceOk": true,
+                "only": false,
+                "title": "default flow",
+                "location": {
+                  "file": "checkout/cart.spec.ts",
+                  "line": 16,
+                  "column": 6
+                },
+                "parallelMode": "none",
+                "hasTagsField": false,
+                "suites": [],
+                "tests": [
+                  {
+                    "title": "view cart",
+                    "titlePath": [
+                      "default flow",
+                      "view cart"
+                    ],
+                    "location": {
+                      "file": "checkout/cart.spec.ts",
+                      "line": 17,
+                      "column": 7
+                    },
+                    "parentTitle": "default flow",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "53fa0b5a5aa39ac6891a-579b1be6d73b4bf8cd06",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [],
+                "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
+                "titlePath": [
+                  "",
+                  "webkit",
+                  "checkout/cart.spec.ts",
+                  "default flow"
+                ],
+                "allTestCount": 1
+              }
+            ],
+            "tests": [],
+            "staticAnnotations": [],
+            "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
+            "titlePath": [
+              "",
+              "webkit",
+              "checkout/cart.spec.ts"
+            ],
+            "allTestCount": 6
+          },
+          {
+            "type": "file",
+            "typeFromApi": false,
+            "typeInferenceOk": true,
+            "only": false,
+            "title": "misc/annotations.spec.ts",
+            "location": {
+              "file": "misc/annotations.spec.ts",
+              "line": 0,
+              "column": 0
+            },
+            "parallelMode": "none",
+            "hasTagsField": false,
+            "suites": [],
+            "tests": [
+              {
+                "title": "hidden type",
+                "titlePath": [
+                  "hidden type"
+                ],
+                "location": {
+                  "file": "misc/annotations.spec.ts",
+                  "line": 3,
+                  "column": 5
+                },
+                "parentTitle": "misc/annotations.spec.ts",
+                "tags": [],
+                "annotations": [
+                  {
+                    "type": "_internal",
+                    "description": "tooling only"
+                  }
+                ],
+                "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
+                "expectedStatus": "passed",
+                "timeout": 30000,
+                "retries": 0,
+                "repeatEachIndex": 0,
+                "id": "7718a717855dcee93cd0-84c8e6fddcaf88e2a30d",
+                "outcome": "skipped"
+              },
+              {
+                "title": "multiple annotations",
+                "titlePath": [
+                  "multiple annotations"
+                ],
+                "location": {
+                  "file": "misc/annotations.spec.ts",
+                  "line": 5,
+                  "column": 5
+                },
+                "parentTitle": "misc/annotations.spec.ts",
+                "tags": [
+                  "@multi"
+                ],
+                "annotations": [
+                  {
+                    "type": "owner",
+                    "description": "alice"
+                  },
+                  {
+                    "type": "issue",
+                    "description": "#123"
+                  },
+                  {
+                    "type": "owner",
+                    "description": "bob"
+                  }
+                ],
+                "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
+                "expectedStatus": "passed",
+                "timeout": 30000,
+                "retries": 0,
+                "repeatEachIndex": 0,
+                "id": "7718a717855dcee93cd0-7a45f1ed380172be544c",
+                "outcome": "skipped"
+              },
+              {
+                "title": "runtime annotation",
+                "titlePath": [
+                  "runtime annotation"
+                ],
+                "location": {
+                  "file": "misc/annotations.spec.ts",
+                  "line": 14,
+                  "column": 5
+                },
+                "parentTitle": "misc/annotations.spec.ts",
+                "tags": [],
+                "annotations": [],
+                "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {\n  _test.test.info().annotations.push({\n    type: 'runtime',\n    description: 'added at run time'\n  });\n}",
+                "expectedStatus": "passed",
+                "timeout": 30000,
+                "retries": 0,
+                "repeatEachIndex": 0,
+                "id": "7718a717855dcee93cd0-2bbf9eee748249c8ff4f",
+                "outcome": "skipped"
+              }
+            ],
+            "staticAnnotations": [],
+            "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
+            "titlePath": [
+              "",
+              "webkit",
+              "misc/annotations.spec.ts"
+            ],
+            "allTestCount": 3
+          },
+          {
+            "type": "file",
+            "typeFromApi": false,
+            "typeInferenceOk": true,
+            "only": false,
+            "title": "misc/conditionals.spec.ts",
+            "location": {
+              "file": "misc/conditionals.spec.ts",
+              "line": 0,
+              "column": 0
+            },
+            "parallelMode": "none",
+            "hasTagsField": false,
+            "suites": [
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "typeInferenceOk": true,
+                "only": false,
+                "title": "conditionals",
+                "location": {
+                  "file": "misc/conditionals.spec.ts",
+                  "line": 14,
+                  "column": 6
+                },
+                "parallelMode": "none",
+                "hasTagsField": false,
+                "suites": [],
+                "tests": [
+                  {
+                    "title": "env var condition",
+                    "titlePath": [
+                      "conditionals",
+                      "env var condition"
+                    ],
+                    "location": {
+                      "file": "misc/conditionals.spec.ts",
+                      "line": 19,
+                      "column": 7
+                    },
+                    "parentTitle": "conditionals",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    _test.test.fixme(process.env.FEATURE_X === '1', 'needs feature x');\n  }",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "512e66e67c635f8cbc7f-3711cc6e63fe24fc63b2",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "helper call",
+                    "titlePath": [
+                      "conditionals",
+                      "helper call"
+                    ],
+                    "location": {
+                      "file": "misc/conditionals.spec.ts",
+                      "line": 23,
+                      "column": 7
+                    },
+                    "parentTitle": "conditionals",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    skipOnCI(_test.test);\n  }",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "512e66e67c635f8cbc7f-d49088e1a2cbbaad8101",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "computed annotation type",
+                    "titlePath": [
+                      "conditionals",
+                      "computed annotation type"
+                    ],
+                    "location": {
+                      "file": "misc/conditionals.spec.ts",
+                      "line": 27,
+                      "column": 7
+                    },
+                    "parentTitle": "conditionals",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {\n    _test.test.info().annotations.push({\n      type: kind,\n      description: 'JIRA-9'\n    });\n  }",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "512e66e67c635f8cbc7f-7a875c8a4a2ae809e9c2",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "early return before conditional",
+                    "titlePath": [
+                      "conditionals",
+                      "early return before conditional"
+                    ],
+                    "location": {
+                      "file": "misc/conditionals.spec.ts",
+                      "line": 31,
+                      "column": 7
+                    },
+                    "parentTitle": "conditionals",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({\n    browserName\n  }) => {\n    if (browserName === 'chromium') return;\n    _test.test.skip(true, 'never reached on chromium');\n  }",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "512e66e67c635f8cbc7f-0114bcddd57fe1112ad4",
+                    "outcome": "skipped"
+                  },
+                  {
+                    "title": "project name condition",
+                    "titlePath": [
+                      "conditionals",
+                      "project name condition"
+                    ],
+                    "location": {
+                      "file": "misc/conditionals.spec.ts",
+                      "line": 36,
+                      "column": 7
+                    },
+                    "parentTitle": "conditionals",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async ({}, testInfo) => {\n    _test.test.slow(testInfo.project.name === 'webkit', 'slow project');\n  }",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "512e66e67c635f8cbc7f-722d23766c79f0b39ea4",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [],
+                "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
+                "hooks": [
+                  {
+                    "type": "beforeEach",
+                    "location": {
+                      "file": "misc/conditionals.spec.ts",
+                      "line": 15,
+                      "column": 8
+                    },
+                    "fn": "async ({\n    browserName\n  }) => {\n    _test.test.skip(browserName === 'webkit', 'beforeEach: no webkit'); // hook form\n  }"
+                  }
+                ],
+                "titlePath": [
+                  "",
+                  "webkit",
+                  "misc/conditionals.spec.ts",
+                  "conditionals"
+                ],
+                "allTestCount": 5
+              }
+            ],
+            "tests": [],
+            "staticAnnotations": [],
+            "internalTags": [],
+            "hasModifiersField": true,
+            "modifiers": [
+              {
+                "type": "skip",
+                "description": "file-level: no firefox",
+                "location": {
+                  "file": "misc/conditionals.spec.ts",
+                  "line": 12,
+                  "column": 6
+                },
+                "fn": "({\n  browserName\n}) => browserName === 'firefox'"
+              }
+            ],
+            "hasHooksField": true,
+            "titlePath": [
+              "",
+              "webkit",
+              "misc/conditionals.spec.ts"
+            ],
+            "allTestCount": 5
+          },
+          {
+            "type": "file",
+            "typeFromApi": false,
+            "typeInferenceOk": true,
+            "only": false,
+            "title": "misc/generated.spec.ts",
+            "location": {
+              "file": "misc/generated.spec.ts",
+              "line": 0,
+              "column": 0
+            },
+            "parallelMode": "none",
+            "hasTagsField": false,
+            "suites": [
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "typeInferenceOk": true,
+                "only": false,
+                "title": "env staging",
+                "location": {
+                  "file": "misc/generated.spec.ts",
+                  "line": 8,
+                  "column": 8
+                },
+                "parallelMode": "none",
+                "hasTagsField": false,
+                "suites": [],
+                "tests": [
+                  {
+                    "title": "health check",
+                    "titlePath": [
+                      "env staging",
+                      "health check"
+                    ],
+                    "location": {
+                      "file": "misc/generated.spec.ts",
+                      "line": 9,
+                      "column": 9
+                    },
+                    "parentTitle": "env staging",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "38c60d58330107297c1d-336d007a778b8aa79159",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [],
+                "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
+                "titlePath": [
+                  "",
+                  "webkit",
+                  "misc/generated.spec.ts",
+                  "env staging"
+                ],
+                "allTestCount": 1
+              },
+              {
+                "type": "describe",
+                "typeFromApi": false,
+                "typeInferenceOk": true,
+                "only": false,
+                "title": "env prod",
+                "location": {
+                  "file": "misc/generated.spec.ts",
+                  "line": 8,
+                  "column": 8
+                },
+                "parallelMode": "none",
+                "hasTagsField": false,
+                "suites": [],
+                "tests": [
+                  {
+                    "title": "health check",
+                    "titlePath": [
+                      "env prod",
+                      "health check"
+                    ],
+                    "location": {
+                      "file": "misc/generated.spec.ts",
+                      "line": 9,
+                      "column": 9
+                    },
+                    "parentTitle": "env prod",
+                    "tags": [],
+                    "annotations": [],
+                    "only": false,
+                    "hasFn": "function",
+                    "fnSource": "async () => {}",
+                    "expectedStatus": "passed",
+                    "timeout": 30000,
+                    "retries": 0,
+                    "repeatEachIndex": 0,
+                    "id": "38c60d58330107297c1d-d0764718e4000653d0ec",
+                    "outcome": "skipped"
+                  }
+                ],
+                "staticAnnotations": [],
+                "internalTags": [],
+                "hasModifiersField": true,
+                "hasHooksField": true,
+                "titlePath": [
+                  "",
+                  "webkit",
+                  "misc/generated.spec.ts",
+                  "env prod"
+                ],
+                "allTestCount": 1
+              }
+            ],
+            "tests": [
+              {
+                "title": "role admin can log in",
+                "titlePath": [
+                  "role admin can log in"
+                ],
+                "location": {
+                  "file": "misc/generated.spec.ts",
+                  "line": 4,
+                  "column": 7
+                },
+                "parentTitle": "misc/generated.spec.ts",
+                "tags": [
+                  "@role-admin"
+                ],
+                "annotations": [],
+                "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
+                "expectedStatus": "passed",
+                "timeout": 30000,
+                "retries": 0,
+                "repeatEachIndex": 0,
+                "id": "38c60d58330107297c1d-8633f7f5c9e22fefc0c2",
+                "outcome": "skipped"
+              },
+              {
+                "title": "role user can log in",
+                "titlePath": [
+                  "role user can log in"
+                ],
+                "location": {
+                  "file": "misc/generated.spec.ts",
+                  "line": 4,
+                  "column": 7
+                },
+                "parentTitle": "misc/generated.spec.ts",
+                "tags": [
+                  "@role-user"
+                ],
+                "annotations": [],
+                "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
+                "expectedStatus": "passed",
+                "timeout": 30000,
+                "retries": 0,
+                "repeatEachIndex": 0,
+                "id": "38c60d58330107297c1d-442ece7cebad78a35b49",
+                "outcome": "skipped"
+              },
+              {
+                "title": "role guest can log in",
+                "titlePath": [
+                  "role guest can log in"
+                ],
+                "location": {
+                  "file": "misc/generated.spec.ts",
+                  "line": 4,
+                  "column": 7
+                },
+                "parentTitle": "misc/generated.spec.ts",
+                "tags": [
+                  "@role-guest"
+                ],
+                "annotations": [],
+                "only": false,
+                "hasFn": "function",
+                "fnSource": "async () => {}",
+                "expectedStatus": "passed",
+                "timeout": 30000,
+                "retries": 0,
+                "repeatEachIndex": 0,
+                "id": "38c60d58330107297c1d-4febb72ec96e7f66121c",
+                "outcome": "skipped"
+              }
+            ],
+            "staticAnnotations": [],
+            "internalTags": [],
+            "hasModifiersField": true,
+            "hasHooksField": true,
+            "titlePath": [
+              "",
+              "webkit",
+              "misc/generated.spec.ts"
+            ],
+            "allTestCount": 5
+          }
+        ],
+        "tests": [],
+        "project": {
+          "name": "webkit",
+          "dependencies": [
+            "setup"
+          ],
+          "testDir": "",
+          "grep": "/.*/",
+          "repeatEach": 1,
+          "retries": 0,
+          "timeout": 30000,
+          "use": {
+            "browserName": "webkit"
+          }
+        },
+        "staticAnnotations": [],
+        "internalTags": [],
+        "hasModifiersField": true,
+        "hasHooksField": true
+      }
+    ],
+    "tests": [],
+    "staticAnnotations": [],
+    "internalTags": [],
+    "hasModifiersField": true,
+    "hasHooksField": true
+  }
+}

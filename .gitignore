@@ -22,3 +22,7 @@ suitemap-report/
 .idea/
 .vscode/*
 !.vscode/extensions.json
+
+# Spike / fixtures
+spike/.work/
+global-setup-ran.marker

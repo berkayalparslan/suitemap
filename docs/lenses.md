@@ -10,6 +10,7 @@ Built-in lenses:
 | Tag | Tag → Test |
 | Project | Project → Folder → Test |
 | Annotation | Annotation type → Annotation value → Test |
+| Conditional | Conditional type → Referenced identifier (`browserName`, `process.env.*`, project) → Test |
 
 Custom lenses are defined in `suitemap.config.ts`, e.g. `Project → Tag`, or `Annotation:fail → Annotation:issue → issueKey`.
 
@@ -27,10 +28,14 @@ A test can have several tags, run in several projects and carry several annotati
 | Tag (network) | **One** node with an edge to each tag; overlaps become visible. | Unique tests |
 | Tag combination (toggle) | Grouped by exact tag set ("@smoke + @auth"); only combinations that exist. | Unique tests |
 
+A conditional is attached to a test, describe or file, so every lens and filter (folder, tag, project) works on it. A conditional on a describe shows on each test below it. Conditionals the extractor could not resolve to a project (`appliesToProjects: 'unknown'`) show on every project's instance with a dashed badge.
+
 ## Preset lenses (Phase 3)
 
 - Known failures: `fail` and `fixme`, grouped by issue
 - Skipped by project
 - Untagged tests
 - Slow tests
+- Conditionals by `confidence` (opaque ones need a human look)
+- Conditionals by form (body, hook, describe/file callback, runtime push)
 - Focused tests (`.only`)

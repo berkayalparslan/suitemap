@@ -1,0 +1,2929 @@
+--- pw-1.42.json	2026-11-27 14:07:18
++++ pw-latest.json	2026-11-27 14:07:20
+@@ -1,5 +1,5 @@
+ {
+-  "playwrightVersion": "1.42.1",
++  "playwrightVersion": "1.65.1",
+   "globalSetup": "../global-setup.ts",
+   "projectNames": [
+     "setup",
+@@ -10,7 +10,7 @@
+   ],
+   "tree": {
+     "type": "root",
+-    "typeFromApi": false,
++    "typeFromApi": true,
+     "typeInferenceOk": true,
+     "only": false,
+     "title": "",
+@@ -19,21 +19,21 @@
+     "suites": [
+       {
+         "type": "project",
+-        "typeFromApi": false,
++        "typeFromApi": true,
+         "typeInferenceOk": true,
+         "only": false,
+-        "title": "teardown",
++        "title": "setup",
+         "parallelMode": "none",
+         "hasTagsField": false,
+         "suites": [
+           {
+             "type": "file",
+-            "typeFromApi": false,
++            "typeFromApi": true,
+             "typeInferenceOk": true,
+             "only": false,
+-            "title": "setup/cleanup.teardown.ts",
++            "title": "setup/auth.setup.ts",
+             "location": {
+-              "file": "setup/cleanup.teardown.ts",
++              "file": "setup/auth.setup.ts",
+               "line": 0,
+               "column": 0
+             },
+@@ -42,16 +42,17 @@
+             "suites": [],
+             "tests": [
+               {
+-                "title": "cleanup",
++                "title": "authenticate",
+                 "titlePath": [
+-                  "cleanup"
++                  "authenticate"
+                 ],
+                 "location": {
+-                  "file": "setup/cleanup.teardown.ts",
++                  "file": "setup/auth.setup.ts",
+                   "line": 2,
+-                  "column": 9
++                  "column": 1
+                 },
+-                "parentTitle": "setup/cleanup.teardown.ts",
++                "parentTitle": "setup/auth.setup.ts",
++                "parentType": "file",
+                 "tags": [],
+                 "annotations": [],
+                 "only": false,
+@@ -61,7 +62,7 @@
+                 "timeout": 30000,
+                 "retries": 0,
+                 "repeatEachIndex": 0,
+-                "id": "4e960201d466a68c6215-ce45eeff1c9244e209ba",
++                "id": "e717b06d8d484d1cd946-ece6ea03d0ba8d9d0fd4",
+                 "outcome": "skipped"
+               }
+             ],
+@@ -71,16 +72,17 @@
+             "hasHooksField": true,
+             "titlePath": [
+               "",
+-              "teardown",
+-              "setup/cleanup.teardown.ts"
++              "setup",
++              "setup/auth.setup.ts"
+             ],
+             "allTestCount": 1
+           }
+         ],
+         "tests": [],
+         "project": {
+-          "name": "teardown",
++          "name": "setup",
+           "dependencies": [],
++          "teardown": "teardown",
+           "testDir": "",
+           "grep": "/.*/",
+           "repeatEach": 1,
+@@ -95,21 +97,21 @@
+       },
+       {
+         "type": "project",
+-        "typeFromApi": false,
++        "typeFromApi": true,
+         "typeInferenceOk": true,
+         "only": false,
+-        "title": "setup",
++        "title": "teardown",
+         "parallelMode": "none",
+         "hasTagsField": false,
+         "suites": [
+           {
+             "type": "file",
+-            "typeFromApi": false,
++            "typeFromApi": true,
+             "typeInferenceOk": true,
+             "only": false,
+-            "title": "setup/auth.setup.ts",
++            "title": "setup/cleanup.teardown.ts",
+             "location": {
+-              "file": "setup/auth.setup.ts",
++              "file": "setup/cleanup.teardown.ts",
+               "line": 0,
+               "column": 0
+             },
+@@ -118,16 +120,17 @@
+             "suites": [],
+             "tests": [
+               {
+-                "title": "authenticate",
++                "title": "cleanup",
+                 "titlePath": [
+-                  "authenticate"
++                  "cleanup"
+                 ],
+                 "location": {
+-                  "file": "setup/auth.setup.ts",
++                  "file": "setup/cleanup.teardown.ts",
+                   "line": 2,
+-                  "column": 6
++                  "column": 1
+                 },
+-                "parentTitle": "setup/auth.setup.ts",
++                "parentTitle": "setup/cleanup.teardown.ts",
++                "parentType": "file",
+                 "tags": [],
+                 "annotations": [],
+                 "only": false,
+@@ -137,7 +140,7 @@
+                 "timeout": 30000,
+                 "retries": 0,
+                 "repeatEachIndex": 0,
+-                "id": "e717b06d8d484d1cd946-ece6ea03d0ba8d9d0fd4",
++                "id": "4e960201d466a68c6215-ce45eeff1c9244e209ba",
+                 "outcome": "skipped"
+               }
+             ],
+@@ -147,17 +150,16 @@
+             "hasHooksField": true,
+             "titlePath": [
+               "",
+-              "setup",
+-              "setup/auth.setup.ts"
++              "teardown",
++              "setup/cleanup.teardown.ts"
+             ],
+             "allTestCount": 1
+           }
+         ],
+         "tests": [],
+         "project": {
+-          "name": "setup",
++          "name": "teardown",
+           "dependencies": [],
+-          "teardown": "teardown",
+           "testDir": "",
+           "grep": "/.*/",
+           "repeatEach": 1,
+@@ -172,7 +174,7 @@
+       },
+       {
+         "type": "project",
+-        "typeFromApi": false,
++        "typeFromApi": true,
+         "typeInferenceOk": true,
+         "only": false,
+         "title": "chromium",
+@@ -181,7 +183,7 @@
+         "suites": [
+           {
+             "type": "file",
+-            "typeFromApi": false,
++            "typeFromApi": true,
+             "typeInferenceOk": true,
+             "only": false,
+             "title": "auth/login.spec.ts",
+@@ -202,9 +204,10 @@
+                 "location": {
+                   "file": "auth/login.spec.ts",
+                   "line": 3,
+-                  "column": 5
++                  "column": 1
+                 },
+                 "parentTitle": "auth/login.spec.ts",
++                "parentType": "file",
+                 "tags": [
+                   "@smoke"
+                 ],
+@@ -227,9 +230,10 @@
+                 "location": {
+                   "file": "auth/login.spec.ts",
+                   "line": 5,
+-                  "column": 5
++                  "column": 1
+                 },
+                 "parentTitle": "auth/login.spec.ts",
++                "parentType": "file",
+                 "tags": [
+                   "@auth",
+                   "@smoke"
+@@ -253,9 +257,10 @@
+                 "location": {
+                   "file": "auth/login.spec.ts",
+                   "line": 7,
+-                  "column": 5
++                  "column": 1
+                 },
+                 "parentTitle": "auth/login.spec.ts",
++                "parentType": "file",
+                 "tags": [
+                   "@fast",
+                   "@auth"
+@@ -279,14 +284,20 @@
+                 "location": {
+                   "file": "auth/login.spec.ts",
+                   "line": 9,
+-                  "column": 5
++                  "column": 1
+                 },
+                 "parentTitle": "auth/login.spec.ts",
++                "parentType": "file",
+                 "tags": [],
+                 "annotations": [
+                   {
+                     "type": "issue",
+-                    "description": "https://github.com/org/repo/issues/12"
++                    "description": "https://github.com/org/repo/issues/12",
++                    "location": {
++                      "file": "auth/login.spec.ts",
++                      "line": 9,
++                      "column": 1
++                    }
+                   }
+                 ],
+                 "only": false,
+@@ -307,18 +318,29 @@
+                 "location": {
+                   "file": "auth/login.spec.ts",
+                   "line": 13,
+-                  "column": 5
++                  "column": 1
+                 },
+                 "parentTitle": "auth/login.spec.ts",
++                "parentType": "file",
+                 "tags": [],
+                 "annotations": [
+                   {
+                     "type": "issue",
+-                    "description": "JIRA-123"
++                    "description": "JIRA-123",
++                    "location": {
++                      "file": "auth/login.spec.ts",
++                      "line": 13,
++                      "column": 1
++                    }
+                   },
+                   {
+                     "type": "issue",
+-                    "description": "https://example.atlassian.net/browse/JIRA-456"
++                    "description": "https://example.atlassian.net/browse/JIRA-456",
++                    "location": {
++                      "file": "auth/login.spec.ts",
++                      "line": 13,
++                      "column": 1
++                    }
+                   }
+                 ],
+                 "only": false,
+@@ -345,7 +367,7 @@
+           },
+           {
+             "type": "file",
+-            "typeFromApi": false,
++            "typeFromApi": true,
+             "typeInferenceOk": true,
+             "only": false,
+             "title": "auth/permissions/roles.spec.ts",
+@@ -359,7 +381,7 @@
+             "suites": [
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "typeInferenceOk": true,
+                 "only": false,
+                 "title": "roles",
+@@ -373,7 +395,7 @@
+                 "suites": [
+                   {
+                     "type": "describe",
+-                    "typeFromApi": false,
++                    "typeFromApi": true,
+                     "typeInferenceOk": true,
+                     "only": false,
+                     "title": "nested",
+@@ -396,9 +418,10 @@
+                         "location": {
+                           "file": "auth/permissions/roles.spec.ts",
+                           "line": 10,
+-                          "column": 9
++                          "column": 5
+                         },
+                         "parentTitle": "nested",
++                        "parentType": "describe",
+                         "tags": [
+                           "@rbac",
+                           "@nested",
+@@ -407,11 +430,21 @@
+                         "annotations": [
+                           {
+                             "type": "owner",
+-                            "description": "team-auth"
++                            "description": "team-auth",
++                            "location": {
++                              "file": "auth/permissions/roles.spec.ts",
++                              "line": 3,
++                              "column": 6
++                            }
+                           },
+                           {
+                             "type": "issue",
+-                            "description": "RBAC-7"
++                            "description": "RBAC-7",
++                            "location": {
++                              "file": "auth/permissions/roles.spec.ts",
++                              "line": 9,
++                              "column": 8
++                            }
+                           }
+                         ],
+                         "only": false,
+@@ -428,7 +461,12 @@
+                     "staticAnnotations": [
+                       {
+                         "type": "issue",
+-                        "description": "RBAC-7"
++                        "description": "RBAC-7",
++                        "location": {
++                          "file": "auth/permissions/roles.spec.ts",
++                          "line": 9,
++                          "column": 8
++                        }
+                       }
+                     ],
+                     "internalTags": [
+@@ -456,16 +494,22 @@
+                     "location": {
+                       "file": "auth/permissions/roles.spec.ts",
+                       "line": 7,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "roles",
++                    "parentType": "describe",
+                     "tags": [
+                       "@rbac"
+                     ],
+                     "annotations": [
+                       {
+                         "type": "owner",
+-                        "description": "team-auth"
++                        "description": "team-auth",
++                        "location": {
++                          "file": "auth/permissions/roles.spec.ts",
++                          "line": 3,
++                          "column": 6
++                        }
+                       }
+                     ],
+                     "only": false,
+@@ -482,7 +526,12 @@
+                 "staticAnnotations": [
+                   {
+                     "type": "owner",
+-                    "description": "team-auth"
++                    "description": "team-auth",
++                    "location": {
++                      "file": "auth/permissions/roles.spec.ts",
++                      "line": 3,
++                      "column": 6
++                    }
+                   }
+                 ],
+                 "internalTags": [
+@@ -513,7 +562,7 @@
+           },
+           {
+             "type": "file",
+-            "typeFromApi": false,
++            "typeFromApi": true,
+             "typeInferenceOk": true,
+             "only": false,
+             "title": "checkout/builtins.spec.ts",
+@@ -527,7 +576,7 @@
+             "suites": [
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "typeInferenceOk": true,
+                 "only": false,
+                 "title": "unconditional",
+@@ -549,9 +598,10 @@
+                     "location": {
+                       "file": "checkout/builtins.spec.ts",
+                       "line": 4,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "unconditional",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -576,10 +626,16 @@
+                       "column": 8
+                     },
+                     "parentTitle": "unconditional",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [
+                       {
+-                        "type": "skip"
++                        "type": "skip",
++                        "location": {
++                          "file": "checkout/builtins.spec.ts",
++                          "line": 5,
++                          "column": 8
++                        }
+                       }
+                     ],
+                     "only": false,
+@@ -604,10 +660,16 @@
+                       "column": 8
+                     },
+                     "parentTitle": "unconditional",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [
+                       {
+-                        "type": "fail"
++                        "type": "fail",
++                        "location": {
++                          "file": "checkout/builtins.spec.ts",
++                          "line": 6,
++                          "column": 8
++                        }
+                       }
+                     ],
+                     "only": false,
+@@ -632,10 +694,16 @@
+                       "column": 8
+                     },
+                     "parentTitle": "unconditional",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [
+                       {
+-                        "type": "fixme"
++                        "type": "fixme",
++                        "location": {
++                          "file": "checkout/builtins.spec.ts",
++                          "line": 7,
++                          "column": 8
++                        }
+                       }
+                     ],
+                     "only": false,
+@@ -657,9 +725,10 @@
+                     "location": {
+                       "file": "checkout/builtins.spec.ts",
+                       "line": 8,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "unconditional",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -687,7 +756,7 @@
+               },
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "typeInferenceOk": true,
+                 "only": false,
+                 "title": "conditional on browserName",
+@@ -709,9 +778,10 @@
+                     "location": {
+                       "file": "checkout/builtins.spec.ts",
+                       "line": 12,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditional on browserName",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -733,9 +803,10 @@
+                     "location": {
+                       "file": "checkout/builtins.spec.ts",
+                       "line": 15,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditional on browserName",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -757,9 +828,10 @@
+                     "location": {
+                       "file": "checkout/builtins.spec.ts",
+                       "line": 18,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditional on browserName",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -781,9 +853,10 @@
+                     "location": {
+                       "file": "checkout/builtins.spec.ts",
+                       "line": 21,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditional on browserName",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -811,7 +884,7 @@
+               },
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "typeInferenceOk": true,
+                 "only": false,
+                 "title": "describe-level",
+@@ -833,9 +906,10 @@
+                     "location": {
+                       "file": "checkout/builtins.spec.ts",
+                       "line": 28,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "describe-level",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -875,7 +949,7 @@
+               },
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "typeInferenceOk": true,
+                 "only": false,
+                 "title": "skipped describe",
+@@ -897,13 +971,19 @@
+                     "location": {
+                       "file": "checkout/builtins.spec.ts",
+                       "line": 32,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "skipped describe",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [
+                       {
+-                        "type": "skip"
++                        "type": "skip",
++                        "location": {
++                          "file": "checkout/builtins.spec.ts",
++                          "line": 31,
++                          "column": 15
++                        }
+                       }
+                     ],
+                     "only": false,
+@@ -919,7 +999,12 @@
+                 ],
+                 "staticAnnotations": [
+                   {
+-                    "type": "skip"
++                    "type": "skip",
++                    "location": {
++                      "file": "checkout/builtins.spec.ts",
++                      "line": 31,
++                      "column": 15
++                    }
+                   }
+                 ],
+                 "internalTags": [],
+@@ -935,7 +1020,7 @@
+               },
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "typeInferenceOk": true,
+                 "only": false,
+                 "title": "fixme describe",
+@@ -957,13 +1042,19 @@
+                     "location": {
+                       "file": "checkout/builtins.spec.ts",
+                       "line": 36,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "fixme describe",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [
+                       {
+-                        "type": "fixme"
++                        "type": "fixme",
++                        "location": {
++                          "file": "checkout/builtins.spec.ts",
++                          "line": 35,
++                          "column": 15
++                        }
+                       }
+                     ],
+                     "only": false,
+@@ -979,7 +1070,12 @@
+                 ],
+                 "staticAnnotations": [
+                   {
+-                    "type": "fixme"
++                    "type": "fixme",
++                    "location": {
++                      "file": "checkout/builtins.spec.ts",
++                      "line": 35,
++                      "column": 15
++                    }
+                   }
+                 ],
+                 "internalTags": [],
+@@ -995,7 +1091,7 @@
+               },
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "typeInferenceOk": true,
+                 "only": false,
+                 "title": "only",
+@@ -1020,6 +1116,7 @@
+                       "column": 8
+                     },
+                     "parentTitle": "only",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": true,
+@@ -1041,9 +1138,10 @@
+                     "location": {
+                       "file": "checkout/builtins.spec.ts",
+                       "line": 41,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "only",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -1084,7 +1182,7 @@
+           },
+           {
+             "type": "file",
+-            "typeFromApi": false,
++            "typeFromApi": true,
+             "typeInferenceOk": true,
+             "only": false,
+             "title": "checkout/cart.spec.ts",
+@@ -1098,7 +1196,7 @@
+             "suites": [
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "typeInferenceOk": true,
+                 "only": false,
+                 "title": "serial flow",
+@@ -1120,11 +1218,21 @@
+                     "location": {
+                       "file": "checkout/cart.spec.ts",
+                       "line": 5,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "serial flow",
++                    "parentType": "describe",
+                     "tags": [],
+-                    "annotations": [],
++                    "annotations": [
++                      {
++                        "type": "serial",
++                        "location": {
++                          "file": "checkout/cart.spec.ts",
++                          "line": 3,
++                          "column": 6
++                        }
++                      }
++                    ],
+                     "only": false,
+                     "hasFn": "function",
+                     "fnSource": "async () => {}",
+@@ -1144,11 +1252,21 @@
+                     "location": {
+                       "file": "checkout/cart.spec.ts",
+                       "line": 6,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "serial flow",
++                    "parentType": "describe",
+                     "tags": [],
+-                    "annotations": [],
++                    "annotations": [
++                      {
++                        "type": "serial",
++                        "location": {
++                          "file": "checkout/cart.spec.ts",
++                          "line": 3,
++                          "column": 6
++                        }
++                      }
++                    ],
+                     "only": false,
+                     "hasFn": "function",
+                     "fnSource": "async () => {}",
+@@ -1168,11 +1286,21 @@
+                     "location": {
+                       "file": "checkout/cart.spec.ts",
+                       "line": 7,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "serial flow",
++                    "parentType": "describe",
+                     "tags": [],
+-                    "annotations": [],
++                    "annotations": [
++                      {
++                        "type": "serial",
++                        "location": {
++                          "file": "checkout/cart.spec.ts",
++                          "line": 3,
++                          "column": 6
++                        }
++                      }
++                    ],
+                     "only": false,
+                     "hasFn": "function",
+                     "fnSource": "async () => {}",
+@@ -1198,7 +1326,7 @@
+               },
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "typeInferenceOk": true,
+                 "only": false,
+                 "title": "parallel flow",
+@@ -1220,9 +1348,10 @@
+                     "location": {
+                       "file": "checkout/cart.spec.ts",
+                       "line": 12,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "parallel flow",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -1244,9 +1373,10 @@
+                     "location": {
+                       "file": "checkout/cart.spec.ts",
+                       "line": 13,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "parallel flow",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -1274,7 +1404,7 @@
+               },
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "typeInferenceOk": true,
+                 "only": false,
+                 "title": "default flow",
+@@ -1296,9 +1426,10 @@
+                     "location": {
+                       "file": "checkout/cart.spec.ts",
+                       "line": 17,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "default flow",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -1339,7 +1470,7 @@
+           },
+           {
+             "type": "file",
+-            "typeFromApi": false,
++            "typeFromApi": true,
+             "typeInferenceOk": true,
+             "only": false,
+             "title": "misc/annotations.spec.ts",
+@@ -1360,14 +1491,20 @@
+                 "location": {
+                   "file": "misc/annotations.spec.ts",
+                   "line": 3,
+-                  "column": 5
++                  "column": 1
+                 },
+                 "parentTitle": "misc/annotations.spec.ts",
++                "parentType": "file",
+                 "tags": [],
+                 "annotations": [
+                   {
+                     "type": "_internal",
+-                    "description": "tooling only"
++                    "description": "tooling only",
++                    "location": {
++                      "file": "misc/annotations.spec.ts",
++                      "line": 3,
++                      "column": 1
++                    }
+                   }
+                 ],
+                 "only": false,
+@@ -1388,24 +1525,40 @@
+                 "location": {
+                   "file": "misc/annotations.spec.ts",
+                   "line": 5,
+-                  "column": 5
++                  "column": 1
+                 },
+                 "parentTitle": "misc/annotations.spec.ts",
++                "parentType": "file",
+                 "tags": [
+                   "@multi"
+                 ],
+                 "annotations": [
+                   {
+                     "type": "owner",
+-                    "description": "alice"
++                    "description": "alice",
++                    "location": {
++                      "file": "misc/annotations.spec.ts",
++                      "line": 5,
++                      "column": 1
++                    }
+                   },
+                   {
+                     "type": "issue",
+-                    "description": "#123"
++                    "description": "#123",
++                    "location": {
++                      "file": "misc/annotations.spec.ts",
++                      "line": 5,
++                      "column": 1
++                    }
+                   },
+                   {
+                     "type": "owner",
+-                    "description": "bob"
++                    "description": "bob",
++                    "location": {
++                      "file": "misc/annotations.spec.ts",
++                      "line": 5,
++                      "column": 1
++                    }
+                   }
+                 ],
+                 "only": false,
+@@ -1426,9 +1579,10 @@
+                 "location": {
+                   "file": "misc/annotations.spec.ts",
+                   "line": 14,
+-                  "column": 5
++                  "column": 1
+                 },
+                 "parentTitle": "misc/annotations.spec.ts",
++                "parentType": "file",
+                 "tags": [],
+                 "annotations": [],
+                 "only": false,
+@@ -1455,7 +1609,7 @@
+           },
+           {
+             "type": "file",
+-            "typeFromApi": false,
++            "typeFromApi": true,
+             "typeInferenceOk": true,
+             "only": false,
+             "title": "misc/conditionals.spec.ts",
+@@ -1469,7 +1623,7 @@
+             "suites": [
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "typeInferenceOk": true,
+                 "only": false,
+                 "title": "conditionals",
+@@ -1491,9 +1645,10 @@
+                     "location": {
+                       "file": "misc/conditionals.spec.ts",
+                       "line": 19,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditionals",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -1515,9 +1670,10 @@
+                     "location": {
+                       "file": "misc/conditionals.spec.ts",
+                       "line": 23,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditionals",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -1539,9 +1695,10 @@
+                     "location": {
+                       "file": "misc/conditionals.spec.ts",
+                       "line": 27,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditionals",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -1563,9 +1720,10 @@
+                     "location": {
+                       "file": "misc/conditionals.spec.ts",
+                       "line": 31,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditionals",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -1587,9 +1745,10 @@
+                     "location": {
+                       "file": "misc/conditionals.spec.ts",
+                       "line": 36,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditionals",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -1653,7 +1812,7 @@
+           },
+           {
+             "type": "file",
+-            "typeFromApi": false,
++            "typeFromApi": true,
+             "typeInferenceOk": true,
+             "only": false,
+             "title": "misc/generated.spec.ts",
+@@ -1667,7 +1826,7 @@
+             "suites": [
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "typeInferenceOk": true,
+                 "only": false,
+                 "title": "env staging",
+@@ -1689,9 +1848,10 @@
+                     "location": {
+                       "file": "misc/generated.spec.ts",
+                       "line": 9,
+-                      "column": 9
++                      "column": 5
+                     },
+                     "parentTitle": "env staging",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -1719,7 +1879,7 @@
+               },
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "typeInferenceOk": true,
+                 "only": false,
+                 "title": "env prod",
+@@ -1741,9 +1901,10 @@
+                     "location": {
+                       "file": "misc/generated.spec.ts",
+                       "line": 9,
+-                      "column": 9
++                      "column": 5
+                     },
+                     "parentTitle": "env prod",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -1779,9 +1940,10 @@
+                 "location": {
+                   "file": "misc/generated.spec.ts",
+                   "line": 4,
+-                  "column": 7
++                  "column": 3
+                 },
+                 "parentTitle": "misc/generated.spec.ts",
++                "parentType": "file",
+                 "tags": [
+                   "@role-admin"
+                 ],
+@@ -1804,9 +1966,10 @@
+                 "location": {
+                   "file": "misc/generated.spec.ts",
+                   "line": 4,
+-                  "column": 7
++                  "column": 3
+                 },
+                 "parentTitle": "misc/generated.spec.ts",
++                "parentType": "file",
+                 "tags": [
+                   "@role-user"
+                 ],
+@@ -1829,9 +1992,10 @@
+                 "location": {
+                   "file": "misc/generated.spec.ts",
+                   "line": 4,
+-                  "column": 7
++                  "column": 3
+                 },
+                 "parentTitle": "misc/generated.spec.ts",
++                "parentType": "file",
+                 "tags": [
+                   "@role-guest"
+                 ],
+@@ -1881,7 +2045,7 @@
+       },
+       {
+         "type": "project",
+-        "typeFromApi": false,
++        "typeFromApi": true,
+         "typeInferenceOk": true,
+         "only": false,
+         "title": "firefox",
+@@ -1890,7 +2054,7 @@
+         "suites": [
+           {
+             "type": "file",
+-            "typeFromApi": false,
++            "typeFromApi": true,
+             "typeInferenceOk": true,
+             "only": false,
+             "title": "auth/login.spec.ts",
+@@ -1911,9 +2075,10 @@
+                 "location": {
+                   "file": "auth/login.spec.ts",
+                   "line": 3,
+-                  "column": 5
++                  "column": 1
+                 },
+                 "parentTitle": "auth/login.spec.ts",
++                "parentType": "file",
+                 "tags": [
+                   "@smoke"
+                 ],
+@@ -1936,9 +2101,10 @@
+                 "location": {
+                   "file": "auth/login.spec.ts",
+                   "line": 5,
+-                  "column": 5
++                  "column": 1
+                 },
+                 "parentTitle": "auth/login.spec.ts",
++                "parentType": "file",
+                 "tags": [
+                   "@auth",
+                   "@smoke"
+@@ -1962,9 +2128,10 @@
+                 "location": {
+                   "file": "auth/login.spec.ts",
+                   "line": 7,
+-                  "column": 5
++                  "column": 1
+                 },
+                 "parentTitle": "auth/login.spec.ts",
++                "parentType": "file",
+                 "tags": [
+                   "@fast",
+                   "@auth"
+@@ -1988,14 +2155,20 @@
+                 "location": {
+                   "file": "auth/login.spec.ts",
+                   "line": 9,
+-                  "column": 5
++                  "column": 1
+                 },
+                 "parentTitle": "auth/login.spec.ts",
++                "parentType": "file",
+                 "tags": [],
+                 "annotations": [
+                   {
+                     "type": "issue",
+-                    "description": "https://github.com/org/repo/issues/12"
++                    "description": "https://github.com/org/repo/issues/12",
++                    "location": {
++                      "file": "auth/login.spec.ts",
++                      "line": 9,
++                      "column": 1
++                    }
+                   }
+                 ],
+                 "only": false,
+@@ -2016,18 +2189,29 @@
+                 "location": {
+                   "file": "auth/login.spec.ts",
+                   "line": 13,
+-                  "column": 5
++                  "column": 1
+                 },
+                 "parentTitle": "auth/login.spec.ts",
++                "parentType": "file",
+                 "tags": [],
+                 "annotations": [
+                   {
+                     "type": "issue",
+-                    "description": "JIRA-123"
++                    "description": "JIRA-123",
++                    "location": {
++                      "file": "auth/login.spec.ts",
++                      "line": 13,
++                      "column": 1
++                    }
+                   },
+                   {
+                     "type": "issue",
+-                    "description": "https://example.atlassian.net/browse/JIRA-456"
++                    "description": "https://example.atlassian.net/browse/JIRA-456",
++                    "location": {
++                      "file": "auth/login.spec.ts",
++                      "line": 13,
++                      "column": 1
++                    }
+                   }
+                 ],
+                 "only": false,
+@@ -2054,7 +2238,7 @@
+           },
+           {
+             "type": "file",
+-            "typeFromApi": false,
++            "typeFromApi": true,
+             "typeInferenceOk": true,
+             "only": false,
+             "title": "auth/permissions/roles.spec.ts",
+@@ -2068,7 +2252,7 @@
+             "suites": [
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "typeInferenceOk": true,
+                 "only": false,
+                 "title": "roles",
+@@ -2082,7 +2266,7 @@
+                 "suites": [
+                   {
+                     "type": "describe",
+-                    "typeFromApi": false,
++                    "typeFromApi": true,
+                     "typeInferenceOk": true,
+                     "only": false,
+                     "title": "nested",
+@@ -2105,9 +2289,10 @@
+                         "location": {
+                           "file": "auth/permissions/roles.spec.ts",
+                           "line": 10,
+-                          "column": 9
++                          "column": 5
+                         },
+                         "parentTitle": "nested",
++                        "parentType": "describe",
+                         "tags": [
+                           "@rbac",
+                           "@nested",
+@@ -2116,11 +2301,21 @@
+                         "annotations": [
+                           {
+                             "type": "owner",
+-                            "description": "team-auth"
++                            "description": "team-auth",
++                            "location": {
++                              "file": "auth/permissions/roles.spec.ts",
++                              "line": 3,
++                              "column": 6
++                            }
+                           },
+                           {
+                             "type": "issue",
+-                            "description": "RBAC-7"
++                            "description": "RBAC-7",
++                            "location": {
++                              "file": "auth/permissions/roles.spec.ts",
++                              "line": 9,
++                              "column": 8
++                            }
+                           }
+                         ],
+                         "only": false,
+@@ -2137,7 +2332,12 @@
+                     "staticAnnotations": [
+                       {
+                         "type": "issue",
+-                        "description": "RBAC-7"
++                        "description": "RBAC-7",
++                        "location": {
++                          "file": "auth/permissions/roles.spec.ts",
++                          "line": 9,
++                          "column": 8
++                        }
+                       }
+                     ],
+                     "internalTags": [
+@@ -2165,16 +2365,22 @@
+                     "location": {
+                       "file": "auth/permissions/roles.spec.ts",
+                       "line": 7,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "roles",
++                    "parentType": "describe",
+                     "tags": [
+                       "@rbac"
+                     ],
+                     "annotations": [
+                       {
+                         "type": "owner",
+-                        "description": "team-auth"
++                        "description": "team-auth",
++                        "location": {
++                          "file": "auth/permissions/roles.spec.ts",
++                          "line": 3,
++                          "column": 6
++                        }
+                       }
+                     ],
+                     "only": false,
+@@ -2191,7 +2397,12 @@
+                 "staticAnnotations": [
+                   {
+                     "type": "owner",
+-                    "description": "team-auth"
++                    "description": "team-auth",
++                    "location": {
++                      "file": "auth/permissions/roles.spec.ts",
++                      "line": 3,
++                      "column": 6
++                    }
+                   }
+                 ],
+                 "internalTags": [
+@@ -2222,7 +2433,7 @@
+           },
+           {
+             "type": "file",
+-            "typeFromApi": false,
++            "typeFromApi": true,
+             "typeInferenceOk": true,
+             "only": false,
+             "title": "checkout/builtins.spec.ts",
+@@ -2236,7 +2447,7 @@
+             "suites": [
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "typeInferenceOk": true,
+                 "only": false,
+                 "title": "unconditional",
+@@ -2258,9 +2469,10 @@
+                     "location": {
+                       "file": "checkout/builtins.spec.ts",
+                       "line": 4,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "unconditional",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -2285,10 +2497,16 @@
+                       "column": 8
+                     },
+                     "parentTitle": "unconditional",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [
+                       {
+-                        "type": "skip"
++                        "type": "skip",
++                        "location": {
++                          "file": "checkout/builtins.spec.ts",
++                          "line": 5,
++                          "column": 8
++                        }
+                       }
+                     ],
+                     "only": false,
+@@ -2313,10 +2531,16 @@
+                       "column": 8
+                     },
+                     "parentTitle": "unconditional",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [
+                       {
+-                        "type": "fail"
++                        "type": "fail",
++                        "location": {
++                          "file": "checkout/builtins.spec.ts",
++                          "line": 6,
++                          "column": 8
++                        }
+                       }
+                     ],
+                     "only": false,
+@@ -2341,10 +2565,16 @@
+                       "column": 8
+                     },
+                     "parentTitle": "unconditional",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [
+                       {
+-                        "type": "fixme"
++                        "type": "fixme",
++                        "location": {
++                          "file": "checkout/builtins.spec.ts",
++                          "line": 7,
++                          "column": 8
++                        }
+                       }
+                     ],
+                     "only": false,
+@@ -2366,9 +2596,10 @@
+                     "location": {
+                       "file": "checkout/builtins.spec.ts",
+                       "line": 8,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "unconditional",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -2396,7 +2627,7 @@
+               },
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "typeInferenceOk": true,
+                 "only": false,
+                 "title": "conditional on browserName",
+@@ -2418,9 +2649,10 @@
+                     "location": {
+                       "file": "checkout/builtins.spec.ts",
+                       "line": 12,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditional on browserName",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -2442,9 +2674,10 @@
+                     "location": {
+                       "file": "checkout/builtins.spec.ts",
+                       "line": 15,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditional on browserName",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -2466,9 +2699,10 @@
+                     "location": {
+                       "file": "checkout/builtins.spec.ts",
+                       "line": 18,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditional on browserName",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -2490,9 +2724,10 @@
+                     "location": {
+                       "file": "checkout/builtins.spec.ts",
+                       "line": 21,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditional on browserName",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -2520,7 +2755,7 @@
+               },
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "typeInferenceOk": true,
+                 "only": false,
+                 "title": "describe-level",
+@@ -2542,9 +2777,10 @@
+                     "location": {
+                       "file": "checkout/builtins.spec.ts",
+                       "line": 28,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "describe-level",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -2584,7 +2820,7 @@
+               },
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "typeInferenceOk": true,
+                 "only": false,
+                 "title": "skipped describe",
+@@ -2606,13 +2842,19 @@
+                     "location": {
+                       "file": "checkout/builtins.spec.ts",
+                       "line": 32,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "skipped describe",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [
+                       {
+-                        "type": "skip"
++                        "type": "skip",
++                        "location": {
++                          "file": "checkout/builtins.spec.ts",
++                          "line": 31,
++                          "column": 15
++                        }
+                       }
+                     ],
+                     "only": false,
+@@ -2628,7 +2870,12 @@
+                 ],
+                 "staticAnnotations": [
+                   {
+-                    "type": "skip"
++                    "type": "skip",
++                    "location": {
++                      "file": "checkout/builtins.spec.ts",
++                      "line": 31,
++                      "column": 15
++                    }
+                   }
+                 ],
+                 "internalTags": [],
+@@ -2644,7 +2891,7 @@
+               },
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "typeInferenceOk": true,
+                 "only": false,
+                 "title": "fixme describe",
+@@ -2666,13 +2913,19 @@
+                     "location": {
+                       "file": "checkout/builtins.spec.ts",
+                       "line": 36,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "fixme describe",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [
+                       {
+-                        "type": "fixme"
++                        "type": "fixme",
++                        "location": {
++                          "file": "checkout/builtins.spec.ts",
++                          "line": 35,
++                          "column": 15
++                        }
+                       }
+                     ],
+                     "only": false,
+@@ -2688,7 +2941,12 @@
+                 ],
+                 "staticAnnotations": [
+                   {
+-                    "type": "fixme"
++                    "type": "fixme",
++                    "location": {
++                      "file": "checkout/builtins.spec.ts",
++                      "line": 35,
++                      "column": 15
++                    }
+                   }
+                 ],
+                 "internalTags": [],
+@@ -2704,7 +2962,7 @@
+               },
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "typeInferenceOk": true,
+                 "only": false,
+                 "title": "only",
+@@ -2729,6 +2987,7 @@
+                       "column": 8
+                     },
+                     "parentTitle": "only",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": true,
+@@ -2750,9 +3009,10 @@
+                     "location": {
+                       "file": "checkout/builtins.spec.ts",
+                       "line": 41,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "only",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -2793,7 +3053,7 @@
+           },
+           {
+             "type": "file",
+-            "typeFromApi": false,
++            "typeFromApi": true,
+             "typeInferenceOk": true,
+             "only": false,
+             "title": "checkout/cart.spec.ts",
+@@ -2807,7 +3067,7 @@
+             "suites": [
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "typeInferenceOk": true,
+                 "only": false,
+                 "title": "serial flow",
+@@ -2829,11 +3089,21 @@
+                     "location": {
+                       "file": "checkout/cart.spec.ts",
+                       "line": 5,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "serial flow",
++                    "parentType": "describe",
+                     "tags": [],
+-                    "annotations": [],
++                    "annotations": [
++                      {
++                        "type": "serial",
++                        "location": {
++                          "file": "checkout/cart.spec.ts",
++                          "line": 3,
++                          "column": 6
++                        }
++                      }
++                    ],
+                     "only": false,
+                     "hasFn": "function",
+                     "fnSource": "async () => {}",
+@@ -2853,11 +3123,21 @@
+                     "location": {
+                       "file": "checkout/cart.spec.ts",
+                       "line": 6,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "serial flow",
++                    "parentType": "describe",
+                     "tags": [],
+-                    "annotations": [],
++                    "annotations": [
++                      {
++                        "type": "serial",
++                        "location": {
++                          "file": "checkout/cart.spec.ts",
++                          "line": 3,
++                          "column": 6
++                        }
++                      }
++                    ],
+                     "only": false,
+                     "hasFn": "function",
+                     "fnSource": "async () => {}",
+@@ -2877,11 +3157,21 @@
+                     "location": {
+                       "file": "checkout/cart.spec.ts",
+                       "line": 7,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "serial flow",
++                    "parentType": "describe",
+                     "tags": [],
+-                    "annotations": [],
++                    "annotations": [
++                      {
++                        "type": "serial",
++                        "location": {
++                          "file": "checkout/cart.spec.ts",
++                          "line": 3,
++                          "column": 6
++                        }
++                      }
++                    ],
+                     "only": false,
+                     "hasFn": "function",
+                     "fnSource": "async () => {}",
+@@ -2907,7 +3197,7 @@
+               },
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "typeInferenceOk": true,
+                 "only": false,
+                 "title": "parallel flow",
+@@ -2929,9 +3219,10 @@
+                     "location": {
+                       "file": "checkout/cart.spec.ts",
+                       "line": 12,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "parallel flow",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -2953,9 +3244,10 @@
+                     "location": {
+                       "file": "checkout/cart.spec.ts",
+                       "line": 13,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "parallel flow",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -2983,7 +3275,7 @@
+               },
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "typeInferenceOk": true,
+                 "only": false,
+                 "title": "default flow",
+@@ -3005,9 +3297,10 @@
+                     "location": {
+                       "file": "checkout/cart.spec.ts",
+                       "line": 17,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "default flow",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -3048,7 +3341,7 @@
+           },
+           {
+             "type": "file",
+-            "typeFromApi": false,
++            "typeFromApi": true,
+             "typeInferenceOk": true,
+             "only": false,
+             "title": "misc/annotations.spec.ts",
+@@ -3069,14 +3362,20 @@
+                 "location": {
+                   "file": "misc/annotations.spec.ts",
+                   "line": 3,
+-                  "column": 5
++                  "column": 1
+                 },
+                 "parentTitle": "misc/annotations.spec.ts",
++                "parentType": "file",
+                 "tags": [],
+                 "annotations": [
+                   {
+                     "type": "_internal",
+-                    "description": "tooling only"
++                    "description": "tooling only",
++                    "location": {
++                      "file": "misc/annotations.spec.ts",
++                      "line": 3,
++                      "column": 1
++                    }
+                   }
+                 ],
+                 "only": false,
+@@ -3097,24 +3396,40 @@
+                 "location": {
+                   "file": "misc/annotations.spec.ts",
+                   "line": 5,
+-                  "column": 5
++                  "column": 1
+                 },
+                 "parentTitle": "misc/annotations.spec.ts",
++                "parentType": "file",
+                 "tags": [
+                   "@multi"
+                 ],
+                 "annotations": [
+                   {
+                     "type": "owner",
+-                    "description": "alice"
++                    "description": "alice",
++                    "location": {
++                      "file": "misc/annotations.spec.ts",
++                      "line": 5,
++                      "column": 1
++                    }
+                   },
+                   {
+                     "type": "issue",
+-                    "description": "#123"
++                    "description": "#123",
++                    "location": {
++                      "file": "misc/annotations.spec.ts",
++                      "line": 5,
++                      "column": 1
++                    }
+                   },
+                   {
+                     "type": "owner",
+-                    "description": "bob"
++                    "description": "bob",
++                    "location": {
++                      "file": "misc/annotations.spec.ts",
++                      "line": 5,
++                      "column": 1
++                    }
+                   }
+                 ],
+                 "only": false,
+@@ -3135,9 +3450,10 @@
+                 "location": {
+                   "file": "misc/annotations.spec.ts",
+                   "line": 14,
+-                  "column": 5
++                  "column": 1
+                 },
+                 "parentTitle": "misc/annotations.spec.ts",
++                "parentType": "file",
+                 "tags": [],
+                 "annotations": [],
+                 "only": false,
+@@ -3164,7 +3480,7 @@
+           },
+           {
+             "type": "file",
+-            "typeFromApi": false,
++            "typeFromApi": true,
+             "typeInferenceOk": true,
+             "only": false,
+             "title": "misc/conditionals.spec.ts",
+@@ -3178,7 +3494,7 @@
+             "suites": [
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "typeInferenceOk": true,
+                 "only": false,
+                 "title": "conditionals",
+@@ -3200,9 +3516,10 @@
+                     "location": {
+                       "file": "misc/conditionals.spec.ts",
+                       "line": 19,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditionals",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -3224,9 +3541,10 @@
+                     "location": {
+                       "file": "misc/conditionals.spec.ts",
+                       "line": 23,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditionals",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -3248,9 +3566,10 @@
+                     "location": {
+                       "file": "misc/conditionals.spec.ts",
+                       "line": 27,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditionals",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -3272,9 +3591,10 @@
+                     "location": {
+                       "file": "misc/conditionals.spec.ts",
+                       "line": 31,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditionals",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -3296,9 +3616,10 @@
+                     "location": {
+                       "file": "misc/conditionals.spec.ts",
+                       "line": 36,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditionals",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -3362,7 +3683,7 @@
+           },
+           {
+             "type": "file",
+-            "typeFromApi": false,
++            "typeFromApi": true,
+             "typeInferenceOk": true,
+             "only": false,
+             "title": "misc/generated.spec.ts",
+@@ -3376,7 +3697,7 @@
+             "suites": [
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "typeInferenceOk": true,
+                 "only": false,
+                 "title": "env staging",
+@@ -3398,9 +3719,10 @@
+                     "location": {
+                       "file": "misc/generated.spec.ts",
+                       "line": 9,
+-                      "column": 9
++                      "column": 5
+                     },
+                     "parentTitle": "env staging",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -3428,7 +3750,7 @@
+               },
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "typeInferenceOk": true,
+                 "only": false,
+                 "title": "env prod",
+@@ -3450,9 +3772,10 @@
+                     "location": {
+                       "file": "misc/generated.spec.ts",
+                       "line": 9,
+-                      "column": 9
++                      "column": 5
+                     },
+                     "parentTitle": "env prod",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -3488,9 +3811,10 @@
+                 "location": {
+                   "file": "misc/generated.spec.ts",
+                   "line": 4,
+-                  "column": 7
++                  "column": 3
+                 },
+                 "parentTitle": "misc/generated.spec.ts",
++                "parentType": "file",
+                 "tags": [
+                   "@role-admin"
+                 ],
+@@ -3513,9 +3837,10 @@
+                 "location": {
+                   "file": "misc/generated.spec.ts",
+                   "line": 4,
+-                  "column": 7
++                  "column": 3
+                 },
+                 "parentTitle": "misc/generated.spec.ts",
++                "parentType": "file",
+                 "tags": [
+                   "@role-user"
+                 ],
+@@ -3538,9 +3863,10 @@
+                 "location": {
+                   "file": "misc/generated.spec.ts",
+                   "line": 4,
+-                  "column": 7
++                  "column": 3
+                 },
+                 "parentTitle": "misc/generated.spec.ts",
++                "parentType": "file",
+                 "tags": [
+                   "@role-guest"
+                 ],
+@@ -3590,7 +3916,7 @@
+       },
+       {
+         "type": "project",
+-        "typeFromApi": false,
++        "typeFromApi": true,
+         "typeInferenceOk": true,
+         "only": false,
+         "title": "webkit",
+@@ -3599,7 +3925,7 @@
+         "suites": [
+           {
+             "type": "file",
+-            "typeFromApi": false,
++            "typeFromApi": true,
+             "typeInferenceOk": true,
+             "only": false,
+             "title": "auth/login.spec.ts",
+@@ -3620,9 +3946,10 @@
+                 "location": {
+                   "file": "auth/login.spec.ts",
+                   "line": 3,
+-                  "column": 5
++                  "column": 1
+                 },
+                 "parentTitle": "auth/login.spec.ts",
++                "parentType": "file",
+                 "tags": [
+                   "@smoke"
+                 ],
+@@ -3645,9 +3972,10 @@
+                 "location": {
+                   "file": "auth/login.spec.ts",
+                   "line": 5,
+-                  "column": 5
++                  "column": 1
+                 },
+                 "parentTitle": "auth/login.spec.ts",
++                "parentType": "file",
+                 "tags": [
+                   "@auth",
+                   "@smoke"
+@@ -3671,9 +3999,10 @@
+                 "location": {
+                   "file": "auth/login.spec.ts",
+                   "line": 7,
+-                  "column": 5
++                  "column": 1
+                 },
+                 "parentTitle": "auth/login.spec.ts",
++                "parentType": "file",
+                 "tags": [
+                   "@fast",
+                   "@auth"
+@@ -3697,14 +4026,20 @@
+                 "location": {
+                   "file": "auth/login.spec.ts",
+                   "line": 9,
+-                  "column": 5
++                  "column": 1
+                 },
+                 "parentTitle": "auth/login.spec.ts",
++                "parentType": "file",
+                 "tags": [],
+                 "annotations": [
+                   {
+                     "type": "issue",
+-                    "description": "https://github.com/org/repo/issues/12"
++                    "description": "https://github.com/org/repo/issues/12",
++                    "location": {
++                      "file": "auth/login.spec.ts",
++                      "line": 9,
++                      "column": 1
++                    }
+                   }
+                 ],
+                 "only": false,
+@@ -3725,18 +4060,29 @@
+                 "location": {
+                   "file": "auth/login.spec.ts",
+                   "line": 13,
+-                  "column": 5
++                  "column": 1
+                 },
+                 "parentTitle": "auth/login.spec.ts",
++                "parentType": "file",
+                 "tags": [],
+                 "annotations": [
+                   {
+                     "type": "issue",
+-                    "description": "JIRA-123"
++                    "description": "JIRA-123",
++                    "location": {
++                      "file": "auth/login.spec.ts",
++                      "line": 13,
++                      "column": 1
++                    }
+                   },
+                   {
+                     "type": "issue",
+-                    "description": "https://example.atlassian.net/browse/JIRA-456"
++                    "description": "https://example.atlassian.net/browse/JIRA-456",
++                    "location": {
++                      "file": "auth/login.spec.ts",
++                      "line": 13,
++                      "column": 1
++                    }
+                   }
+                 ],
+                 "only": false,
+@@ -3763,7 +4109,7 @@
+           },
+           {
+             "type": "file",
+-            "typeFromApi": false,
++            "typeFromApi": true,
+             "typeInferenceOk": true,
+             "only": false,
+             "title": "auth/permissions/roles.spec.ts",
+@@ -3777,7 +4123,7 @@
+             "suites": [
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "typeInferenceOk": true,
+                 "only": false,
+                 "title": "roles",
+@@ -3791,7 +4137,7 @@
+                 "suites": [
+                   {
+                     "type": "describe",
+-                    "typeFromApi": false,
++                    "typeFromApi": true,
+                     "typeInferenceOk": true,
+                     "only": false,
+                     "title": "nested",
+@@ -3814,9 +4160,10 @@
+                         "location": {
+                           "file": "auth/permissions/roles.spec.ts",
+                           "line": 10,
+-                          "column": 9
++                          "column": 5
+                         },
+                         "parentTitle": "nested",
++                        "parentType": "describe",
+                         "tags": [
+                           "@rbac",
+                           "@nested",
+@@ -3825,11 +4172,21 @@
+                         "annotations": [
+                           {
+                             "type": "owner",
+-                            "description": "team-auth"
++                            "description": "team-auth",
++                            "location": {
++                              "file": "auth/permissions/roles.spec.ts",
++                              "line": 3,
++                              "column": 6
++                            }
+                           },
+                           {
+                             "type": "issue",
+-                            "description": "RBAC-7"
++                            "description": "RBAC-7",
++                            "location": {
++                              "file": "auth/permissions/roles.spec.ts",
++                              "line": 9,
++                              "column": 8
++                            }
+                           }
+                         ],
+                         "only": false,
+@@ -3846,7 +4203,12 @@
+                     "staticAnnotations": [
+                       {
+                         "type": "issue",
+-                        "description": "RBAC-7"
++                        "description": "RBAC-7",
++                        "location": {
++                          "file": "auth/permissions/roles.spec.ts",
++                          "line": 9,
++                          "column": 8
++                        }
+                       }
+                     ],
+                     "internalTags": [
+@@ -3874,16 +4236,22 @@
+                     "location": {
+                       "file": "auth/permissions/roles.spec.ts",
+                       "line": 7,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "roles",
++                    "parentType": "describe",
+                     "tags": [
+                       "@rbac"
+                     ],
+                     "annotations": [
+                       {
+                         "type": "owner",
+-                        "description": "team-auth"
++                        "description": "team-auth",
++                        "location": {
++                          "file": "auth/permissions/roles.spec.ts",
++                          "line": 3,
++                          "column": 6
++                        }
+                       }
+                     ],
+                     "only": false,
+@@ -3900,7 +4268,12 @@
+                 "staticAnnotations": [
+                   {
+                     "type": "owner",
+-                    "description": "team-auth"
++                    "description": "team-auth",
++                    "location": {
++                      "file": "auth/permissions/roles.spec.ts",
++                      "line": 3,
++                      "column": 6
++                    }
+                   }
+                 ],
+                 "internalTags": [
+@@ -3931,7 +4304,7 @@
+           },
+           {
+             "type": "file",
+-            "typeFromApi": false,
++            "typeFromApi": true,
+             "typeInferenceOk": true,
+             "only": false,
+             "title": "checkout/builtins.spec.ts",
+@@ -3945,7 +4318,7 @@
+             "suites": [
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "typeInferenceOk": true,
+                 "only": false,
+                 "title": "unconditional",
+@@ -3967,9 +4340,10 @@
+                     "location": {
+                       "file": "checkout/builtins.spec.ts",
+                       "line": 4,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "unconditional",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -3994,10 +4368,16 @@
+                       "column": 8
+                     },
+                     "parentTitle": "unconditional",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [
+                       {
+-                        "type": "skip"
++                        "type": "skip",
++                        "location": {
++                          "file": "checkout/builtins.spec.ts",
++                          "line": 5,
++                          "column": 8
++                        }
+                       }
+                     ],
+                     "only": false,
+@@ -4022,10 +4402,16 @@
+                       "column": 8
+                     },
+                     "parentTitle": "unconditional",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [
+                       {
+-                        "type": "fail"
++                        "type": "fail",
++                        "location": {
++                          "file": "checkout/builtins.spec.ts",
++                          "line": 6,
++                          "column": 8
++                        }
+                       }
+                     ],
+                     "only": false,
+@@ -4050,10 +4436,16 @@
+                       "column": 8
+                     },
+                     "parentTitle": "unconditional",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [
+                       {
+-                        "type": "fixme"
++                        "type": "fixme",
++                        "location": {
++                          "file": "checkout/builtins.spec.ts",
++                          "line": 7,
++                          "column": 8
++                        }
+                       }
+                     ],
+                     "only": false,
+@@ -4075,9 +4467,10 @@
+                     "location": {
+                       "file": "checkout/builtins.spec.ts",
+                       "line": 8,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "unconditional",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -4105,7 +4498,7 @@
+               },
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "typeInferenceOk": true,
+                 "only": false,
+                 "title": "conditional on browserName",
+@@ -4127,9 +4520,10 @@
+                     "location": {
+                       "file": "checkout/builtins.spec.ts",
+                       "line": 12,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditional on browserName",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -4151,9 +4545,10 @@
+                     "location": {
+                       "file": "checkout/builtins.spec.ts",
+                       "line": 15,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditional on browserName",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -4175,9 +4570,10 @@
+                     "location": {
+                       "file": "checkout/builtins.spec.ts",
+                       "line": 18,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditional on browserName",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -4199,9 +4595,10 @@
+                     "location": {
+                       "file": "checkout/builtins.spec.ts",
+                       "line": 21,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditional on browserName",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -4229,7 +4626,7 @@
+               },
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "typeInferenceOk": true,
+                 "only": false,
+                 "title": "describe-level",
+@@ -4251,9 +4648,10 @@
+                     "location": {
+                       "file": "checkout/builtins.spec.ts",
+                       "line": 28,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "describe-level",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -4293,7 +4691,7 @@
+               },
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "typeInferenceOk": true,
+                 "only": false,
+                 "title": "skipped describe",
+@@ -4315,13 +4713,19 @@
+                     "location": {
+                       "file": "checkout/builtins.spec.ts",
+                       "line": 32,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "skipped describe",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [
+                       {
+-                        "type": "skip"
++                        "type": "skip",
++                        "location": {
++                          "file": "checkout/builtins.spec.ts",
++                          "line": 31,
++                          "column": 15
++                        }
+                       }
+                     ],
+                     "only": false,
+@@ -4337,7 +4741,12 @@
+                 ],
+                 "staticAnnotations": [
+                   {
+-                    "type": "skip"
++                    "type": "skip",
++                    "location": {
++                      "file": "checkout/builtins.spec.ts",
++                      "line": 31,
++                      "column": 15
++                    }
+                   }
+                 ],
+                 "internalTags": [],
+@@ -4353,7 +4762,7 @@
+               },
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "typeInferenceOk": true,
+                 "only": false,
+                 "title": "fixme describe",
+@@ -4375,13 +4784,19 @@
+                     "location": {
+                       "file": "checkout/builtins.spec.ts",
+                       "line": 36,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "fixme describe",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [
+                       {
+-                        "type": "fixme"
++                        "type": "fixme",
++                        "location": {
++                          "file": "checkout/builtins.spec.ts",
++                          "line": 35,
++                          "column": 15
++                        }
+                       }
+                     ],
+                     "only": false,
+@@ -4397,7 +4812,12 @@
+                 ],
+                 "staticAnnotations": [
+                   {
+-                    "type": "fixme"
++                    "type": "fixme",
++                    "location": {
++                      "file": "checkout/builtins.spec.ts",
++                      "line": 35,
++                      "column": 15
++                    }
+                   }
+                 ],
+                 "internalTags": [],
+@@ -4413,7 +4833,7 @@
+               },
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "typeInferenceOk": true,
+                 "only": false,
+                 "title": "only",
+@@ -4438,6 +4858,7 @@
+                       "column": 8
+                     },
+                     "parentTitle": "only",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": true,
+@@ -4459,9 +4880,10 @@
+                     "location": {
+                       "file": "checkout/builtins.spec.ts",
+                       "line": 41,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "only",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -4502,7 +4924,7 @@
+           },
+           {
+             "type": "file",
+-            "typeFromApi": false,
++            "typeFromApi": true,
+             "typeInferenceOk": true,
+             "only": false,
+             "title": "checkout/cart.spec.ts",
+@@ -4516,7 +4938,7 @@
+             "suites": [
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "typeInferenceOk": true,
+                 "only": false,
+                 "title": "serial flow",
+@@ -4538,11 +4960,21 @@
+                     "location": {
+                       "file": "checkout/cart.spec.ts",
+                       "line": 5,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "serial flow",
++                    "parentType": "describe",
+                     "tags": [],
+-                    "annotations": [],
++                    "annotations": [
++                      {
++                        "type": "serial",
++                        "location": {
++                          "file": "checkout/cart.spec.ts",
++                          "line": 3,
++                          "column": 6
++                        }
++                      }
++                    ],
+                     "only": false,
+                     "hasFn": "function",
+                     "fnSource": "async () => {}",
+@@ -4562,11 +4994,21 @@
+                     "location": {
+                       "file": "checkout/cart.spec.ts",
+                       "line": 6,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "serial flow",
++                    "parentType": "describe",
+                     "tags": [],
+-                    "annotations": [],
++                    "annotations": [
++                      {
++                        "type": "serial",
++                        "location": {
++                          "file": "checkout/cart.spec.ts",
++                          "line": 3,
++                          "column": 6
++                        }
++                      }
++                    ],
+                     "only": false,
+                     "hasFn": "function",
+                     "fnSource": "async () => {}",
+@@ -4586,11 +5028,21 @@
+                     "location": {
+                       "file": "checkout/cart.spec.ts",
+                       "line": 7,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "serial flow",
++                    "parentType": "describe",
+                     "tags": [],
+-                    "annotations": [],
++                    "annotations": [
++                      {
++                        "type": "serial",
++                        "location": {
++                          "file": "checkout/cart.spec.ts",
++                          "line": 3,
++                          "column": 6
++                        }
++                      }
++                    ],
+                     "only": false,
+                     "hasFn": "function",
+                     "fnSource": "async () => {}",
+@@ -4616,7 +5068,7 @@
+               },
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "typeInferenceOk": true,
+                 "only": false,
+                 "title": "parallel flow",
+@@ -4638,9 +5090,10 @@
+                     "location": {
+                       "file": "checkout/cart.spec.ts",
+                       "line": 12,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "parallel flow",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -4662,9 +5115,10 @@
+                     "location": {
+                       "file": "checkout/cart.spec.ts",
+                       "line": 13,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "parallel flow",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -4692,7 +5146,7 @@
+               },
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "typeInferenceOk": true,
+                 "only": false,
+                 "title": "default flow",
+@@ -4714,9 +5168,10 @@
+                     "location": {
+                       "file": "checkout/cart.spec.ts",
+                       "line": 17,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "default flow",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -4757,7 +5212,7 @@
+           },
+           {
+             "type": "file",
+-            "typeFromApi": false,
++            "typeFromApi": true,
+             "typeInferenceOk": true,
+             "only": false,
+             "title": "misc/annotations.spec.ts",
+@@ -4778,14 +5233,20 @@
+                 "location": {
+                   "file": "misc/annotations.spec.ts",
+                   "line": 3,
+-                  "column": 5
++                  "column": 1
+                 },
+                 "parentTitle": "misc/annotations.spec.ts",
++                "parentType": "file",
+                 "tags": [],
+                 "annotations": [
+                   {
+                     "type": "_internal",
+-                    "description": "tooling only"
++                    "description": "tooling only",
++                    "location": {
++                      "file": "misc/annotations.spec.ts",
++                      "line": 3,
++                      "column": 1
++                    }
+                   }
+                 ],
+                 "only": false,
+@@ -4806,24 +5267,40 @@
+                 "location": {
+                   "file": "misc/annotations.spec.ts",
+                   "line": 5,
+-                  "column": 5
++                  "column": 1
+                 },
+                 "parentTitle": "misc/annotations.spec.ts",
++                "parentType": "file",
+                 "tags": [
+                   "@multi"
+                 ],
+                 "annotations": [
+                   {
+                     "type": "owner",
+-                    "description": "alice"
++                    "description": "alice",
++                    "location": {
++                      "file": "misc/annotations.spec.ts",
++                      "line": 5,
++                      "column": 1
++                    }
+                   },
+                   {
+                     "type": "issue",
+-                    "description": "#123"
++                    "description": "#123",
++                    "location": {
++                      "file": "misc/annotations.spec.ts",
++                      "line": 5,
++                      "column": 1
++                    }
+                   },
+                   {
+                     "type": "owner",
+-                    "description": "bob"
++                    "description": "bob",
++                    "location": {
++                      "file": "misc/annotations.spec.ts",
++                      "line": 5,
++                      "column": 1
++                    }
+                   }
+                 ],
+                 "only": false,
+@@ -4844,9 +5321,10 @@
+                 "location": {
+                   "file": "misc/annotations.spec.ts",
+                   "line": 14,
+-                  "column": 5
++                  "column": 1
+                 },
+                 "parentTitle": "misc/annotations.spec.ts",
++                "parentType": "file",
+                 "tags": [],
+                 "annotations": [],
+                 "only": false,
+@@ -4873,7 +5351,7 @@
+           },
+           {
+             "type": "file",
+-            "typeFromApi": false,
++            "typeFromApi": true,
+             "typeInferenceOk": true,
+             "only": false,
+             "title": "misc/conditionals.spec.ts",
+@@ -4887,7 +5365,7 @@
+             "suites": [
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "typeInferenceOk": true,
+                 "only": false,
+                 "title": "conditionals",
+@@ -4909,9 +5387,10 @@
+                     "location": {
+                       "file": "misc/conditionals.spec.ts",
+                       "line": 19,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditionals",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -4933,9 +5412,10 @@
+                     "location": {
+                       "file": "misc/conditionals.spec.ts",
+                       "line": 23,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditionals",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -4957,9 +5437,10 @@
+                     "location": {
+                       "file": "misc/conditionals.spec.ts",
+                       "line": 27,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditionals",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -4981,9 +5462,10 @@
+                     "location": {
+                       "file": "misc/conditionals.spec.ts",
+                       "line": 31,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditionals",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -5005,9 +5487,10 @@
+                     "location": {
+                       "file": "misc/conditionals.spec.ts",
+                       "line": 36,
+-                      "column": 7
++                      "column": 3
+                     },
+                     "parentTitle": "conditionals",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -5071,7 +5554,7 @@
+           },
+           {
+             "type": "file",
+-            "typeFromApi": false,
++            "typeFromApi": true,
+             "typeInferenceOk": true,
+             "only": false,
+             "title": "misc/generated.spec.ts",
+@@ -5085,7 +5568,7 @@
+             "suites": [
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "typeInferenceOk": true,
+                 "only": false,
+                 "title": "env staging",
+@@ -5107,9 +5590,10 @@
+                     "location": {
+                       "file": "misc/generated.spec.ts",
+                       "line": 9,
+-                      "column": 9
++                      "column": 5
+                     },
+                     "parentTitle": "env staging",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -5137,7 +5621,7 @@
+               },
+               {
+                 "type": "describe",
+-                "typeFromApi": false,
++                "typeFromApi": true,
+                 "typeInferenceOk": true,
+                 "only": false,
+                 "title": "env prod",
+@@ -5159,9 +5643,10 @@
+                     "location": {
+                       "file": "misc/generated.spec.ts",
+                       "line": 9,
+-                      "column": 9
++                      "column": 5
+                     },
+                     "parentTitle": "env prod",
++                    "parentType": "describe",
+                     "tags": [],
+                     "annotations": [],
+                     "only": false,
+@@ -5197,9 +5682,10 @@
+                 "location": {
+                   "file": "misc/generated.spec.ts",
+                   "line": 4,
+-                  "column": 7
++                  "column": 3
+                 },
+                 "parentTitle": "misc/generated.spec.ts",
++                "parentType": "file",
+                 "tags": [
+                   "@role-admin"
+                 ],
+@@ -5222,9 +5708,10 @@
+                 "location": {
+                   "file": "misc/generated.spec.ts",
+                   "line": 4,
+-                  "column": 7
++                  "column": 3
+                 },
+                 "parentTitle": "misc/generated.spec.ts",
++                "parentType": "file",
+                 "tags": [
+                   "@role-user"
+                 ],
+@@ -5247,9 +5734,10 @@
+                 "location": {
+                   "file": "misc/generated.spec.ts",
+                   "line": 4,
+-                  "column": 7
++                  "column": 3
+                 },
+                 "parentTitle": "misc/generated.spec.ts",
++                "parentType": "file",
+                 "tags": [
+                   "@role-guest"
+                 ],

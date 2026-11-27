@@ -25,15 +25,18 @@ See `schema.md` for the exact types.
 | `Project` | name, use/browser, grep, testMatch | `DEPENDS_ON`, `TEARDOWN` |
 | `Tag` | name (normalised, `@` kept) | `HAS_TAG` (direct or inherited) |
 | `AnnotationType` / `AnnotationValue` | type, description, parsed key (e.g. `JIRA-123`) | `ANNOTATED_WITH` |
+| `Conditional` | type, form, condition, refs, confidence, appliesToProjects, observed (Phase 4) | `CONDITIONAL_ON` (test, describe or file) |
 
 Why `TestInstance`: annotations often depend on the project (`test.fixme(browserName === 'webkit')`), so the same test can be `fixme` in one project and active in another.
+
+Why `Conditional`: those project-dependent annotations are not annotations in `--list` output. They are found from `Suite._modifiers` and by parsing the function source Playwright holds (`TestCase.fn`, hooks), and are kept as their own nodes with a `confidence` level (ADR 0004).
 
 ## Packages
 
 | Package | Responsibility |
 | --- | --- |
 | `@suitemap/core` | Schema, graph builder, pivot/filter engine, exporters. No Playwright dependency. |
-| `@suitemap/playwright` | `--list` reporter, results reader, project/annotation normalisation. |
+| `@suitemap/playwright` | `--list` reporter, function-source scan for conditionals, results reader, project/annotation normalisation. |
 | `@suitemap/viewer` | Static single-file HTML app; offline, CI-artifact friendly. |
 | `suitemap` (CLI) | `extract`, `view`, `export`; later `lint`, `diff`. |
 
