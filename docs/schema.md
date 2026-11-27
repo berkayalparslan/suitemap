@@ -1,6 +1,6 @@
 # Canonical schema (draft v0)
 
-> **Draft status:** the sections "Phase 0 findings: proposed changes" and "Proposed entity: `Conditional`" below are **not** part of `schemaVersion` 1 until ADR 0004 is accepted. Do not implement them in Phase 1 before that.
+> **Status:** the changes from ADR 0004 (accepted 2026-11-27) are folded into the types below. The schema stays draft v0 until Phase 1 freezes `schemaVersion` 1.
 
 This is the contract between the extractor, the viewer and the rule engine. It is a **draft**: Phase 0 validates it against real `--list` output, Phase 1 freezes v1.
 
@@ -23,6 +23,7 @@ export interface SuitemapDocument {
   instances: TestInstance[];
   tags: Tag[];
   annotationTypes: AnnotationType[];
+  conditionals: Conditional[];    // ADR 0004
 }
 
 export interface Project {
@@ -44,13 +45,13 @@ export interface Describe {
   title: string;
   fileId: string;
   parentId?: string;              // parent describe id
-  mode: 'default' | 'parallel' | 'serial';
+  mode: 'default' | 'parallel' | 'serial';  // Playwright's 'none' maps to 'default'
   tags: string[];                 // declared directly on this describe
   annotations: Annotation[];      // declared directly on this describe
 }
 
 export interface Test {
-  id: string;                     // stable: file path + title path
+  id: string;                     // file path + titlePath (describe titles + test title); no line/column (ADR 0004)
   title: string;
   titlePath: string[];
   fileId: string;
@@ -60,7 +61,7 @@ export interface Test {
 }
 
 export interface TestInstance {
-  id: string;                     // test id + project id (+ repeatEachIndex if > 0)
+  id: string;                     // test id + project id + repeatEachIndex (always; ADR 0004)
   testId: string;
   projectId: string;
   expectedStatus: 'passed' | 'failed' | 'skipped' | 'timedOut' | 'interrupted';
@@ -87,39 +88,6 @@ export interface Annotation {
 export interface Tag { name: string; testCount: number }
 export interface AnnotationType { type: string; builtIn: boolean; testCount: number }
 
-export interface InstanceResult {
-  status: 'passed' | 'failed' | 'skipped' | 'timedOut' | 'interrupted';
-  durationMs: number;
-  retry: number;
-  flaky: boolean;
-}
-```
-
-## Open questions for Phase 0
-
-- Is `id` stable enough across renames? Consider an optional user-provided id annotation.
-- Which `use` fields are safe to serialise? Default to an allow-list (no env values, no storage state).
-- Should `repeatEach` produce separate instances or a count?
-
-## Phase 0 findings: proposed changes
-
-Source: `docs/playwright-adapter.md` (Phase 0 checks). Proposed for v1, pending acceptance of `docs/decisions/0004-phase-0-schema-changes.md`.
-
-1. `TestInstance.id` = `projectId + testId + repeatEachIndex` always (not only if > 0); Playwright's `TestCase.id` is unique per project and repeat index (122 tests, 122 unique ids) and identical across versions, but its first 20 characters are shared by the same test in every project and it is a hash, not readable. Keep our own `testId` + `projectId` + `repeatEachIndex` id and store `TestCase.id` only as an optional cross-check.
-2. `Test.id` = file path + `titlePath` (describe titles + test title, without project or file segments); duplicate titles are a load error, so this is unique. Do not use line or column.
-3. `Annotation.origin` stays, but note that Playwright copies describe annotations onto every test. The extractor must dedupe: take the describe's own annotations (internal `_staticAnnotations`) as `describe`, the rest as `declaration`. Drop the synthetic `serial` annotation.
-4. `TagRef.origin` is reconstructed by the extractor (Playwright gives a flat list).
-5. `Describe.mode` stays `default`/`parallel`/`serial`; map Playwright's `none` to `default`.
-6. `TestInstance.only` stays; sourced from internal `_only`.
-7. Conditionals become a first-class entity (`Conditional`, below) instead of being invisible. See ADR 0004.
-8. `Annotation` has no `location` on 1.42; keep it optional if added later.
-9. Open questions answered: repeatEach produces separate instances; `use` allow-list is an extractor decision (the spike used `browserName, viewport, baseURL, channel, headless`).
-
-### Proposed entity: `Conditional`
-
-Conditional and runtime annotations (`test.skip(cond)`, `annotations.push(...)`, hooks, describe callbacks) are listed as their own entity so lenses and filters (test, project, tag, folder, `refs`, `form`, `type`, `confidence`) treat them like tags and annotations. Added to `SuitemapDocument` as `conditionals: Conditional[]`.
-
-```ts
 export interface Conditional {
   id: string;
   type: string;                      // 'skip' | 'fail' | 'fixme' | 'slow' | custom annotation type
@@ -134,6 +102,39 @@ export interface Conditional {
   confidence: 'static' | 'inferred' | 'opaque';  // opaque: not analysable (e.g. helper call)
   observed?: { instanceId: string; fired: boolean }[];  // Phase 4
 }
+
+export interface InstanceResult {
+  status: 'passed' | 'failed' | 'skipped' | 'timedOut' | 'interrupted';
+  durationMs: number;
+  retry: number;
+  flaky: boolean;
+}
 ```
+
+## Open questions (Phase 0, answered below)
+
+- Is `id` stable enough across renames? Consider an optional user-provided id annotation.
+- Which `use` fields are safe to serialise? Default to an allow-list (no env values, no storage state).
+- Should `repeatEach` produce separate instances or a count?
+
+## Phase 0 decisions (ADR 0004, accepted)
+
+Source: `docs/playwright-adapter.md` (Phase 0 checks), accepted in `docs/decisions/0004-phase-0-schema-changes.md`.
+
+1. `TestInstance.id` = `projectId + testId + repeatEachIndex` always (not only if > 0); Playwright's `TestCase.id` is unique per project and repeat index (122 tests, 122 unique ids) and identical across versions, but its first 20 characters are shared by the same test in every project and it is a hash, not readable. Keep our own `testId` + `projectId` + `repeatEachIndex` id and store `TestCase.id` only as an optional cross-check.
+2. `Test.id` = file path + `titlePath` (describe titles + test title, without project or file segments); duplicate titles are a load error, so this is unique. Do not use line or column.
+3. `Annotation.origin` stays, but note that Playwright copies describe annotations onto every test. The extractor must dedupe: take the describe's own annotations (internal `_staticAnnotations`) as `describe`, the rest as `declaration`. Drop the synthetic `serial` annotation.
+4. `TagRef.origin` is reconstructed by the extractor (Playwright gives a flat list).
+5. `Describe.mode` stays `default`/`parallel`/`serial`; map Playwright's `none` to `default`.
+6. `TestInstance.only` stays; sourced from internal `_only`.
+7. Conditionals become a first-class entity (`Conditional`, below) instead of being invisible. See ADR 0004.
+8. `Annotation` has no `location` on 1.42; keep it optional if added later.
+9. Open questions answered: repeatEach produces separate instances; `use` allow-list is an extractor decision (the spike used `browserName, viewport, baseURL, channel, headless`).
+
+### Entity: `Conditional`
+
+Conditional and runtime annotations (`test.skip(cond)`, `annotations.push(...)`, hooks, describe callbacks) are listed as their own entity so lenses and filters (test, project, tag, folder, `refs`, `form`, `type`, `confidence`) treat them like tags and annotations. Added to `SuitemapDocument` as `conditionals: Conditional[]`.
+
+The `Conditional` type is defined in the main schema above.
 
 Completeness: the scan cannot prove it found every conditional (helpers, fixtures, dynamic types). The viewer shows "N found by scan", not "all".
