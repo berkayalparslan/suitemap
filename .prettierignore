@@ -9,3 +9,4 @@ docs
 spike
 *.md
 .github
+packages/*/src/__snapshots__

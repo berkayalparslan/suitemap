@@ -1,0 +1,36 @@
+{
+  "name": "@suitemap/playwright",
+  "version": "0.0.0",
+  "description": "Suitemap Playwright adapter: a --list reporter that turns the suite tree into a Suitemap document.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./extract": {
+      "types": "./dist/reporter.d.ts",
+      "default": "./dist/reporter.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@suitemap/core": "workspace:*"
+  },
+  "peerDependencies": {
+    "@playwright/test": ">=1.42"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.65.1",
+    "@types/node": "^20.19.43"
+  }
+}

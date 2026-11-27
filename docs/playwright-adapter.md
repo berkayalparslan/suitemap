@@ -59,6 +59,20 @@ Evidence: `spike/output/pw-1.42.json` (1.42.1), `pw-latest.json` (1.65.1), `*-re
   - Hard cases for the scan are in `fixtures/playwright-basic/tests/misc/conditionals.spec.ts` (helper call, env var, computed annotation type, early return, project-name condition, hook form, file-level callback).
 - [x] **Describe-level annotations: on the describe or copied to tests?** Both. Each test's `annotations` contains everything inherited from enclosing describes (outermost first, then its own); the describe node also exposes its own via internal `_staticAnnotations` (not public API, present on both). Tags behave the same: `test.tags` includes inherited describe tags (`@rbac`, `@nested`, then own) with no origin; the describe's own tags are on internal `_tags`. Origin (`title`/`details`/`describe`) therefore has to be reconstructed: title tags by parsing `@tokens` from the title, describe tags from describe titles/`_tags`, remaining ones are `details`. Using internal fields is a risk, recorded in ADR 0004.
 
+### Phase 1 findings (extractor, `packages/playwright`)
+
+Found while building the public-fields extractor; the version matrix in CI (1.42.1 and 1.65.1) runs one fixture snapshot on both.
+
+- **`FullConfig.rootDir` is the `testDir`, not the config directory** (the fixture's `rootDir` is `tests/`). Paths relative to it lose the `tests/` prefix and two projects with different `testDir`s could collide, so the extractor makes every path relative to the **config file's directory** and reports that directory as `source.rootDir`. The Phase 0 dumps in `spike/output/` are relative to Playwright's `rootDir`.
+- **`TestCase.type` and `Suite.entries()` do not exist on 1.42.** Tell tests from suites by the `suites` array. Without `entries()` the order of mixed tests and describes is lost (suites first, then tests); the extractor restores it by sorting on source position, so the snapshot is identical on both versions.
+- **`FullProject` is not exported from `@playwright/test/reporter` on 1.42**; derive the type from `Suite['project']`.
+- **A throwing reporter does not fail `playwright test --list`.** Playwright prints `Error in reporter ...` on **stdout** and still lists the tests, so the runner must treat "no output file" as failure and surface both streams.
+- **File suites may have no `location`.** Fall back to the first test's file.
+- **`serial` annotation filter:** the synthetic `{ type: 'serial' }` (newer versions, serial describes) is dropped when it has no description. A user-declared `serial` annotation without a description is dropped with it until the internals reader can check the describe mode.
+- **`location.column` is version-dependent** (e.g. 9 on 1.42 vs 1 on latest for the same call). It is kept in the document but must not be compared across versions; the snapshot test zeroes it.
+- **`use.baseURL`** is serialised only when it is an http(s) URL, without userinfo, query and fragment.
+- **Public-only limits** (left for the internals PR, flagged by warnings in the document): describe `mode`, describe-level tags and annotations (so `Annotation.origin` is always `declaration` and inherited describe annotations appear on every test as Playwright reports them), `only`, and conditionals. Tag origin is `title` (an `@token` in the test title) or `describe` (an `@token` in a describe title); everything else is `details`, which cannot separate a describe's `{ tag }` from the test's own.
+
 ### Other findings
 
 - `test.only` does not filter `--list`; all tests are listed. The focused test is flagged via internal `_only` (also on both versions).

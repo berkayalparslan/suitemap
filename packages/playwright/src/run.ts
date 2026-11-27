@@ -1,0 +1,148 @@
+// Programmatic entry point (what the CLI calls): runs the project's own Playwright with
+// `--list` and our reporter, and returns the validated document.
+import { spawn } from 'node:child_process';
+import { mkdtemp, readFile, rm } from 'node:fs/promises';
+import { createRequire } from 'node:module';
+import os from 'node:os';
+import path from 'node:path';
+import { existsSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { validateDocument, type SuitemapDocument } from '@suitemap/core';
+
+export interface ExtractOptions {
+  /** Playwright config file; defaults to Playwright's own lookup in `cwd`. */
+  configFile?: string;
+  /** Directory Playwright runs in (also where @playwright/test is resolved from). Default: process.cwd(). */
+  cwd?: string;
+  /** Extra environment for the Playwright process (config loading may read env vars). */
+  env?: Record<string, string | undefined>;
+  /** Fixed ISO timestamp for reproducible output. */
+  generatedAt?: string;
+  /** Extra arguments for `playwright test`, e.g. ['--project=chromium']. */
+  playwrightArgs?: string[];
+  /** Kill Playwright and fail after this many milliseconds. Default: no timeout. */
+  timeoutMs?: number;
+}
+
+export class ExtractionError extends Error {
+  constructor(
+    message: string,
+    readonly stderr: string,
+  ) {
+    super(message);
+    this.name = 'ExtractionError';
+  }
+}
+
+// Playwright loads the reporter itself, so it must be the built file. When this module runs from
+// src/ (unit tests), fall back to the sibling dist/ build.
+function findReporter(): string {
+  const found = [
+    new URL('./reporter.js', import.meta.url),
+    new URL('../dist/reporter.js', import.meta.url),
+  ]
+    .map((u) => fileURLToPath(u))
+    .find((p) => existsSync(p));
+  if (!found) throw new ExtractionError('reporter.js not found; run `pnpm build` first.', '');
+  return found;
+}
+
+function resolvePlaywrightCli(cwd: string, env: NodeJS.ProcessEnv): string {
+  // Resolve like the user's own `npx playwright` would: from their project, not from this package.
+  // NODE_PATH is read by Node only at startup, so honour the child's value here explicitly.
+  const paths = [cwd, ...(env.NODE_PATH ? env.NODE_PATH.split(path.delimiter) : [])];
+  try {
+    return createRequire(import.meta.url).resolve('@playwright/test/cli', { paths });
+  } catch {
+    throw new ExtractionError(
+      `Could not find @playwright/test from ${cwd}. Install it in the project being mapped (>=1.42).`,
+      '',
+    );
+  }
+}
+
+export async function extract(options: ExtractOptions = {}): Promise<SuitemapDocument> {
+  const cwd = path.resolve(options.cwd ?? process.cwd());
+  const env: NodeJS.ProcessEnv = { ...process.env, ...options.env };
+  const cli = resolvePlaywrightCli(cwd, env);
+  const dir = await mkdtemp(path.join(os.tmpdir(), 'suitemap-'));
+  const outputFile = path.join(dir, 'suitemap.json');
+  try {
+    env.SUITEMAP_OUT = outputFile;
+    if (options.generatedAt) env.SUITEMAP_GENERATED_AT = options.generatedAt;
+    const args = [
+      cli,
+      'test',
+      '--list',
+      `--reporter=${findReporter()}`,
+      ...(options.configFile ? [`--config=${path.resolve(cwd, options.configFile)}`] : []),
+      ...(options.playwrightArgs ?? []),
+    ];
+    const { output: stderr, code } = await new Promise<{ output: string; code: number | null }>(
+      (resolve, reject) => {
+        const child = spawn(process.execPath, args, {
+          cwd,
+          env,
+          stdio: ['ignore', 'pipe', 'pipe'],
+        });
+        let err = '';
+        // Playwright reports reporter failures ("Error in reporter ...") on stdout, so keep both streams.
+        child.stdout.on('data', (d: Buffer) => (err += d.toString()));
+        child.stderr.on('data', (d: Buffer) => (err += d.toString()));
+        const timer =
+          options.timeoutMs === undefined
+            ? undefined
+            : setTimeout(() => {
+                child.kill('SIGKILL');
+                reject(
+                  new ExtractionError(
+                    `playwright test --list did not finish within ${options.timeoutMs} ms.\n${err}`,
+                    err,
+                  ),
+                );
+              }, options.timeoutMs);
+        child.on('error', (e) => {
+          clearTimeout(timer);
+          reject(e);
+        });
+        child.on('close', (code) => {
+          clearTimeout(timer);
+          resolve({ output: err, code });
+        });
+      },
+    );
+    let text: string;
+    try {
+      text = await readFile(outputFile, 'utf8');
+    } catch {
+      throw new ExtractionError(
+        `Playwright finished without producing a document.\n${stderr}`,
+        stderr,
+      );
+    }
+    // Killed by a signal (code null): the file may be partial or stale, so do not trust it.
+    if (code === null)
+      throw new ExtractionError(
+        `playwright test --list was terminated by a signal.\n${stderr}`,
+        stderr,
+      );
+    let parsed: unknown;
+    try {
+      parsed = JSON.parse(text);
+    } catch {
+      throw new ExtractionError(`Playwright wrote an unreadable document.\n${stderr}`, stderr);
+    }
+    const result = validateDocument(parsed);
+    if (!result.ok)
+      throw new ExtractionError(`Invalid document:\n${result.issues.join('\n')}`, stderr);
+    // Playwright also exits non-zero for e.g. no matching tests or forbidOnly; the document is still usable.
+    if (code !== 0)
+      result.document.warnings.push({
+        code: 'playwright-exit-code',
+        message: `playwright test --list exited with code ${code}; the document was still produced.`,
+      });
+    return result.document;
+  } finally {
+    await rm(dir, { recursive: true, force: true });
+  }
+}

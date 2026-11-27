@@ -18,6 +18,29 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm format:check
       - run: pnpm lint
-      - run: pnpm typecheck
+      # Build first: packages import each other through their built output.
       - run: pnpm build
+      - run: pnpm typecheck
       - run: pnpm test
+
+  # The extractor reads Playwright's suite tree, which differs between versions. The same fixture
+  # snapshot must hold on the minimum supported version and on the pinned latest.
+  extractor:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        playwright: ['1.42.1', '1.65.1']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Install Playwright ${{ matrix.playwright }}
+        run: pnpm --filter @suitemap/playwright add --save-dev @playwright/test@${{ matrix.playwright }}
+      - run: pnpm build
+      - run: pnpm --filter @suitemap/playwright typecheck
+      - run: pnpm exec vitest run packages/playwright

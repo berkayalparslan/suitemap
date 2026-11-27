@@ -63,6 +63,7 @@ export interface RawExtraction {
   framework: 'playwright';
   frameworkVersion: string;
   configFile: string;
+  /** Directory of the config file; every path in the extraction is relative to it. */
   rootDir: string;
   projects: RawProjectSuite[];
   conditionals: RawConditional[];
