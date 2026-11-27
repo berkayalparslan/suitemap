@@ -1,0 +1,27 @@
+{
+  "name": "suitemap",
+  "version": "0.0.0",
+  "description": "Suitemap CLI: turn a Playwright test suite into a Suitemap document.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "suitemap": "./dist/bin.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20.19"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@suitemap/playwright": "workspace:*"
+  },
+  "devDependencies": {
+    "@suitemap/core": "workspace:*",
+    "@types/node": "^20.19.43"
+  }
+}

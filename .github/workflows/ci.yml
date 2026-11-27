@@ -24,7 +24,7 @@ jobs:
       - run: pnpm test
 
   # The extractor reads Playwright's suite tree, which differs between versions. The same fixture
-  # snapshot must hold on the minimum supported version and on the pinned latest.
+  # snapshot must hold (also through the CLI) on the minimum supported version and on the pinned latest.
   extractor:
     runs-on: ubuntu-latest
     strategy:
@@ -42,5 +42,6 @@ jobs:
       - name: Install Playwright ${{ matrix.playwright }}
         run: pnpm --filter @suitemap/playwright add --save-dev @playwright/test@${{ matrix.playwright }}
       - run: pnpm build
-      - run: pnpm --filter @suitemap/playwright typecheck
-      - run: pnpm exec vitest run packages/playwright
+      - run: pnpm --filter @suitemap/playwright --filter suitemap typecheck
+      # The CLI e2e test runs the built binary against the fixture and the same snapshot.
+      - run: pnpm exec vitest run packages/playwright packages/cli
