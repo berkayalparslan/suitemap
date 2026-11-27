@@ -68,6 +68,9 @@ Found while building the public-fields extractor; the version matrix in CI (1.42
 - **`FullProject` is not exported from `@playwright/test/reporter` on 1.42**; derive the type from `Suite['project']`.
 - **A throwing reporter does not fail `playwright test --list`.** Playwright prints `Error in reporter ...` on **stdout** and still lists the tests, so the runner must treat "no output file" as failure and surface both streams.
 - **File suites may have no `location`.** Fall back to the first test's file.
+- **`serial` annotation filter:** the synthetic `{ type: 'serial' }` (newer versions, serial describes) is dropped when it has no description. A user-declared `serial` annotation without a description is dropped with it until the internals reader can check the describe mode.
+- **`location.column` is version-dependent** (e.g. 9 on 1.42 vs 1 on latest for the same call). It is kept in the document but must not be compared across versions; the snapshot test zeroes it.
+- **`use.baseURL`** is serialised only when it is an http(s) URL, without userinfo, query and fragment.
 - **Public-only limits** (left for the internals PR, flagged by warnings in the document): describe `mode`, describe-level tags and annotations (so `Annotation.origin` is always `declaration` and inherited describe annotations appear on every test as Playwright reports them), `only`, and conditionals. Tag origin is `title` (an `@token` in the test title) or `describe` (an `@token` in a describe title); everything else is `details`, which cannot separate a describe's `{ tag }` from the test's own.
 
 ### Other findings

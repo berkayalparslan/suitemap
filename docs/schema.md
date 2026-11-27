@@ -59,7 +59,7 @@ export interface Test {
   titlePath: string[];
   fileId: string;
   describeId?: string;
-  location: { file: string; line: number; column: number };
+  location: { file: string; line: number; column: number };  // column varies by Playwright version; do not compare across versions
   tags: TagRef[];                 // direct + inherited, with origin
 }
 

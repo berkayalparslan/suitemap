@@ -20,6 +20,8 @@ export interface ExtractOptions {
   generatedAt?: string;
   /** Extra arguments for `playwright test`, e.g. ['--project=chromium']. */
   playwrightArgs?: string[];
+  /** Kill Playwright and fail after this many milliseconds. Default: no timeout. */
+  timeoutMs?: number;
 }
 
 export class ExtractionError extends Error {
@@ -87,8 +89,26 @@ export async function extract(options: ExtractOptions = {}): Promise<SuitemapDoc
         // Playwright reports reporter failures ("Error in reporter ...") on stdout, so keep both streams.
         child.stdout.on('data', (d: Buffer) => (err += d.toString()));
         child.stderr.on('data', (d: Buffer) => (err += d.toString()));
-        child.on('error', reject);
-        child.on('close', (code) => resolve({ output: err, code }));
+        const timer =
+          options.timeoutMs === undefined
+            ? undefined
+            : setTimeout(() => {
+                child.kill('SIGKILL');
+                reject(
+                  new ExtractionError(
+                    `playwright test --list did not finish within ${options.timeoutMs} ms.\n${err}`,
+                    err,
+                  ),
+                );
+              }, options.timeoutMs);
+        child.on('error', (e) => {
+          clearTimeout(timer);
+          reject(e);
+        });
+        child.on('close', (code) => {
+          clearTimeout(timer);
+          resolve({ output: err, code });
+        });
       },
     );
     let text: string;
@@ -100,7 +120,19 @@ export async function extract(options: ExtractOptions = {}): Promise<SuitemapDoc
         stderr,
       );
     }
-    const result = validateDocument(JSON.parse(text));
+    // Killed by a signal (code null): the file may be partial or stale, so do not trust it.
+    if (code === null)
+      throw new ExtractionError(
+        `playwright test --list was terminated by a signal.\n${stderr}`,
+        stderr,
+      );
+    let parsed: unknown;
+    try {
+      parsed = JSON.parse(text);
+    } catch {
+      throw new ExtractionError(`Playwright wrote an unreadable document.\n${stderr}`, stderr);
+    }
+    const result = validateDocument(parsed);
     if (!result.ok)
       throw new ExtractionError(`Invalid document:\n${result.issues.join('\n')}`, stderr);
     // Playwright also exits non-zero for e.g. no matching tests or forbidOnly; the document is still usable.

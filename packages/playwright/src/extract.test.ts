@@ -284,6 +284,16 @@ describe('review fixes', () => {
     });
   });
 
+  it.each(['admin:hunter2@staging.local:8080', 'ftp://h/x', 'not a url'])(
+    'does not serialise unsafe baseURL %s',
+    (baseURL) => {
+      const { config, root } = fakeRoot([{ name: 'p', use: { baseURL }, files: {} }], false);
+      const doc = extractDocument(config, root, GEN);
+      expect(JSON.stringify(doc)).not.toContain('hunter2');
+      expect(doc.projects[0]).not.toHaveProperty('use');
+    },
+  );
+
   it('keeps a user-declared serial annotation that has a description', () => {
     const { config, root } = fakeRoot(
       [

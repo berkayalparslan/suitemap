@@ -73,17 +73,21 @@ const regexSources = (value: RegExp | RegExp[] | null | undefined): string[] | u
 const TITLE_TAG = /@\S+/g;
 const tagTokens = (title: string) => title.match(TITLE_TAG) ?? [];
 
-/** Drops userinfo, query and fragment from a URL: they can carry credentials or tokens. */
-function stripUrlSecrets(value: string): string {
+/**
+ * Keeps only http(s) base URLs, without userinfo, query or fragment (they can carry credentials or
+ * tokens). Anything else, including scheme-less `user:secret@host`, is not serialised.
+ */
+function safeBaseUrl(value: string): string | undefined {
   try {
     const u = new URL(value);
+    if (u.protocol !== 'http:' && u.protocol !== 'https:') return undefined;
     u.username = '';
     u.password = '';
     u.search = '';
     u.hash = '';
     return u.toString();
   } catch {
-    return '<unparseable>';
+    return undefined;
   }
 }
 
@@ -108,7 +112,11 @@ function toProject(ctx: ExtractionContext, p: FullProject): Project {
   const use: Record<string, unknown> = {};
   const rawUse = (p.use ?? {}) as Record<string, unknown>;
   for (const key of USE_ALLOW_LIST) if (rawUse[key] !== undefined) use[key] = rawUse[key];
-  if (typeof use.baseURL === 'string') use.baseURL = stripUrlSecrets(use.baseURL);
+  if (typeof use.baseURL === 'string') {
+    const safe = safeBaseUrl(use.baseURL);
+    if (safe === undefined) delete use.baseURL;
+    else use.baseURL = safe;
+  }
   const grep = regexSources(p.grep);
   const grepInvert = regexSources(p.grepInvert);
   // A config without named projects yields one project whose name is ''.
