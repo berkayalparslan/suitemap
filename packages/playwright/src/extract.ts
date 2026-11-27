@@ -1,8 +1,9 @@
 // Turns Playwright's suite tree (from Reporter.onBegin) into the framework-neutral RawExtraction.
 //
-// Public Reporter API fields only. Anything that needs Playwright internals (_staticAnnotations,
-// _tags, _only, _parallelMode, _modifiers, _hooks, TestCase.fn) is a TODO for the internals PR:
-// those schema fields are left empty (never guessed) and a warning tells consumers so.
+// Public Reporter API plus the describe/test internals read through ./internals.ts (the only module
+// that touches underscore fields). When an internal field is missing or malformed the dependent schema
+// field falls back to what the public API can prove, and a warning says so (one per field).
+// Still TODO (conditionals PR): _modifiers, _hooks, TestCase.fn.
 import path from 'node:path';
 import {
   buildDocument,
@@ -10,7 +11,6 @@ import {
   type Annotation,
   type BuildOptions,
   type Project,
-  type RawDescribe,
   type RawExtraction,
   type RawFile,
   type RawNode,
@@ -21,6 +21,14 @@ import {
   type Warning,
 } from '@suitemap/core';
 import type { FullConfig, Suite, TestCase } from '@playwright/test/reporter';
+import {
+  readParallelMode,
+  readSuiteAnnotations,
+  readSuiteTags,
+  readTestOnly,
+  type DescribeMode,
+  type StaticAnnotation,
+} from './internals.js';
 
 // `FullProject` is not exported by the 1.42 reporter types.
 type FullProject = NonNullable<ReturnType<Suite['project']>>;
@@ -97,13 +105,54 @@ export interface ExtractionContext {
   warnings: Warning[];
   /** Warning codes already emitted once. */
   flags: Set<string>;
+  /** Whether this Playwright version adds a synthetic `serial` annotation; undefined until learned. */
+  syntheticSerial?: boolean;
 }
 
-const warnOnce = (ctx: ExtractionContext, code: string, message: string) => {
-  if (ctx.flags.has(code)) return;
-  ctx.flags.add(code);
-  ctx.warnings.push({ code, message });
+const warnOnce = (ctx: ExtractionContext, code: string, message: string, where?: string) => {
+  const key = where === undefined ? code : `${code}:${where}`;
+  if (ctx.flags.has(key)) return;
+  ctx.flags.add(key);
+  ctx.warnings.push({ code, message, ...(where === undefined ? {} : { where }) });
 };
+
+/** What the extractor reports instead, per internal field it could not read. */
+const FALLBACK: Record<string, string> = {
+  _parallelMode:
+    'describe mode is reported as "default" and the synthetic serial annotation is filtered by shape',
+  _tags:
+    'describe-level tags are not reported and tags declared in describe details get origin "details"',
+  _staticAnnotations:
+    'describe-level annotations are not reported and inherited annotations keep origin "declaration"',
+  _only: 'the `only` flag is not reported',
+};
+
+/** Warning for an internal field that is missing or has an unexpected shape (once per field). */
+const internalsReport = (ctx: ExtractionContext) => (field: string, message: string) =>
+  warnOnce(
+    ctx,
+    'internal-field-unavailable',
+    `${message}; ${FALLBACK[field] ?? 'dependent data is not reported'}.`,
+    field,
+  );
+
+/** What was read from one enclosing suite (file or describe); `undefined` = unavailable. */
+interface SuiteInfo {
+  title: string;
+  mode: DescribeMode | undefined;
+  tags: string[] | undefined;
+  annotations: StaticAnnotation[] | undefined;
+}
+
+function readSuiteInfo(ctx: ExtractionContext, suite: Suite): SuiteInfo {
+  const report = internalsReport(ctx);
+  return {
+    title: suite.title,
+    mode: readParallelMode(suite, report),
+    tags: readSuiteTags(suite, report),
+    annotations: readSuiteAnnotations(suite, report),
+  };
+}
 
 const relPath = (ctx: ExtractionContext, p: string) =>
   path.relative(ctx.baseDir, p).split(path.sep).join('/');
@@ -133,50 +182,106 @@ function toProject(ctx: ExtractionContext, p: FullProject): Project {
   };
 }
 
-/** Test tags with origin. Public fields only: see the TODO on `details` below. */
-function toTags(ctx: ExtractionContext, t: TestCase, describeTitles: string[]): TagRef[] {
+/**
+ * Test tags with origin: `title` (an @token in the test title), `describe` (declared in an enclosing
+ * describe's `{ tag }` details, or an @token in an enclosing describe title), otherwise `details`.
+ * `chain` is the enclosing file/describe suites, outermost first.
+ */
+function toTags(t: TestCase, chain: SuiteInfo[]): TagRef[] {
   const fromTitle = new Set(tagTokens(t.title));
-  const fromDescribes = new Set(describeTitles.flatMap(tagTokens));
+  const fromDescribes = new Set([
+    ...chain.flatMap((c) => tagTokens(c.title)),
+    ...chain.flatMap((c) => c.tags ?? []),
+  ]);
   const out: TagRef[] = [];
   const seen = new Set<string>();
   for (const name of t.tags) {
     if (seen.has(name)) continue;
     seen.add(name);
-    if (fromTitle.has(name)) out.push({ name, origin: 'title' });
-    else if (fromDescribes.has(name)) out.push({ name, origin: 'describe' });
-    else {
-      // TODO(internals PR): describe-level `{ tag }` details are indistinguishable from the test's own
-      // `{ tag }` details here; the describe's own tags are on the internal `_tags`.
-      out.push({ name, origin: 'details' });
-      if (describeTitles.length > 0)
-        warnOnce(
-          ctx,
-          'tag-origin-approximate',
-          'Tags declared in test.describe details cannot be told apart from the test’s own details tags without Playwright internals; both are reported with origin "details" for tests inside a describe.',
-        );
-    }
+    const origin = fromTitle.has(name) ? 'title' : fromDescribes.has(name) ? 'describe' : 'details';
+    out.push({ name, origin });
   }
   return out;
 }
 
-/** Annotations as Playwright reports them for this test. */
-function toAnnotations(t: TestCase): Annotation[] {
-  return (
-    t.annotations
-      // Playwright (newer versions only) adds a synthetic { type: 'serial' } to tests in a serial
-      // describe. Describe mode is the source of truth, so drop it for a stable cross-version output.
-      .filter((a) => !(a.type === 'serial' && a.description === undefined))
-      // TODO(internals PR): split inherited describe annotations (origin "describe") from the test's
-      // own (origin "declaration") using the describe's internal `_staticAnnotations`.
-      .map((a) => ({
-        type: a.type,
-        ...(a.description === undefined ? {} : { description: a.description }),
-        origin: 'declaration' as const,
-      }))
-  );
+const sameAnnotation = (a: { type: string; description?: string }, b: StaticAnnotation) =>
+  a.type === b.type && a.description === b.description;
+
+/**
+ * Splits `test.annotations` into inherited (origin "describe") and own (origin "declaration").
+ *
+ * Playwright builds the list outermost-first: for each enclosing suite, its `_staticAnnotations`,
+ * preceded, on versions that have it, by a synthetic description-less `{ type: 'serial' }` when the
+ * suite is serial; the test's own annotations come last. Whether the marker exists is a property of the
+ * Playwright version, not of the suite, so one interpretation (markers or no markers) is applied to all
+ * enclosing suites of a test. It is learned from the first test where only one interpretation fits
+ * (`ctx.syntheticSerial`); where both fit, markers are assumed (a user-declared `serial` among the
+ * test's own annotations is the only case this can get wrong, and only before the version is learned).
+ * Markers are dropped; they are not something the user declared.
+ *
+ * If no interpretation fits (or a field is unavailable) nothing is split: all annotations are
+ * "declaration" and only a description-less `serial` is dropped, as before.
+ */
+function toAnnotations(ctx: ExtractionContext, t: TestCase, chain: SuiteInfo[]): Annotation[] {
+  type Raw = { type: string; description?: string };
+  const all = t.annotations as Raw[];
+  const make = (a: Raw, origin: Annotation['origin']): Annotation => ({
+    type: a.type,
+    ...(a.description === undefined ? {} : { description: a.description }),
+    origin,
+  });
+  const isSerialMark = (a: Raw) => a.type === 'serial' && a.description === undefined;
+
+  const trySplit = (markers: boolean) => {
+    let cursor = 0;
+    const inherited: Raw[] = [];
+    for (const s of chain) {
+      if (markers && s.mode === 'serial') {
+        if (all[cursor] === undefined || !isSerialMark(all[cursor]!)) return undefined;
+        cursor += 1;
+      }
+      for (const st of s.annotations ?? []) {
+        const a = all[cursor];
+        if (a === undefined || !sameAnnotation(a, st)) return undefined;
+        inherited.push(a);
+        cursor += 1;
+      }
+    }
+    return { inherited, own: all.slice(cursor) };
+  };
+
+  if (chain.every((c) => c.annotations !== undefined && c.mode !== undefined)) {
+    const anySerial = chain.some((c) => c.mode === 'serial');
+    const order = !anySerial
+      ? [false]
+      : ctx.syntheticSerial === false
+        ? [false, true]
+        : [true, false];
+    const fits = order.flatMap((markers) => {
+      const split = trySplit(markers);
+      return split ? [{ markers, split }] : [];
+    });
+    const chosen = fits[0];
+    if (chosen) {
+      if (anySerial && fits.length === 1) ctx.syntheticSerial = chosen.markers;
+      return [
+        ...chosen.split.inherited.map((a) => make(a, 'describe')),
+        ...chosen.split.own.map((a) => make(a, 'declaration')),
+      ];
+    }
+  }
+
+  if (chain.every((c) => c.annotations !== undefined))
+    warnOnce(
+      ctx,
+      'annotation-inheritance-mismatch',
+      'test.annotations does not start with the enclosing describes’ own annotations in the expected order; inherited annotations are reported with origin "declaration".',
+    );
+  return all.filter((a) => !isSerialMark(a)).map((a) => make(a, 'declaration'));
 }
 
-function toTest(ctx: ExtractionContext, t: TestCase, describeTitles: string[]): RawTest {
+function toTest(ctx: ExtractionContext, t: TestCase, chain: SuiteInfo[]): RawTest {
+  const only = readTestOnly(t, internalsReport(ctx));
   return {
     kind: 'test',
     title: t.title,
@@ -185,38 +290,32 @@ function toTest(ctx: ExtractionContext, t: TestCase, describeTitles: string[]): 
       line: t.location.line,
       column: t.location.column,
     },
-    tags: toTags(ctx, t, describeTitles),
-    annotations: toAnnotations(t),
+    tags: toTags(t, chain),
+    annotations: toAnnotations(ctx, t, chain),
     expectedStatus: t.expectedStatus,
     timeout: t.timeout,
     retries: t.retries,
     repeatEachIndex: t.repeatEachIndex,
     nativeId: t.id,
-    // TODO(internals PR): `only` from the internal `_only`.
+    ...(only === undefined ? {} : { only }),
   };
 }
 
-function toNodes(ctx: ExtractionContext, suite: Suite, depth: number, titles: string[]): RawNode[] {
+/** `chain` is the enclosing file and describe suites, outermost first. */
+function toNodes(ctx: ExtractionContext, suite: Suite, chain: SuiteInfo[]): RawNode[] {
   const nodes: RawNode[] = [];
   for (const entry of entriesOf(suite)) {
-    if (isTest(entry)) nodes.push(toTest(ctx, entry, titles));
+    if (isTest(entry)) nodes.push(toTest(ctx, entry, chain));
     else {
-      const describe: RawDescribe = {
+      const info = readSuiteInfo(ctx, entry);
+      nodes.push({
         kind: 'describe',
         title: entry.title,
-        // TODO(internals PR): `mode` from the internal `_parallelMode` ('none' -> 'default').
-        mode: 'default',
-        // TODO(internals PR): the describe's own tags/annotations from `_tags` / `_staticAnnotations`.
-        tags: [],
-        annotations: [],
-        children: toNodes(ctx, entry, depth + 1, [...titles, entry.title]),
-      };
-      nodes.push(describe);
-      warnOnce(
-        ctx,
-        'describe-internals-unavailable',
-        'Describe mode, own tags and own annotations are not in the public Reporter API; describes are reported with mode "default" and no tags or annotations until the internals reader lands.',
-      );
+        mode: info.mode ?? 'default',
+        tags: info.tags ?? [],
+        annotations: (info.annotations ?? []).map((a) => ({ ...a, origin: 'describe' as const })),
+        children: toNodes(ctx, entry, [...chain, info]),
+      });
     }
   }
   return nodes;
@@ -262,7 +361,10 @@ export function extractRaw(config: FullConfig, root: Suite): RawExtraction {
         });
         continue;
       }
-      files.push({ path: relPath(ctx, file), children: toNodes(ctx, fileSuite, 3, []) });
+      files.push({
+        path: relPath(ctx, file),
+        children: toNodes(ctx, fileSuite, [readSuiteInfo(ctx, fileSuite)]),
+      });
     }
     projects.push({ project: toProject(ctx, project), files });
   }

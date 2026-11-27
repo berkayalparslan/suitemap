@@ -9,7 +9,7 @@ The spike (`spike/`, `fixtures/playwright-basic`) dumped the suite tree on Playw
 
 ## Decision
 
-Adopt the changes listed under "Phase 0 decisions" in `docs/schema.md` for schema v1. The extractor reads a few internal fields (`_staticAnnotations`, `_tags`, `_only`, `_parallelMode`) because the public Reporter API does not expose describe-level data; the Phase 1 extractor must feature-detect them and cover them with the version-matrix snapshot tests (planned, not yet written; the spike reporter reads them without fallback).
+Adopt the changes listed under "Phase 0 decisions" in `docs/schema.md` for schema v1. The extractor reads a few internal fields (`_staticAnnotations`, `_tags`, `_only`, `_parallelMode`) because the public Reporter API does not expose describe-level data; the Phase 1 extractor must feature-detect them and cover them with the version-matrix snapshot tests. Both are done (`packages/playwright/src/internals.ts`, ADR 0007); the spike reporter read them without fallback.
 
 ## Conditional and runtime annotations
 
@@ -27,4 +27,5 @@ Accepted: the function-source scan ships with the Phase 1 extractor and adds a s
 ## Consequences
 
 - Extractor owns dedupe of inherited annotations/tags and origin reconstruction.
-- A Playwright release that renames internal fields breaks describe attribution; the planned matrix tests would catch this.
+- A Playwright release that renames internal fields breaks describe attribution. It no longer breaks extraction: each accessor returns `undefined` and the document carries an `internal-field-unavailable` warning for that field (ADR 0007). The version matrix catches it because the fixture snapshot has `warnings: []`; a renamed or reshaped field shows up as a warning diff.
+- Silent semantic changes (a field keeps its shape but changes meaning) are not detected by shape checks. The annotation split verifies the inherited prefix positionally and warns on mismatch; the other fields rely on the snapshot.

@@ -68,10 +68,27 @@ Found while building the public-fields extractor; the version matrix in CI (1.42
 - **`FullProject` is not exported from `@playwright/test/reporter` on 1.42**; derive the type from `Suite['project']`.
 - **A throwing reporter does not fail `playwright test --list`.** Playwright prints `Error in reporter ...` on **stdout** and still lists the tests, so the runner must treat "no output file" as failure and surface both streams.
 - **File suites may have no `location`.** Fall back to the first test's file.
-- **`serial` annotation filter:** the synthetic `{ type: 'serial' }` (newer versions, serial describes) is dropped when it has no description. A user-declared `serial` annotation without a description is dropped with it until the internals reader can check the describe mode.
+- **`serial` annotation filter:** newer versions add a synthetic `{ type: 'serial' }` (no description) to every test under a serial describe or a serial file (`test.describe.configure({ mode: 'serial' })` at file level). It is dropped only where `_parallelMode` proves an enclosing suite is serial, so a user-declared `serial` annotation survives (as `declaration`, or `describe` when it sits on a describe). If `_parallelMode` or `_staticAnnotations` cannot be read, the old shape-based filter applies (drop every description-less `serial`).
 - **`location.column` is version-dependent** (e.g. 9 on 1.42 vs 1 on latest for the same call). It is kept in the document but must not be compared across versions; the snapshot test zeroes it.
 - **`use.baseURL`** is serialised only when it is an http(s) URL, without userinfo, query and fragment.
-- **Public-only limits** (left for the internals PR, flagged by warnings in the document): describe `mode`, describe-level tags and annotations (so `Annotation.origin` is always `declaration` and inherited describe annotations appear on every test as Playwright reports them), `only`, and conditionals. Tag origin is `title` (an `@token` in the test title) or `describe` (an `@token` in a describe title); everything else is `details`, which cannot separate a describe's `{ tag }` from the test's own.
+- **Remaining public-only limit:** conditionals (`_modifiers`, `_hooks`, `TestCase.fn`), still `[]` until the conditionals PR.
+
+### Internal fields (`packages/playwright/src/internals.ts`)
+
+Read through four feature-detecting accessors, the only code that touches underscore fields. Each checks existence and shape and returns `undefined` plus a report on mismatch; it never throws. The extractor turns a report into one `internal-field-unavailable` warning per field (`where` is the field name) and falls back to what the public API can prove.
+
+| Field | Gives | Fallback when unavailable |
+| --- | --- | --- |
+| `Suite._parallelMode` (`none`/`parallel`/`serial`) | `Describe.mode` (`none` -> `default`); proves which suites are serial | mode `default`; description-less `serial` annotations filtered by shape |
+| `Suite._tags` | describe-level tags; tag origin `describe` for `{ tag }` details | no describe tags; those tags get origin `details` |
+| `Suite._staticAnnotations` | describe's own annotations; inherited vs own split | no describe annotations; every annotation is `declaration` |
+| `TestCase._only` | `Instance.only` | `only` omitted (not `false`) |
+
+- **Annotation split.** `test.annotations` is built outermost-first: per enclosing suite, its `_staticAnnotations` (preceded, on newer versions only, by the synthetic `serial` marker for a serial suite), then the test's own. The extractor consumes that prefix positionally from the enclosing file and describe suites, tags it `describe`, and keeps the rest as `declaration`. If the prefix does not match (a Playwright change), it does not guess: all annotations are `declaration` and an `annotation-inheritance-mismatch` warning is emitted. Inherited annotations stay on each instance (so the annotation lens does not have to walk the tree) with origin `describe`; the describe node holds its own list once.
+- **Tag origin**, in order: an `@token` in the test's own title (`title`); an enclosing describe's `_tags` or an `@token` in an enclosing describe title (`describe`); anything else (`details`). A tag that is both in the test title and a describe is `title`.
+- **File suites** are read like describes (a file-level `configure({ mode: 'serial' })` changes the annotations of every test in the file) but are not describe nodes, so a file-level mode, tag or annotation is used for origin and serial detection and is not itself represented in the document.
+- **Synthetic `serial` marker.** Whether the marker exists is a property of the version (1.42.1: never; 1.65.1: one per serial suite, file suites included), so the extractor applies one interpretation to all enclosing suites of a test and learns it from the first test where only one fits (`ctx.syntheticSerial`). Known ambiguity: before the version is learned, a serial test whose *own* annotations include a description-less `serial` fits both interpretations and is read as having markers. The fixture and the snapshot do not hit this.
+- `test.only` on a describe (`describe.only`) is `Suite._only`, not read; `Instance.only` is the test's own flag.
 
 ### Other findings
 
@@ -80,4 +97,4 @@ Found while building the public-fields extractor; the version matrix in CI (1.42
 - `repeatEach: 2` yields two `TestCase`s inside the same project node, distinguished by `repeatEachIndex` and a different `id`. Instances need `repeatEachIndex` in their id (matches the draft).
 - Loop-generated tests and describes appear as ordinary tests; no marker that they were generated. Location points at the same line for all of them, so `file:line` is not unique and cannot be an id.
 - A `{type: 'issue', description}` annotation round-trips with the exact description (URL or key). Hidden `_` types are reported like any other.
-- Describe `mode` is only available via internal `_parallelMode` (observed: `none`, `parallel`, `serial`); `none` means unset.
+- Describe `mode` is only available via internal `_parallelMode` (observed: `none`, `parallel`, `serial`); `none` means unset and is reported as `default`.

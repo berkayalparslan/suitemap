@@ -145,8 +145,16 @@
       "title": "roles",
       "fileId": "tests/auth/permissions/roles.spec.ts",
       "mode": "default",
-      "tags": [],
-      "annotations": []
+      "tags": [
+        "@rbac"
+      ],
+      "annotations": [
+        {
+          "type": "owner",
+          "description": "team-auth",
+          "origin": "describe"
+        }
+      ]
     },
     {
       "id": "tests/auth/permissions/roles.spec.ts › roles › nested",
@@ -154,8 +162,16 @@
       "fileId": "tests/auth/permissions/roles.spec.ts",
       "parentId": "tests/auth/permissions/roles.spec.ts › roles",
       "mode": "default",
-      "tags": [],
-      "annotations": []
+      "tags": [
+        "@nested"
+      ],
+      "annotations": [
+        {
+          "type": "issue",
+          "description": "RBAC-7",
+          "origin": "describe"
+        }
+      ]
     },
     {
       "id": "tests/checkout/builtins.spec.ts › unconditional",
@@ -187,7 +203,12 @@
       "fileId": "tests/checkout/builtins.spec.ts",
       "mode": "default",
       "tags": [],
-      "annotations": []
+      "annotations": [
+        {
+          "type": "skip",
+          "origin": "describe"
+        }
+      ]
     },
     {
       "id": "tests/checkout/builtins.spec.ts › fixme describe",
@@ -195,7 +216,12 @@
       "fileId": "tests/checkout/builtins.spec.ts",
       "mode": "default",
       "tags": [],
-      "annotations": []
+      "annotations": [
+        {
+          "type": "fixme",
+          "origin": "describe"
+        }
+      ]
     },
     {
       "id": "tests/checkout/builtins.spec.ts › only",
@@ -209,7 +235,7 @@
       "id": "tests/checkout/cart.spec.ts › serial flow",
       "title": "serial flow",
       "fileId": "tests/checkout/cart.spec.ts",
-      "mode": "default",
+      "mode": "serial",
       "tags": [],
       "annotations": []
     },
@@ -217,7 +243,7 @@
       "id": "tests/checkout/cart.spec.ts › parallel flow",
       "title": "parallel flow",
       "fileId": "tests/checkout/cart.spec.ts",
-      "mode": "default",
+      "mode": "parallel",
       "tags": [],
       "annotations": []
     },
@@ -365,7 +391,7 @@
       "tags": [
         {
           "name": "@rbac",
-          "origin": "details"
+          "origin": "describe"
         }
       ]
     },
@@ -387,11 +413,11 @@
       "tags": [
         {
           "name": "@rbac",
-          "origin": "details"
+          "origin": "describe"
         },
         {
           "name": "@nested",
-          "origin": "details"
+          "origin": "describe"
         },
         {
           "name": "@negative",
@@ -974,7 +1000,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/auth/login.spec.ts › login with details tags [chromium#0]",
@@ -985,7 +1012,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/auth/login.spec.ts › login mixed tags @fast [chromium#0]",
@@ -996,7 +1024,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/auth/login.spec.ts › login known bug (url issue) [chromium#0]",
@@ -1013,7 +1042,8 @@
         }
       ],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/auth/login.spec.ts › login known bug (jira key) [chromium#0]",
@@ -1035,7 +1065,8 @@
         }
       ],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/auth/permissions/roles.spec.ts › roles › admin can manage users [chromium#0]",
@@ -1048,11 +1079,12 @@
         {
           "type": "owner",
           "description": "team-auth",
-          "origin": "declaration"
+          "origin": "describe"
         }
       ],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/auth/permissions/roles.spec.ts › roles › nested › guest cannot manage users [chromium#0]",
@@ -1065,16 +1097,17 @@
         {
           "type": "owner",
           "description": "team-auth",
-          "origin": "declaration"
+          "origin": "describe"
         },
         {
           "type": "issue",
           "description": "RBAC-7",
-          "origin": "declaration"
+          "origin": "describe"
         }
       ],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/builtins.spec.ts › unconditional › skip [chromium#0]",
@@ -1085,7 +1118,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/builtins.spec.ts › unconditional › skip (declaration) [chromium#0]",
@@ -1101,7 +1135,8 @@
         }
       ],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/builtins.spec.ts › unconditional › fail (declaration) [chromium#0]",
@@ -1117,7 +1152,8 @@
         }
       ],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/builtins.spec.ts › unconditional › fixme (declaration) [chromium#0]",
@@ -1133,7 +1169,8 @@
         }
       ],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/builtins.spec.ts › unconditional › slow (in body) [chromium#0]",
@@ -1144,7 +1181,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/builtins.spec.ts › conditional on browserName › skip webkit (declaration callback) [chromium#0]",
@@ -1155,7 +1193,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/builtins.spec.ts › conditional on browserName › fail firefox (in body) [chromium#0]",
@@ -1166,7 +1205,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/builtins.spec.ts › conditional on browserName › fixme chromium (in body) [chromium#0]",
@@ -1177,7 +1217,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/builtins.spec.ts › conditional on browserName › slow webkit (in body) [chromium#0]",
@@ -1188,7 +1229,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/builtins.spec.ts › describe-level › inside conditional fixme describe [chromium#0]",
@@ -1199,7 +1241,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/builtins.spec.ts › skipped describe › inside skipped describe [chromium#0]",
@@ -1211,11 +1254,12 @@
       "annotations": [
         {
           "type": "skip",
-          "origin": "declaration"
+          "origin": "describe"
         }
       ],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/builtins.spec.ts › fixme describe › inside fixme describe [chromium#0]",
@@ -1227,11 +1271,12 @@
       "annotations": [
         {
           "type": "fixme",
-          "origin": "declaration"
+          "origin": "describe"
         }
       ],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/builtins.spec.ts › only › focused test [chromium#0]",
@@ -1242,7 +1287,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": true
     },
     {
       "id": "tests/checkout/builtins.spec.ts › only › unfocused sibling [chromium#0]",
@@ -1253,7 +1299,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/cart.spec.ts › serial flow › add item [chromium#0]",
@@ -1264,7 +1311,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/cart.spec.ts › serial flow › apply coupon [chromium#0]",
@@ -1275,7 +1323,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/cart.spec.ts › serial flow › pay [chromium#0]",
@@ -1286,7 +1335,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/cart.spec.ts › parallel flow › browse A [chromium#0]",
@@ -1297,7 +1347,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/cart.spec.ts › parallel flow › browse B [chromium#0]",
@@ -1308,7 +1359,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/cart.spec.ts › default flow › view cart [chromium#0]",
@@ -1319,7 +1371,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/misc/annotations.spec.ts › hidden type [chromium#0]",
@@ -1337,7 +1390,8 @@
         }
       ],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/misc/annotations.spec.ts › multiple annotations [chromium#0]",
@@ -1364,7 +1418,8 @@
         }
       ],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/misc/annotations.spec.ts › runtime annotation [chromium#0]",
@@ -1375,7 +1430,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/misc/conditionals.spec.ts › conditionals › env var condition [chromium#0]",
@@ -1386,7 +1442,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/misc/conditionals.spec.ts › conditionals › helper call [chromium#0]",
@@ -1397,7 +1454,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/misc/conditionals.spec.ts › conditionals › computed annotation type [chromium#0]",
@@ -1408,7 +1466,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/misc/conditionals.spec.ts › conditionals › early return before conditional [chromium#0]",
@@ -1419,7 +1478,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/misc/conditionals.spec.ts › conditionals › project name condition [chromium#0]",
@@ -1430,7 +1490,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/misc/generated.spec.ts › role admin can log in [chromium#0]",
@@ -1441,7 +1502,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/misc/generated.spec.ts › role user can log in [chromium#0]",
@@ -1452,7 +1514,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/misc/generated.spec.ts › role guest can log in [chromium#0]",
@@ -1463,7 +1526,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/misc/generated.spec.ts › env staging › health check [chromium#0]",
@@ -1474,7 +1538,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/misc/generated.spec.ts › env prod › health check [chromium#0]",
@@ -1485,7 +1550,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/auth/login.spec.ts › login with valid credentials @smoke [firefox#0]",
@@ -1496,7 +1562,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/auth/login.spec.ts › login with details tags [firefox#0]",
@@ -1507,7 +1574,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/auth/login.spec.ts › login mixed tags @fast [firefox#0]",
@@ -1518,7 +1586,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/auth/login.spec.ts › login known bug (url issue) [firefox#0]",
@@ -1535,7 +1604,8 @@
         }
       ],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/auth/login.spec.ts › login known bug (jira key) [firefox#0]",
@@ -1557,7 +1627,8 @@
         }
       ],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/auth/permissions/roles.spec.ts › roles › admin can manage users [firefox#0]",
@@ -1570,11 +1641,12 @@
         {
           "type": "owner",
           "description": "team-auth",
-          "origin": "declaration"
+          "origin": "describe"
         }
       ],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/auth/permissions/roles.spec.ts › roles › nested › guest cannot manage users [firefox#0]",
@@ -1587,16 +1659,17 @@
         {
           "type": "owner",
           "description": "team-auth",
-          "origin": "declaration"
+          "origin": "describe"
         },
         {
           "type": "issue",
           "description": "RBAC-7",
-          "origin": "declaration"
+          "origin": "describe"
         }
       ],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/builtins.spec.ts › unconditional › skip [firefox#0]",
@@ -1607,7 +1680,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/builtins.spec.ts › unconditional › skip (declaration) [firefox#0]",
@@ -1623,7 +1697,8 @@
         }
       ],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/builtins.spec.ts › unconditional › fail (declaration) [firefox#0]",
@@ -1639,7 +1714,8 @@
         }
       ],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/builtins.spec.ts › unconditional › fixme (declaration) [firefox#0]",
@@ -1655,7 +1731,8 @@
         }
       ],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/builtins.spec.ts › unconditional › slow (in body) [firefox#0]",
@@ -1666,7 +1743,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/builtins.spec.ts › conditional on browserName › skip webkit (declaration callback) [firefox#0]",
@@ -1677,7 +1755,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/builtins.spec.ts › conditional on browserName › fail firefox (in body) [firefox#0]",
@@ -1688,7 +1767,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/builtins.spec.ts › conditional on browserName › fixme chromium (in body) [firefox#0]",
@@ -1699,7 +1779,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/builtins.spec.ts › conditional on browserName › slow webkit (in body) [firefox#0]",
@@ -1710,7 +1791,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/builtins.spec.ts › describe-level › inside conditional fixme describe [firefox#0]",
@@ -1721,7 +1803,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/builtins.spec.ts › skipped describe › inside skipped describe [firefox#0]",
@@ -1733,11 +1816,12 @@
       "annotations": [
         {
           "type": "skip",
-          "origin": "declaration"
+          "origin": "describe"
         }
       ],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/builtins.spec.ts › fixme describe › inside fixme describe [firefox#0]",
@@ -1749,11 +1833,12 @@
       "annotations": [
         {
           "type": "fixme",
-          "origin": "declaration"
+          "origin": "describe"
         }
       ],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/builtins.spec.ts › only › focused test [firefox#0]",
@@ -1764,7 +1849,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": true
     },
     {
       "id": "tests/checkout/builtins.spec.ts › only › unfocused sibling [firefox#0]",
@@ -1775,7 +1861,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/cart.spec.ts › serial flow › add item [firefox#0]",
@@ -1786,7 +1873,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/cart.spec.ts › serial flow › apply coupon [firefox#0]",
@@ -1797,7 +1885,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/cart.spec.ts › serial flow › pay [firefox#0]",
@@ -1808,7 +1897,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/cart.spec.ts › parallel flow › browse A [firefox#0]",
@@ -1819,7 +1909,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/cart.spec.ts › parallel flow › browse B [firefox#0]",
@@ -1830,7 +1921,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/cart.spec.ts › default flow › view cart [firefox#0]",
@@ -1841,7 +1933,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/misc/annotations.spec.ts › hidden type [firefox#0]",
@@ -1859,7 +1952,8 @@
         }
       ],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/misc/annotations.spec.ts › multiple annotations [firefox#0]",
@@ -1886,7 +1980,8 @@
         }
       ],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/misc/annotations.spec.ts › runtime annotation [firefox#0]",
@@ -1897,7 +1992,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/misc/conditionals.spec.ts › conditionals › env var condition [firefox#0]",
@@ -1908,7 +2004,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/misc/conditionals.spec.ts › conditionals › helper call [firefox#0]",
@@ -1919,7 +2016,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/misc/conditionals.spec.ts › conditionals › computed annotation type [firefox#0]",
@@ -1930,7 +2028,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/misc/conditionals.spec.ts › conditionals › early return before conditional [firefox#0]",
@@ -1941,7 +2040,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/misc/conditionals.spec.ts › conditionals › project name condition [firefox#0]",
@@ -1952,7 +2052,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/misc/generated.spec.ts › role admin can log in [firefox#0]",
@@ -1963,7 +2064,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/misc/generated.spec.ts › role user can log in [firefox#0]",
@@ -1974,7 +2076,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/misc/generated.spec.ts › role guest can log in [firefox#0]",
@@ -1985,7 +2088,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/misc/generated.spec.ts › env staging › health check [firefox#0]",
@@ -1996,7 +2100,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/misc/generated.spec.ts › env prod › health check [firefox#0]",
@@ -2007,7 +2112,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/setup/auth.setup.ts › authenticate [setup#0]",
@@ -2018,7 +2124,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/setup/cleanup.teardown.ts › cleanup [teardown#0]",
@@ -2029,7 +2136,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/auth/login.spec.ts › login with valid credentials @smoke [webkit#0]",
@@ -2040,7 +2148,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/auth/login.spec.ts › login with details tags [webkit#0]",
@@ -2051,7 +2160,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/auth/login.spec.ts › login mixed tags @fast [webkit#0]",
@@ -2062,7 +2172,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/auth/login.spec.ts › login known bug (url issue) [webkit#0]",
@@ -2079,7 +2190,8 @@
         }
       ],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/auth/login.spec.ts › login known bug (jira key) [webkit#0]",
@@ -2101,7 +2213,8 @@
         }
       ],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/auth/permissions/roles.spec.ts › roles › admin can manage users [webkit#0]",
@@ -2114,11 +2227,12 @@
         {
           "type": "owner",
           "description": "team-auth",
-          "origin": "declaration"
+          "origin": "describe"
         }
       ],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/auth/permissions/roles.spec.ts › roles › nested › guest cannot manage users [webkit#0]",
@@ -2131,16 +2245,17 @@
         {
           "type": "owner",
           "description": "team-auth",
-          "origin": "declaration"
+          "origin": "describe"
         },
         {
           "type": "issue",
           "description": "RBAC-7",
-          "origin": "declaration"
+          "origin": "describe"
         }
       ],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/builtins.spec.ts › unconditional › skip [webkit#0]",
@@ -2151,7 +2266,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/builtins.spec.ts › unconditional › skip (declaration) [webkit#0]",
@@ -2167,7 +2283,8 @@
         }
       ],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/builtins.spec.ts › unconditional › fail (declaration) [webkit#0]",
@@ -2183,7 +2300,8 @@
         }
       ],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/builtins.spec.ts › unconditional › fixme (declaration) [webkit#0]",
@@ -2199,7 +2317,8 @@
         }
       ],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/builtins.spec.ts › unconditional › slow (in body) [webkit#0]",
@@ -2210,7 +2329,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/builtins.spec.ts › conditional on browserName › skip webkit (declaration callback) [webkit#0]",
@@ -2221,7 +2341,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/builtins.spec.ts › conditional on browserName › fail firefox (in body) [webkit#0]",
@@ -2232,7 +2353,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/builtins.spec.ts › conditional on browserName › fixme chromium (in body) [webkit#0]",
@@ -2243,7 +2365,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/builtins.spec.ts › conditional on browserName › slow webkit (in body) [webkit#0]",
@@ -2254,7 +2377,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/builtins.spec.ts › describe-level › inside conditional fixme describe [webkit#0]",
@@ -2265,7 +2389,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/builtins.spec.ts › skipped describe › inside skipped describe [webkit#0]",
@@ -2277,11 +2402,12 @@
       "annotations": [
         {
           "type": "skip",
-          "origin": "declaration"
+          "origin": "describe"
         }
       ],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/builtins.spec.ts › fixme describe › inside fixme describe [webkit#0]",
@@ -2293,11 +2419,12 @@
       "annotations": [
         {
           "type": "fixme",
-          "origin": "declaration"
+          "origin": "describe"
         }
       ],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/builtins.spec.ts › only › focused test [webkit#0]",
@@ -2308,7 +2435,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": true
     },
     {
       "id": "tests/checkout/builtins.spec.ts › only › unfocused sibling [webkit#0]",
@@ -2319,7 +2447,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/cart.spec.ts › serial flow › add item [webkit#0]",
@@ -2330,7 +2459,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/cart.spec.ts › serial flow › apply coupon [webkit#0]",
@@ -2341,7 +2471,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/cart.spec.ts › serial flow › pay [webkit#0]",
@@ -2352,7 +2483,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/cart.spec.ts › parallel flow › browse A [webkit#0]",
@@ -2363,7 +2495,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/cart.spec.ts › parallel flow › browse B [webkit#0]",
@@ -2374,7 +2507,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/checkout/cart.spec.ts › default flow › view cart [webkit#0]",
@@ -2385,7 +2519,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/misc/annotations.spec.ts › hidden type [webkit#0]",
@@ -2403,7 +2538,8 @@
         }
       ],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/misc/annotations.spec.ts › multiple annotations [webkit#0]",
@@ -2430,7 +2566,8 @@
         }
       ],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/misc/annotations.spec.ts › runtime annotation [webkit#0]",
@@ -2441,7 +2578,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/misc/conditionals.spec.ts › conditionals › env var condition [webkit#0]",
@@ -2452,7 +2590,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/misc/conditionals.spec.ts › conditionals › helper call [webkit#0]",
@@ -2463,7 +2602,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/misc/conditionals.spec.ts › conditionals › computed annotation type [webkit#0]",
@@ -2474,7 +2614,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/misc/conditionals.spec.ts › conditionals › early return before conditional [webkit#0]",
@@ -2485,7 +2626,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/misc/conditionals.spec.ts › conditionals › project name condition [webkit#0]",
@@ -2496,7 +2638,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/misc/generated.spec.ts › role admin can log in [webkit#0]",
@@ -2507,7 +2650,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/misc/generated.spec.ts › role user can log in [webkit#0]",
@@ -2518,7 +2662,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/misc/generated.spec.ts › role guest can log in [webkit#0]",
@@ -2529,7 +2674,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/misc/generated.spec.ts › env staging › health check [webkit#0]",
@@ -2540,7 +2686,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     },
     {
       "id": "tests/misc/generated.spec.ts › env prod › health check [webkit#0]",
@@ -2551,7 +2698,8 @@
       "expectedStatus": "passed",
       "annotations": [],
       "timeout": 30000,
-      "retries": 0
+      "retries": 0,
+      "only": false
     }
   ],
   "tags": [
@@ -2629,14 +2777,5 @@
     }
   ],
   "conditionals": [],
-  "warnings": [
-    {
-      "code": "tag-origin-approximate",
-      "message": "Tags declared in test.describe details cannot be told apart from the test’s own details tags without Playwright internals; both are reported with origin \"details\" for tests inside a describe."
-    },
-    {
-      "code": "describe-internals-unavailable",
-      "message": "Describe mode, own tags and own annotations are not in the public Reporter API; describes are reported with mode \"default\" and no tags or annotations until the internals reader lands."
-    }
-  ]
+  "warnings": []
 }

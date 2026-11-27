@@ -70,15 +70,14 @@ describe('suitemap extract: fixtures/playwright-basic', () => {
     );
     expect(r.code).toBe(0);
     const text = readFileSync(out, 'utf8');
-    // Warnings go to stderr as a per-kind summary; stdout carries only the status line.
+    // The fixture extracts cleanly (every internal field is readable): no warnings, nothing on stderr.
     const doc = JSON.parse(text) as {
       tests: unknown[];
       instances: unknown[];
       warnings: { code: string }[];
     };
-    expect(doc.warnings.length).toBeGreaterThan(0);
-    for (const code of new Set(doc.warnings.map((w) => w.code)))
-      expect(r.stderr).toContain(`${doc.warnings.filter((w) => w.code === code).length} ${code}`);
+    expect(doc.warnings).toEqual([]);
+    expect(r.stderr).toBe('');
     expect(r.stdout).toBe(
       `Wrote ${out} (${doc.tests.length} tests, ${doc.instances.length} instances)\n`,
     );
@@ -88,26 +87,6 @@ describe('suitemap extract: fixtures/playwright-basic', () => {
     expect(normalise(parsed as Parameters<typeof normalise>[0])).toEqual(
       JSON.parse(readFileSync(snapshotFile, 'utf8')),
     );
-  }, 120_000);
-
-  it('--verbose lists every warning', () => {
-    const out = path.join(tmp, 'verbose.json');
-    const r = suitemap(
-      [
-        'extract',
-        '--config',
-        path.join(fixtureDir, 'playwright.config.ts'),
-        '--out',
-        out,
-        '--verbose',
-      ],
-      {},
-      fixtureDir,
-    );
-    expect(r.code).toBe(0);
-    const warnings = (JSON.parse(readFileSync(out, 'utf8')) as { warnings: { code: string }[] })
-      .warnings;
-    expect(r.stderr.split('\n').filter((l) => l.startsWith('  ['))).toHaveLength(warnings.length);
   }, 120_000);
 
   it('defaults --out to suitemap.json next to the config', async () => {
