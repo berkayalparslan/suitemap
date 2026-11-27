@@ -269,3 +269,41 @@ describe('unexpected shapes become warnings, not crashes', () => {
     expect(raw.warnings.map((w) => w.code)).toEqual(['unexpected-suite']);
   });
 });
+
+describe('review fixes', () => {
+  it('names the unnamed project and strips secrets from baseURL', () => {
+    const { config, root } = fakeRoot(
+      [{ name: '', use: { baseURL: 'https://u:tok@staging.example.com/app?k=1#x' }, files: {} }],
+      false,
+    );
+    const doc = extractDocument(config, root, GEN);
+    expect(doc.projects[0]).toMatchObject({
+      id: 'default',
+      name: 'default',
+      use: { baseURL: 'https://staging.example.com/app' },
+    });
+  });
+
+  it('keeps a user-declared serial annotation that has a description', () => {
+    const { config, root } = fakeRoot(
+      [
+        {
+          name: 'p',
+          files: {
+            'tests/a.spec.ts': [
+              {
+                title: 't',
+                annotations: [{ type: 'serial' }, { type: 'serial', description: 'mine' }],
+              },
+            ],
+          },
+        },
+      ],
+      false,
+    );
+    const doc = extractDocument(config, root, GEN);
+    expect(doc.instances[0]?.annotations).toEqual([
+      { type: 'serial', description: 'mine', origin: 'declaration' },
+    ]);
+  });
+});

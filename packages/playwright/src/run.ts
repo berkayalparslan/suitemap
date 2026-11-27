@@ -34,12 +34,16 @@ export class ExtractionError extends Error {
 
 // Playwright loads the reporter itself, so it must be the built file. When this module runs from
 // src/ (unit tests), fall back to the sibling dist/ build.
-const reporterPath = [
-  new URL('./reporter.js', import.meta.url),
-  new URL('../dist/reporter.js', import.meta.url),
-]
-  .map((u) => fileURLToPath(u))
-  .find((p) => existsSync(p)) as string;
+function findReporter(): string {
+  const found = [
+    new URL('./reporter.js', import.meta.url),
+    new URL('../dist/reporter.js', import.meta.url),
+  ]
+    .map((u) => fileURLToPath(u))
+    .find((p) => existsSync(p));
+  if (!found) throw new ExtractionError('reporter.js not found; run `pnpm build` first.', '');
+  return found;
+}
 
 function resolvePlaywrightCli(cwd: string, env: NodeJS.ProcessEnv): string {
   // Resolve like the user's own `npx playwright` would: from their project, not from this package.
@@ -68,25 +72,25 @@ export async function extract(options: ExtractOptions = {}): Promise<SuitemapDoc
       cli,
       'test',
       '--list',
-      `--reporter=${reporterPath}`,
+      `--reporter=${findReporter()}`,
       ...(options.configFile ? [`--config=${path.resolve(cwd, options.configFile)}`] : []),
       ...(options.playwrightArgs ?? []),
     ];
-    const stderr = await new Promise<string>((resolve, reject) => {
-      const child = spawn(process.execPath, args, { cwd, env, stdio: ['ignore', 'pipe', 'pipe'] });
-      let err = '';
-      // Playwright reports reporter failures ("Error in reporter ...") on stdout, so keep both streams.
-      child.stdout.on('data', (d: Buffer) => (err += d.toString()));
-      child.stderr.on('data', (d: Buffer) => (err += d.toString()));
-      child.on('error', reject);
-      child.on('close', (code) =>
-        code === 0
-          ? resolve(err)
-          : reject(
-              new ExtractionError(`playwright test --list exited with code ${code}.\n${err}`, err),
-            ),
-      );
-    });
+    const { output: stderr, code } = await new Promise<{ output: string; code: number | null }>(
+      (resolve, reject) => {
+        const child = spawn(process.execPath, args, {
+          cwd,
+          env,
+          stdio: ['ignore', 'pipe', 'pipe'],
+        });
+        let err = '';
+        // Playwright reports reporter failures ("Error in reporter ...") on stdout, so keep both streams.
+        child.stdout.on('data', (d: Buffer) => (err += d.toString()));
+        child.stderr.on('data', (d: Buffer) => (err += d.toString()));
+        child.on('error', reject);
+        child.on('close', (code) => resolve({ output: err, code }));
+      },
+    );
     let text: string;
     try {
       text = await readFile(outputFile, 'utf8');
@@ -99,6 +103,12 @@ export async function extract(options: ExtractOptions = {}): Promise<SuitemapDoc
     const result = validateDocument(JSON.parse(text));
     if (!result.ok)
       throw new ExtractionError(`Invalid document:\n${result.issues.join('\n')}`, stderr);
+    // Playwright also exits non-zero for e.g. no matching tests or forbidOnly; the document is still usable.
+    if (code !== 0)
+      result.document.warnings.push({
+        code: 'playwright-exit-code',
+        message: `playwright test --list exited with code ${code}; the document was still produced.`,
+      });
     return result.document;
   } finally {
     await rm(dir, { recursive: true, force: true });

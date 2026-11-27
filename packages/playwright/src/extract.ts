@@ -28,6 +28,9 @@ type FullProject = NonNullable<ReturnType<Suite['project']>>;
 /** `use` keys that are safe to serialise (ADR 0004 decision 9). No env values, no storage state. */
 const USE_ALLOW_LIST = ['browserName', 'viewport', 'baseURL', 'channel', 'headless'] as const;
 
+/** Id and name given to Playwright's unnamed project. */
+const DEFAULT_PROJECT = 'default';
+
 type SuiteKind = 'root' | 'project' | 'file' | 'describe';
 
 /**
@@ -50,7 +53,10 @@ function entriesOf(suite: Suite): (Suite | TestCase)[] {
   const merged = [...suite.suites, ...suite.tests];
   if (merged.some((e) => e.location === undefined)) return merged;
   return merged.sort(
-    (a, b) => a.location!.line - b.location!.line || a.location!.column - b.location!.column,
+    (a, b) =>
+      (a.location!.file < b.location!.file ? -1 : a.location!.file > b.location!.file ? 1 : 0) ||
+      a.location!.line - b.location!.line ||
+      a.location!.column - b.location!.column,
   );
 }
 
@@ -66,6 +72,20 @@ const regexSources = (value: RegExp | RegExp[] | null | undefined): string[] | u
 
 const TITLE_TAG = /@\S+/g;
 const tagTokens = (title: string) => title.match(TITLE_TAG) ?? [];
+
+/** Drops userinfo, query and fragment from a URL: they can carry credentials or tokens. */
+function stripUrlSecrets(value: string): string {
+  try {
+    const u = new URL(value);
+    u.username = '';
+    u.password = '';
+    u.search = '';
+    u.hash = '';
+    return u.toString();
+  } catch {
+    return '<unparseable>';
+  }
+}
 
 export interface ExtractionContext {
   /** Directory paths are made relative to: the config file's directory. */
@@ -88,11 +108,14 @@ function toProject(ctx: ExtractionContext, p: FullProject): Project {
   const use: Record<string, unknown> = {};
   const rawUse = (p.use ?? {}) as Record<string, unknown>;
   for (const key of USE_ALLOW_LIST) if (rawUse[key] !== undefined) use[key] = rawUse[key];
+  if (typeof use.baseURL === 'string') use.baseURL = stripUrlSecrets(use.baseURL);
   const grep = regexSources(p.grep);
   const grepInvert = regexSources(p.grepInvert);
+  // A config without named projects yields one project whose name is ''.
+  const name = p.name === '' ? DEFAULT_PROJECT : p.name;
   return {
-    id: p.name,
-    name: p.name,
+    id: name,
+    name,
     dependencies: [...p.dependencies],
     ...(p.teardown === undefined ? {} : { teardown: p.teardown }),
     testDir: relPath(ctx, p.testDir) || '.',
@@ -134,7 +157,7 @@ function toAnnotations(t: TestCase): Annotation[] {
     t.annotations
       // Playwright (newer versions only) adds a synthetic { type: 'serial' } to tests in a serial
       // describe. Describe mode is the source of truth, so drop it for a stable cross-version output.
-      .filter((a) => a.type !== 'serial')
+      .filter((a) => !(a.type === 'serial' && a.description === undefined))
       // TODO(internals PR): split inherited describe annotations (origin "describe") from the test's
       // own (origin "declaration") using the describe's internal `_staticAnnotations`.
       .map((a) => ({
@@ -197,11 +220,18 @@ function fileOf(suite: Suite): string | undefined {
 }
 
 export function extractRaw(config: FullConfig, root: Suite): RawExtraction {
+  const noConfigFile = !config.configFile;
   const ctx: ExtractionContext = {
     baseDir: config.configFile ? path.dirname(config.configFile) : config.rootDir,
     warnings: [],
     flags: new Set(),
   };
+
+  if (noConfigFile)
+    ctx.warnings.push({
+      code: 'no-config-file',
+      message: `Playwright reported no config file; paths are relative to its rootDir (${config.rootDir}), which is the testDir.`,
+    });
 
   const projects: RawProjectSuite[] = [];
   for (const projectSuite of root.suites) {
