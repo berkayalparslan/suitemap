@@ -48,18 +48,20 @@ class ListReporter implements Reporter {
       }
       // Describe-level declared data, if the version exposes it (internal fields).
       const internal = s as any;
-      if (internal._staticAnnotations) out.staticAnnotations = internal._staticAnnotations.map(relAnn);
-      if (internal._tags) out.internalTags = internal._tags;
+      if (Array.isArray(internal._staticAnnotations)) out.staticAnnotations = internal._staticAnnotations.map(relAnn);
+      if (Array.isArray(internal._tags)) out.internalTags = internal._tags;
       // Describe/file-level conditional modifiers (test.skip(cb, reason) at suite level), if exposed.
-      out.hasModifiersField = '_modifiers' in internal;
-      if (internal._modifiers?.length)
+      // Internal fields: guard every shape assumption and record presence so a changed shape is data, not a crash.
+      const fnSource = (f: unknown) => (typeof f === 'function' ? f.toString() : undefined);
+      out.hasModifiersField = Array.isArray(internal._modifiers);
+      if (out.hasModifiersField && internal._modifiers.length)
         out.modifiers = internal._modifiers.map((m: any) => ({
-          type: m.type, description: m.description, location: loc(m.location), fn: m.fn?.toString(),
+          type: m?.type, description: m?.description, location: loc(m?.location), fn: fnSource(m?.fn),
         }));
       // Hooks (beforeEach etc.) are registered on the suite; record whether they are visible.
-      out.hasHooksField = '_hooks' in internal;
-      if (internal._hooks?.length)
-        out.hooks = internal._hooks.map((h: any) => ({ type: h.type, location: loc(h.location), fn: h.fn?.toString() }));
+      out.hasHooksField = Array.isArray(internal._hooks);
+      if (out.hasHooksField && internal._hooks.length)
+        out.hooks = internal._hooks.map((h: any) => ({ type: h?.type, location: loc(h?.location), fn: fnSource(h?.fn) }));
       if (out.type === 'describe' || out.type === 'file') {
         out.titlePath = s.titlePath();
         out.allTestCount = s.allTests().length;
@@ -78,7 +80,7 @@ class ListReporter implements Reporter {
       annotations: t.annotations.map(relAnn),
       only: (t as any)._only,
       hasFn: typeof (t as any).fn,
-      fnSource: (t as any).fn?.toString(),
+      fnSource: typeof (t as any).fn === 'function' ? (t as any).fn.toString() : undefined,
       expectedStatus: t.expectedStatus,
       timeout: t.timeout,
       retries: t.retries,

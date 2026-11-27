@@ -1,5 +1,7 @@
 # Canonical schema (draft v0)
 
+> **Draft status:** the sections "Phase 0 findings: proposed changes" and "Proposed entity: `Conditional`" below are **not** part of `schemaVersion` 1 until ADR 0004 is accepted. Do not implement them in Phase 1 before that.
+
 This is the contract between the extractor, the viewer and the rule engine. It is a **draft**: Phase 0 validates it against real `--list` output, Phase 1 freezes v1.
 
 ```ts
