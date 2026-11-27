@@ -37,8 +37,27 @@ Each project repeats the suite with its own `use`, `testMatch`/`testIgnore`, `gr
 
 ## Phase 0 checks
 
-- [ ] Does `--list` run `globalSetup`? (affects repos needing services)
-- [ ] Which env vars does config loading need in real repos?
-- [ ] What does `onBegin` contain on 1.42 vs latest? Diff the dumps.
-- [ ] Do conditional `skip`/`fixme` with static conditions appear in `--list`?
-- [ ] Are describe-level annotations reported on the describe or copied to each test?
+Evidence: `spike/output/pw-1.42.json` (1.42.1), `pw-latest.json` (1.65.1), `*-repeat.json` (same with `repeatEach: 2`), `diff.txt`. Reproduce with `spike/run.sh`. Fixture: `fixtures/playwright-basic`.
+
+- [x] **Does `--list` run `globalSetup`?** No, on both versions (marker file never written). Repos that need services in `globalSetup` can still be listed. The config file itself is loaded and executed, so top-level code in it runs. Not yet checked: `webServer`, `globalTeardown`, and project-level setup code with side effects.
+- [~] **Which env vars does config loading need?** Only what the config reads at load time. A config reading an unset env var for `baseURL` loads fine (value `undefined`); a config that throws on a missing var will make extraction fail. This cannot be answered from the fixture; it needs the 2 real open-source suites in Phase 1. Extraction should report config load errors verbatim and allow `--env-file`.
+- [x] **`onBegin` on 1.42 vs latest.** Same tree shape on both: root → project → file → describe → test. Differences (see `diff.txt`):
+  - `Suite.type` does not exist on 1.42; infer from depth (root/project/file/describe). Present from a later version.
+  - `TestAnnotation.location` is absent on 1.42 and present on latest.
+  - Project order differs (1.42: `teardown` before `setup`; latest: declaration order). Do not depend on order.
+  - Declared `serial` mode adds a synthetic `{type: 'serial'}` annotation to each test on latest only; 1.42 has none. Drop it when building annotations and use describe mode instead.
+  - Test `location.column` differs between versions (e.g. 9 vs 1 for a top-level `setup(...)` call). Do not use column in ids.
+  - Identical on both: `TestCase.id` (stable hash, same value across versions), `titlePath`, `tags` (including order), `expectedStatus`, `timeout`, `retries`, `repeatEachIndex`.
+- [x] **Do conditional `skip`/`fixme` appear in `--list`?** No. `test.skip(cond, reason)`, `test.fail(cond)`, `test.fixme(cond)`, `test.slow(cond)` inside a test body or callback are invisible (no annotation, `expectedStatus: passed`), including a describe-level `test.fixme(({browserName}) => ..., reason)`. They only run when the test runs. Static view must say so; Phase 4 fills it in. Unconditional declarations (`test.skip(title, fn)`, `test.fixme(title, fn)`, `test.describe.skip/fixme`) are visible with `expectedStatus: skipped` and a `skip`/`fixme` annotation; `test.fail(title, fn)` gets a `fail` annotation but `expectedStatus` stays `passed` on both versions. An unconditional `test.skip()` / `test.slow()` called in a test body is also invisible.
+  - Runtime `test.info().annotations.push(...)` is invisible, as expected.
+  - Gotcha: `test.slow(title, fn)` is not a declaration form; a call with those args acts as a describe-level `slow()`.
+- [x] **Describe-level annotations: on the describe or copied to tests?** Both. Each test's `annotations` contains everything inherited from enclosing describes (outermost first, then its own); the describe node also exposes its own via internal `_staticAnnotations` (not public API, present on both). Tags behave the same: `test.tags` includes inherited describe tags (`@rbac`, `@nested`, then own) with no origin; the describe's own tags are on internal `_tags`. Origin (`title`/`details`/`describe`) therefore has to be reconstructed: title tags by parsing `@tokens` from the title, describe tags from describe titles/`_tags`, remaining ones are `details`. Using internal fields is a risk to record in an ADR before Phase 1.
+
+### Other findings
+
+- `test.only` does not filter `--list`; all tests are listed. The focused test is flagged via internal `_only` (also on both versions).
+- Duplicate titles in one file are a load error on both versions, so `file + titlePath` is a unique id within a project. `TestCase.id` is not unique across projects (it is identical for the same test in every project); the instance id must include the project name.
+- `repeatEach: 2` yields two `TestCase`s inside the same project node, distinguished by `repeatEachIndex` and a different `id`. Instances need `repeatEachIndex` in their id (matches the draft).
+- Loop-generated tests and describes appear as ordinary tests; no marker that they were generated. Location points at the same line for all of them, so `file:line` is not unique and cannot be an id.
+- A `{type: 'issue', description}` annotation round-trips with the exact description (URL or key). Hidden `_` types are reported like any other.
+- Describe `mode` is only available via internal `_parallelMode` (observed: `none`, `parallel`, `serial`); `none` means unset.
