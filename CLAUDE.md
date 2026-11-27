@@ -33,7 +33,7 @@ Node >= 20.19, pnpm 10 (`corepack enable`).
 ```sh
 pnpm install            # install workspace deps
 pnpm build              # tsc build of every package (pnpm -r build)
-pnpm typecheck          # tsc --noEmit per package
+pnpm typecheck          # tsc --noEmit per package (needs `pnpm build` first on a fresh clone)
 pnpm lint               # eslint
 pnpm format:check       # prettier (code only; docs are hand-formatted)
 pnpm test               # vitest run (all packages)
