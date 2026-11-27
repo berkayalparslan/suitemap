@@ -50,7 +50,7 @@ CI (`.github/workflows/ci.yml`) runs format check, lint, typecheck, build and te
 node packages/cli/dist/bin.js extract --config <playwright.config.ts> [--out <file>] [--env-file <path>] [--cwd <dir>] [--verbose]
 ```
 
-Default `--out` is `suitemap.json` next to the config. The target project must have `@playwright/test` installed (resolved from `--cwd`). Exit 0 on success even with warnings (summary on stderr, `--verbose` lists them); 1 on failure (config load error, Playwright missing, invalid output, unwritable `--out`); 2 on bad usage. The JSON goes only to the file. `--env-file` is loaded into the Playwright process only; values already in the environment win, and values never reach the output. The CLI e2e test (`packages/cli`) runs in the extractor CI matrix.
+Default `--out` is `suitemap.json` next to the config. The target project must have `@playwright/test` installed (resolved from `--cwd`). Exit 0 on success even with warnings (summary on stderr, `--verbose` lists them); 1 on failure (config load error, Playwright missing, invalid output, unwritable `--out`); 2 on bad usage. The JSON goes only to the file. `--env-file` is loaded into the Playwright process only; values already in the environment win, and values are not copied into the output (the extractor keeps only allow-listed config fields such as `baseURL`, with credentials stripped). The CLI e2e test (`packages/cli`) runs in the extractor CI matrix.
 
 ## Conventions
 

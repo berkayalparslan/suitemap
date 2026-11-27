@@ -9,6 +9,13 @@ describe('parseEnvFile', () => {
     expect(env).toEqual({ A: '1', B: 'two', C: 'x y\n#z', D: '$A' });
   });
 
+  it('decodes escapes in one pass and treats a leading # as a comment', () => {
+    expect(parseEnvFile('P="C:\\\\new"\nQ=   # fill me in\n__proto__=x')).toMatchObject({
+      P: 'C:\\new',
+      Q: '',
+    });
+  });
+
   it('names the line but never echoes its content', () => {
     expect(() => parseEnvFile('A=1\nsecret-without-equals')).toThrow(/line 2/);
     expect(() => parseEnvFile('A=1\nsecret-without-equals')).not.toThrow(/secret/);

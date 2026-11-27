@@ -26,8 +26,9 @@ extract options:
   --config <path>    Playwright config file. Default: Playwright's own lookup in --cwd.
   --out <file>       Output JSON file. Default: suitemap.json next to the config (or in --cwd).
   --env-file <path>  KEY=value file loaded into the environment of the Playwright process.
-                     Variables already set in your environment win. Values are never written
-                     to the output.
+                     Variables already set in your environment win. Values are not copied
+                     into the output, except config fields the extractor keeps (baseURL,
+                     credentials stripped): do not put secrets in a variable feeding baseURL.
   --cwd <dir>        Directory Playwright runs in and @playwright/test is resolved from.
                      Default: the current directory.
   --verbose          List every warning instead of a per-kind count.
@@ -85,6 +86,17 @@ async function runExtract(args: string[], io: Io): Promise<number> {
   }
   if (!(await stat(cwd).catch(() => undefined))?.isDirectory()) {
     io.stderr(`suitemap: --cwd is not a directory: ${cwd}\n`);
+    return EXIT_FAILURE;
+  }
+
+  // Fail before the (slow) extraction rather than after it.
+  const outDir = path.dirname(out);
+  if (!(await stat(outDir).catch(() => undefined))?.isDirectory()) {
+    io.stderr(`suitemap: cannot write ${out}: ${outDir} is not a directory\n`);
+    return EXIT_FAILURE;
+  }
+  if ((await stat(out).catch(() => undefined))?.isDirectory()) {
+    io.stderr(`suitemap: cannot write ${out}: it is a directory\n`);
     return EXIT_FAILURE;
   }
 
