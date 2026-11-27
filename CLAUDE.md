@@ -40,7 +40,9 @@ pnpm test               # vitest run (all packages)
 pnpm exec vitest run packages/core/src/build.test.ts   # one file
 ```
 
-CI (`.github/workflows/ci.yml`) runs format check, lint, typecheck, build and test. `suitemap extract` is added with the CLI package; its usage goes here then.
+The extractor's fixture snapshot test spawns Playwright with the built reporter, so run `pnpm build` before `pnpm test`. To try another Playwright version locally: `pnpm --filter @suitemap/playwright add -D @playwright/test@1.42.1` (revert `package.json` and the lockfile afterwards).
+
+CI (`.github/workflows/ci.yml`) runs format check, lint, typecheck, build and test. A second `extractor` job repeats build, typecheck and the extractor tests on Playwright 1.42.1 and 1.65.1. `suitemap extract` is added with the CLI package; its usage goes here then.
 
 ## Conventions
 

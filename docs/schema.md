@@ -12,7 +12,7 @@ export interface SuitemapDocument {
     framework: 'playwright';
     frameworkVersion: string;     // e.g. "1.49.0"
     configFile: string;           // relative to rootDir
-    rootDir: string;
+    rootDir: string;              // directory of the config file; all paths in the document are relative to it
     mode: 'static' | 'results';   // 'results' once a run overlay is merged (Phase 4)
   };
   projects: Project[];

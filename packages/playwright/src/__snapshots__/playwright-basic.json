@@ -1,0 +1,2642 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-01-01T00:00:00.000Z",
+  "source": {
+    "framework": "playwright",
+    "frameworkVersion": "<version>",
+    "configFile": "playwright.config.ts",
+    "rootDir": "<rootDir>",
+    "mode": "static"
+  },
+  "projects": [
+    {
+      "id": "chromium",
+      "name": "chromium",
+      "dependencies": [
+        "setup"
+      ],
+      "testDir": "tests",
+      "use": {
+        "browserName": "chromium"
+      }
+    },
+    {
+      "id": "firefox",
+      "name": "firefox",
+      "dependencies": [
+        "setup"
+      ],
+      "testDir": "tests",
+      "use": {
+        "browserName": "firefox"
+      }
+    },
+    {
+      "id": "setup",
+      "name": "setup",
+      "dependencies": [],
+      "teardown": "teardown",
+      "testDir": "tests"
+    },
+    {
+      "id": "teardown",
+      "name": "teardown",
+      "dependencies": [],
+      "testDir": "tests"
+    },
+    {
+      "id": "webkit",
+      "name": "webkit",
+      "dependencies": [
+        "setup"
+      ],
+      "testDir": "tests",
+      "use": {
+        "browserName": "webkit"
+      }
+    }
+  ],
+  "folders": [
+    {
+      "id": ".",
+      "path": "."
+    },
+    {
+      "id": "tests",
+      "path": "tests",
+      "parentId": "."
+    },
+    {
+      "id": "tests/auth",
+      "path": "tests/auth",
+      "parentId": "tests"
+    },
+    {
+      "id": "tests/auth/permissions",
+      "path": "tests/auth/permissions",
+      "parentId": "tests/auth"
+    },
+    {
+      "id": "tests/checkout",
+      "path": "tests/checkout",
+      "parentId": "tests"
+    },
+    {
+      "id": "tests/misc",
+      "path": "tests/misc",
+      "parentId": "tests"
+    },
+    {
+      "id": "tests/setup",
+      "path": "tests/setup",
+      "parentId": "tests"
+    }
+  ],
+  "files": [
+    {
+      "id": "tests/auth/login.spec.ts",
+      "path": "tests/auth/login.spec.ts",
+      "folderId": "tests/auth"
+    },
+    {
+      "id": "tests/auth/permissions/roles.spec.ts",
+      "path": "tests/auth/permissions/roles.spec.ts",
+      "folderId": "tests/auth/permissions"
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts",
+      "path": "tests/checkout/builtins.spec.ts",
+      "folderId": "tests/checkout"
+    },
+    {
+      "id": "tests/checkout/cart.spec.ts",
+      "path": "tests/checkout/cart.spec.ts",
+      "folderId": "tests/checkout"
+    },
+    {
+      "id": "tests/misc/annotations.spec.ts",
+      "path": "tests/misc/annotations.spec.ts",
+      "folderId": "tests/misc"
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts",
+      "path": "tests/misc/conditionals.spec.ts",
+      "folderId": "tests/misc"
+    },
+    {
+      "id": "tests/misc/generated.spec.ts",
+      "path": "tests/misc/generated.spec.ts",
+      "folderId": "tests/misc"
+    },
+    {
+      "id": "tests/setup/auth.setup.ts",
+      "path": "tests/setup/auth.setup.ts",
+      "folderId": "tests/setup"
+    },
+    {
+      "id": "tests/setup/cleanup.teardown.ts",
+      "path": "tests/setup/cleanup.teardown.ts",
+      "folderId": "tests/setup"
+    }
+  ],
+  "describes": [
+    {
+      "id": "tests/auth/permissions/roles.spec.ts › roles",
+      "title": "roles",
+      "fileId": "tests/auth/permissions/roles.spec.ts",
+      "mode": "default",
+      "tags": [],
+      "annotations": []
+    },
+    {
+      "id": "tests/auth/permissions/roles.spec.ts › roles › nested",
+      "title": "nested",
+      "fileId": "tests/auth/permissions/roles.spec.ts",
+      "parentId": "tests/auth/permissions/roles.spec.ts › roles",
+      "mode": "default",
+      "tags": [],
+      "annotations": []
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › unconditional",
+      "title": "unconditional",
+      "fileId": "tests/checkout/builtins.spec.ts",
+      "mode": "default",
+      "tags": [],
+      "annotations": []
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › conditional on browserName",
+      "title": "conditional on browserName",
+      "fileId": "tests/checkout/builtins.spec.ts",
+      "mode": "default",
+      "tags": [],
+      "annotations": []
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › describe-level",
+      "title": "describe-level",
+      "fileId": "tests/checkout/builtins.spec.ts",
+      "mode": "default",
+      "tags": [],
+      "annotations": []
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › skipped describe",
+      "title": "skipped describe",
+      "fileId": "tests/checkout/builtins.spec.ts",
+      "mode": "default",
+      "tags": [],
+      "annotations": []
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › fixme describe",
+      "title": "fixme describe",
+      "fileId": "tests/checkout/builtins.spec.ts",
+      "mode": "default",
+      "tags": [],
+      "annotations": []
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › only",
+      "title": "only",
+      "fileId": "tests/checkout/builtins.spec.ts",
+      "mode": "default",
+      "tags": [],
+      "annotations": []
+    },
+    {
+      "id": "tests/checkout/cart.spec.ts › serial flow",
+      "title": "serial flow",
+      "fileId": "tests/checkout/cart.spec.ts",
+      "mode": "default",
+      "tags": [],
+      "annotations": []
+    },
+    {
+      "id": "tests/checkout/cart.spec.ts › parallel flow",
+      "title": "parallel flow",
+      "fileId": "tests/checkout/cart.spec.ts",
+      "mode": "default",
+      "tags": [],
+      "annotations": []
+    },
+    {
+      "id": "tests/checkout/cart.spec.ts › default flow",
+      "title": "default flow",
+      "fileId": "tests/checkout/cart.spec.ts",
+      "mode": "default",
+      "tags": [],
+      "annotations": []
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts › conditionals",
+      "title": "conditionals",
+      "fileId": "tests/misc/conditionals.spec.ts",
+      "mode": "default",
+      "tags": [],
+      "annotations": []
+    },
+    {
+      "id": "tests/misc/generated.spec.ts › env staging",
+      "title": "env staging",
+      "fileId": "tests/misc/generated.spec.ts",
+      "mode": "default",
+      "tags": [],
+      "annotations": []
+    },
+    {
+      "id": "tests/misc/generated.spec.ts › env prod",
+      "title": "env prod",
+      "fileId": "tests/misc/generated.spec.ts",
+      "mode": "default",
+      "tags": [],
+      "annotations": []
+    }
+  ],
+  "tests": [
+    {
+      "id": "tests/auth/login.spec.ts › login with valid credentials @smoke",
+      "title": "login with valid credentials @smoke",
+      "titlePath": [
+        "login with valid credentials @smoke"
+      ],
+      "fileId": "tests/auth/login.spec.ts",
+      "location": {
+        "file": "tests/auth/login.spec.ts",
+        "line": 3,
+        "column": 0
+      },
+      "tags": [
+        {
+          "name": "@smoke",
+          "origin": "title"
+        }
+      ]
+    },
+    {
+      "id": "tests/auth/login.spec.ts › login with details tags",
+      "title": "login with details tags",
+      "titlePath": [
+        "login with details tags"
+      ],
+      "fileId": "tests/auth/login.spec.ts",
+      "location": {
+        "file": "tests/auth/login.spec.ts",
+        "line": 5,
+        "column": 0
+      },
+      "tags": [
+        {
+          "name": "@auth",
+          "origin": "details"
+        },
+        {
+          "name": "@smoke",
+          "origin": "details"
+        }
+      ]
+    },
+    {
+      "id": "tests/auth/login.spec.ts › login mixed tags @fast",
+      "title": "login mixed tags @fast",
+      "titlePath": [
+        "login mixed tags @fast"
+      ],
+      "fileId": "tests/auth/login.spec.ts",
+      "location": {
+        "file": "tests/auth/login.spec.ts",
+        "line": 7,
+        "column": 0
+      },
+      "tags": [
+        {
+          "name": "@fast",
+          "origin": "title"
+        },
+        {
+          "name": "@auth",
+          "origin": "details"
+        }
+      ]
+    },
+    {
+      "id": "tests/auth/login.spec.ts › login known bug (url issue)",
+      "title": "login known bug (url issue)",
+      "titlePath": [
+        "login known bug (url issue)"
+      ],
+      "fileId": "tests/auth/login.spec.ts",
+      "location": {
+        "file": "tests/auth/login.spec.ts",
+        "line": 9,
+        "column": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "tests/auth/login.spec.ts › login known bug (jira key)",
+      "title": "login known bug (jira key)",
+      "titlePath": [
+        "login known bug (jira key)"
+      ],
+      "fileId": "tests/auth/login.spec.ts",
+      "location": {
+        "file": "tests/auth/login.spec.ts",
+        "line": 13,
+        "column": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "tests/auth/permissions/roles.spec.ts › roles › admin can manage users",
+      "title": "admin can manage users",
+      "titlePath": [
+        "roles",
+        "admin can manage users"
+      ],
+      "fileId": "tests/auth/permissions/roles.spec.ts",
+      "describeId": "tests/auth/permissions/roles.spec.ts › roles",
+      "location": {
+        "file": "tests/auth/permissions/roles.spec.ts",
+        "line": 7,
+        "column": 0
+      },
+      "tags": [
+        {
+          "name": "@rbac",
+          "origin": "details"
+        }
+      ]
+    },
+    {
+      "id": "tests/auth/permissions/roles.spec.ts › roles › nested › guest cannot manage users",
+      "title": "guest cannot manage users",
+      "titlePath": [
+        "roles",
+        "nested",
+        "guest cannot manage users"
+      ],
+      "fileId": "tests/auth/permissions/roles.spec.ts",
+      "describeId": "tests/auth/permissions/roles.spec.ts › roles › nested",
+      "location": {
+        "file": "tests/auth/permissions/roles.spec.ts",
+        "line": 10,
+        "column": 0
+      },
+      "tags": [
+        {
+          "name": "@rbac",
+          "origin": "details"
+        },
+        {
+          "name": "@nested",
+          "origin": "details"
+        },
+        {
+          "name": "@negative",
+          "origin": "details"
+        }
+      ]
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › unconditional › skip",
+      "title": "skip",
+      "titlePath": [
+        "unconditional",
+        "skip"
+      ],
+      "fileId": "tests/checkout/builtins.spec.ts",
+      "describeId": "tests/checkout/builtins.spec.ts › unconditional",
+      "location": {
+        "file": "tests/checkout/builtins.spec.ts",
+        "line": 4,
+        "column": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › unconditional › skip (declaration)",
+      "title": "skip (declaration)",
+      "titlePath": [
+        "unconditional",
+        "skip (declaration)"
+      ],
+      "fileId": "tests/checkout/builtins.spec.ts",
+      "describeId": "tests/checkout/builtins.spec.ts › unconditional",
+      "location": {
+        "file": "tests/checkout/builtins.spec.ts",
+        "line": 5,
+        "column": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › unconditional › fail (declaration)",
+      "title": "fail (declaration)",
+      "titlePath": [
+        "unconditional",
+        "fail (declaration)"
+      ],
+      "fileId": "tests/checkout/builtins.spec.ts",
+      "describeId": "tests/checkout/builtins.spec.ts › unconditional",
+      "location": {
+        "file": "tests/checkout/builtins.spec.ts",
+        "line": 6,
+        "column": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › unconditional › fixme (declaration)",
+      "title": "fixme (declaration)",
+      "titlePath": [
+        "unconditional",
+        "fixme (declaration)"
+      ],
+      "fileId": "tests/checkout/builtins.spec.ts",
+      "describeId": "tests/checkout/builtins.spec.ts › unconditional",
+      "location": {
+        "file": "tests/checkout/builtins.spec.ts",
+        "line": 7,
+        "column": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › unconditional › slow (in body)",
+      "title": "slow (in body)",
+      "titlePath": [
+        "unconditional",
+        "slow (in body)"
+      ],
+      "fileId": "tests/checkout/builtins.spec.ts",
+      "describeId": "tests/checkout/builtins.spec.ts › unconditional",
+      "location": {
+        "file": "tests/checkout/builtins.spec.ts",
+        "line": 8,
+        "column": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › conditional on browserName › skip webkit (declaration callback)",
+      "title": "skip webkit (declaration callback)",
+      "titlePath": [
+        "conditional on browserName",
+        "skip webkit (declaration callback)"
+      ],
+      "fileId": "tests/checkout/builtins.spec.ts",
+      "describeId": "tests/checkout/builtins.spec.ts › conditional on browserName",
+      "location": {
+        "file": "tests/checkout/builtins.spec.ts",
+        "line": 12,
+        "column": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › conditional on browserName › fail firefox (in body)",
+      "title": "fail firefox (in body)",
+      "titlePath": [
+        "conditional on browserName",
+        "fail firefox (in body)"
+      ],
+      "fileId": "tests/checkout/builtins.spec.ts",
+      "describeId": "tests/checkout/builtins.spec.ts › conditional on browserName",
+      "location": {
+        "file": "tests/checkout/builtins.spec.ts",
+        "line": 15,
+        "column": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › conditional on browserName › fixme chromium (in body)",
+      "title": "fixme chromium (in body)",
+      "titlePath": [
+        "conditional on browserName",
+        "fixme chromium (in body)"
+      ],
+      "fileId": "tests/checkout/builtins.spec.ts",
+      "describeId": "tests/checkout/builtins.spec.ts › conditional on browserName",
+      "location": {
+        "file": "tests/checkout/builtins.spec.ts",
+        "line": 18,
+        "column": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › conditional on browserName › slow webkit (in body)",
+      "title": "slow webkit (in body)",
+      "titlePath": [
+        "conditional on browserName",
+        "slow webkit (in body)"
+      ],
+      "fileId": "tests/checkout/builtins.spec.ts",
+      "describeId": "tests/checkout/builtins.spec.ts › conditional on browserName",
+      "location": {
+        "file": "tests/checkout/builtins.spec.ts",
+        "line": 21,
+        "column": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › describe-level › inside conditional fixme describe",
+      "title": "inside conditional fixme describe",
+      "titlePath": [
+        "describe-level",
+        "inside conditional fixme describe"
+      ],
+      "fileId": "tests/checkout/builtins.spec.ts",
+      "describeId": "tests/checkout/builtins.spec.ts › describe-level",
+      "location": {
+        "file": "tests/checkout/builtins.spec.ts",
+        "line": 28,
+        "column": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › skipped describe › inside skipped describe",
+      "title": "inside skipped describe",
+      "titlePath": [
+        "skipped describe",
+        "inside skipped describe"
+      ],
+      "fileId": "tests/checkout/builtins.spec.ts",
+      "describeId": "tests/checkout/builtins.spec.ts › skipped describe",
+      "location": {
+        "file": "tests/checkout/builtins.spec.ts",
+        "line": 32,
+        "column": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › fixme describe › inside fixme describe",
+      "title": "inside fixme describe",
+      "titlePath": [
+        "fixme describe",
+        "inside fixme describe"
+      ],
+      "fileId": "tests/checkout/builtins.spec.ts",
+      "describeId": "tests/checkout/builtins.spec.ts › fixme describe",
+      "location": {
+        "file": "tests/checkout/builtins.spec.ts",
+        "line": 36,
+        "column": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › only › focused test",
+      "title": "focused test",
+      "titlePath": [
+        "only",
+        "focused test"
+      ],
+      "fileId": "tests/checkout/builtins.spec.ts",
+      "describeId": "tests/checkout/builtins.spec.ts › only",
+      "location": {
+        "file": "tests/checkout/builtins.spec.ts",
+        "line": 40,
+        "column": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › only › unfocused sibling",
+      "title": "unfocused sibling",
+      "titlePath": [
+        "only",
+        "unfocused sibling"
+      ],
+      "fileId": "tests/checkout/builtins.spec.ts",
+      "describeId": "tests/checkout/builtins.spec.ts › only",
+      "location": {
+        "file": "tests/checkout/builtins.spec.ts",
+        "line": 41,
+        "column": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "tests/checkout/cart.spec.ts › serial flow › add item",
+      "title": "add item",
+      "titlePath": [
+        "serial flow",
+        "add item"
+      ],
+      "fileId": "tests/checkout/cart.spec.ts",
+      "describeId": "tests/checkout/cart.spec.ts › serial flow",
+      "location": {
+        "file": "tests/checkout/cart.spec.ts",
+        "line": 5,
+        "column": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "tests/checkout/cart.spec.ts › serial flow › apply coupon",
+      "title": "apply coupon",
+      "titlePath": [
+        "serial flow",
+        "apply coupon"
+      ],
+      "fileId": "tests/checkout/cart.spec.ts",
+      "describeId": "tests/checkout/cart.spec.ts › serial flow",
+      "location": {
+        "file": "tests/checkout/cart.spec.ts",
+        "line": 6,
+        "column": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "tests/checkout/cart.spec.ts › serial flow › pay",
+      "title": "pay",
+      "titlePath": [
+        "serial flow",
+        "pay"
+      ],
+      "fileId": "tests/checkout/cart.spec.ts",
+      "describeId": "tests/checkout/cart.spec.ts › serial flow",
+      "location": {
+        "file": "tests/checkout/cart.spec.ts",
+        "line": 7,
+        "column": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "tests/checkout/cart.spec.ts › parallel flow › browse A",
+      "title": "browse A",
+      "titlePath": [
+        "parallel flow",
+        "browse A"
+      ],
+      "fileId": "tests/checkout/cart.spec.ts",
+      "describeId": "tests/checkout/cart.spec.ts › parallel flow",
+      "location": {
+        "file": "tests/checkout/cart.spec.ts",
+        "line": 12,
+        "column": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "tests/checkout/cart.spec.ts › parallel flow › browse B",
+      "title": "browse B",
+      "titlePath": [
+        "parallel flow",
+        "browse B"
+      ],
+      "fileId": "tests/checkout/cart.spec.ts",
+      "describeId": "tests/checkout/cart.spec.ts › parallel flow",
+      "location": {
+        "file": "tests/checkout/cart.spec.ts",
+        "line": 13,
+        "column": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "tests/checkout/cart.spec.ts › default flow › view cart",
+      "title": "view cart",
+      "titlePath": [
+        "default flow",
+        "view cart"
+      ],
+      "fileId": "tests/checkout/cart.spec.ts",
+      "describeId": "tests/checkout/cart.spec.ts › default flow",
+      "location": {
+        "file": "tests/checkout/cart.spec.ts",
+        "line": 17,
+        "column": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "tests/misc/annotations.spec.ts › hidden type",
+      "title": "hidden type",
+      "titlePath": [
+        "hidden type"
+      ],
+      "fileId": "tests/misc/annotations.spec.ts",
+      "location": {
+        "file": "tests/misc/annotations.spec.ts",
+        "line": 3,
+        "column": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "tests/misc/annotations.spec.ts › multiple annotations",
+      "title": "multiple annotations",
+      "titlePath": [
+        "multiple annotations"
+      ],
+      "fileId": "tests/misc/annotations.spec.ts",
+      "location": {
+        "file": "tests/misc/annotations.spec.ts",
+        "line": 5,
+        "column": 0
+      },
+      "tags": [
+        {
+          "name": "@multi",
+          "origin": "details"
+        }
+      ]
+    },
+    {
+      "id": "tests/misc/annotations.spec.ts › runtime annotation",
+      "title": "runtime annotation",
+      "titlePath": [
+        "runtime annotation"
+      ],
+      "fileId": "tests/misc/annotations.spec.ts",
+      "location": {
+        "file": "tests/misc/annotations.spec.ts",
+        "line": 14,
+        "column": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts › conditionals › env var condition",
+      "title": "env var condition",
+      "titlePath": [
+        "conditionals",
+        "env var condition"
+      ],
+      "fileId": "tests/misc/conditionals.spec.ts",
+      "describeId": "tests/misc/conditionals.spec.ts › conditionals",
+      "location": {
+        "file": "tests/misc/conditionals.spec.ts",
+        "line": 19,
+        "column": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts › conditionals › helper call",
+      "title": "helper call",
+      "titlePath": [
+        "conditionals",
+        "helper call"
+      ],
+      "fileId": "tests/misc/conditionals.spec.ts",
+      "describeId": "tests/misc/conditionals.spec.ts › conditionals",
+      "location": {
+        "file": "tests/misc/conditionals.spec.ts",
+        "line": 23,
+        "column": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts › conditionals › computed annotation type",
+      "title": "computed annotation type",
+      "titlePath": [
+        "conditionals",
+        "computed annotation type"
+      ],
+      "fileId": "tests/misc/conditionals.spec.ts",
+      "describeId": "tests/misc/conditionals.spec.ts › conditionals",
+      "location": {
+        "file": "tests/misc/conditionals.spec.ts",
+        "line": 27,
+        "column": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts › conditionals › early return before conditional",
+      "title": "early return before conditional",
+      "titlePath": [
+        "conditionals",
+        "early return before conditional"
+      ],
+      "fileId": "tests/misc/conditionals.spec.ts",
+      "describeId": "tests/misc/conditionals.spec.ts › conditionals",
+      "location": {
+        "file": "tests/misc/conditionals.spec.ts",
+        "line": 31,
+        "column": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts › conditionals › project name condition",
+      "title": "project name condition",
+      "titlePath": [
+        "conditionals",
+        "project name condition"
+      ],
+      "fileId": "tests/misc/conditionals.spec.ts",
+      "describeId": "tests/misc/conditionals.spec.ts › conditionals",
+      "location": {
+        "file": "tests/misc/conditionals.spec.ts",
+        "line": 36,
+        "column": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "tests/misc/generated.spec.ts › role admin can log in",
+      "title": "role admin can log in",
+      "titlePath": [
+        "role admin can log in"
+      ],
+      "fileId": "tests/misc/generated.spec.ts",
+      "location": {
+        "file": "tests/misc/generated.spec.ts",
+        "line": 4,
+        "column": 0
+      },
+      "tags": [
+        {
+          "name": "@role-admin",
+          "origin": "details"
+        }
+      ]
+    },
+    {
+      "id": "tests/misc/generated.spec.ts › role user can log in",
+      "title": "role user can log in",
+      "titlePath": [
+        "role user can log in"
+      ],
+      "fileId": "tests/misc/generated.spec.ts",
+      "location": {
+        "file": "tests/misc/generated.spec.ts",
+        "line": 4,
+        "column": 0
+      },
+      "tags": [
+        {
+          "name": "@role-user",
+          "origin": "details"
+        }
+      ]
+    },
+    {
+      "id": "tests/misc/generated.spec.ts › role guest can log in",
+      "title": "role guest can log in",
+      "titlePath": [
+        "role guest can log in"
+      ],
+      "fileId": "tests/misc/generated.spec.ts",
+      "location": {
+        "file": "tests/misc/generated.spec.ts",
+        "line": 4,
+        "column": 0
+      },
+      "tags": [
+        {
+          "name": "@role-guest",
+          "origin": "details"
+        }
+      ]
+    },
+    {
+      "id": "tests/misc/generated.spec.ts › env staging › health check",
+      "title": "health check",
+      "titlePath": [
+        "env staging",
+        "health check"
+      ],
+      "fileId": "tests/misc/generated.spec.ts",
+      "describeId": "tests/misc/generated.spec.ts › env staging",
+      "location": {
+        "file": "tests/misc/generated.spec.ts",
+        "line": 9,
+        "column": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "tests/misc/generated.spec.ts › env prod › health check",
+      "title": "health check",
+      "titlePath": [
+        "env prod",
+        "health check"
+      ],
+      "fileId": "tests/misc/generated.spec.ts",
+      "describeId": "tests/misc/generated.spec.ts › env prod",
+      "location": {
+        "file": "tests/misc/generated.spec.ts",
+        "line": 9,
+        "column": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "tests/setup/auth.setup.ts › authenticate",
+      "title": "authenticate",
+      "titlePath": [
+        "authenticate"
+      ],
+      "fileId": "tests/setup/auth.setup.ts",
+      "location": {
+        "file": "tests/setup/auth.setup.ts",
+        "line": 2,
+        "column": 0
+      },
+      "tags": []
+    },
+    {
+      "id": "tests/setup/cleanup.teardown.ts › cleanup",
+      "title": "cleanup",
+      "titlePath": [
+        "cleanup"
+      ],
+      "fileId": "tests/setup/cleanup.teardown.ts",
+      "location": {
+        "file": "tests/setup/cleanup.teardown.ts",
+        "line": 2,
+        "column": 0
+      },
+      "tags": []
+    }
+  ],
+  "instances": [
+    {
+      "id": "tests/auth/login.spec.ts › login with valid credentials @smoke [chromium#0]",
+      "testId": "tests/auth/login.spec.ts › login with valid credentials @smoke",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "231ca1f0f4db3e4958c3-638515f8543500453e2c",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/auth/login.spec.ts › login with details tags [chromium#0]",
+      "testId": "tests/auth/login.spec.ts › login with details tags",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "231ca1f0f4db3e4958c3-b810360acee508f8f8e7",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/auth/login.spec.ts › login mixed tags @fast [chromium#0]",
+      "testId": "tests/auth/login.spec.ts › login mixed tags @fast",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "231ca1f0f4db3e4958c3-0a36170f67316032a752",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/auth/login.spec.ts › login known bug (url issue) [chromium#0]",
+      "testId": "tests/auth/login.spec.ts › login known bug (url issue)",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "231ca1f0f4db3e4958c3-f6b893daf9e38572abac",
+      "expectedStatus": "passed",
+      "annotations": [
+        {
+          "type": "issue",
+          "description": "https://github.com/org/repo/issues/12",
+          "origin": "declaration"
+        }
+      ],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/auth/login.spec.ts › login known bug (jira key) [chromium#0]",
+      "testId": "tests/auth/login.spec.ts › login known bug (jira key)",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "231ca1f0f4db3e4958c3-f3709b4cff346695da01",
+      "expectedStatus": "passed",
+      "annotations": [
+        {
+          "type": "issue",
+          "description": "JIRA-123",
+          "origin": "declaration"
+        },
+        {
+          "type": "issue",
+          "description": "https://example.atlassian.net/browse/JIRA-456",
+          "origin": "declaration"
+        }
+      ],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/auth/permissions/roles.spec.ts › roles › admin can manage users [chromium#0]",
+      "testId": "tests/auth/permissions/roles.spec.ts › roles › admin can manage users",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "9ea6afc0c4455dda9c0c-d04dcbaae8cb68acf44d",
+      "expectedStatus": "passed",
+      "annotations": [
+        {
+          "type": "owner",
+          "description": "team-auth",
+          "origin": "declaration"
+        }
+      ],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/auth/permissions/roles.spec.ts › roles › nested › guest cannot manage users [chromium#0]",
+      "testId": "tests/auth/permissions/roles.spec.ts › roles › nested › guest cannot manage users",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "9ea6afc0c4455dda9c0c-49d9191eaaf71f4bbefd",
+      "expectedStatus": "passed",
+      "annotations": [
+        {
+          "type": "owner",
+          "description": "team-auth",
+          "origin": "declaration"
+        },
+        {
+          "type": "issue",
+          "description": "RBAC-7",
+          "origin": "declaration"
+        }
+      ],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › unconditional › skip [chromium#0]",
+      "testId": "tests/checkout/builtins.spec.ts › unconditional › skip",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-4090e4bbc23f5cede2a3",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › unconditional › skip (declaration) [chromium#0]",
+      "testId": "tests/checkout/builtins.spec.ts › unconditional › skip (declaration)",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-6538e503e7909f156138",
+      "expectedStatus": "skipped",
+      "annotations": [
+        {
+          "type": "skip",
+          "origin": "declaration"
+        }
+      ],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › unconditional › fail (declaration) [chromium#0]",
+      "testId": "tests/checkout/builtins.spec.ts › unconditional › fail (declaration)",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-0715f9c793b2ffa0c0ef",
+      "expectedStatus": "passed",
+      "annotations": [
+        {
+          "type": "fail",
+          "origin": "declaration"
+        }
+      ],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › unconditional › fixme (declaration) [chromium#0]",
+      "testId": "tests/checkout/builtins.spec.ts › unconditional › fixme (declaration)",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-9991e968be56b2b3edbc",
+      "expectedStatus": "skipped",
+      "annotations": [
+        {
+          "type": "fixme",
+          "origin": "declaration"
+        }
+      ],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › unconditional › slow (in body) [chromium#0]",
+      "testId": "tests/checkout/builtins.spec.ts › unconditional › slow (in body)",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-2d0b0f722b63db3b943d",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › conditional on browserName › skip webkit (declaration callback) [chromium#0]",
+      "testId": "tests/checkout/builtins.spec.ts › conditional on browserName › skip webkit (declaration callback)",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-3a7ca32cc3db3e6f86d3",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › conditional on browserName › fail firefox (in body) [chromium#0]",
+      "testId": "tests/checkout/builtins.spec.ts › conditional on browserName › fail firefox (in body)",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-25bd8ec6feed2f133f94",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › conditional on browserName › fixme chromium (in body) [chromium#0]",
+      "testId": "tests/checkout/builtins.spec.ts › conditional on browserName › fixme chromium (in body)",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-097bbad4ee4037705b4b",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › conditional on browserName › slow webkit (in body) [chromium#0]",
+      "testId": "tests/checkout/builtins.spec.ts › conditional on browserName › slow webkit (in body)",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-b1dedbb453fd546b1967",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › describe-level › inside conditional fixme describe [chromium#0]",
+      "testId": "tests/checkout/builtins.spec.ts › describe-level › inside conditional fixme describe",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-5047ce561e3c4c6fbc5d",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › skipped describe › inside skipped describe [chromium#0]",
+      "testId": "tests/checkout/builtins.spec.ts › skipped describe › inside skipped describe",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-734aae171aa529055a8a",
+      "expectedStatus": "skipped",
+      "annotations": [
+        {
+          "type": "skip",
+          "origin": "declaration"
+        }
+      ],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › fixme describe › inside fixme describe [chromium#0]",
+      "testId": "tests/checkout/builtins.spec.ts › fixme describe › inside fixme describe",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-5a82e3c95eba28a9525d",
+      "expectedStatus": "skipped",
+      "annotations": [
+        {
+          "type": "fixme",
+          "origin": "declaration"
+        }
+      ],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › only › focused test [chromium#0]",
+      "testId": "tests/checkout/builtins.spec.ts › only › focused test",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-e7acf3d04c45b474292f",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › only › unfocused sibling [chromium#0]",
+      "testId": "tests/checkout/builtins.spec.ts › only › unfocused sibling",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-65eb3ef2fcac6b0ca242",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/cart.spec.ts › serial flow › add item [chromium#0]",
+      "testId": "tests/checkout/cart.spec.ts › serial flow › add item",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "53fa0b5a5aa39ac6891a-c623f7311a80c0895021",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/cart.spec.ts › serial flow › apply coupon [chromium#0]",
+      "testId": "tests/checkout/cart.spec.ts › serial flow › apply coupon",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "53fa0b5a5aa39ac6891a-aa91a039a1ab21e2e662",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/cart.spec.ts › serial flow › pay [chromium#0]",
+      "testId": "tests/checkout/cart.spec.ts › serial flow › pay",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "53fa0b5a5aa39ac6891a-4da882aed35dba77abfa",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/cart.spec.ts › parallel flow › browse A [chromium#0]",
+      "testId": "tests/checkout/cart.spec.ts › parallel flow › browse A",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "53fa0b5a5aa39ac6891a-8fcc8bf3d97b62fb11d3",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/cart.spec.ts › parallel flow › browse B [chromium#0]",
+      "testId": "tests/checkout/cart.spec.ts › parallel flow › browse B",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "53fa0b5a5aa39ac6891a-8c37e850f48b30d62359",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/cart.spec.ts › default flow › view cart [chromium#0]",
+      "testId": "tests/checkout/cart.spec.ts › default flow › view cart",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "53fa0b5a5aa39ac6891a-dea83a442d071e042af5",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/misc/annotations.spec.ts › hidden type [chromium#0]",
+      "testId": "tests/misc/annotations.spec.ts › hidden type",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "7718a717855dcee93cd0-89e013edb99091ad2151",
+      "expectedStatus": "passed",
+      "annotations": [
+        {
+          "type": "_internal",
+          "description": "tooling only",
+          "origin": "declaration",
+          "hidden": true
+        }
+      ],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/misc/annotations.spec.ts › multiple annotations [chromium#0]",
+      "testId": "tests/misc/annotations.spec.ts › multiple annotations",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "7718a717855dcee93cd0-1ac90ff53e9300d8bffa",
+      "expectedStatus": "passed",
+      "annotations": [
+        {
+          "type": "owner",
+          "description": "alice",
+          "origin": "declaration"
+        },
+        {
+          "type": "issue",
+          "description": "#123",
+          "origin": "declaration"
+        },
+        {
+          "type": "owner",
+          "description": "bob",
+          "origin": "declaration"
+        }
+      ],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/misc/annotations.spec.ts › runtime annotation [chromium#0]",
+      "testId": "tests/misc/annotations.spec.ts › runtime annotation",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "7718a717855dcee93cd0-753a9aee160586586e92",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts › conditionals › env var condition [chromium#0]",
+      "testId": "tests/misc/conditionals.spec.ts › conditionals › env var condition",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "512e66e67c635f8cbc7f-f668e627a62a3e19b177",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts › conditionals › helper call [chromium#0]",
+      "testId": "tests/misc/conditionals.spec.ts › conditionals › helper call",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "512e66e67c635f8cbc7f-ce77c8a36cf7e38b2195",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts › conditionals › computed annotation type [chromium#0]",
+      "testId": "tests/misc/conditionals.spec.ts › conditionals › computed annotation type",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "512e66e67c635f8cbc7f-27e408e0b24426ca4bf5",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts › conditionals › early return before conditional [chromium#0]",
+      "testId": "tests/misc/conditionals.spec.ts › conditionals › early return before conditional",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "512e66e67c635f8cbc7f-869a6355632e03b7e968",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts › conditionals › project name condition [chromium#0]",
+      "testId": "tests/misc/conditionals.spec.ts › conditionals › project name condition",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "512e66e67c635f8cbc7f-e4cdc9f225ed5103ce56",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/misc/generated.spec.ts › role admin can log in [chromium#0]",
+      "testId": "tests/misc/generated.spec.ts › role admin can log in",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "38c60d58330107297c1d-453c6a529576d98be1d2",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/misc/generated.spec.ts › role user can log in [chromium#0]",
+      "testId": "tests/misc/generated.spec.ts › role user can log in",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "38c60d58330107297c1d-33867f6457e70b6c28eb",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/misc/generated.spec.ts › role guest can log in [chromium#0]",
+      "testId": "tests/misc/generated.spec.ts › role guest can log in",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "38c60d58330107297c1d-49678b3fb363eb54e329",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/misc/generated.spec.ts › env staging › health check [chromium#0]",
+      "testId": "tests/misc/generated.spec.ts › env staging › health check",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "38c60d58330107297c1d-9c4263f572253be5b907",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/misc/generated.spec.ts › env prod › health check [chromium#0]",
+      "testId": "tests/misc/generated.spec.ts › env prod › health check",
+      "projectId": "chromium",
+      "repeatEachIndex": 0,
+      "playwrightId": "38c60d58330107297c1d-3fc5debfae3eabbd1602",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/auth/login.spec.ts › login with valid credentials @smoke [firefox#0]",
+      "testId": "tests/auth/login.spec.ts › login with valid credentials @smoke",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "231ca1f0f4db3e4958c3-f4de6880e3c6ac2dc420",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/auth/login.spec.ts › login with details tags [firefox#0]",
+      "testId": "tests/auth/login.spec.ts › login with details tags",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "231ca1f0f4db3e4958c3-09e5bce17e14678e58de",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/auth/login.spec.ts › login mixed tags @fast [firefox#0]",
+      "testId": "tests/auth/login.spec.ts › login mixed tags @fast",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "231ca1f0f4db3e4958c3-339e9aec7be7ef839514",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/auth/login.spec.ts › login known bug (url issue) [firefox#0]",
+      "testId": "tests/auth/login.spec.ts › login known bug (url issue)",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "231ca1f0f4db3e4958c3-bd2f2c884b84fa485533",
+      "expectedStatus": "passed",
+      "annotations": [
+        {
+          "type": "issue",
+          "description": "https://github.com/org/repo/issues/12",
+          "origin": "declaration"
+        }
+      ],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/auth/login.spec.ts › login known bug (jira key) [firefox#0]",
+      "testId": "tests/auth/login.spec.ts › login known bug (jira key)",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "231ca1f0f4db3e4958c3-df31ad7e6187d54b0002",
+      "expectedStatus": "passed",
+      "annotations": [
+        {
+          "type": "issue",
+          "description": "JIRA-123",
+          "origin": "declaration"
+        },
+        {
+          "type": "issue",
+          "description": "https://example.atlassian.net/browse/JIRA-456",
+          "origin": "declaration"
+        }
+      ],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/auth/permissions/roles.spec.ts › roles › admin can manage users [firefox#0]",
+      "testId": "tests/auth/permissions/roles.spec.ts › roles › admin can manage users",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "9ea6afc0c4455dda9c0c-bd36dfa7535b6f398e07",
+      "expectedStatus": "passed",
+      "annotations": [
+        {
+          "type": "owner",
+          "description": "team-auth",
+          "origin": "declaration"
+        }
+      ],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/auth/permissions/roles.spec.ts › roles › nested › guest cannot manage users [firefox#0]",
+      "testId": "tests/auth/permissions/roles.spec.ts › roles › nested › guest cannot manage users",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "9ea6afc0c4455dda9c0c-722c2621bf8d1c11cd2c",
+      "expectedStatus": "passed",
+      "annotations": [
+        {
+          "type": "owner",
+          "description": "team-auth",
+          "origin": "declaration"
+        },
+        {
+          "type": "issue",
+          "description": "RBAC-7",
+          "origin": "declaration"
+        }
+      ],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › unconditional › skip [firefox#0]",
+      "testId": "tests/checkout/builtins.spec.ts › unconditional › skip",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-b33712465d20989f2425",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › unconditional › skip (declaration) [firefox#0]",
+      "testId": "tests/checkout/builtins.spec.ts › unconditional › skip (declaration)",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-d98070d14e50bfef3cf1",
+      "expectedStatus": "skipped",
+      "annotations": [
+        {
+          "type": "skip",
+          "origin": "declaration"
+        }
+      ],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › unconditional › fail (declaration) [firefox#0]",
+      "testId": "tests/checkout/builtins.spec.ts › unconditional › fail (declaration)",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-1ca325fe067426bebb7a",
+      "expectedStatus": "passed",
+      "annotations": [
+        {
+          "type": "fail",
+          "origin": "declaration"
+        }
+      ],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › unconditional › fixme (declaration) [firefox#0]",
+      "testId": "tests/checkout/builtins.spec.ts › unconditional › fixme (declaration)",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-322b53053ea27c6cd627",
+      "expectedStatus": "skipped",
+      "annotations": [
+        {
+          "type": "fixme",
+          "origin": "declaration"
+        }
+      ],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › unconditional › slow (in body) [firefox#0]",
+      "testId": "tests/checkout/builtins.spec.ts › unconditional › slow (in body)",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-333310a4b6fe404e4e30",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › conditional on browserName › skip webkit (declaration callback) [firefox#0]",
+      "testId": "tests/checkout/builtins.spec.ts › conditional on browserName › skip webkit (declaration callback)",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-ec17d5ae4c5962bebc11",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › conditional on browserName › fail firefox (in body) [firefox#0]",
+      "testId": "tests/checkout/builtins.spec.ts › conditional on browserName › fail firefox (in body)",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-b58eaaf250ebc53c2f60",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › conditional on browserName › fixme chromium (in body) [firefox#0]",
+      "testId": "tests/checkout/builtins.spec.ts › conditional on browserName › fixme chromium (in body)",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-8a1bd8e6d4e58671be49",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › conditional on browserName › slow webkit (in body) [firefox#0]",
+      "testId": "tests/checkout/builtins.spec.ts › conditional on browserName › slow webkit (in body)",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-7cf30ce962acfe4a4ad0",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › describe-level › inside conditional fixme describe [firefox#0]",
+      "testId": "tests/checkout/builtins.spec.ts › describe-level › inside conditional fixme describe",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-b8d7650b1fdeafd515ef",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › skipped describe › inside skipped describe [firefox#0]",
+      "testId": "tests/checkout/builtins.spec.ts › skipped describe › inside skipped describe",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-da4f11edb5a939aa598f",
+      "expectedStatus": "skipped",
+      "annotations": [
+        {
+          "type": "skip",
+          "origin": "declaration"
+        }
+      ],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › fixme describe › inside fixme describe [firefox#0]",
+      "testId": "tests/checkout/builtins.spec.ts › fixme describe › inside fixme describe",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-8e6afc71fa8a903960bf",
+      "expectedStatus": "skipped",
+      "annotations": [
+        {
+          "type": "fixme",
+          "origin": "declaration"
+        }
+      ],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › only › focused test [firefox#0]",
+      "testId": "tests/checkout/builtins.spec.ts › only › focused test",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-3123c76e76101d0f6794",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › only › unfocused sibling [firefox#0]",
+      "testId": "tests/checkout/builtins.spec.ts › only › unfocused sibling",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-9b6f3ec845fc8f935800",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/cart.spec.ts › serial flow › add item [firefox#0]",
+      "testId": "tests/checkout/cart.spec.ts › serial flow › add item",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "53fa0b5a5aa39ac6891a-620afddd56c52a6361d9",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/cart.spec.ts › serial flow › apply coupon [firefox#0]",
+      "testId": "tests/checkout/cart.spec.ts › serial flow › apply coupon",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "53fa0b5a5aa39ac6891a-9414f6e9fa90414675f9",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/cart.spec.ts › serial flow › pay [firefox#0]",
+      "testId": "tests/checkout/cart.spec.ts › serial flow › pay",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "53fa0b5a5aa39ac6891a-57f2786416444ac7d9f2",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/cart.spec.ts › parallel flow › browse A [firefox#0]",
+      "testId": "tests/checkout/cart.spec.ts › parallel flow › browse A",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "53fa0b5a5aa39ac6891a-214dfd3cd5839dd900ca",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/cart.spec.ts › parallel flow › browse B [firefox#0]",
+      "testId": "tests/checkout/cart.spec.ts › parallel flow › browse B",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "53fa0b5a5aa39ac6891a-eff1bb16dc26d53df341",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/cart.spec.ts › default flow › view cart [firefox#0]",
+      "testId": "tests/checkout/cart.spec.ts › default flow › view cart",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "53fa0b5a5aa39ac6891a-18ddec892c33acc65b72",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/misc/annotations.spec.ts › hidden type [firefox#0]",
+      "testId": "tests/misc/annotations.spec.ts › hidden type",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "7718a717855dcee93cd0-f40a89db3659de9f55e8",
+      "expectedStatus": "passed",
+      "annotations": [
+        {
+          "type": "_internal",
+          "description": "tooling only",
+          "origin": "declaration",
+          "hidden": true
+        }
+      ],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/misc/annotations.spec.ts › multiple annotations [firefox#0]",
+      "testId": "tests/misc/annotations.spec.ts › multiple annotations",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "7718a717855dcee93cd0-141296a5f7e8d281593c",
+      "expectedStatus": "passed",
+      "annotations": [
+        {
+          "type": "owner",
+          "description": "alice",
+          "origin": "declaration"
+        },
+        {
+          "type": "issue",
+          "description": "#123",
+          "origin": "declaration"
+        },
+        {
+          "type": "owner",
+          "description": "bob",
+          "origin": "declaration"
+        }
+      ],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/misc/annotations.spec.ts › runtime annotation [firefox#0]",
+      "testId": "tests/misc/annotations.spec.ts › runtime annotation",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "7718a717855dcee93cd0-2b0035d00d8d5836eb61",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts › conditionals › env var condition [firefox#0]",
+      "testId": "tests/misc/conditionals.spec.ts › conditionals › env var condition",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "512e66e67c635f8cbc7f-f3c1333c7962ef4f9cc2",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts › conditionals › helper call [firefox#0]",
+      "testId": "tests/misc/conditionals.spec.ts › conditionals › helper call",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "512e66e67c635f8cbc7f-32e925fd0adbcd8987da",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts › conditionals › computed annotation type [firefox#0]",
+      "testId": "tests/misc/conditionals.spec.ts › conditionals › computed annotation type",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "512e66e67c635f8cbc7f-24bae7a2143460c50c0e",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts › conditionals › early return before conditional [firefox#0]",
+      "testId": "tests/misc/conditionals.spec.ts › conditionals › early return before conditional",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "512e66e67c635f8cbc7f-a4496a88a09dbd1759cb",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts › conditionals › project name condition [firefox#0]",
+      "testId": "tests/misc/conditionals.spec.ts › conditionals › project name condition",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "512e66e67c635f8cbc7f-d725bf03bcf1d2a02009",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/misc/generated.spec.ts › role admin can log in [firefox#0]",
+      "testId": "tests/misc/generated.spec.ts › role admin can log in",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "38c60d58330107297c1d-9ffbaafe1545b744e704",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/misc/generated.spec.ts › role user can log in [firefox#0]",
+      "testId": "tests/misc/generated.spec.ts › role user can log in",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "38c60d58330107297c1d-c0f90607565f40e43057",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/misc/generated.spec.ts › role guest can log in [firefox#0]",
+      "testId": "tests/misc/generated.spec.ts › role guest can log in",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "38c60d58330107297c1d-5b364279a66c990eef4a",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/misc/generated.spec.ts › env staging › health check [firefox#0]",
+      "testId": "tests/misc/generated.spec.ts › env staging › health check",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "38c60d58330107297c1d-d3be50a7ac840ef3bca3",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/misc/generated.spec.ts › env prod › health check [firefox#0]",
+      "testId": "tests/misc/generated.spec.ts › env prod › health check",
+      "projectId": "firefox",
+      "repeatEachIndex": 0,
+      "playwrightId": "38c60d58330107297c1d-8d9fed69072221f66ee2",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/setup/auth.setup.ts › authenticate [setup#0]",
+      "testId": "tests/setup/auth.setup.ts › authenticate",
+      "projectId": "setup",
+      "repeatEachIndex": 0,
+      "playwrightId": "e717b06d8d484d1cd946-ece6ea03d0ba8d9d0fd4",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/setup/cleanup.teardown.ts › cleanup [teardown#0]",
+      "testId": "tests/setup/cleanup.teardown.ts › cleanup",
+      "projectId": "teardown",
+      "repeatEachIndex": 0,
+      "playwrightId": "4e960201d466a68c6215-ce45eeff1c9244e209ba",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/auth/login.spec.ts › login with valid credentials @smoke [webkit#0]",
+      "testId": "tests/auth/login.spec.ts › login with valid credentials @smoke",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "231ca1f0f4db3e4958c3-125f80a340b52bfbb610",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/auth/login.spec.ts › login with details tags [webkit#0]",
+      "testId": "tests/auth/login.spec.ts › login with details tags",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "231ca1f0f4db3e4958c3-443295b9e217000b8b5c",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/auth/login.spec.ts › login mixed tags @fast [webkit#0]",
+      "testId": "tests/auth/login.spec.ts › login mixed tags @fast",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "231ca1f0f4db3e4958c3-6a14fd9421cf4bc223f6",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/auth/login.spec.ts › login known bug (url issue) [webkit#0]",
+      "testId": "tests/auth/login.spec.ts › login known bug (url issue)",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "231ca1f0f4db3e4958c3-ef59c5379b7641ebef6c",
+      "expectedStatus": "passed",
+      "annotations": [
+        {
+          "type": "issue",
+          "description": "https://github.com/org/repo/issues/12",
+          "origin": "declaration"
+        }
+      ],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/auth/login.spec.ts › login known bug (jira key) [webkit#0]",
+      "testId": "tests/auth/login.spec.ts › login known bug (jira key)",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "231ca1f0f4db3e4958c3-8f1d87ca1ada4cd39120",
+      "expectedStatus": "passed",
+      "annotations": [
+        {
+          "type": "issue",
+          "description": "JIRA-123",
+          "origin": "declaration"
+        },
+        {
+          "type": "issue",
+          "description": "https://example.atlassian.net/browse/JIRA-456",
+          "origin": "declaration"
+        }
+      ],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/auth/permissions/roles.spec.ts › roles › admin can manage users [webkit#0]",
+      "testId": "tests/auth/permissions/roles.spec.ts › roles › admin can manage users",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "9ea6afc0c4455dda9c0c-4a6da0e3eea73130e6e8",
+      "expectedStatus": "passed",
+      "annotations": [
+        {
+          "type": "owner",
+          "description": "team-auth",
+          "origin": "declaration"
+        }
+      ],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/auth/permissions/roles.spec.ts › roles › nested › guest cannot manage users [webkit#0]",
+      "testId": "tests/auth/permissions/roles.spec.ts › roles › nested › guest cannot manage users",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "9ea6afc0c4455dda9c0c-a4873cbc75deea659712",
+      "expectedStatus": "passed",
+      "annotations": [
+        {
+          "type": "owner",
+          "description": "team-auth",
+          "origin": "declaration"
+        },
+        {
+          "type": "issue",
+          "description": "RBAC-7",
+          "origin": "declaration"
+        }
+      ],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › unconditional › skip [webkit#0]",
+      "testId": "tests/checkout/builtins.spec.ts › unconditional › skip",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-2142f9b9af074c737b7f",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › unconditional › skip (declaration) [webkit#0]",
+      "testId": "tests/checkout/builtins.spec.ts › unconditional › skip (declaration)",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-35339b17d8479f1df331",
+      "expectedStatus": "skipped",
+      "annotations": [
+        {
+          "type": "skip",
+          "origin": "declaration"
+        }
+      ],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › unconditional › fail (declaration) [webkit#0]",
+      "testId": "tests/checkout/builtins.spec.ts › unconditional › fail (declaration)",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-96ce88258a2d4939f79c",
+      "expectedStatus": "passed",
+      "annotations": [
+        {
+          "type": "fail",
+          "origin": "declaration"
+        }
+      ],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › unconditional › fixme (declaration) [webkit#0]",
+      "testId": "tests/checkout/builtins.spec.ts › unconditional › fixme (declaration)",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-e7f8d279b5773d7441e9",
+      "expectedStatus": "skipped",
+      "annotations": [
+        {
+          "type": "fixme",
+          "origin": "declaration"
+        }
+      ],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › unconditional › slow (in body) [webkit#0]",
+      "testId": "tests/checkout/builtins.spec.ts › unconditional › slow (in body)",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-cb0e7091482efb894954",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › conditional on browserName › skip webkit (declaration callback) [webkit#0]",
+      "testId": "tests/checkout/builtins.spec.ts › conditional on browserName › skip webkit (declaration callback)",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-b5001d7b24c00ecf08f4",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › conditional on browserName › fail firefox (in body) [webkit#0]",
+      "testId": "tests/checkout/builtins.spec.ts › conditional on browserName › fail firefox (in body)",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-7256fc2faa9061e4c272",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › conditional on browserName › fixme chromium (in body) [webkit#0]",
+      "testId": "tests/checkout/builtins.spec.ts › conditional on browserName › fixme chromium (in body)",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-49aaa858388327bfff8a",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › conditional on browserName › slow webkit (in body) [webkit#0]",
+      "testId": "tests/checkout/builtins.spec.ts › conditional on browserName › slow webkit (in body)",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-94a98cddcb30b88c2131",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › describe-level › inside conditional fixme describe [webkit#0]",
+      "testId": "tests/checkout/builtins.spec.ts › describe-level › inside conditional fixme describe",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-aa09e067775a7a1b0d5e",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › skipped describe › inside skipped describe [webkit#0]",
+      "testId": "tests/checkout/builtins.spec.ts › skipped describe › inside skipped describe",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-8411ec3192aee1ce1d3b",
+      "expectedStatus": "skipped",
+      "annotations": [
+        {
+          "type": "skip",
+          "origin": "declaration"
+        }
+      ],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › fixme describe › inside fixme describe [webkit#0]",
+      "testId": "tests/checkout/builtins.spec.ts › fixme describe › inside fixme describe",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-45bb11f4611e76247eba",
+      "expectedStatus": "skipped",
+      "annotations": [
+        {
+          "type": "fixme",
+          "origin": "declaration"
+        }
+      ],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › only › focused test [webkit#0]",
+      "testId": "tests/checkout/builtins.spec.ts › only › focused test",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-9d97760d5402389f726a",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/builtins.spec.ts › only › unfocused sibling [webkit#0]",
+      "testId": "tests/checkout/builtins.spec.ts › only › unfocused sibling",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "6cb2e79787f8f05e426e-14f80008a03e1ab6d0d9",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/cart.spec.ts › serial flow › add item [webkit#0]",
+      "testId": "tests/checkout/cart.spec.ts › serial flow › add item",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "53fa0b5a5aa39ac6891a-2a1128f0f48be304d136",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/cart.spec.ts › serial flow › apply coupon [webkit#0]",
+      "testId": "tests/checkout/cart.spec.ts › serial flow › apply coupon",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "53fa0b5a5aa39ac6891a-ffa743eca09faeb52990",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/cart.spec.ts › serial flow › pay [webkit#0]",
+      "testId": "tests/checkout/cart.spec.ts › serial flow › pay",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "53fa0b5a5aa39ac6891a-f67a205ba25172b452f1",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/cart.spec.ts › parallel flow › browse A [webkit#0]",
+      "testId": "tests/checkout/cart.spec.ts › parallel flow › browse A",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "53fa0b5a5aa39ac6891a-fd63bd15b3e8b857012b",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/cart.spec.ts › parallel flow › browse B [webkit#0]",
+      "testId": "tests/checkout/cart.spec.ts › parallel flow › browse B",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "53fa0b5a5aa39ac6891a-103f693ec2b9d07dff5a",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/checkout/cart.spec.ts › default flow › view cart [webkit#0]",
+      "testId": "tests/checkout/cart.spec.ts › default flow › view cart",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "53fa0b5a5aa39ac6891a-579b1be6d73b4bf8cd06",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/misc/annotations.spec.ts › hidden type [webkit#0]",
+      "testId": "tests/misc/annotations.spec.ts › hidden type",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "7718a717855dcee93cd0-84c8e6fddcaf88e2a30d",
+      "expectedStatus": "passed",
+      "annotations": [
+        {
+          "type": "_internal",
+          "description": "tooling only",
+          "origin": "declaration",
+          "hidden": true
+        }
+      ],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/misc/annotations.spec.ts › multiple annotations [webkit#0]",
+      "testId": "tests/misc/annotations.spec.ts › multiple annotations",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "7718a717855dcee93cd0-7a45f1ed380172be544c",
+      "expectedStatus": "passed",
+      "annotations": [
+        {
+          "type": "owner",
+          "description": "alice",
+          "origin": "declaration"
+        },
+        {
+          "type": "issue",
+          "description": "#123",
+          "origin": "declaration"
+        },
+        {
+          "type": "owner",
+          "description": "bob",
+          "origin": "declaration"
+        }
+      ],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/misc/annotations.spec.ts › runtime annotation [webkit#0]",
+      "testId": "tests/misc/annotations.spec.ts › runtime annotation",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "7718a717855dcee93cd0-2bbf9eee748249c8ff4f",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts › conditionals › env var condition [webkit#0]",
+      "testId": "tests/misc/conditionals.spec.ts › conditionals › env var condition",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "512e66e67c635f8cbc7f-3711cc6e63fe24fc63b2",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts › conditionals › helper call [webkit#0]",
+      "testId": "tests/misc/conditionals.spec.ts › conditionals › helper call",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "512e66e67c635f8cbc7f-d49088e1a2cbbaad8101",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts › conditionals › computed annotation type [webkit#0]",
+      "testId": "tests/misc/conditionals.spec.ts › conditionals › computed annotation type",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "512e66e67c635f8cbc7f-7a875c8a4a2ae809e9c2",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts › conditionals › early return before conditional [webkit#0]",
+      "testId": "tests/misc/conditionals.spec.ts › conditionals › early return before conditional",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "512e66e67c635f8cbc7f-0114bcddd57fe1112ad4",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/misc/conditionals.spec.ts › conditionals › project name condition [webkit#0]",
+      "testId": "tests/misc/conditionals.spec.ts › conditionals › project name condition",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "512e66e67c635f8cbc7f-722d23766c79f0b39ea4",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/misc/generated.spec.ts › role admin can log in [webkit#0]",
+      "testId": "tests/misc/generated.spec.ts › role admin can log in",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "38c60d58330107297c1d-8633f7f5c9e22fefc0c2",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/misc/generated.spec.ts › role user can log in [webkit#0]",
+      "testId": "tests/misc/generated.spec.ts › role user can log in",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "38c60d58330107297c1d-442ece7cebad78a35b49",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/misc/generated.spec.ts › role guest can log in [webkit#0]",
+      "testId": "tests/misc/generated.spec.ts › role guest can log in",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "38c60d58330107297c1d-4febb72ec96e7f66121c",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/misc/generated.spec.ts › env staging › health check [webkit#0]",
+      "testId": "tests/misc/generated.spec.ts › env staging › health check",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "38c60d58330107297c1d-336d007a778b8aa79159",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    },
+    {
+      "id": "tests/misc/generated.spec.ts › env prod › health check [webkit#0]",
+      "testId": "tests/misc/generated.spec.ts › env prod › health check",
+      "projectId": "webkit",
+      "repeatEachIndex": 0,
+      "playwrightId": "38c60d58330107297c1d-d0764718e4000653d0ec",
+      "expectedStatus": "passed",
+      "annotations": [],
+      "timeout": 30000,
+      "retries": 0
+    }
+  ],
+  "tags": [
+    {
+      "name": "@auth",
+      "testCount": 2
+    },
+    {
+      "name": "@fast",
+      "testCount": 1
+    },
+    {
+      "name": "@multi",
+      "testCount": 1
+    },
+    {
+      "name": "@negative",
+      "testCount": 1
+    },
+    {
+      "name": "@nested",
+      "testCount": 1
+    },
+    {
+      "name": "@rbac",
+      "testCount": 2
+    },
+    {
+      "name": "@role-admin",
+      "testCount": 1
+    },
+    {
+      "name": "@role-guest",
+      "testCount": 1
+    },
+    {
+      "name": "@role-user",
+      "testCount": 1
+    },
+    {
+      "name": "@smoke",
+      "testCount": 2
+    }
+  ],
+  "annotationTypes": [
+    {
+      "type": "_internal",
+      "builtIn": false,
+      "testCount": 1
+    },
+    {
+      "type": "fail",
+      "builtIn": true,
+      "testCount": 1
+    },
+    {
+      "type": "fixme",
+      "builtIn": true,
+      "testCount": 2
+    },
+    {
+      "type": "issue",
+      "builtIn": false,
+      "testCount": 4
+    },
+    {
+      "type": "owner",
+      "builtIn": false,
+      "testCount": 3
+    },
+    {
+      "type": "skip",
+      "builtIn": true,
+      "testCount": 2
+    }
+  ],
+  "conditionals": [],
+  "warnings": [
+    {
+      "code": "tag-origin-approximate",
+      "message": "Tags declared in test.describe details cannot be told apart from the test’s own details tags without Playwright internals; both are reported with origin \"details\" for tests inside a describe."
+    },
+    {
+      "code": "describe-internals-unavailable",
+      "message": "Describe mode, own tags and own annotations are not in the public Reporter API; describes are reported with mode \"default\" and no tags or annotations until the internals reader lands."
+    }
+  ]
+}
