@@ -41,8 +41,6 @@
               {
                 "title": "cleanup",
                 "titlePath": [
-                  "teardown",
-                  "setup/cleanup.teardown.ts",
                   "cleanup"
                 ],
                 "location": {
@@ -111,8 +109,6 @@
               {
                 "title": "authenticate",
                 "titlePath": [
-                  "setup",
-                  "setup/auth.setup.ts",
                   "authenticate"
                 ],
                 "location": {
@@ -182,8 +178,6 @@
               {
                 "title": "login with valid credentials @smoke",
                 "titlePath": [
-                  "chromium",
-                  "auth/login.spec.ts",
                   "login with valid credentials @smoke"
                 ],
                 "location": {
@@ -207,8 +201,6 @@
               {
                 "title": "login with details tags",
                 "titlePath": [
-                  "chromium",
-                  "auth/login.spec.ts",
                   "login with details tags"
                 ],
                 "location": {
@@ -233,8 +225,6 @@
               {
                 "title": "login mixed tags @fast",
                 "titlePath": [
-                  "chromium",
-                  "auth/login.spec.ts",
                   "login mixed tags @fast"
                 ],
                 "location": {
@@ -259,8 +249,6 @@
               {
                 "title": "login known bug (url issue)",
                 "titlePath": [
-                  "chromium",
-                  "auth/login.spec.ts",
                   "login known bug (url issue)"
                 ],
                 "location": {
@@ -287,8 +275,6 @@
               {
                 "title": "login known bug (jira key)",
                 "titlePath": [
-                  "chromium",
-                  "auth/login.spec.ts",
                   "login known bug (jira key)"
                 ],
                 "location": {
@@ -369,8 +355,6 @@
                       {
                         "title": "guest cannot manage users",
                         "titlePath": [
-                          "chromium",
-                          "auth/permissions/roles.spec.ts",
                           "roles",
                           "nested",
                           "guest cannot manage users"
@@ -428,8 +412,6 @@
                   {
                     "title": "admin can manage users",
                     "titlePath": [
-                      "chromium",
-                      "auth/permissions/roles.spec.ts",
                       "roles",
                       "admin can manage users"
                     ],
@@ -515,8 +497,6 @@
                   {
                     "title": "skip",
                     "titlePath": [
-                      "chromium",
-                      "checkout/builtins.spec.ts",
                       "unconditional",
                       "skip"
                     ],
@@ -539,8 +519,6 @@
                   {
                     "title": "skip (declaration)",
                     "titlePath": [
-                      "chromium",
-                      "checkout/builtins.spec.ts",
                       "unconditional",
                       "skip (declaration)"
                     ],
@@ -567,8 +545,6 @@
                   {
                     "title": "fail (declaration)",
                     "titlePath": [
-                      "chromium",
-                      "checkout/builtins.spec.ts",
                       "unconditional",
                       "fail (declaration)"
                     ],
@@ -595,8 +571,6 @@
                   {
                     "title": "fixme (declaration)",
                     "titlePath": [
-                      "chromium",
-                      "checkout/builtins.spec.ts",
                       "unconditional",
                       "fixme (declaration)"
                     ],
@@ -623,8 +597,6 @@
                   {
                     "title": "slow (in body)",
                     "titlePath": [
-                      "chromium",
-                      "checkout/builtins.spec.ts",
                       "unconditional",
                       "slow (in body)"
                     ],
@@ -672,8 +644,6 @@
                   {
                     "title": "skip webkit (declaration callback)",
                     "titlePath": [
-                      "chromium",
-                      "checkout/builtins.spec.ts",
                       "conditional on browserName",
                       "skip webkit (declaration callback)"
                     ],
@@ -696,8 +666,6 @@
                   {
                     "title": "fail firefox (in body)",
                     "titlePath": [
-                      "chromium",
-                      "checkout/builtins.spec.ts",
                       "conditional on browserName",
                       "fail firefox (in body)"
                     ],
@@ -720,8 +688,6 @@
                   {
                     "title": "fixme chromium (in body)",
                     "titlePath": [
-                      "chromium",
-                      "checkout/builtins.spec.ts",
                       "conditional on browserName",
                       "fixme chromium (in body)"
                     ],
@@ -744,8 +710,6 @@
                   {
                     "title": "slow webkit (in body)",
                     "titlePath": [
-                      "chromium",
-                      "checkout/builtins.spec.ts",
                       "conditional on browserName",
                       "slow webkit (in body)"
                     ],
@@ -793,8 +757,6 @@
                   {
                     "title": "inside conditional fixme describe",
                     "titlePath": [
-                      "chromium",
-                      "checkout/builtins.spec.ts",
                       "describe-level",
                       "inside conditional fixme describe"
                     ],
@@ -842,8 +804,6 @@
                   {
                     "title": "inside skipped describe",
                     "titlePath": [
-                      "chromium",
-                      "checkout/builtins.spec.ts",
                       "skipped describe",
                       "inside skipped describe"
                     ],
@@ -899,8 +859,6 @@
                   {
                     "title": "inside fixme describe",
                     "titlePath": [
-                      "chromium",
-                      "checkout/builtins.spec.ts",
                       "fixme describe",
                       "inside fixme describe"
                     ],
@@ -956,8 +914,6 @@
                   {
                     "title": "focused test",
                     "titlePath": [
-                      "chromium",
-                      "checkout/builtins.spec.ts",
                       "only",
                       "focused test"
                     ],
@@ -980,8 +936,6 @@
                   {
                     "title": "unfocused sibling",
                     "titlePath": [
-                      "chromium",
-                      "checkout/builtins.spec.ts",
                       "only",
                       "unfocused sibling"
                     ],
@@ -1053,8 +1007,6 @@
                   {
                     "title": "add item",
                     "titlePath": [
-                      "chromium",
-                      "checkout/cart.spec.ts",
                       "serial flow",
                       "add item"
                     ],
@@ -1077,8 +1029,6 @@
                   {
                     "title": "apply coupon",
                     "titlePath": [
-                      "chromium",
-                      "checkout/cart.spec.ts",
                       "serial flow",
                       "apply coupon"
                     ],
@@ -1101,8 +1051,6 @@
                   {
                     "title": "pay",
                     "titlePath": [
-                      "chromium",
-                      "checkout/cart.spec.ts",
                       "serial flow",
                       "pay"
                     ],
@@ -1150,8 +1098,6 @@
                   {
                     "title": "browse A",
                     "titlePath": [
-                      "chromium",
-                      "checkout/cart.spec.ts",
                       "parallel flow",
                       "browse A"
                     ],
@@ -1174,8 +1120,6 @@
                   {
                     "title": "browse B",
                     "titlePath": [
-                      "chromium",
-                      "checkout/cart.spec.ts",
                       "parallel flow",
                       "browse B"
                     ],
@@ -1223,8 +1167,6 @@
                   {
                     "title": "view cart",
                     "titlePath": [
-                      "chromium",
-                      "checkout/cart.spec.ts",
                       "default flow",
                       "view cart"
                     ],
@@ -1283,8 +1225,6 @@
               {
                 "title": "hidden type",
                 "titlePath": [
-                  "chromium",
-                  "misc/annotations.spec.ts",
                   "hidden type"
                 ],
                 "location": {
@@ -1311,8 +1251,6 @@
               {
                 "title": "multiple annotations",
                 "titlePath": [
-                  "chromium",
-                  "misc/annotations.spec.ts",
                   "multiple annotations"
                 ],
                 "location": {
@@ -1349,8 +1287,6 @@
               {
                 "title": "runtime annotation",
                 "titlePath": [
-                  "chromium",
-                  "misc/annotations.spec.ts",
                   "runtime annotation"
                 ],
                 "location": {
@@ -1409,8 +1345,6 @@
                   {
                     "title": "health check",
                     "titlePath": [
-                      "chromium",
-                      "misc/generated.spec.ts",
                       "env staging",
                       "health check"
                     ],
@@ -1458,8 +1392,6 @@
                   {
                     "title": "health check",
                     "titlePath": [
-                      "chromium",
-                      "misc/generated.spec.ts",
                       "env prod",
                       "health check"
                     ],
@@ -1495,8 +1427,6 @@
               {
                 "title": "role admin can log in",
                 "titlePath": [
-                  "chromium",
-                  "misc/generated.spec.ts",
                   "role admin can log in"
                 ],
                 "location": {
@@ -1520,8 +1450,6 @@
               {
                 "title": "role user can log in",
                 "titlePath": [
-                  "chromium",
-                  "misc/generated.spec.ts",
                   "role user can log in"
                 ],
                 "location": {
@@ -1545,8 +1473,6 @@
               {
                 "title": "role guest can log in",
                 "titlePath": [
-                  "chromium",
-                  "misc/generated.spec.ts",
                   "role guest can log in"
                 ],
                 "location": {
@@ -1621,8 +1547,6 @@
               {
                 "title": "login with valid credentials @smoke",
                 "titlePath": [
-                  "firefox",
-                  "auth/login.spec.ts",
                   "login with valid credentials @smoke"
                 ],
                 "location": {
@@ -1646,8 +1570,6 @@
               {
                 "title": "login with details tags",
                 "titlePath": [
-                  "firefox",
-                  "auth/login.spec.ts",
                   "login with details tags"
                 ],
                 "location": {
@@ -1672,8 +1594,6 @@
               {
                 "title": "login mixed tags @fast",
                 "titlePath": [
-                  "firefox",
-                  "auth/login.spec.ts",
                   "login mixed tags @fast"
                 ],
                 "location": {
@@ -1698,8 +1618,6 @@
               {
                 "title": "login known bug (url issue)",
                 "titlePath": [
-                  "firefox",
-                  "auth/login.spec.ts",
                   "login known bug (url issue)"
                 ],
                 "location": {
@@ -1726,8 +1644,6 @@
               {
                 "title": "login known bug (jira key)",
                 "titlePath": [
-                  "firefox",
-                  "auth/login.spec.ts",
                   "login known bug (jira key)"
                 ],
                 "location": {
@@ -1808,8 +1724,6 @@
                       {
                         "title": "guest cannot manage users",
                         "titlePath": [
-                          "firefox",
-                          "auth/permissions/roles.spec.ts",
                           "roles",
                           "nested",
                           "guest cannot manage users"
@@ -1867,8 +1781,6 @@
                   {
                     "title": "admin can manage users",
                     "titlePath": [
-                      "firefox",
-                      "auth/permissions/roles.spec.ts",
                       "roles",
                       "admin can manage users"
                     ],
@@ -1954,8 +1866,6 @@
                   {
                     "title": "skip",
                     "titlePath": [
-                      "firefox",
-                      "checkout/builtins.spec.ts",
                       "unconditional",
                       "skip"
                     ],
@@ -1978,8 +1888,6 @@
                   {
                     "title": "skip (declaration)",
                     "titlePath": [
-                      "firefox",
-                      "checkout/builtins.spec.ts",
                       "unconditional",
                       "skip (declaration)"
                     ],
@@ -2006,8 +1914,6 @@
                   {
                     "title": "fail (declaration)",
                     "titlePath": [
-                      "firefox",
-                      "checkout/builtins.spec.ts",
                       "unconditional",
                       "fail (declaration)"
                     ],
@@ -2034,8 +1940,6 @@
                   {
                     "title": "fixme (declaration)",
                     "titlePath": [
-                      "firefox",
-                      "checkout/builtins.spec.ts",
                       "unconditional",
                       "fixme (declaration)"
                     ],
@@ -2062,8 +1966,6 @@
                   {
                     "title": "slow (in body)",
                     "titlePath": [
-                      "firefox",
-                      "checkout/builtins.spec.ts",
                       "unconditional",
                       "slow (in body)"
                     ],
@@ -2111,8 +2013,6 @@
                   {
                     "title": "skip webkit (declaration callback)",
                     "titlePath": [
-                      "firefox",
-                      "checkout/builtins.spec.ts",
                       "conditional on browserName",
                       "skip webkit (declaration callback)"
                     ],
@@ -2135,8 +2035,6 @@
                   {
                     "title": "fail firefox (in body)",
                     "titlePath": [
-                      "firefox",
-                      "checkout/builtins.spec.ts",
                       "conditional on browserName",
                       "fail firefox (in body)"
                     ],
@@ -2159,8 +2057,6 @@
                   {
                     "title": "fixme chromium (in body)",
                     "titlePath": [
-                      "firefox",
-                      "checkout/builtins.spec.ts",
                       "conditional on browserName",
                       "fixme chromium (in body)"
                     ],
@@ -2183,8 +2079,6 @@
                   {
                     "title": "slow webkit (in body)",
                     "titlePath": [
-                      "firefox",
-                      "checkout/builtins.spec.ts",
                       "conditional on browserName",
                       "slow webkit (in body)"
                     ],
@@ -2232,8 +2126,6 @@
                   {
                     "title": "inside conditional fixme describe",
                     "titlePath": [
-                      "firefox",
-                      "checkout/builtins.spec.ts",
                       "describe-level",
                       "inside conditional fixme describe"
                     ],
@@ -2281,8 +2173,6 @@
                   {
                     "title": "inside skipped describe",
                     "titlePath": [
-                      "firefox",
-                      "checkout/builtins.spec.ts",
                       "skipped describe",
                       "inside skipped describe"
                     ],
@@ -2338,8 +2228,6 @@
                   {
                     "title": "inside fixme describe",
                     "titlePath": [
-                      "firefox",
-                      "checkout/builtins.spec.ts",
                       "fixme describe",
                       "inside fixme describe"
                     ],
@@ -2395,8 +2283,6 @@
                   {
                     "title": "focused test",
                     "titlePath": [
-                      "firefox",
-                      "checkout/builtins.spec.ts",
                       "only",
                       "focused test"
                     ],
@@ -2419,8 +2305,6 @@
                   {
                     "title": "unfocused sibling",
                     "titlePath": [
-                      "firefox",
-                      "checkout/builtins.spec.ts",
                       "only",
                       "unfocused sibling"
                     ],
@@ -2492,8 +2376,6 @@
                   {
                     "title": "add item",
                     "titlePath": [
-                      "firefox",
-                      "checkout/cart.spec.ts",
                       "serial flow",
                       "add item"
                     ],
@@ -2516,8 +2398,6 @@
                   {
                     "title": "apply coupon",
                     "titlePath": [
-                      "firefox",
-                      "checkout/cart.spec.ts",
                       "serial flow",
                       "apply coupon"
                     ],
@@ -2540,8 +2420,6 @@
                   {
                     "title": "pay",
                     "titlePath": [
-                      "firefox",
-                      "checkout/cart.spec.ts",
                       "serial flow",
                       "pay"
                     ],
@@ -2589,8 +2467,6 @@
                   {
                     "title": "browse A",
                     "titlePath": [
-                      "firefox",
-                      "checkout/cart.spec.ts",
                       "parallel flow",
                       "browse A"
                     ],
@@ -2613,8 +2489,6 @@
                   {
                     "title": "browse B",
                     "titlePath": [
-                      "firefox",
-                      "checkout/cart.spec.ts",
                       "parallel flow",
                       "browse B"
                     ],
@@ -2662,8 +2536,6 @@
                   {
                     "title": "view cart",
                     "titlePath": [
-                      "firefox",
-                      "checkout/cart.spec.ts",
                       "default flow",
                       "view cart"
                     ],
@@ -2722,8 +2594,6 @@
               {
                 "title": "hidden type",
                 "titlePath": [
-                  "firefox",
-                  "misc/annotations.spec.ts",
                   "hidden type"
                 ],
                 "location": {
@@ -2750,8 +2620,6 @@
               {
                 "title": "multiple annotations",
                 "titlePath": [
-                  "firefox",
-                  "misc/annotations.spec.ts",
                   "multiple annotations"
                 ],
                 "location": {
@@ -2788,8 +2656,6 @@
               {
                 "title": "runtime annotation",
                 "titlePath": [
-                  "firefox",
-                  "misc/annotations.spec.ts",
                   "runtime annotation"
                 ],
                 "location": {
@@ -2848,8 +2714,6 @@
                   {
                     "title": "health check",
                     "titlePath": [
-                      "firefox",
-                      "misc/generated.spec.ts",
                       "env staging",
                       "health check"
                     ],
@@ -2897,8 +2761,6 @@
                   {
                     "title": "health check",
                     "titlePath": [
-                      "firefox",
-                      "misc/generated.spec.ts",
                       "env prod",
                       "health check"
                     ],
@@ -2934,8 +2796,6 @@
               {
                 "title": "role admin can log in",
                 "titlePath": [
-                  "firefox",
-                  "misc/generated.spec.ts",
                   "role admin can log in"
                 ],
                 "location": {
@@ -2959,8 +2819,6 @@
               {
                 "title": "role user can log in",
                 "titlePath": [
-                  "firefox",
-                  "misc/generated.spec.ts",
                   "role user can log in"
                 ],
                 "location": {
@@ -2984,8 +2842,6 @@
               {
                 "title": "role guest can log in",
                 "titlePath": [
-                  "firefox",
-                  "misc/generated.spec.ts",
                   "role guest can log in"
                 ],
                 "location": {
@@ -3060,8 +2916,6 @@
               {
                 "title": "login with valid credentials @smoke",
                 "titlePath": [
-                  "webkit",
-                  "auth/login.spec.ts",
                   "login with valid credentials @smoke"
                 ],
                 "location": {
@@ -3085,8 +2939,6 @@
               {
                 "title": "login with details tags",
                 "titlePath": [
-                  "webkit",
-                  "auth/login.spec.ts",
                   "login with details tags"
                 ],
                 "location": {
@@ -3111,8 +2963,6 @@
               {
                 "title": "login mixed tags @fast",
                 "titlePath": [
-                  "webkit",
-                  "auth/login.spec.ts",
                   "login mixed tags @fast"
                 ],
                 "location": {
@@ -3137,8 +2987,6 @@
               {
                 "title": "login known bug (url issue)",
                 "titlePath": [
-                  "webkit",
-                  "auth/login.spec.ts",
                   "login known bug (url issue)"
                 ],
                 "location": {
@@ -3165,8 +3013,6 @@
               {
                 "title": "login known bug (jira key)",
                 "titlePath": [
-                  "webkit",
-                  "auth/login.spec.ts",
                   "login known bug (jira key)"
                 ],
                 "location": {
@@ -3247,8 +3093,6 @@
                       {
                         "title": "guest cannot manage users",
                         "titlePath": [
-                          "webkit",
-                          "auth/permissions/roles.spec.ts",
                           "roles",
                           "nested",
                           "guest cannot manage users"
@@ -3306,8 +3150,6 @@
                   {
                     "title": "admin can manage users",
                     "titlePath": [
-                      "webkit",
-                      "auth/permissions/roles.spec.ts",
                       "roles",
                       "admin can manage users"
                     ],
@@ -3393,8 +3235,6 @@
                   {
                     "title": "skip",
                     "titlePath": [
-                      "webkit",
-                      "checkout/builtins.spec.ts",
                       "unconditional",
                       "skip"
                     ],
@@ -3417,8 +3257,6 @@
                   {
                     "title": "skip (declaration)",
                     "titlePath": [
-                      "webkit",
-                      "checkout/builtins.spec.ts",
                       "unconditional",
                       "skip (declaration)"
                     ],
@@ -3445,8 +3283,6 @@
                   {
                     "title": "fail (declaration)",
                     "titlePath": [
-                      "webkit",
-                      "checkout/builtins.spec.ts",
                       "unconditional",
                       "fail (declaration)"
                     ],
@@ -3473,8 +3309,6 @@
                   {
                     "title": "fixme (declaration)",
                     "titlePath": [
-                      "webkit",
-                      "checkout/builtins.spec.ts",
                       "unconditional",
                       "fixme (declaration)"
                     ],
@@ -3501,8 +3335,6 @@
                   {
                     "title": "slow (in body)",
                     "titlePath": [
-                      "webkit",
-                      "checkout/builtins.spec.ts",
                       "unconditional",
                       "slow (in body)"
                     ],
@@ -3550,8 +3382,6 @@
                   {
                     "title": "skip webkit (declaration callback)",
                     "titlePath": [
-                      "webkit",
-                      "checkout/builtins.spec.ts",
                       "conditional on browserName",
                       "skip webkit (declaration callback)"
                     ],
@@ -3574,8 +3404,6 @@
                   {
                     "title": "fail firefox (in body)",
                     "titlePath": [
-                      "webkit",
-                      "checkout/builtins.spec.ts",
                       "conditional on browserName",
                       "fail firefox (in body)"
                     ],
@@ -3598,8 +3426,6 @@
                   {
                     "title": "fixme chromium (in body)",
                     "titlePath": [
-                      "webkit",
-                      "checkout/builtins.spec.ts",
                       "conditional on browserName",
                       "fixme chromium (in body)"
                     ],
@@ -3622,8 +3448,6 @@
                   {
                     "title": "slow webkit (in body)",
                     "titlePath": [
-                      "webkit",
-                      "checkout/builtins.spec.ts",
                       "conditional on browserName",
                       "slow webkit (in body)"
                     ],
@@ -3671,8 +3495,6 @@
                   {
                     "title": "inside conditional fixme describe",
                     "titlePath": [
-                      "webkit",
-                      "checkout/builtins.spec.ts",
                       "describe-level",
                       "inside conditional fixme describe"
                     ],
@@ -3720,8 +3542,6 @@
                   {
                     "title": "inside skipped describe",
                     "titlePath": [
-                      "webkit",
-                      "checkout/builtins.spec.ts",
                       "skipped describe",
                       "inside skipped describe"
                     ],
@@ -3777,8 +3597,6 @@
                   {
                     "title": "inside fixme describe",
                     "titlePath": [
-                      "webkit",
-                      "checkout/builtins.spec.ts",
                       "fixme describe",
                       "inside fixme describe"
                     ],
@@ -3834,8 +3652,6 @@
                   {
                     "title": "focused test",
                     "titlePath": [
-                      "webkit",
-                      "checkout/builtins.spec.ts",
                       "only",
                       "focused test"
                     ],
@@ -3858,8 +3674,6 @@
                   {
                     "title": "unfocused sibling",
                     "titlePath": [
-                      "webkit",
-                      "checkout/builtins.spec.ts",
                       "only",
                       "unfocused sibling"
                     ],
@@ -3931,8 +3745,6 @@
                   {
                     "title": "add item",
                     "titlePath": [
-                      "webkit",
-                      "checkout/cart.spec.ts",
                       "serial flow",
                       "add item"
                     ],
@@ -3955,8 +3767,6 @@
                   {
                     "title": "apply coupon",
                     "titlePath": [
-                      "webkit",
-                      "checkout/cart.spec.ts",
                       "serial flow",
                       "apply coupon"
                     ],
@@ -3979,8 +3789,6 @@
                   {
                     "title": "pay",
                     "titlePath": [
-                      "webkit",
-                      "checkout/cart.spec.ts",
                       "serial flow",
                       "pay"
                     ],
@@ -4028,8 +3836,6 @@
                   {
                     "title": "browse A",
                     "titlePath": [
-                      "webkit",
-                      "checkout/cart.spec.ts",
                       "parallel flow",
                       "browse A"
                     ],
@@ -4052,8 +3858,6 @@
                   {
                     "title": "browse B",
                     "titlePath": [
-                      "webkit",
-                      "checkout/cart.spec.ts",
                       "parallel flow",
                       "browse B"
                     ],
@@ -4101,8 +3905,6 @@
                   {
                     "title": "view cart",
                     "titlePath": [
-                      "webkit",
-                      "checkout/cart.spec.ts",
                       "default flow",
                       "view cart"
                     ],
@@ -4161,8 +3963,6 @@
               {
                 "title": "hidden type",
                 "titlePath": [
-                  "webkit",
-                  "misc/annotations.spec.ts",
                   "hidden type"
                 ],
                 "location": {
@@ -4189,8 +3989,6 @@
               {
                 "title": "multiple annotations",
                 "titlePath": [
-                  "webkit",
-                  "misc/annotations.spec.ts",
                   "multiple annotations"
                 ],
                 "location": {
@@ -4227,8 +4025,6 @@
               {
                 "title": "runtime annotation",
                 "titlePath": [
-                  "webkit",
-                  "misc/annotations.spec.ts",
                   "runtime annotation"
                 ],
                 "location": {
@@ -4287,8 +4083,6 @@
                   {
                     "title": "health check",
                     "titlePath": [
-                      "webkit",
-                      "misc/generated.spec.ts",
                       "env staging",
                       "health check"
                     ],
@@ -4336,8 +4130,6 @@
                   {
                     "title": "health check",
                     "titlePath": [
-                      "webkit",
-                      "misc/generated.spec.ts",
                       "env prod",
                       "health check"
                     ],
@@ -4373,8 +4165,6 @@
               {
                 "title": "role admin can log in",
                 "titlePath": [
-                  "webkit",
-                  "misc/generated.spec.ts",
                   "role admin can log in"
                 ],
                 "location": {
@@ -4398,8 +4188,6 @@
               {
                 "title": "role user can log in",
                 "titlePath": [
-                  "webkit",
-                  "misc/generated.spec.ts",
                   "role user can log in"
                 ],
                 "location": {
@@ -4423,8 +4211,6 @@
               {
                 "title": "role guest can log in",
                 "titlePath": [
-                  "webkit",
-                  "misc/generated.spec.ts",
                   "role guest can log in"
                 ],
                 "location": {

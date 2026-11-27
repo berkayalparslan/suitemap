@@ -37,7 +37,7 @@ Each project repeats the suite with its own `use`, `testMatch`/`testIgnore`, `gr
 
 ## Phase 0 checks
 
-Evidence: `spike/output/pw-1.42.json` (1.42.1), `pw-latest.json` (1.65.1), `*-repeat.json` (same with `repeatEach: 2`), `diff.txt`. Reproduce with `spike/run.sh`. Fixture: `fixtures/playwright-basic`.
+Evidence: `spike/output/pw-1.42.json` (1.42.1), `pw-latest.json` (1.65.1), `*-repeat.json` (same with `repeatEach: 2`), `diff.txt`. Reproduce with `spike/run.sh` (usage in the script header; `pw-latest` dumps were made with 1.65.1; `duplicate-title-*.txt` holds the load-error output). Fixture: `fixtures/playwright-basic`.
 
 - [x] **Does `--list` run `globalSetup`?** No, on both versions (marker file never written). Repos that need services in `globalSetup` can still be listed. The config file itself is loaded and executed, so top-level code in it runs. Not yet checked: `webServer`, `globalTeardown`, and project-level setup code with side effects.
 - [~] **Which env vars does config loading need?** Only what the config reads at load time. A config reading an unset env var for `baseURL` loads fine (value `undefined`); a config that throws on a missing var will make extraction fail. This cannot be answered from the fixture; it needs the 2 real open-source suites in Phase 1. Extraction should report config load errors verbatim and allow `--env-file`.

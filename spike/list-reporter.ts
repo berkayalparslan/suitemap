@@ -58,7 +58,8 @@ class ListReporter implements Reporter {
 
     const testNode = (t: TestCase) => ({
       title: t.title,
-      titlePath: t.titlePath().slice(1).map((x, i) => (i === 0 ? x : x)), // drop root ''
+      // titlePath() is ['', project, file, ...describes, title]; drop root, project and file so it is project-independent.
+      titlePath: t.titlePath().slice(3),
       location: loc(t.location),
       parentTitle: t.parent.title,
       parentType: (t.parent as any).type,
