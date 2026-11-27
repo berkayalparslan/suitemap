@@ -24,6 +24,6 @@ if [ -z "${4:-}" ]; then
   cp "$here/../fixtures/playwright-basic/playwright.negative.config.ts" "$work/"
   npx playwright test --config playwright.negative.config.ts --list > "$here/output/duplicate-title-$label.txt" 2>&1 && { echo "expected duplicate-title error, got success"; exit 1; } || echo "$label: duplicate-title error recorded"
   if [ -f "$here/output/pw-1.42.json" ] && [ -f "$here/output/pw-latest.json" ]; then
-    diff -u "$here/output/pw-1.42.json" "$here/output/pw-latest.json" > "$here/output/diff.txt" || true
+    (cd "$here/output" && diff -u pw-1.42.json pw-latest.json > diff.txt || true)
   fi
 fi

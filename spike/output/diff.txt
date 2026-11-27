@@ -1,5 +1,5 @@
---- /Users/berkay/repos/berkayalparslan/suitemap/spike/output/pw-1.42.json	2026-11-27 13:41:37
-+++ /Users/berkay/repos/berkayalparslan/suitemap/spike/output/pw-latest.json	2026-11-27 13:41:39
+--- pw-1.42.json	2026-11-27 13:41:37
++++ pw-latest.json	2026-11-27 13:41:39
 @@ -1,5 +1,5 @@
  {
 -  "playwrightVersion": "1.42.1",
