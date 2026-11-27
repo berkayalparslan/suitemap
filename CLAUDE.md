@@ -6,7 +6,7 @@ Open source (MIT). Distributed as npm packages with a static, single-file HTML v
 
 ## Current status
 
-Phase 0 (discovery spike). See `docs/roadmap.md` for phases and exit criteria.
+Phase 1 (extraction and data model) in progress; Phase 0 is merged. See `docs/roadmap.md` for phases and exit criteria.
 
 ## Read these before changing code
 
@@ -28,7 +28,19 @@ Phase 0 (discovery spike). See `docs/roadmap.md` for phases and exit criteria.
 
 ## Commands
 
-To be filled in during Phase 1 (install, build, test, lint, run the fixture extraction).
+Node >= 20.19, pnpm 10 (`corepack enable`).
+
+```sh
+pnpm install            # install workspace deps
+pnpm build              # tsc build of every package (pnpm -r build)
+pnpm typecheck          # tsc --noEmit per package
+pnpm lint               # eslint
+pnpm format:check       # prettier (code only; docs are hand-formatted)
+pnpm test               # vitest run (all packages)
+pnpm exec vitest run packages/core/src/build.test.ts   # one file
+```
+
+CI (`.github/workflows/ci.yml`) runs format check, lint, typecheck, build and test. `suitemap extract` is added with the CLI package; its usage goes here then.
 
 ## Conventions
 

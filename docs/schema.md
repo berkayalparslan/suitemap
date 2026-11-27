@@ -1,8 +1,8 @@
-# Canonical schema (draft v0)
+# Canonical schema (v1)
 
-> **Status:** the changes from ADR 0004 (accepted 2026-11-27) are folded into the types below. The schema stays draft v0 until Phase 1 freezes `schemaVersion` 1.
+> **Status:** `schemaVersion` 1 is frozen with the changes from ADR 0004 and ADR 0005. The implementation is `packages/core/src/schema.ts` (valibot validators; types are derived from them). Keep this page in step with it.
 
-This is the contract between the extractor, the viewer and the rule engine. It is a **draft**: Phase 0 validates it against real `--list` output, Phase 1 freezes v1.
+This is the contract between the extractor, the viewer and the rule engine. Phase 0 validated it against real `--list` output; Phase 1 froze v1.
 
 ```ts
 export interface SuitemapDocument {
@@ -24,7 +24,10 @@ export interface SuitemapDocument {
   tags: Tag[];
   annotationTypes: AnnotationType[];
   conditionals: Conditional[];    // ADR 0004
+  warnings: Warning[];            // ADR 0005: non-fatal extraction problems
 }
+
+export interface Warning { code: string; message: string; where?: string }
 
 export interface Project {
   id: string;                     // project name
@@ -64,6 +67,8 @@ export interface TestInstance {
   id: string;                     // test id + project id + repeatEachIndex (always; ADR 0004)
   testId: string;
   projectId: string;
+  repeatEachIndex: number;        // ADR 0005
+  playwrightId?: string;          // Playwright TestCase.id, optional cross-check (ADR 0005)
   expectedStatus: 'passed' | 'failed' | 'skipped' | 'timedOut' | 'interrupted';
   annotations: Annotation[];      // what Playwright reports for this instance
   timeout: number;
@@ -121,7 +126,7 @@ export interface InstanceResult {
 
 Source: `docs/playwright-adapter.md` (Phase 0 checks), accepted in `docs/decisions/0004-phase-0-schema-changes.md`.
 
-1. `TestInstance.id` = `projectId + testId + repeatEachIndex` always (not only if > 0); Playwright's `TestCase.id` is unique per project and repeat index (122 tests, 122 unique ids) and identical across versions, but its first 20 characters are shared by the same test in every project and it is a hash, not readable. Keep our own `testId` + `projectId` + `repeatEachIndex` id and store `TestCase.id` only as an optional cross-check.
+1. `TestInstance.id` is built from the test id, project id and `repeatEachIndex` always (not only if > 0); Playwright's `TestCase.id` is unique per project and repeat index (122 tests, 122 unique ids) and identical across versions, but its first 20 characters are shared by the same test in every project and it is a hash, not readable. Keep our own `testId` + `projectId` + `repeatEachIndex` id and store `TestCase.id` only as an optional cross-check.
 2. `Test.id` = file path + `titlePath` (describe titles + test title, without project or file segments); duplicate titles are a load error, so this is unique. Do not use line or column.
 3. `Annotation.origin` stays, but note that Playwright copies describe annotations onto every test. The extractor must dedupe: take the describe's own annotations (internal `_staticAnnotations`) as `describe`, the rest as `declaration`. Drop the synthetic `serial` annotation.
 4. `TagRef.origin` is reconstructed by the extractor (Playwright gives a flat list).
@@ -138,3 +143,12 @@ Conditional and runtime annotations (`test.skip(cond)`, `annotations.push(...)`,
 The `Conditional` type is defined in the main schema above.
 
 Completeness: the scan cannot prove it found every conditional (helpers, fixtures, dynamic types). The viewer shows "N found by scan", not "all".
+
+## Id formats (implemented in `packages/core/src/build.ts`)
+
+Ids are readable and deterministic; consumers should treat them as opaque strings.
+
+- `Folder.id` / `File.id`: path relative to `rootDir`, forward slashes; the root folder is `.`.
+- `Describe.id`: `<parent id> › <describe title>` (so `<file> › <describe title> › ...`); sibling describes with the same title get `#2`, `#3`, ... appended in source order; `Test.id`: `<file> › <describe titles> › <test title>` (separator ` › `).
+- `TestInstance.id`: `<test id> [<project id>#<repeatEachIndex>]`.
+- `Conditional.id`: `<file>:<line>:<column>:<type>:<form>`, with `#n` appended on collision.

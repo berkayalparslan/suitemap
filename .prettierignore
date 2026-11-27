@@ -1,0 +1,11 @@
+node_modules
+dist
+pnpm-lock.yaml
+spike/output
+fixtures
+docs/superpowers
+.remember
+docs
+spike
+*.md
+.github
