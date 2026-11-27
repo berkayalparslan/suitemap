@@ -1,0 +1,4 @@
+# Copy this file to CLAUDE.local.md (gitignored) and adjust the path.
+# It loads your private notes from the separate private repo.
+
+@~/suitemap-private/index.md
